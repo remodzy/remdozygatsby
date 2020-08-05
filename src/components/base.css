@@ -1,16 +1,8 @@
-@font-face {
-  font-family: "Avenir";
-  font-weight: 400;
-  font-style: normal;
-  src: url("/avenir-400.woff2") format("woff2");
-  font-display: swap;
-}
-
 body {
-  font-family: "Avenir", Tahoma, Arial, Helvetica, sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 1em;
   line-height: 1.65;
-  color: #373F49;
+  color: #373f49;
   background: #eee;
   margin: 0;
 }
@@ -74,45 +66,44 @@ a {
 /** BUTTONS **/
 
 .primary-btn {
-  background-color: #4865EB;
+  background-color: #4865eb;
 }
 
 .primary-btn:hover {
-  background-color: #507CF5;
+  background-color: #507cf5;
 }
 
 .success-btn {
-  background-color: #5B9976;
+  background-color: #5b9976;
 }
 
 .success-btn:hover {
-  background-color: #97BFAB;
+  background-color: #97bfab;
 }
 
 .warning-btn {
-  background-color: #D78153;
+  background-color: #d78153;
 }
 
 .warning-btn:hover {
-  background-color: #E3975D;
+  background-color: #e3975d;
 }
 
 .default-btn {
   background-color: #ffffff;
-  color: #4865EB,
+  color: #4865eb;
 }
 
 .primary-link-btn {
   all: unset;
   padding: 18px 32px;
-  color: #4865EB;
+  color: #4865eb;
   font-weight: 500;
 }
 
 .primary-link-btn:hover {
-  color: #507CF5;
+  color: #507cf5;
   cursor: pointer;
 }
-
 
 /**END BUTTONS**/
