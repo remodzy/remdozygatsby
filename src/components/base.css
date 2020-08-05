@@ -67,6 +67,52 @@ a {
   list-style: none;
 }
 
-  .list-inline li {
-    display: inline-block;
-  }
+.list-inline li {
+  display: inline-block;
+}
+
+/** BUTTONS **/
+
+.primary-btn {
+  background-color: #4865EB;
+}
+
+.primary-btn:hover {
+  background-color: #507CF5;
+}
+
+.success-btn {
+  background-color: #5B9976;
+}
+
+.success-btn:hover {
+  background-color: #97BFAB;
+}
+
+.warning-btn {
+  background-color: #D78153;
+}
+
+.warning-btn:hover {
+  background-color: #E3975D;
+}
+
+.default-btn {
+  background-color: #ffffff;
+  color: #4865EB,
+}
+
+.primary-link-btn {
+  all: unset;
+  padding: 18px 32px;
+  color: #4865EB;
+  font-weight: 500;
+}
+
+.primary-link-btn:hover {
+  color: #507CF5;
+  cursor: pointer;
+}
+
+
+/**END BUTTONS**/
