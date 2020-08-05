@@ -3,14 +3,14 @@ import PrimaryBlock from './components/primaryBlock'
 import Service from './components/service'
 
 const styles = {
-    root: {}
+  root: {},
 }
 
 export default function Landing() {
-    return (
-        <div style={styles.root}>
-            <PrimaryBlock />
-            <Service />
-        </div>
-    )
+  return (
+    <div style={styles.root}>
+      <PrimaryBlock />
+      <Service />
+    </div>
+  )
 }

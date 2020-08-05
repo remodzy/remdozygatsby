@@ -1,6 +1,6 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import { Link } from 'gatsby'
+import PropTypes from 'prop-types'
+import React from 'react'
 
 import Logo from '../logo'
 import HeaderMenu from '../headerMenu'
@@ -36,8 +36,16 @@ const Header = () => (
       </Link>
       <HeaderMenu />
       <div>
-        <LinkButton label="Log In" className="primary-link-btn" handleClick={()=>{}} />
-        <Button label="Get Started" className="primary-btn" handleClick={()=>{}} />
+        <LinkButton
+          label="Log In"
+          className="primary-link-btn"
+          handleClick={() => {}}
+        />
+        <Button
+          label="Get Started"
+          className="primary-btn"
+          handleClick={() => {}}
+        />
       </div>
     </div>
   </header>
