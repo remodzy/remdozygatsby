@@ -1,3 +1,8 @@
+type Color = {
+  main: string
+  sub: string
+}
+
 export const mainColorsGroup = {
   primary: {
     main: '#4865EB',
@@ -60,7 +65,7 @@ export type ColorName = {
   color: string
 }
 
-export function getColor(name: ColorName) {
+export function getColor(name: ColorName): Color {
   if (name.group === 'main') {
     return mainColorsGroup[name.color]
   }
@@ -68,6 +73,6 @@ export function getColor(name: ColorName) {
   return subColorsGroup[name.color]
 }
 
-export function getTextColor() {
+export function getTextColor(): Color {
   return mainColorsGroup.text
 }

@@ -1,6 +1,5 @@
 import React from 'react'
 import IconWrapper from '../IconWrapper'
-import Icon from '../../../../../../components/icons'
 import { getColor, getTextColor } from '../../../../../../utils/colors'
 import Button from '../../../../../../components/button'
 
@@ -27,9 +26,8 @@ const styles = {
   },
 }
 
-export default function InfoBlock({ item }) {
+export default function InfoBlock({ item, icon: Icon }) {
   const color = getColor(item.color)
-  console.log(color)
 
   const buttonColors = {
     background: color.sub,
@@ -38,7 +36,7 @@ export default function InfoBlock({ item }) {
   return (
     <div style={styles.root}>
       <IconWrapper color={color.sub}>
-        <Icon name={item.icon} />
+        <Icon />
       </IconWrapper>
       <div style={styles.title}>{item.title}</div>
       <div style={styles.text}>{item.text}</div>

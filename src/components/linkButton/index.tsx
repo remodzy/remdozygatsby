@@ -1,14 +1,14 @@
 import React, { ReactElement } from 'react'
 
 type Props = {
-  className: string
+  className?: string
   handleClick: () => any
   label: string
 }
 
 export default function LinkButton({
   label,
-  className = '',
+  className = 'primary-link-btn',
   handleClick,
 }: Props): ReactElement<any, any> {
   return (

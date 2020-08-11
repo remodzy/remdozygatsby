@@ -2,8 +2,8 @@ body {
   font-family: 'Manrope', sans-serif;
   font-size: 1em;
   line-height: 1.65;
-  color: #373f49;
-  background: #eee;
+  color: #22344b;
+  background: #f8fafc;
   margin: 0;
 }
 
@@ -96,7 +96,7 @@ a {
 
 .primary-link-btn {
   all: unset;
-  padding: 18px 32px;
+  /* padding: 18px 32px; */
   color: #4865eb;
   font-weight: 500;
 }

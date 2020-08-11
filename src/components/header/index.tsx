@@ -26,7 +26,7 @@ const Header = () => (
       }}
     >
       <Link
-        to="/"
+        to='/'
         style={{
           color: `white`,
           textDecoration: `none`,
@@ -35,15 +35,19 @@ const Header = () => (
         <Logo />
       </Link>
       <HeaderMenu />
-      <div>
-        <LinkButton
-          label="Log In"
-          className="primary-link-btn"
-          handleClick={() => {}}
-        />
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        <div style={{ marginRight: 32 }}>
+          <LinkButton label='Log In' handleClick={() => {}} />
+        </div>
         <Button
-          label="Get Started"
-          className="primary-btn"
+          label='Get Started'
+          className='primary-btn'
           handleClick={() => {}}
         />
       </div>
