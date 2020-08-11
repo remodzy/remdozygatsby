@@ -4,10 +4,20 @@ import Img from 'gatsby-image'
 
 import InfoBlock from '../InfoBlock'
 
-const list = [
+type ListItem = {
+  key: string
+  title: string
+  text: string
+  color: {
+    group: string
+    color: string
+  }
+  buttonLabel: string
+}
+
+const list: ListItem[] = [
   {
     key: 'settings',
-    icon: 'settings',
     title: 'In the field, at the office, in control',
     text:
       'Respond to customer requests with greater visibility of technicians and job status using field service software. Have everyone log in to one system to avoid project management using separate calendars and spreadsheets to increase productivity at the job site and in the back office.',
@@ -19,7 +29,6 @@ const list = [
   },
   {
     key: 'calendar',
-    icon: 'calendar',
     title: 'Simplify scheduling with an easy-to-use calendar',
     text:
       'See which field workers are available, schedule service calls and jobs, add customer information and include job details. If a job changes, drag and drop it to a new date and time, and the field technician is notified of the update.',
@@ -31,7 +40,6 @@ const list = [
   },
   {
     key: 'communicate',
-    icon: 'communicate',
     title: 'Easily communicate with field technicians',
     text:
       'Dispatch jobs directly to techs and allow them to set job status. Field staff can see their schedule and collect signatures, photos and notes – all from the mobile application.',
@@ -43,7 +51,6 @@ const list = [
   },
   {
     key: 'messaging',
-    icon: 'messaging',
     title: 'Messaging',
     text:
       'Automatically alert customers of ETAs and delays using GPS tracking data. Dispatchers receive an alert if a technician hasn’t viewed a job, and customer appointment notifications and reminders can be automated.',
@@ -70,7 +77,7 @@ const rowStyles = {
 }
 
 export default function ServiceList() {
-  const data = useStaticQuery(graphql`
+  const images = useStaticQuery(graphql`
     query {
       settings: file(relativePath: { eq: "landing/settings-image.png" }) {
         childImageSharp {
@@ -102,38 +109,67 @@ export default function ServiceList() {
           }
         }
       }
+
+      settingsIcon: file(relativePath: { eq: "landing/icons/settings.png" }) {
+        childImageSharp {
+          fixed(width: 24) {
+            ...GatsbyImageSharpFixed_noBase64
+          }
+        }
+      }
+
+      calendarIcon: file(relativePath: { eq: "landing/icons/calendar.png" }) {
+        childImageSharp {
+          fixed(width: 24) {
+            ...GatsbyImageSharpFixed_noBase64
+          }
+        }
+      }
+
+      communicateIcon: file(relativePath: { eq: "landing/icons/worker.png" }) {
+        childImageSharp {
+          fixed(width: 24) {
+            ...GatsbyImageSharpFixed_noBase64
+          }
+        }
+      }
+
+      messagingIcon: file(relativePath: { eq: "landing/icons/messaging.png" }) {
+        childImageSharp {
+          fixed(width: 24) {
+            ...GatsbyImageSharpFixed_noBase64
+          }
+        }
+      }
     }
   `)
 
   return (
-    <div key="service-list" style={styles.root}>
-      {list.map(renderRow(data))}
+    <div key='service-list' style={styles.root}>
+      {list.map(renderRow(images))}
     </div>
   )
 }
 
 function renderRow(images) {
   return (item, index) => {
-    const image = images[item.key]
+    const image = images[item.key].childImageSharp.fluid
+    const Icon = () => (
+      <Img fixed={images[`${item.key}Icon`].childImageSharp.fixed} />
+    )
     const isEven = (index + 1) % 2 === 0
-    const Info = () => <InfoBlock item={item} />
+    const Info = () => <InfoBlock item={item} icon={Icon} />
     return (
       <div key={item.key} style={rowStyles.root}>
         {!isEven && (
           <>
             <Info />
-            <Img
-              fluid={image.childImageSharp.fluid}
-              style={{ width: '100%' }}
-            />
+            <Img fluid={image} style={{ width: '100%' }} />
           </>
         )}
         {isEven && (
           <>
-            <Img
-              fluid={image.childImageSharp.fluid}
-              style={{ width: '100%' }}
-            />
+            <Img fluid={image} style={{ width: '100%' }} />
             <Info />
           </>
         )}

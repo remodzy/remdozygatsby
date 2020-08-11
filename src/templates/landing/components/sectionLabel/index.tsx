@@ -3,19 +3,31 @@ import { getColor } from '../../../../utils/colors'
 
 type Props = {
   text: string
+  color?: string
 }
-
-const labelColor = getColor({ group: 'main', color: 'success' })
 
 const styles = {
   root: {
     fontSize: 17,
     fontWeight: 600,
-    color: labelColor.main,
     textAlign: 'center' as const,
+    textTransform: 'uppercase' as const,
   },
 }
 
-export default function SectionLabel({ text }: Props): ReactElement<any, any> {
-  return <div style={styles.root}>{text}</div>
+export default function SectionLabel({
+  text,
+  color = 'success',
+}: Props): ReactElement<any, any> {
+  const labelColor = getColor({ group: 'main', color })
+  return (
+    <div
+      style={{
+        ...styles.root,
+        color: labelColor.main,
+      }}
+    >
+      {text}
+    </div>
+  )
 }
