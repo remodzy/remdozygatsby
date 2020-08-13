@@ -10,7 +10,7 @@ export const mainColorsGroup = {
   },
   success: {
     main: '#5B9976',
-    sub: '#97BFAB',
+    sub: '#EAF2EE',
   },
   warning: {
     main: '#D78153',

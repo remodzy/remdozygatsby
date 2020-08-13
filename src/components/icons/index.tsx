@@ -25,6 +25,17 @@ export function Circle() {
 }
 
 const icons = {
+  arrowTop: () => (
+    <svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' fill='none'>
+      <path
+        stroke='#091F3E'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        strokeWidth='1.8'
+        d='M14 14H8.42857C7.68975 14 6.9812 13.6839 6.45877 13.1213C5.93635 12.5587 5.64286 11.7956 5.64286 11V1M5.64286 1L1 6M5.64286 1L10.2857 6'
+      />
+    </svg>
+  ),
   settings: () => (
     <svg width='27' height='26' fill='none' xmlns='http://www.w3.org/2000/svg'>
       <defs>

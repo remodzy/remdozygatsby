@@ -3,7 +3,7 @@ body {
   font-size: 1em;
   line-height: 1.65;
   color: #22344b;
-  background: #f8fafc;
+  background: #ffffff;
   margin: 0;
 }
 
@@ -21,6 +21,10 @@ h3 {
 
 a {
   color: currentColor;
+}
+
+hr {
+  background: rgba(92, 110, 128, 0.2);
 }
 
 .wrapper {
