@@ -14,6 +14,7 @@ const styles = {
     gap: '60px 100px',
     justifyContent: 'center',
     marginTop: 90,
+    padding: '0 240px',
   },
 }
 
