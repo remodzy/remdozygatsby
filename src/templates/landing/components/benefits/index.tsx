@@ -6,7 +6,7 @@ import FeatureList from './featureList'
 
 export default function Benefits() {
   return (
-    <div style={{ marginTop: 150 }}>
+    <div style={{ marginTop: 150, marginBottom: 100 }}>
       <SectionLabel text='Benefits' color='primary' />
       <SectionTitle text='Features' />
       <FeatureList />
