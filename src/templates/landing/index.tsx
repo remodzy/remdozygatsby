@@ -5,6 +5,8 @@ import Integrations from './components/integrations'
 import HowItWorks from './components/howItWorks'
 import Benefits from './components/benefits'
 import Blog from './components/blog'
+import Testimonials from './components/testimonials'
+import BlueBlock from './components/blueBlock'
 
 const styles = {
   root: {},
@@ -19,6 +21,8 @@ export default function Landing() {
       <HowItWorks />
       <Benefits />
       <Blog />
+      <Testimonials />
+      <BlueBlock />
     </div>
   )
 }

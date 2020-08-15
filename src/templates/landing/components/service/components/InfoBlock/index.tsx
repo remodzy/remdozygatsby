@@ -26,7 +26,7 @@ const styles = {
   },
 }
 
-export default function InfoBlock({ item, icon: Icon }) {
+export default function InfoBlock({ item, isEven, icon: Icon }) {
   const color = getColor(item.color)
 
   const buttonColors = {
@@ -34,7 +34,13 @@ export default function InfoBlock({ item, icon: Icon }) {
     text: color.main,
   }
   return (
-    <div style={styles.root}>
+    <div
+      style={{
+        ...styles.root,
+        marginLeft: isEven ? 150 : 0,
+        marginRight: !isEven ? 150 : 0,
+      }}
+    >
       <IconWrapper color={color.sub}>
         <Icon />
       </IconWrapper>

@@ -22,9 +22,8 @@ export default function Layout({ children }) {
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
-          margin: `0 auto`,
           maxWidth: 1600,
-          padding: `0 1.0875rem 1.45rem`,
+          margin: '0 auto',
         }}
       >
         <main>{children}</main>

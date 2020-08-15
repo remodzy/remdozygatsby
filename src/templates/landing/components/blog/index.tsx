@@ -10,18 +10,18 @@ const styles = {
   root: {
     marginTop: 50,
     paddingBottom: 116,
+    background: `linear-gradient(180deg, rgba(246, 249, 251, 0) 0%, #F5F8FB 100%)`,
   },
   list: {
     display: 'grid',
     gridTemplateColumns: 'repeat(auto-fit, minmax(328px, 1fr))',
     columnGap: 56,
-    padding: '0 234px',
+    padding: '86px 234px 0',
   },
   buttonContainer: {
     display: 'flex',
     justifyContent: 'center',
     marginTop: 80,
-    marginBottom: 100,
   },
 }
 

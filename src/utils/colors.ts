@@ -10,7 +10,7 @@ export const mainColorsGroup = {
   },
   success: {
     main: '#5B9976',
-    sub: '#97BFAB',
+    sub: '#EAF2EE',
   },
   warning: {
     main: '#D78153',
@@ -39,20 +39,20 @@ export const subColorsGroup = {
     sub: '#FE958C',
   },
   fourth: {
-    main: '#FFBF87',
-    sub: '#FFC99A',
+    main: '#FFB675',
+    sub: '#FFF0E3',
   },
   fifth: {
-    main: '#5A60A6',
-    sub: '#7177C2',
+    main: '#486CE3',
+    sub: '#DBE2FA',
   },
   sixth: {
     main: '#F7C357',
     sub: '#F8D58D',
   },
   seventh: {
-    main: '#FEA897',
-    sub: '#FFB5A7',
+    main: '#FE9682',
+    sub: '#FFEAE6',
   },
   eighth: {
     main: '#D3DE5A',

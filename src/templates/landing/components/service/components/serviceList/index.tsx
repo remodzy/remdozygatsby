@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
@@ -13,6 +13,7 @@ type ListItem = {
     color: string
   }
   buttonLabel: string
+  imageSize: number
 }
 
 const list: ListItem[] = [
@@ -23,9 +24,10 @@ const list: ListItem[] = [
       'Respond to customer requests with greater visibility of technicians and job status using field service software. Have everyone log in to one system to avoid project management using separate calendars and spreadsheets to increase productivity at the job site and in the back office.',
     color: {
       group: 'sub',
-      color: 'third',
+      color: 'fourth',
     },
     buttonLabel: 'Learn More',
+    imageSize: 766,
   },
   {
     key: 'calendar',
@@ -37,6 +39,7 @@ const list: ListItem[] = [
       color: 'success',
     },
     buttonLabel: 'Learn More',
+    imageSize: 789,
   },
   {
     key: 'communicate',
@@ -48,6 +51,7 @@ const list: ListItem[] = [
       color: 'fifth',
     },
     buttonLabel: 'Learn More',
+    imageSize: 682,
   },
   {
     key: 'messaging',
@@ -59,6 +63,7 @@ const list: ListItem[] = [
       color: 'seventh',
     },
     buttonLabel: 'Learn More',
+    imageSize: 754,
   },
 ]
 
@@ -71,6 +76,7 @@ const styles = {
 const rowStyles = {
   root: {
     display: 'flex',
+    flexWrap: 'wrap' as const,
     justifyContent: 'space-between',
     alignItems: 'center',
   },
@@ -81,14 +87,14 @@ export default function ServiceList() {
     query {
       settings: file(relativePath: { eq: "landing/settings-image.png" }) {
         childImageSharp {
-          fluid(maxWidth: 780) {
+          fluid(maxWidth: 766) {
             ...GatsbyImageSharpFluid_noBase64
           }
         }
       }
       calendar: file(relativePath: { eq: "landing/calendar-image.png" }) {
         childImageSharp {
-          fluid(maxWidth: 780) {
+          fluid(maxWidth: 789) {
             ...GatsbyImageSharpFluid_noBase64
           }
         }
@@ -96,7 +102,7 @@ export default function ServiceList() {
 
       communicate: file(relativePath: { eq: "landing/communicate-image.png" }) {
         childImageSharp {
-          fluid(maxWidth: 780) {
+          fluid(maxWidth: 682) {
             ...GatsbyImageSharpFluid_noBase64
           }
         }
@@ -104,7 +110,7 @@ export default function ServiceList() {
 
       messaging: file(relativePath: { eq: "landing/messaging-image.png" }) {
         childImageSharp {
-          fluid(maxWidth: 780) {
+          fluid(maxWidth: 754) {
             ...GatsbyImageSharpFluid_noBase64
           }
         }
@@ -152,25 +158,40 @@ export default function ServiceList() {
 }
 
 function renderRow(images) {
-  return (item, index) => {
-    const image = images[item.key].childImageSharp.fluid
+  return (item: ListItem, index: number): ReactElement<any, any> => {
     const Icon = () => (
       <Img fixed={images[`${item.key}Icon`].childImageSharp.fixed} />
     )
+    const Image = () => (
+      <Img
+        fluid={images[item.key].childImageSharp.fluid}
+        style={{ maxWidth: item.imageSize, width: '100%' }}
+      />
+    )
     const isEven = (index + 1) % 2 === 0
-    const Info = () => <InfoBlock item={item} icon={Icon} />
+    const Info = ({ isEven }) => (
+      <InfoBlock isEven={isEven} item={item} icon={Icon} />
+    )
     return (
-      <div key={item.key} style={rowStyles.root}>
+      <div
+        key={item.key}
+        style={{
+          ...rowStyles.root,
+          justifyContent: !isEven ? 'flex-end' : 'flex-start',
+          background:
+            'linear-gradient(102.33deg, rgba(246, 249, 251, 0) 4.99%, rgba(245, 248, 251, 0.21) 62.88%, #F5F8FB 98.08%)',
+        }}
+      >
         {!isEven && (
           <>
-            <Info />
-            <Img fluid={image} style={{ width: '100%' }} />
+            <Info isEven={false} />
+            <Image />
           </>
         )}
         {isEven && (
           <>
-            <Img fluid={image} style={{ width: '100%' }} />
-            <Info />
+            <Image />
+            <Info isEven />
           </>
         )}
       </div>
