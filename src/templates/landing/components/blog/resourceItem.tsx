@@ -52,8 +52,13 @@ export default function ResourceItem({
 }: Props): ReactElement<any, any> {
   return (
     <div style={styles.root}>
-      <Img fixed={image} />
-      <div style={{ color: imageTitleColor }}>{imageTitle}</div>
+      <Img
+        fixed={image}
+        style={{
+          filter: 'drop-shadow(22px 26px 80px rgba(153, 174, 186, 0.25))',
+        }}
+      />
+      <div style={{ color: imageTitleColor, marginTop: 24 }}>{imageTitle}</div>
       <div style={styles.title}>{title}</div>
       <div style={styles.text}>{text}</div>
       <div style={styles.linkContainer}>

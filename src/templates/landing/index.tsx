@@ -6,6 +6,7 @@ import HowItWorks from './components/howItWorks'
 import Benefits from './components/benefits'
 import Blog from './components/blog'
 import Testimonials from './components/testimonials'
+import BlueBlock from './components/blueBlock'
 
 const styles = {
   root: {},
@@ -21,6 +22,7 @@ export default function Landing() {
       <Benefits />
       <Blog />
       <Testimonials />
+      <BlueBlock />
     </div>
   )
 }

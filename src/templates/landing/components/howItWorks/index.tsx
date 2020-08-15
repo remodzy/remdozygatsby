@@ -12,9 +12,9 @@ const styles = {
   root: { marginTop: 106 },
   itemsContainer: {
     display: 'flex',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'flex-start',
-    marginTop: 100,
+    padding: '100px 240px 0',
   },
   text: {
     fontSize: 23,

@@ -16,7 +16,7 @@ const styles = {
     display: 'grid',
     gridTemplateColumns: 'repeat(auto-fit, minmax(328px, 1fr))',
     columnGap: 56,
-    padding: '0 234px',
+    padding: '86px 234px 0',
   },
   buttonContainer: {
     display: 'flex',

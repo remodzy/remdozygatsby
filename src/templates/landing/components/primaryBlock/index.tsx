@@ -24,6 +24,7 @@ const styles = {
     textAlign: 'center' as const,
     textTransform: 'capitalize' as const,
     marginBottom: 22,
+    maxWidth: 600,
   },
   secondaryLabel: {
     color: textColor.sub,
@@ -33,6 +34,7 @@ const styles = {
     padding: '0 60px',
     lineHeight: '182.3%',
     marginBottom: 45,
+    maxWidth: 800,
   },
   buttonContainer: {
     textAlign: 'center' as const,
@@ -53,12 +55,12 @@ export default function PrimaryBlock() {
       </div>
       <div style={styles.buttonContainer}>
         <Button
-          label="Start Free Trial"
-          className="primary-btn"
+          label='Start Free Trial'
+          className='primary-btn'
           handleClick={() => {}}
         />
         <div style={styles.labelContainer}>
-          <Label text="No credit card required" />
+          <Label text='No credit card required' />
         </div>
       </div>
 

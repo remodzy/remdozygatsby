@@ -24,6 +24,7 @@ const styles = {
     textAlign: 'center' as const,
     marginTop: 22,
     color: textColor.sub,
+    maxWidth: 610,
   },
 }
 

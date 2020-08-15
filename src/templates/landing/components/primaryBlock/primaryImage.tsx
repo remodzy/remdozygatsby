@@ -20,6 +20,9 @@ export default function PrimaryImage(): ReactElement<any, any> {
   )
 
   return (
-    <Img fluid={data.file.childImageSharp.fluid} style={{ width: '100%' }} />
+    <Img
+      fluid={data.file.childImageSharp.fluid}
+      style={{ width: '100%', maxWidth: 1290 }}
+    />
   )
 }
