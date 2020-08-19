@@ -1,10 +1,12 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import BackgroundImage from 'gatsby-background-image'
 
 import SectionLabel from '../sectionLabel'
 import SectionTitle from '../sectionTitle'
 import { getTextColor } from '../../../../utils/colors'
+import Icon from '../../../../components/icons'
 
 const textColors = getTextColor()
 
@@ -34,6 +36,7 @@ const styles = {
     fontWeight: 500,
     fontSize: 15,
     lineHeight: '182.3%',
+    color: textColors.sub,
   },
 }
 
@@ -45,6 +48,13 @@ export default function Testimonials() {
           childImageSharp {
             fixed(width: 724, height: 570) {
               ...GatsbyImageSharpFixed_withWebp_noBase64
+            }
+          }
+        }
+        second: file(relativePath: { eq: "landing/testimonials-2.png" }) {
+          childImageSharp {
+            fixed(width: 170) {
+              ...GatsbyImageSharpFixed_noBase64
             }
           }
         }
@@ -60,8 +70,19 @@ export default function Testimonials() {
           style={{
             padding: '66px 0 0 68px',
             maxWidth: 435,
+            position: 'relative',
+            marginTop: 140,
           }}
         >
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+            }}
+          >
+            <Icon name='paragraph' />
+          </div>
           <div style={styles.text}>
             Capture job notes, photos and signatures from the field in the
             technician mobile app.

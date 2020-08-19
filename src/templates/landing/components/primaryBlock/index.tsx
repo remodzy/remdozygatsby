@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { getTextColor } from '../../../../utils/colors'
 import Button from '../../../../components/button'
 import Label from '../../../../components/Label'
 import CompaniesLogos from '../companiesLogos'
 import PrimaryImage from './primaryImage'
+import BackgroundImage1 from './components/backgroundImage1'
+import BackgroundImage2 from './components/backgroundImage2'
 
 const textColor = getTextColor()
 
@@ -44,9 +46,11 @@ const styles = {
   },
 }
 
-export default function PrimaryBlock() {
+export default function PrimaryBlock(): ReactElement<any, any> {
   return (
     <div style={styles.root}>
+      <BackgroundImage1 />
+      <BackgroundImage2 />
       <div style={styles.primaryLabel}>Field service management software</div>
       <div style={styles.secondaryLabel}>
         With Remodzy Services from Remodzy, you can schedule and manage jobs,
