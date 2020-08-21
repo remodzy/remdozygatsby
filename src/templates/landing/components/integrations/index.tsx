@@ -5,7 +5,10 @@ import Button from '../../../../components/button'
 import GlassesImage from './glassesImage'
 import { getTextColor } from '../../../../utils/colors'
 import DotsArtifact from '../../../../components/dot'
-import CircleArtifact from '../../../../components/circleArtifact'
+import {
+  CircleArtifact,
+  CircleName,
+} from '../../../../components/circleArtifact'
 
 const textColor = getTextColor()
 
@@ -126,36 +129,18 @@ export default function Integrations(): ReactElement<any, any> {
         ]}
       />
       <CircleArtifact
-        container={{
-          width: 54,
-          height: 54,
-          left: 240,
-          top: 492,
-        }}
-        primary={{
-          background: 'linear-gradient(180deg, #CDE7DA 0%, #97BFAB 100%)',
-        }}
-        secondary={{
-          width: 11,
-          height: 11,
-          background: '#5B9976',
-        }}
+        name={CircleName.Green}
+        mainSize={54}
+        centerSize={11}
+        left='15%'
+        top={492}
       />
       <CircleArtifact
-        container={{
-          width: 38,
-          height: 38,
-          left: 1383,
-          top: 92,
-        }}
-        primary={{
-          background: 'linear-gradient(180deg, #E0C7F7 0%, #CB9EF3 100%)',
-        }}
-        secondary={{
-          width: 8,
-          height: 8,
-          background: '#B98EE0',
-        }}
+        name={CircleName.Violet}
+        mainSize={38}
+        centerSize={8}
+        left='86.4375%'
+        top={92}
       />
       <div
         style={{

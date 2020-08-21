@@ -4,7 +4,10 @@ import Button from '../../../../components/button'
 import Label from '../../../../components/Label'
 import CompaniesLogos from '../companiesLogos'
 import PrimaryImage from './primaryImage'
-import CircleArtifact from '../../../../components/circleArtifact'
+import {
+  CircleArtifact,
+  CircleName,
+} from '../../../../components/circleArtifact'
 import DotsArtifact from '../../../../components/dot'
 
 const textColor = getTextColor()
@@ -121,52 +124,25 @@ export default function PrimaryBlock(): ReactElement<any, any> {
         ]}
       />
       <CircleArtifact
-        container={{
-          width: 64,
-          height: 64,
-          left: 219,
-          top: 238,
-        }}
-        primary={{
-          background: 'linear-gradient(180deg, #A1A7ED 0%, #7177C2 100%)',
-        }}
-        secondary={{
-          width: 12,
-          height: 12,
-          background: '#5A60A6',
-        }}
+        name={CircleName.Purple}
+        mainSize={64}
+        centerSize={12}
+        left='13.6875%'
+        top={30}
       />
       <CircleArtifact
-        container={{
-          width: 40,
-          height: 40,
-          left: 1323,
-          top: 30,
-        }}
-        primary={{
-          background: 'linear-gradient(180deg, #8AA5ED 0%, #507CF5 100%)',
-        }}
-        secondary={{
-          width: 12,
-          height: 12,
-          background: '#4865EB',
-        }}
+        name={CircleName.Blue}
+        mainSize={40}
+        centerSize={12}
+        left='82.6875%'
+        top={238}
       />
       <CircleArtifact
-        container={{
-          width: 62,
-          height: 62,
-          left: 1481,
-          top: 611,
-        }}
-        primary={{
-          background: 'linear-gradient(180deg, #CDE7DA 0%, #97BFAB 100%)',
-        }}
-        secondary={{
-          width: 12,
-          height: 12,
-          background: '#5B9976',
-        }}
+        name={CircleName.Green}
+        mainSize={62}
+        centerSize={12}
+        left='92.5625%'
+        top={611}
       />
       <div style={styles.primaryLabel}>Field service management software</div>
       <div style={styles.secondaryLabel}>

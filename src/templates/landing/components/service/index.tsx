@@ -1,6 +1,9 @@
 import React from 'react'
 
-import CircleArtifact from '../../../../components/circleArtifact'
+import {
+  CircleArtifact,
+  CircleName,
+} from '../../../../components/circleArtifact'
 import SectionLabel from '../sectionLabel'
 import SectionTitle from '../sectionTitle'
 import ServiceList from './components/ServiceList'
@@ -20,36 +23,18 @@ export default function Service() {
       <SectionTitle text='Remodzy Service' />
       <ServiceList />
       <CircleArtifact
-        container={{
-          width: 22,
-          height: 22,
-          left: 1439,
-          top: 0,
-        }}
-        primary={{
-          background: 'linear-gradient(180deg, #A1A7ED 0%, #7177C2 100%)',
-        }}
-        secondary={{
-          width: 5,
-          height: 5,
-          background: '#5A60A6',
-        }}
+        name={CircleName.Purple}
+        mainSize={22}
+        centerSize={5}
+        left='89.9375%'
+        top={0}
       />
       <CircleArtifact
-        container={{
-          width: 32,
-          height: 32,
-          left: 470,
-          top: 130,
-        }}
-        primary={{
-          background: 'linear-gradient(180deg, #CDE7DA 0%, #97BFAB 100%)',
-        }}
-        secondary={{
-          width: 7,
-          height: 7,
-          background: '#5B9976',
-        }}
+        name={CircleName.Green}
+        mainSize={32}
+        centerSize={5}
+        left='29.375%'
+        top={130}
       />
       <DotsArtifact
         left={17}

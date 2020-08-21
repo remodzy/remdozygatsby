@@ -3,7 +3,10 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import InfoBlock from './InfoBlock'
-import CircleArtifact from '../../../../../components/circleArtifact'
+import {
+  CircleArtifact,
+  CircleName,
+} from '../../../../../components/circleArtifact'
 import DotsArtifact from '../../../../../components/dot'
 
 type ListItem = {
@@ -37,20 +40,11 @@ const list: ListItem[] = [
         <MapIcon2 />
         <MapIcon3 />
         <CircleArtifact
-          container={{
-            width: 40,
-            height: 40,
-            left: 510,
-            top: 600,
-          }}
-          primary={{
-            background: 'linear-gradient(180deg, #8AA5ED 0%, #507CF5 100%)',
-          }}
-          secondary={{
-            background: '#4865EB',
-            height: 8,
-            width: 8,
-          }}
+          name={CircleName.Blue}
+          mainSize={40}
+          centerSize={8}
+          left='31.875%'
+          top={600}
         />
         <DotsArtifact
           top={-3}
