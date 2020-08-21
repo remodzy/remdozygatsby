@@ -1,13 +1,16 @@
 import React from 'react'
-import IconWrapper from '../IconWrapper'
-import { getColor, getTextColor } from '../../../../../../utils/colors'
-import Button from '../../../../../../components/button'
+import Img from 'gatsby-image'
+
+import IconWrapper from './IconWrapper'
+import { getColor, getTextColor } from '../../../../../utils/colors'
+import Button from '../../../../../components/button'
 
 const textColors = getTextColor()
 
 const styles = {
   root: {
     maxWidth: 375,
+    marginBottom: 195,
   },
   title: {
     fontSize: 36,
@@ -26,7 +29,7 @@ const styles = {
   },
 }
 
-export default function InfoBlock({ item, isEven, icon: Icon }) {
+export default function InfoBlock({ item, isEven, icon }) {
   const color = getColor(item.color)
 
   const buttonColors = {
@@ -42,7 +45,7 @@ export default function InfoBlock({ item, isEven, icon: Icon }) {
       }}
     >
       <IconWrapper color={color.sub}>
-        <Icon />
+        <Img fixed={icon} />
       </IconWrapper>
       <div style={styles.title}>{item.title}</div>
       <div style={styles.text}>{item.text}</div>
