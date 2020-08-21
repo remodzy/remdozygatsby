@@ -1,14 +1,20 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 
 import SectionLabel from '../sectionLabel'
 import SectionTitle from '../sectionTitle'
 import ResourceItem from './resourceItem'
 import Button from '../../../../components/button'
-import { useStaticQuery, graphql } from 'gatsby'
+import DotsArtifact from '../../../../components/dot'
+import {
+  CircleArtifact,
+  CircleName,
+} from '../../../../components/circleArtifact'
 
 const styles = {
   root: {
-    marginTop: 50,
+    position: 'relative' as const,
+    paddingTop: 50,
     paddingBottom: 116,
     background: `linear-gradient(180deg, rgba(246, 249, 251, 0) 0%, #F5F8FB 100%)`,
   },
@@ -89,6 +95,48 @@ export default function Blog() {
           handleClick={() => {}}
         />
       </div>
+
+      <DotsArtifact
+        top={0}
+        left={187}
+        columns={8}
+        zIndex={1}
+        // prettier-ignore
+        list={[
+          0,0,0,0,0,0,0,1,
+          0,1,0,0,1,0,0,0,
+          0,1,0,0,0,0,0,0,
+          0,0,0,0,0,1,1,0,
+        ]}
+      />
+
+      <DotsArtifact
+        top={804}
+        right={22}
+        columns={6}
+        zIndex={1}
+        // prettier-ignore
+        list={[
+          0,0,0,0,0,0,
+          0,1,0,0,1,0,
+          0,1,0,0,0,0,
+          0,0,0,0,0,1,
+        ]}
+      />
+      <CircleArtifact
+        name={CircleName.Violet}
+        mainSize={38}
+        centerSize={7.6}
+        left='76.0625%'
+        top={90}
+      />
+      <CircleArtifact
+        name={CircleName.Green}
+        mainSize={64}
+        centerSize={11.43}
+        left='6%'
+        top={404}
+      />
     </div>
   )
 }
