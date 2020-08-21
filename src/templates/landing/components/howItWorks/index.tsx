@@ -97,39 +97,12 @@ export default function HowItWorks() {
         left={52}
         columns={8}
         zIndex={1}
+        // prettier-ignore
         list={[
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          0,
-          1,
-          0,
-          0,
-          1,
-          0,
-          0,
-          0,
-          0,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          1,
-          0,
+          0,0,0,0,0,0,0,1,
+          0,1,0,0,1,0,0,0,
+          0,1,0,0,0,0,0,0,
+          0,0,0,0,0,1,1,0,
         ]}
       />
       <DotsArtifact
@@ -137,7 +110,13 @@ export default function HowItWorks() {
         right={22}
         columns={4}
         zIndex={1}
-        list={[0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0]}
+        // prettier-ignore
+        list={[
+          0, 1, 1, 0,
+          0, 0, 0, 0,
+          0, 0, 0, 1,
+          1, 0, 0, 0
+        ]}
       />
     </div>
   )

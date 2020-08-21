@@ -53,39 +53,16 @@ export default function Integrations(): ReactElement<any, any> {
         top={106}
         left={148}
         columns={4}
+        // prettier-ignore
         list={[
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          0,
-          0,
-          0,
-          1,
-          0,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
+          1,0,0,0,
+          0,0,0,1,
+          0,0,0,1,
+          0,1,0,0,
+          0,0,0,0,
+          0,0,0,0,
+          0,1,1,0,
+          0,0,0,0,
         ]}
       />
       <DotsArtifact
@@ -93,39 +70,12 @@ export default function Integrations(): ReactElement<any, any> {
         right={173}
         columns={8}
         zIndex={1}
+        // prettier-ignore
         list={[
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          0,
-          1,
-          0,
-          0,
-          1,
-          0,
-          0,
-          0,
-          0,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          1,
-          0,
+          0,0,0,0,0,0,0,1,
+          0,1,0,0,1,0,0,0,
+          0,1,0,0,0,0,0,0,
+          0,0,0,0,0,1,1,0,
         ]}
       />
       <CircleArtifact
