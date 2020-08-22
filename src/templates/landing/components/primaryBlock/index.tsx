@@ -57,6 +57,8 @@ export default function PrimaryBlock(): ReactElement<any, any> {
         columns={3}
         left={17}
         top={234}
+        size={5.78}
+        gap={27.56}
         // prettier-ignore
         list={[
           0,0,0,
@@ -73,6 +75,8 @@ export default function PrimaryBlock(): ReactElement<any, any> {
         columns={8}
         right={256}
         top={344}
+        size={5.78}
+        gap={27.56}
         // prettier-ignore
         list={[
           0,1,1,0,0,0,0,0,

@@ -48,6 +48,8 @@ export default function Benefits() {
         top={516}
         left={26}
         columns={2}
+        size={9.74}
+        gap={46.41}
         // prettier-ignore
         list={[
           0,0,
@@ -64,6 +66,8 @@ export default function Benefits() {
         top={567}
         right={38}
         columns={2}
+        size={10.22}
+        gap={48.69}
         // prettier-ignore
         list={[
           0,1,

@@ -53,6 +53,8 @@ export default function Integrations(): ReactElement<any, any> {
         top={106}
         left={148}
         columns={4}
+        size={6.32}
+        gap={30.12}
         // prettier-ignore
         list={[
           1,0,0,0,
@@ -70,6 +72,8 @@ export default function Integrations(): ReactElement<any, any> {
         right={173}
         columns={8}
         zIndex={1}
+        size={6.32}
+        gap={30.12}
         // prettier-ignore
         list={[
           0,0,0,0,0,0,0,1,

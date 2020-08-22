@@ -2,9 +2,9 @@ import React, { ReactElement } from 'react'
 
 export const gradient = 'linear-gradient(180deg, #8AA5ED 0%, #507CF5 100%)'
 
-export function Dot({ background = '#CCD0D3' }) {
+export function Dot({ background = '#CCD0D3', size = 6 }) {
   return (
-    <div style={{ width: 6, height: 6 }}>
+    <div style={{ width: size, height: size }}>
       <div
         style={{
           width: '100%',
@@ -25,6 +25,8 @@ type Props = {
   left?: number | string
   list: number[]
   zIndex?: number
+  gap?: number
+  size?: number
 }
 
 export default function DotsArtifact({
@@ -35,6 +37,8 @@ export default function DotsArtifact({
   right = 'initial',
   bottom = 'initial',
   zIndex = -1,
+  gap = 28,
+  size = 6,
 }: Props): ReactElement<any, any> {
   return (
     <div
@@ -46,13 +50,17 @@ export default function DotsArtifact({
         bottom,
         display: 'grid',
         gridTemplateColumns: `repeat(${columns}, auto)`,
-        gap: '28px',
+        gap: `${gap}px`,
         opacity: 0.5,
         zIndex,
       }}
     >
       {list.map((el, index) =>
-        el ? <Dot background={gradient} key={index} /> : <Dot key={index} />
+        el ? (
+          <Dot background={gradient} size={size} key={index} />
+        ) : (
+          <Dot size={size} key={index} />
+        )
       )}
     </div>
   )

@@ -97,6 +97,8 @@ export default function HowItWorks() {
         left={52}
         columns={8}
         zIndex={1}
+        size={4.19}
+        gap={19.96}
         // prettier-ignore
         list={[
           0,0,0,0,0,0,0,1,
@@ -110,6 +112,8 @@ export default function HowItWorks() {
         right={22}
         columns={4}
         zIndex={1}
+        size={6.26}
+        gap={29.8}
         // prettier-ignore
         list={[
           0, 1, 1, 0,

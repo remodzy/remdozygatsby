@@ -101,6 +101,8 @@ export default function Blog() {
         left={187}
         columns={8}
         zIndex={1}
+        size={5.98}
+        gap={28.49}
         // prettier-ignore
         list={[
           0,0,0,0,0,0,0,1,
@@ -115,6 +117,8 @@ export default function Blog() {
         right={22}
         columns={6}
         zIndex={1}
+        size={6.03}
+        gap={28.75}
         // prettier-ignore
         list={[
           0,0,0,0,0,0,
