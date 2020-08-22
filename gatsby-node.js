@@ -47,10 +47,10 @@ exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
   const config = getConfig()
   config.resolve.alias = {
     ...config.resolve.alias,
-    '@@root': path.resolve(__dirname, 'src'),
-    '@@components': path.resolve(__dirname, 'src', 'components'),
-    '@@utils': path.resolve(__dirname, 'src', 'utils'),
-    '@@templates': path.resolve(__dirname, 'src', 'templates'),
+    '~root': path.resolve(__dirname, 'src'),
+    '~components': path.resolve(__dirname, 'src', 'components'),
+    '~utils': path.resolve(__dirname, 'src', 'utils'),
+    '~templates': path.resolve(__dirname, 'src', 'templates'),
   }
 
   actions.replaceWebpackConfig(config)

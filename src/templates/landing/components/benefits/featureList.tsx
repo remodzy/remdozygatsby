@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import { getTextColor } from '@@utils/colors'
+import { getTextColor } from '~utils/colors'
 import IconWrapper from '../service/components/IconWrapper'
 
 const textColors = getTextColor()

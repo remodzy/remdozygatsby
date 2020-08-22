@@ -3,16 +3,14 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import InfoBlock from './InfoBlock'
-import {
-  CircleArtifact,
-  CircleName,
-} from '../../../../../components/circleArtifact'
-import DotsArtifact from '../../../../../components/dot'
+import { CircleArtifact, CircleName } from '~components/circleArtifact'
+import DotsArtifact from '~components/dot'
 
 type ListItem = {
   key: string
   title: string
   text: string
+  paddingTop?: number
   color: {
     group: string
     color: string
@@ -21,102 +19,6 @@ type ListItem = {
   imageSize: number
   Artifacts: () => ReactElement<any, any>
 }
-
-const list: ListItem[] = [
-  {
-    key: 'settings',
-    title: 'In the field, at the office, in control',
-    text:
-      'Respond to customer requests with greater visibility of technicians and job status using field service software. Have everyone log in to one system to avoid project management using separate calendars and spreadsheets to increase productivity at the job site and in the back office.',
-    color: {
-      group: 'sub',
-      color: 'fourth',
-    },
-    buttonLabel: 'Learn More',
-    imageSize: 766,
-    Artifacts: () => (
-      <>
-        <MapIcon1 />
-        <MapIcon2 />
-        <MapIcon3 />
-        <CircleArtifact
-          name={CircleName.Blue}
-          mainSize={40}
-          centerSize={8}
-          left='31.875%'
-          top={600}
-        />
-        <DotsArtifact
-          top={-3}
-          right={85}
-          columns={8}
-          // prettier-ignore
-          list={[
-            0,0,0,0,0,1,0,0,
-            0,1,0,0,1,0,0,0,
-            0,1,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,
-          ]}
-        />
-        <DotsArtifact
-          left={697}
-          bottom={25}
-          columns={4}
-          // prettier-ignore
-          list={[
-            1,0,0,0,
-            0,0,0,0,
-            0,0,0,0,
-            0,1,0,0,
-            0,0,0,0,
-            0,0,0,0,
-            0,1,1,0,
-            0,0,0,0,
-          ]}
-        />
-      </>
-    ),
-  },
-  {
-    key: 'calendar',
-    title: 'Simplify scheduling with an easy-to-use calendar',
-    text:
-      'See which field workers are available, schedule service calls and jobs, add customer information and include job details. If a job changes, drag and drop it to a new date and time, and the field technician is notified of the update.',
-    color: {
-      group: 'main',
-      color: 'success',
-    },
-    buttonLabel: 'Learn More',
-    imageSize: 789,
-    Artifacts: () => <></>,
-  },
-  {
-    key: 'communicate',
-    title: 'Easily communicate with field technicians',
-    text:
-      'Dispatch jobs directly to techs and allow them to set job status. Field staff can see their schedule and collect signatures, photos and notes – all from the mobile application.',
-    color: {
-      group: 'sub',
-      color: 'fifth',
-    },
-    buttonLabel: 'Learn More',
-    imageSize: 682,
-    Artifacts: () => <></>,
-  },
-  {
-    key: 'messaging',
-    title: 'Messaging',
-    text:
-      'Automatically alert customers of ETAs and delays using GPS tracking data. Dispatchers receive an alert if a technician hasn’t viewed a job, and customer appointment notifications and reminders can be automated.',
-    color: {
-      group: 'sub',
-      color: 'seventh',
-    },
-    buttonLabel: 'Learn More',
-    imageSize: 754,
-    Artifacts: () => <></>,
-  },
-]
 
 const styles = {
   root: {
@@ -217,6 +119,8 @@ export default function ServiceList() {
     }
   `)
 
+  const list = getConfigList()
+
   return (
     <div key='service-list' style={styles.root}>
       {list.map(renderRow(images))}
@@ -237,6 +141,7 @@ function renderRow(images) {
         key={item.key}
         style={{
           ...rowStyles.root,
+          paddingTop: item.paddingTop || 0,
           position: 'relative',
           justifyContent: !isEven ? 'flex-end' : 'flex-start',
         }}
@@ -363,4 +268,286 @@ function MapIcon3() {
       </svg>
     </div>
   )
+}
+
+function getConfigList(): ListItem[] {
+  return [
+    {
+      key: 'settings',
+      title: 'In the field, at the office, in control',
+      text:
+        'Respond to customer requests with greater visibility of technicians and job status using field service software. Have everyone log in to one system to avoid project management using separate calendars and spreadsheets to increase productivity at the job site and in the back office.',
+      color: {
+        group: 'sub',
+        color: 'fourth',
+      },
+      buttonLabel: 'Learn More',
+      imageSize: 766,
+      Artifacts: () => (
+        <>
+          <MapIcon1 />
+          <MapIcon2 />
+          <MapIcon3 />
+          <CircleArtifact
+            name={CircleName.Blue}
+            mainSize={40}
+            centerSize={8}
+            left='31.875%'
+            top={600}
+          />
+          <DotsArtifact
+            top={-3}
+            right={85}
+            columns={8}
+            // prettier-ignore
+            list={[
+              0,0,0,0,0,1,0,0,
+              0,1,0,0,1,0,0,0,
+              0,1,0,0,0,0,0,0,
+              0,0,0,0,0,0,0,0,
+            ]}
+          />
+          <DotsArtifact
+            left={697}
+            bottom={25}
+            columns={4}
+            // prettier-ignore
+            list={[
+              1,0,0,0,
+              0,0,0,0,
+              0,0,0,0,
+              0,1,0,0,
+              0,0,0,0,
+              0,0,0,0,
+              0,1,1,0,
+              0,0,0,0,
+            ]}
+          />
+        </>
+      ),
+    },
+    {
+      key: 'calendar',
+      title: 'Simplify scheduling with an easy-to-use calendar',
+      text:
+        'See which field workers are available, schedule service calls and jobs, add customer information and include job details. If a job changes, drag and drop it to a new date and time, and the field technician is notified of the update.',
+      color: {
+        group: 'main',
+        color: 'success',
+      },
+      buttonLabel: 'Learn More',
+      imageSize: 789,
+      paddingTop: 172,
+      Artifacts: () => (
+        <>
+          <DotsArtifact
+            top={204}
+            left={98}
+            columns={8}
+            size={6.75}
+            gap={32.15}
+            // prettier-ignore
+            list={[
+            0,1,1,0,0,0,0,0,
+            0,0,0,0,0,0,1,0,
+            0,0,0,0,0,0,0,0,
+            1,0,0,0,0,0,0,0,
+          ]}
+          />
+          <DotsArtifact
+            top={172}
+            right={26}
+            columns={4}
+            size={4.71}
+            gap={22.45}
+            // prettier-ignore
+            list={[
+            0,1,1,0,
+            0,0,0,0,
+            0,0,0,1,
+            1,0,0,0,
+          ]}
+          />
+          <DotsArtifact
+            top={680}
+            right={665}
+            columns={4}
+            size={3.69}
+            gap={17.57}
+            // prettier-ignore
+            list={[
+            0,0,0,0,
+            0,0,1,0,
+            0,0,0,0,
+            0,0,0,0,
+            0,0,1,0,
+            1,0,0,0,
+            1,0,0,0,
+            0,0,0,1,
+          ]}
+          />
+          <CircleArtifact
+            name={CircleName.Violet}
+            mainSize={38}
+            centerSize={6.79}
+            top={634}
+            left='92%'
+          />
+        </>
+      ),
+    },
+    {
+      key: 'communicate',
+      title: 'Easily communicate with field technicians',
+      text:
+        'Dispatch jobs directly to techs and allow them to set job status. Field staff can see their schedule and collect signatures, photos and notes – all from the mobile application.',
+      color: {
+        group: 'sub',
+        color: 'fifth',
+      },
+      buttonLabel: 'Learn More',
+      paddingTop: 207,
+      imageSize: 682,
+      Artifacts: () => (
+        <>
+          <DotsArtifact
+            top={468}
+            left={24}
+            columns={3}
+            size={3.74}
+            gap={17.8}
+            // prettier-ignore
+            list={[
+              0,0,0,
+              1,1,0,
+              0,0,0,
+              0,0,0,
+              0,1,0,
+              0,0,0,
+              0,0,0,
+              0,0,1,
+            ]}
+          />
+          <DotsArtifact
+            top={156}
+            left={1066}
+            columns={8}
+            size={5.74}
+            gap={27.36}
+            // prettier-ignore
+            list={[
+              0,0,0,0,0,0,0,1,
+              0,1,0,0,1,0,0,0,
+              0,0,0,0,0,0,0,0,
+              0,0,0,0,0,1,1,0,
+            ]}
+          />
+          <CircleArtifact
+            name={CircleName.Purple}
+            mainSize={26}
+            centerSize={5.2}
+            top={98}
+            left='21.3125%'
+          />
+          <CircleArtifact
+            name={CircleName.Green}
+            mainSize={42}
+            centerSize={8.4}
+            top={327}
+            left='46.875%'
+          />
+          <CircleArtifact
+            name={CircleName.Purple}
+            mainSize={28}
+            centerSize={5.6}
+            top={182}
+            left='85.5%'
+          />
+        </>
+      ),
+    },
+    {
+      key: 'messaging',
+      title: 'Messaging',
+      text:
+        'Automatically alert customers of ETAs and delays using GPS tracking data. Dispatchers receive an alert if a technician hasn’t viewed a job, and customer appointment notifications and reminders can be automated.',
+      color: {
+        group: 'sub',
+        color: 'seventh',
+      },
+      buttonLabel: 'Learn More',
+      paddingTop: 109,
+      imageSize: 754,
+      Artifacts: () => (
+        <>
+          <DotsArtifact
+            top={175}
+            left={116}
+            columns={8}
+            size={4.28}
+            gap={20.4}
+            // prettier-ignore
+            list={[
+              0,0,0,0,0,0,0,1,
+              0,1,0,0,1,0,0,0,
+              0,1,0,0,0,0,0,0,
+              0,0,0,0,0,0,0,0,
+            ]}
+          />
+          <DotsArtifact
+            top={389}
+            left={1520}
+            columns={2}
+            size={8.11}
+            gap={38.65}
+            // prettier-ignore
+            list={[
+              0,0,
+              0,1,
+              0,0,
+              0,0,
+              0,0,
+              1,0,
+              1,0,
+              0,0,
+            ]}
+          />
+          <DotsArtifact
+            top={640}
+            left={620}
+            columns={4}
+            size={4.28}
+            gap={20.4}
+            // prettier-ignore
+            list={[
+              1,0,0,0,
+              1,0,0,0,
+              0,0,0,1,
+            ]}
+          />
+          <CircleArtifact
+            name={CircleName.Purple}
+            mainSize={40}
+            centerSize={8}
+            top={70}
+            left='9.25%'
+          />
+          <CircleArtifact
+            name={CircleName.Blue}
+            mainSize={30}
+            centerSize={6}
+            top={190}
+            left='91.5625%'
+          />
+          <CircleArtifact
+            name={CircleName.Green}
+            mainSize={56}
+            centerSize={11.2}
+            top={660}
+            left='61.25%'
+          />
+        </>
+      ),
+    },
+  ]
 }
