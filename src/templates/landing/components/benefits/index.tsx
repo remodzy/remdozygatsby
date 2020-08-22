@@ -1,13 +1,10 @@
 import React from 'react'
 
+import { CircleArtifact, CircleName } from '~components/circleArtifact'
+import DotsArtifact from '~components/dot'
 import SectionLabel from '../sectionLabel'
 import SectionTitle from '../sectionTitle'
 import FeatureList from './featureList'
-import {
-  CircleArtifact,
-  CircleName,
-} from '../../../../components/circleArtifact'
-import DotsArtifact from '../../../../components/dot'
 
 const styles = {
   root: {

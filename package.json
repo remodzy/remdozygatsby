@@ -26,6 +26,8 @@
   },
   "devDependencies": {
     "contentful-import": "~7.9.5",
+    "eslint-config-react-app": "^5.2.1",
+    "eslint-import-resolver-alias": "^1.1.2",
     "husky": "~4.2.5",
     "netlify-cli": "~2.59.1",
     "prettier": "~2.0.5",
