@@ -5,11 +5,16 @@ import Img from 'gatsby-image'
 import SectionLabel from '../sectionLabel'
 import SectionTitle from '../sectionTitle'
 import { getTextColor } from '../../../../utils/colors'
+import {
+  CircleArtifact,
+  CircleName,
+} from '../../../../components/circleArtifact'
+import DotsArtifact from '../../../../components/dot'
 
 const textColors = getTextColor()
 
 const styles = {
-  root: { marginTop: 106 },
+  root: { paddingTop: 155, position: 'relative' as const },
   itemsContainer: {
     display: 'flex',
     justifyContent: 'space-between',
@@ -73,6 +78,50 @@ export default function HowItWorks() {
           text='Once a job is complete, submit a rating and review of the job and technician.'
         />
       </div>
+      <CircleArtifact
+        name={CircleName.Purple}
+        mainSize={40}
+        centerSize={8}
+        left='69.1875%'
+        top={178}
+      />
+      <CircleArtifact
+        name={CircleName.Purple}
+        mainSize={26}
+        centerSize={5.2}
+        left='11.25%'
+        top={556}
+      />
+      <DotsArtifact
+        top={229}
+        left={52}
+        columns={8}
+        zIndex={1}
+        size={4.19}
+        gap={19.96}
+        // prettier-ignore
+        list={[
+          0,0,0,0,0,0,0,1,
+          0,1,0,0,1,0,0,0,
+          0,1,0,0,0,0,0,0,
+          0,0,0,0,0,1,1,0,
+        ]}
+      />
+      <DotsArtifact
+        top={316}
+        right={22}
+        columns={4}
+        zIndex={1}
+        size={6.26}
+        gap={29.8}
+        // prettier-ignore
+        list={[
+          0, 1, 1, 0,
+          0, 0, 0, 0,
+          0, 0, 0, 1,
+          1, 0, 0, 0
+        ]}
+      />
     </div>
   )
 }

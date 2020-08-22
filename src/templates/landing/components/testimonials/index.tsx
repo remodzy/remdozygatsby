@@ -7,12 +7,18 @@ import SectionLabel from '../sectionLabel'
 import SectionTitle from '../sectionTitle'
 import { getTextColor } from '../../../../utils/colors'
 import Icon from '../../../../components/icons'
+import DotsArtifact from '../../../../components/dot'
+import {
+  CircleArtifact,
+  CircleName,
+} from '../../../../components/circleArtifact'
 
 const textColors = getTextColor()
 
 const styles = {
   root: {
-    paddingTop: '136px',
+    position: 'relative' as const,
+    paddingTop: 136,
   },
   container: {
     display: 'flex',
@@ -94,6 +100,65 @@ export default function Testimonials() {
           <Img fixed={images.first.childImageSharp.fixed} />
         </div>
       </div>
+      <DotsArtifact
+        top={190}
+        left={26}
+        columns={5}
+        size={9.09}
+        gap={43.33}
+        // prettier-ignore
+        list={[
+          0,0,0,0,1,
+          0,1,0,0,0,
+          0,0,0,0,0,
+          0,0,1,1,0,
+        ]}
+      />
+      <DotsArtifact
+        top={360}
+        right={439}
+        columns={4}
+        size={6.55}
+        gap={31.21}
+        // prettier-ignore
+        list={[
+          0,0,0,0,
+          0,1,1,0,
+          0,0,0,0,
+          0,0,0,0,
+          0,0,0,0,
+        ]}
+      />
+      <DotsArtifact
+        top={980}
+        left={355}
+        columns={4}
+        size={5.67}
+        gap={27.01}
+        // prettier-ignore
+        list={[
+          1,0,0,0,
+          0,0,0,1,
+          0,0,0,1,
+          0,1,0,0,
+          0,0,0,0,
+          0,0,0,0,
+        ]}
+      />
+      <CircleArtifact
+        name={CircleName.Green}
+        mainSize={32}
+        centerSize={5.71}
+        left='82.375%'
+        top={178}
+      />
+      <CircleArtifact
+        name={CircleName.Green}
+        mainSize={36}
+        centerSize={7.2}
+        left='60.1875%'
+        top={1014}
+      />
     </div>
   )
 }

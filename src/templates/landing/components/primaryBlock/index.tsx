@@ -4,8 +4,11 @@ import Button from '../../../../components/button'
 import Label from '../../../../components/Label'
 import CompaniesLogos from '../companiesLogos'
 import PrimaryImage from './primaryImage'
-import BackgroundImage1 from './components/backgroundImage1'
-import BackgroundImage2 from './components/backgroundImage2'
+import {
+  CircleArtifact,
+  CircleName,
+} from '../../../../components/circleArtifact'
+import DotsArtifact from '../../../../components/dot'
 
 const textColor = getTextColor()
 
@@ -15,7 +18,8 @@ const styles = {
     flexDirection: 'column' as const,
     alignItems: 'center',
     marginTop: 95,
-    marginBottom: 150,
+    marginBottom: 112,
+    position: 'relative' as const,
   },
   primaryLabel: {
     color: textColor.main,
@@ -49,8 +53,59 @@ const styles = {
 export default function PrimaryBlock(): ReactElement<any, any> {
   return (
     <div style={styles.root}>
-      <BackgroundImage1 />
-      <BackgroundImage2 />
+      <DotsArtifact
+        columns={3}
+        left={17}
+        top={234}
+        size={5.78}
+        gap={27.56}
+        // prettier-ignore
+        list={[
+          0,0,0,
+          1,1,0,
+          0,0,0,
+          0,0,0,
+          0,1,0,
+          0,0,0,
+          0,0,0,
+          0,0,1,
+        ]}
+      />
+      <DotsArtifact
+        columns={8}
+        right={256}
+        top={344}
+        size={5.78}
+        gap={27.56}
+        // prettier-ignore
+        list={[
+          0,1,1,0,0,0,0,0,
+          0,0,0,0,0,0,1,0,
+          0,0,0,0,0,0,1,0,
+          0,0,0,0,0,0,0,0,
+        ]}
+      />
+      <CircleArtifact
+        name={CircleName.Purple}
+        mainSize={64}
+        centerSize={12}
+        left='13.6875%'
+        top={30}
+      />
+      <CircleArtifact
+        name={CircleName.Blue}
+        mainSize={40}
+        centerSize={12}
+        left='82.6875%'
+        top={238}
+      />
+      <CircleArtifact
+        name={CircleName.Green}
+        mainSize={62}
+        centerSize={12}
+        left='92.5625%'
+        top={611}
+      />
       <div style={styles.primaryLabel}>Field service management software</div>
       <div style={styles.secondaryLabel}>
         With Remodzy Services from Remodzy, you can schedule and manage jobs,
@@ -70,6 +125,16 @@ export default function PrimaryBlock(): ReactElement<any, any> {
 
       <PrimaryImage />
       <CompaniesLogos />
+      <div
+        style={{
+          position: 'absolute',
+          zIndex: -1,
+          width: 1600,
+          height: 818,
+          background:
+            'linear-gradient(180deg, rgba(246, 249, 251, 0) 0%, #F5F8FB 100%)',
+        }}
+      ></div>
     </div>
   )
 }

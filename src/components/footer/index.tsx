@@ -2,11 +2,13 @@ import React from 'react'
 import Logo from '../logo'
 import { getTextColor } from '../../utils/colors'
 import Icon from '../icons'
+import DotsArtifact from '../dot'
 
 const textColors = getTextColor()
 
 const styles = {
   root: {
+    position: 'relative' as const,
     padding: '60px 140px',
   },
   container: {
@@ -27,6 +29,7 @@ const styles = {
     fontWeight: 600,
     lineHeight: '31px',
     color: textColors.main,
+    paddingBottom: 24,
   },
   link: {
     fontWeight: 500,
@@ -101,6 +104,38 @@ export default function Footer() {
           &nbsp;&nbsp;&nbsp;Back to top
         </span>
       </div>
+      <DotsArtifact
+        top={151}
+        left={11}
+        columns={3}
+        gap={18.7}
+        size={3.99}
+        // prettier-ignore
+        list={[
+          0,0,0,
+          0,0,1,
+          0,0,1,
+          1,0,0,
+          0,0,0,
+          0,0,0,
+          1,1,0,
+          0,0,0,
+        ]}
+      />
+      <DotsArtifact
+        top={98}
+        right={13}
+        columns={5}
+        size={3.93}
+        gap={18.71}
+        // prettier-ignore
+        list={[
+          0,1,1,0,0,
+          0,0,0,0,0,
+          0,0,0,1,0,
+          1,0,0,0,0,
+        ]}
+      />
     </footer>
   )
 }
