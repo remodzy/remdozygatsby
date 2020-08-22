@@ -27,6 +27,11 @@ type Props = {
   zIndex?: number
   gap?: number
   size?: number
+  opacity?: number
+  background?: {
+    default: string
+    primary: string
+  }
 }
 
 export default function DotsArtifact({
@@ -39,6 +44,11 @@ export default function DotsArtifact({
   zIndex = -1,
   gap = 28,
   size = 6,
+  opacity = 0.5,
+  background = {
+    default: '#CCD0D3',
+    primary: gradient,
+  },
 }: Props): ReactElement<any, any> {
   return (
     <div
@@ -51,15 +61,15 @@ export default function DotsArtifact({
         display: 'grid',
         gridTemplateColumns: `repeat(${columns}, auto)`,
         gap: `${gap}px`,
-        opacity: 0.5,
+        opacity,
         zIndex,
       }}
     >
       {list.map((el, index) =>
         el ? (
-          <Dot background={gradient} size={size} key={index} />
+          <Dot background={background.primary} size={size} key={index} />
         ) : (
-          <Dot size={size} key={index} />
+          <Dot size={size} background={background.default} key={index} />
         )
       )}
     </div>

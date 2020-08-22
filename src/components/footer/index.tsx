@@ -29,6 +29,7 @@ const styles = {
     fontWeight: 600,
     lineHeight: '31px',
     color: textColors.main,
+    paddingBottom: 24,
   },
   link: {
     fontWeight: 500,
