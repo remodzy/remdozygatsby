@@ -52,14 +52,6 @@ module.exports = {
         display: 'swap',
       },
     },
-    {
-      resolve: 'gatsby-plugin-react-svg',
-      options: {
-        rule: {
-          include: /images\/svg/, // See below to configure properly
-        },
-      },
-    },
     'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
