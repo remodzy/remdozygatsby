@@ -1,66 +1,63 @@
+import React, { useCallback } from 'react'
 import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
-import React from 'react'
 
 import Logo from '../logo'
 import HeaderMenu from '../headerMenu'
 import Button from '../button'
 import LinkButton from '../linkButton'
+import { login } from '../../utils/auth'
 
-const Header = () => (
-  <header
-    style={{
-      background: `#ffffff`,
-      marginBottom: `1.45rem`,
-      boxShadow: `0px 4px 20px rgba(179, 192, 213, 0.25)`,
-    }}
-  >
-    <div
+const Header = () => {
+  const handleLogin = useCallback(() => {
+    login()
+  }, [])
+  return (
+    <header
       style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        margin: `0 auto`,
-        maxWidth: 1600,
-        padding: `1.45rem 1.0875rem`,
+        background: `#ffffff`,
+        marginBottom: `1.45rem`,
+        boxShadow: `0px 4px 20px rgba(179, 192, 213, 0.25)`,
       }}
     >
-      <Link
-        to='/'
-        style={{
-          color: `white`,
-          textDecoration: `none`,
-        }}
-      >
-        <Logo />
-      </Link>
-      <HeaderMenu />
       <div
         style={{
           display: 'flex',
-          alignItems: 'center',
           justifyContent: 'space-between',
+          alignItems: 'center',
+          margin: `0 auto`,
+          maxWidth: 1600,
+          padding: `1.45rem 1.0875rem`,
         }}
       >
-        <div style={{ marginRight: 32 }}>
-          <LinkButton label='Log In' handleClick={() => {}} />
+        <Link
+          to='/'
+          style={{
+            color: `white`,
+            textDecoration: `none`,
+          }}
+        >
+          <Logo />
+        </Link>
+        <HeaderMenu />
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+          }}
+        >
+          <div style={{ marginRight: 32 }}>
+            <LinkButton label='Log In' handleClick={handleLogin} />
+          </div>
+          <Button
+            label='Get Started'
+            className='primary-btn'
+            handleClick={() => {}}
+          />
         </div>
-        <Button
-          label='Get Started'
-          className='primary-btn'
-          handleClick={() => {}}
-        />
       </div>
-    </div>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+    </header>
+  )
 }
 
 export default Header
