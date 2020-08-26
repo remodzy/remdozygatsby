@@ -19,10 +19,10 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    padding: '100px 240px 0',
+    padding: '100px 10%',
   },
   text: {
-    fontSize: 23,
+    fontSize: '1.2rem',
     fontWeight: 500,
     lineHeight: '31px',
     textAlign: 'center' as const,
