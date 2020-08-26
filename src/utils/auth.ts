@@ -8,9 +8,9 @@ const auth: any = isBrowser
       domain: process.env.AUTH0_DOMAIN,
       clientID: process.env.AUTH0_CLIENTID,
       redirectUri: process.env.AUTH0_CALLBACK,
-      responseType: 'token id_token',
+      responseType: 'code',
       scope: 'openid profile email',
-    })
+    } as any)
   : {}
 
 const tokens = {
@@ -34,7 +34,10 @@ export const login = () => {
     return
   }
 
-  auth.authorize()
+  auth.authorize({
+    hasError: false,
+    signUp: false,
+  })
 }
 
 const setSession = (cb = () => {}) => (err, authResult) => {
