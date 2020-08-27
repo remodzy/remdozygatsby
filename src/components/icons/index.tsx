@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
 export function Circle() {
   return (
@@ -24,7 +24,7 @@ export function Circle() {
   )
 }
 
-const icons = {
+const icons: { [key: string]: () => ReactElement } = {
   paragraph: () => (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -359,7 +359,11 @@ const icons = {
   ),
 }
 
-export default function Icon({ name }) {
+type IconProps = {
+  name: string
+}
+
+export default function Icon({ name }: IconProps) {
   const Icon = icons[name]
   return <Icon />
 }

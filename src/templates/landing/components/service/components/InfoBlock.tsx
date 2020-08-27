@@ -1,9 +1,10 @@
 import React from 'react'
-import Img from 'gatsby-image'
+import Img, { FixedObject } from 'gatsby-image'
 
-import IconWrapper from './IconWrapper'
 import { getColor, getTextColor } from '../../../../../utils/colors'
-import Button from '../../../../../components/button'
+import Button, { ButtonColors } from '../../../../../components/button'
+import IconWrapper from './IconWrapper'
+import { ListItem } from './ServiceList'
 
 const textColors = getTextColor()
 
@@ -30,10 +31,16 @@ const styles = {
   },
 }
 
-export default function InfoBlock({ item, isEven, icon }) {
+type Props = {
+  item: ListItem
+  isEven: boolean
+  icon: FixedObject
+}
+
+export default function InfoBlock({ item, isEven, icon }: Props) {
   const color = getColor(item.color)
 
-  const buttonColors = {
+  const buttonColors: ButtonColors = {
     background: color.sub,
     text: color.main,
   }

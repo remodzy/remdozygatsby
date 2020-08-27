@@ -25,63 +25,9 @@ export const CircleArtifact = (props: Props): ReactElement<any, any> => {
   )
 }
 
-// export default function CircleArtifact({
-//   container,
-//   primary,
-//   secondary,
-// }: Props): ReactElement<any, any> {
-//   return (
-//     <div
-//       style={{
-//         position: 'absolute',
-//         opacity: 0.2,
-//         ...container,
-//       }}
-//     >
-//       <div
-//         style={{
-//           display: 'flex',
-//           justifyContent: 'center',
-//           alignItems: 'center',
-//           width: '100%',
-//           height: '100%',
-//           borderRadius: '50%',
-//           ...primary,
-//         }}
-//       >
-//         <div
-//           style={{
-//             borderRadius: '50%',
-//             transform: 'matrix(-1, 0, 0, 1, 0, 0)',
-//             ...secondary,
-//           }}
-//         ></div>
-//       </div>
-//     </div>
-//   )
-// }
-
 type Style = {
-  root: {
-    position: string
-    display: string
-    justifyContent: string
-    alignItems: string
-    borderRadius: string
-    opacity: number
-    width: number
-    height: number
-    top: number
-    left: string
-    background: string
-  }
-  center: {
-    borderRadius: string
-    transform: string
-    width: number
-    height: number
-    background: string
-  }
+  root: React.CSSProperties
+  center: React.CSSProperties
 }
 
 function getStyles({ mainSize, centerSize, top, left, name }: Props): Style {
@@ -89,8 +35,8 @@ function getStyles({ mainSize, centerSize, top, left, name }: Props): Style {
   const root = {
     position: 'absolute' as const,
     display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'center' as const,
+    alignItems: 'center' as const,
     borderRadius: '50%',
     opacity: 0.2,
     width: mainSize,
@@ -113,7 +59,12 @@ function getStyles({ mainSize, centerSize, top, left, name }: Props): Style {
   }
 }
 
-function getCircleColors(name: string): { main: string; center: string } {
+type Result = {
+  main: string
+  center: string
+}
+
+function getCircleColors(name: string): Result {
   switch (name) {
     case CircleName.Green:
       return {
@@ -135,5 +86,10 @@ function getCircleColors(name: string): { main: string; center: string } {
         main: 'linear-gradient(180deg, #8AA5ED 0%, #507CF5 100%)',
         center: '#4865EB',
       }
+  }
+
+  return {
+    main: 'linear-gradient(180deg, #8AA5ED 0%, #507CF5 100%)',
+    center: '#4865EB',
   }
 }

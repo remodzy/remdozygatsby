@@ -1,9 +1,9 @@
-type Color = {
+export type ColorType = {
   main: string
-  sub: string
+  sub?: string
 }
 
-export const mainColorsGroup = {
+export const mainColorsGroup: { [key: string]: ColorType } = {
   primary: {
     main: '#4865EB',
     sub: '#507CF5',
@@ -25,7 +25,7 @@ export const mainColorsGroup = {
   },
 }
 
-export const subColorsGroup = {
+export const subColorsGroup: { [key: string]: ColorType } = {
   first: {
     main: '#21A4D9',
     sub: '#4BC2F2',
@@ -65,7 +65,7 @@ export type ColorName = {
   color: string
 }
 
-export function getColor(name: ColorName): Color {
+export function getColor(name: ColorName): ColorType {
   if (name.group === 'main') {
     return mainColorsGroup[name.color]
   }
@@ -73,6 +73,6 @@ export function getColor(name: ColorName): Color {
   return subColorsGroup[name.color]
 }
 
-export function getTextColor(): Color {
+export function getTextColor(): ColorType {
   return mainColorsGroup.text
 }

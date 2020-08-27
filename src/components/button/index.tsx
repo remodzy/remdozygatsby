@@ -1,18 +1,19 @@
 import React, { ReactElement } from 'react'
-import { getColor } from '../../utils/colors'
+
+export type ButtonColors = {
+  background?: string
+  text: string
+}
 
 type Props = {
-  colors?: {
-    background: string
-    text: string
-  }
+  colors?: ButtonColors
   className?: string
   label: string
   handleClick: () => any
 }
 
 export default function Button({
-  colors = null,
+  colors,
   className = '',
   label,
   handleClick,
@@ -26,14 +27,14 @@ export default function Button({
     color: 'white',
     outline: 'none',
   }
-  if (!className) {
+  if (!className && colors) {
     style.backgroundColor = colors.background
     style.color = colors.text
   }
 
   return (
     <button
-      type="button"
+      type='button'
       className={className}
       style={style}
       onClick={handleClick}
