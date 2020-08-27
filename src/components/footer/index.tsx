@@ -3,13 +3,13 @@ import Logo from '../logo'
 import { getTextColor } from '../../utils/colors'
 import Icon from '../icons'
 import DotsArtifact from '../dot'
+import BlockWrapper from '../blockWrapper'
 
 const textColors = getTextColor()
 
 const styles = {
   root: {
     position: 'relative' as const,
-    padding: '60px 140px',
   },
   container: {
     display: 'flex',
@@ -49,61 +49,67 @@ const styles = {
 export default function Footer() {
   return (
     <footer style={styles.root}>
-      <div style={styles.container}>
-        <Logo />
-        <div style={styles.linksContainer}>
-          <div style={styles.linkColumn}>
-            <div style={styles.columnTitle}>Company</div>
-            <a style={styles.link} href='#'>
-              Products
-            </a>
-            <a style={styles.link} href='#'>
-              Integrations
-            </a>
-            <a style={styles.link} href='#'>
-              Pricing
-            </a>
-          </div>
-          <div style={styles.linkColumn}>
-            <div style={styles.columnTitle}>About Remodzy</div>
-            <a style={styles.link} href='#'>
-              About Us
-            </a>
-            <a style={styles.link} href='#'>
-              Blog
-            </a>
-            <a style={styles.link} href='#'>
-              Privacy & Terms
-            </a>
-          </div>
-          <div style={styles.linkColumn}>
-            <div style={styles.columnTitle}>Talk With Us</div>
-            <a style={styles.link} href='#'>
-              Request a Free Demo
-            </a>
-            <a style={styles.link} href='#'>
-              Contact Us
-            </a>
-            <a style={styles.link} href='#'>
-              Careers
-            </a>
-          </div>
-        </div>
-      </div>
-      <hr />
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
+      <BlockWrapper
+        styleWrapper={{
+          padding: '60px 140px',
         }}
       >
-        <span>© {new Date().getFullYear()}, Remodzy LLC.</span>
-        <span style={styles.backToTop}>
-          <Icon name='arrowTop' />
-          &nbsp;&nbsp;&nbsp;Back to top
-        </span>
-      </div>
+        <div style={styles.container}>
+          <Logo />
+          <div style={styles.linksContainer}>
+            <div style={styles.linkColumn}>
+              <div style={styles.columnTitle}>Company</div>
+              <a style={styles.link} href='#'>
+                Products
+              </a>
+              <a style={styles.link} href='#'>
+                Integrations
+              </a>
+              <a style={styles.link} href='#'>
+                Pricing
+              </a>
+            </div>
+            <div style={styles.linkColumn}>
+              <div style={styles.columnTitle}>About Remodzy</div>
+              <a style={styles.link} href='#'>
+                About Us
+              </a>
+              <a style={styles.link} href='#'>
+                Blog
+              </a>
+              <a style={styles.link} href='#'>
+                Privacy & Terms
+              </a>
+            </div>
+            <div style={styles.linkColumn}>
+              <div style={styles.columnTitle}>Talk With Us</div>
+              <a style={styles.link} href='#'>
+                Request a Free Demo
+              </a>
+              <a style={styles.link} href='#'>
+                Contact Us
+              </a>
+              <a style={styles.link} href='#'>
+                Careers
+              </a>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}
+        >
+          <span>© {new Date().getFullYear()}, Remodzy LLC.</span>
+          <span style={styles.backToTop}>
+            <Icon name='arrowTop' />
+            &nbsp;&nbsp;&nbsp;Back to top
+          </span>
+        </div>
+      </BlockWrapper>
       <DotsArtifact
         top={151}
         left={11}

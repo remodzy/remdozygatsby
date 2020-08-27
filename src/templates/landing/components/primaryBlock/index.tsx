@@ -1,22 +1,19 @@
 import React, { ReactElement } from 'react'
-import { getTextColor } from '../../../../utils/colors'
-import Button from '../../../../components/button'
-import Label from '../../../../components/Label'
+
+import { getTextColor } from '~utils/colors'
+import Button from '~components/button'
+import Label from '~components/Label'
+import { CircleArtifact, CircleName } from '~components/circleArtifact'
+import DotsArtifact from '~components/dot'
+import BlockWrapper from '~components/blockWrapper'
 import CompaniesLogos from '../companiesLogos'
 import PrimaryImage from './primaryImage'
-import {
-  CircleArtifact,
-  CircleName,
-} from '../../../../components/circleArtifact'
-import DotsArtifact from '../../../../components/dot'
 
 const textColor = getTextColor()
 
 const styles = {
   root: {
     display: 'flex',
-    flexDirection: 'column' as const,
-    alignItems: 'center',
     marginTop: 95,
     marginBottom: 112,
     position: 'relative' as const,
@@ -53,12 +50,80 @@ const styles = {
 export default function PrimaryBlock(): ReactElement<any, any> {
   return (
     <div style={styles.root}>
+      <BlockWrapper>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <DotsArtifact
+            columns={8}
+            right={256}
+            top={344}
+            size={5.78}
+            gap={27.56}
+            // prettier-ignore
+            list={[
+              0,1,1,0,0,0,0,0,
+              0,0,0,0,0,0,1,0,
+              0,0,0,0,0,0,1,0,
+              0,0,0,0,0,0,0,0,
+            ]}
+          />
+          <CircleArtifact
+            name={CircleName.Purple}
+            mainSize={64}
+            centerSize={12}
+            left='13.6875%'
+            top={30}
+          />
+          <CircleArtifact
+            name={CircleName.Blue}
+            mainSize={40}
+            centerSize={12}
+            left='82.6875%'
+            top={238}
+          />
+          <CircleArtifact
+            name={CircleName.Green}
+            mainSize={62}
+            centerSize={12}
+            left='92.5625%'
+            top={611}
+          />
+          <div style={styles.primaryLabel}>
+            Field service management software
+          </div>
+          <div style={styles.secondaryLabel}>
+            With Remodzy Services from Remodzy, you can schedule and manage
+            jobs, dispatch them to field technicians, and provide ETAs to
+            customers with notifications.
+          </div>
+          <div style={styles.buttonContainer}>
+            <Button
+              label='Start Free Trial'
+              className='primary-btn'
+              handleClick={() => {}}
+            />
+            <div style={styles.labelContainer}>
+              <Label text='No credit card required' />
+            </div>
+          </div>
+
+          <PrimaryImage />
+          <CompaniesLogos />
+        </div>
+      </BlockWrapper>
+
       <DotsArtifact
         columns={3}
         left={17}
         top={234}
         size={5.78}
         gap={27.56}
+        zIndex={0}
         // prettier-ignore
         list={[
           0,0,0,
@@ -71,65 +136,12 @@ export default function PrimaryBlock(): ReactElement<any, any> {
           0,0,1,
         ]}
       />
-      <DotsArtifact
-        columns={8}
-        right={256}
-        top={344}
-        size={5.78}
-        gap={27.56}
-        // prettier-ignore
-        list={[
-          0,1,1,0,0,0,0,0,
-          0,0,0,0,0,0,1,0,
-          0,0,0,0,0,0,1,0,
-          0,0,0,0,0,0,0,0,
-        ]}
-      />
-      <CircleArtifact
-        name={CircleName.Purple}
-        mainSize={64}
-        centerSize={12}
-        left='13.6875%'
-        top={30}
-      />
-      <CircleArtifact
-        name={CircleName.Blue}
-        mainSize={40}
-        centerSize={12}
-        left='82.6875%'
-        top={238}
-      />
-      <CircleArtifact
-        name={CircleName.Green}
-        mainSize={62}
-        centerSize={12}
-        left='92.5625%'
-        top={611}
-      />
-      <div style={styles.primaryLabel}>Field service management software</div>
-      <div style={styles.secondaryLabel}>
-        With Remodzy Services from Remodzy, you can schedule and manage jobs,
-        dispatch them to field technicians, and provide ETAs to customers with
-        notifications.
-      </div>
-      <div style={styles.buttonContainer}>
-        <Button
-          label='Start Free Trial'
-          className='primary-btn'
-          handleClick={() => {}}
-        />
-        <div style={styles.labelContainer}>
-          <Label text='No credit card required' />
-        </div>
-      </div>
 
-      <PrimaryImage />
-      <CompaniesLogos />
       <div
         style={{
           position: 'absolute',
           zIndex: -1,
-          width: 1600,
+          width: '100%',
           height: 818,
           background:
             'linear-gradient(180deg, rgba(246, 249, 251, 0) 0%, #F5F8FB 100%)',

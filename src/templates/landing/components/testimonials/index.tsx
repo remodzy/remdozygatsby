@@ -1,17 +1,15 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import BackgroundImage from 'gatsby-background-image'
+
+import { getTextColor } from '~utils/colors'
+import Icon from '~components/icons'
+import DotsArtifact from '~components/dot'
+import BlockWrapper from '~components/blockWrapper'
+import { CircleArtifact, CircleName } from '~components/circleArtifact'
 
 import SectionLabel from '../sectionLabel'
 import SectionTitle from '../sectionTitle'
-import { getTextColor } from '../../../../utils/colors'
-import Icon from '../../../../components/icons'
-import DotsArtifact from '../../../../components/dot'
-import {
-  CircleArtifact,
-  CircleName,
-} from '../../../../components/circleArtifact'
 
 const textColors = getTextColor()
 
@@ -69,43 +67,90 @@ export default function Testimonials() {
   )
   return (
     <div style={styles.root}>
-      <SectionLabel text='testimonials' color='success' />
-      <SectionTitle text='What People Say' />
-      <div style={styles.container}>
-        <div
-          style={{
-            padding: '66px 0 0 68px',
-            maxWidth: 435,
-            position: 'relative',
-            marginTop: 140,
-          }}
-        >
+      <BlockWrapper>
+        <SectionLabel text='testimonials' color='success' />
+        <SectionTitle text='What People Say' />
+        <div style={styles.container}>
           <div
             style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
+              padding: '66px 0 0 68px',
+              maxWidth: 435,
+              position: 'relative',
+              marginTop: 140,
             }}
           >
-            <Icon name='paragraph' />
+            <div
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+              }}
+            >
+              <Icon name='paragraph' />
+            </div>
+            <div style={styles.text}>
+              Capture job notes, photos and signatures from the field in the
+              technician mobile app.
+            </div>
+            <div style={styles.author}>Jon Thomas</div>
+            <div style={styles.work}>CEO, Dell</div>
           </div>
-          <div style={styles.text}>
-            Capture job notes, photos and signatures from the field in the
-            technician mobile app.
+          <div>
+            <Img fixed={images.first.childImageSharp.fixed} />
           </div>
-          <div style={styles.author}>Jon Thomas</div>
-          <div style={styles.work}>CEO, Dell</div>
         </div>
-        <div>
-          <Img fixed={images.first.childImageSharp.fixed} />
-        </div>
-      </div>
+        <DotsArtifact
+          top={230}
+          right={439}
+          columns={4}
+          size={6.55}
+          gap={31.21}
+          // prettier-ignore
+          list={[
+            0,0,0,0,
+            0,1,1,0,
+            0,0,0,0,
+            0,0,0,0,
+            0,0,0,0,
+          ]}
+        />
+        <DotsArtifact
+          top={850}
+          left={355}
+          columns={4}
+          size={5.67}
+          gap={27.01}
+          // prettier-ignore
+          list={[
+            1,0,0,0,
+            0,0,0,1,
+            0,0,0,1,
+            0,1,0,0,
+            0,0,0,0,
+            0,0,0,0,
+          ]}
+        />
+        <CircleArtifact
+          name={CircleName.Green}
+          mainSize={32}
+          centerSize={5.71}
+          left='82.375%'
+          top={48}
+        />
+        <CircleArtifact
+          name={CircleName.Purple}
+          mainSize={36}
+          centerSize={7.2}
+          left='60.1875%'
+          top={884}
+        />
+      </BlockWrapper>
       <DotsArtifact
         top={190}
         left={26}
         columns={5}
         size={9.09}
-        gap={43.33}
+        gap={43.34}
         // prettier-ignore
         list={[
           0,0,0,0,1,
@@ -113,51 +158,6 @@ export default function Testimonials() {
           0,0,0,0,0,
           0,0,1,1,0,
         ]}
-      />
-      <DotsArtifact
-        top={360}
-        right={439}
-        columns={4}
-        size={6.55}
-        gap={31.21}
-        // prettier-ignore
-        list={[
-          0,0,0,0,
-          0,1,1,0,
-          0,0,0,0,
-          0,0,0,0,
-          0,0,0,0,
-        ]}
-      />
-      <DotsArtifact
-        top={980}
-        left={355}
-        columns={4}
-        size={5.67}
-        gap={27.01}
-        // prettier-ignore
-        list={[
-          1,0,0,0,
-          0,0,0,1,
-          0,0,0,1,
-          0,1,0,0,
-          0,0,0,0,
-          0,0,0,0,
-        ]}
-      />
-      <CircleArtifact
-        name={CircleName.Green}
-        mainSize={32}
-        centerSize={5.71}
-        left='82.375%'
-        top={178}
-      />
-      <CircleArtifact
-        name={CircleName.Green}
-        mainSize={36}
-        centerSize={7.2}
-        left='60.1875%'
-        top={1014}
       />
     </div>
   )

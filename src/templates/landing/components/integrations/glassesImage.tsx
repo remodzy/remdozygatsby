@@ -10,7 +10,7 @@ export default function GlassesImage(): ReactElement<any, any> {
           childImageSharp {
             # Specify the image processing specifications right in the query.
             # Makes it trivial to update as your page's design changes.
-            fluid(maxWidth: 673) {
+            fluid(maxWidth: 664) {
               ...GatsbyImageSharpFluid_noBase64
             }
           }
@@ -22,7 +22,12 @@ export default function GlassesImage(): ReactElement<any, any> {
   return (
     <Img
       fluid={data.file.childImageSharp.fluid}
-      style={{ width: '100%', maxWidth: 673 }}
+      style={{
+        width: '100%',
+        maxWidth: 664,
+        marginTop: 119,
+        marginBottom: 174,
+      }}
     />
   )
 }
