@@ -4,10 +4,10 @@ import { useLocation } from '@reach/router'
 import { Helmet } from 'react-helmet'
 
 type Props = {
-  title: string
-  description: string
-  image: string
-  article: boolean
+  title?: string
+  description?: string
+  image?: string
+  article?: boolean
 }
 
 export default function SEO({ title, description, image, article }: Props) {

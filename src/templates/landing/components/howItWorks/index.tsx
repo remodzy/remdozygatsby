@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import Img, { FluidObject } from 'gatsby-image'
 
 import { getTextColor } from '~utils/colors'
 import { CircleArtifact, CircleName } from '~components/circleArtifact'
@@ -127,7 +127,17 @@ export default function HowItWorks() {
   )
 }
 
-function Item({ image, text, size }) {
+type ItemProps = {
+  image: {
+    childImageSharp: {
+      fluid: FluidObject
+    }
+  }
+  text: string
+  size: number
+}
+
+function Item({ image, text, size }: ItemProps) {
   return (
     <div
       style={{

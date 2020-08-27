@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react'
 
 type Props = {
   children: ReactElement
-  color: string
+  color?: string
 }
 
 const IconWrapper = ({ children, color }: Props): ReactElement => {

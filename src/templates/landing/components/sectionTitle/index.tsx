@@ -12,6 +12,10 @@ const styles = {
   },
 }
 
-export default function SectionTitle({ text }) {
+type Props = {
+  text: string
+}
+
+export default function SectionTitle({ text }: Props) {
   return <div style={styles.root}>{text}</div>
 }

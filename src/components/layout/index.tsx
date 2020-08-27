@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
 import Header from '../header'
 import Footer from '../footer'
@@ -6,7 +6,11 @@ import Footer from '../footer'
 import '../base.css'
 import SEO from '../seo'
 
-export default function Layout({ children }) {
+type Props = {
+  children: ReactElement | ReactElement[]
+}
+
+export default function Layout({ children }: Props) {
   return (
     <>
       <SEO />

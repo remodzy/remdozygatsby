@@ -8,6 +8,10 @@ const styles = {
   },
 }
 
-export default function Label({ text }) {
+type Props = {
+  text: string
+}
+
+export default function Label({ text }: Props) {
   return <span style={styles.root}>{text}</span>
 }

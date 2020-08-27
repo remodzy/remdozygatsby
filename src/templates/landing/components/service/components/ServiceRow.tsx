@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
-import Img from 'gatsby-image'
+import Img, { FluidObject } from 'gatsby-image'
 
 import BlockWrapper from '~components/blockWrapper'
 import InfoBlock from './InfoBlock'
@@ -11,7 +11,12 @@ const rowStyles = {
   },
 }
 
-const Image = ({ image, size }) => (
+type ImageProps = {
+  image: FluidObject
+  size: number
+}
+
+const Image = ({ image, size }: ImageProps) => (
   <Img fluid={image} style={{ maxWidth: size, width: '100%' }} />
 )
 

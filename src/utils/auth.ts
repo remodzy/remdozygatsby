@@ -1,4 +1,4 @@
-import { WebAuth } from 'auth0-js'
+import { WebAuth, Auth0Result } from 'auth0-js'
 import { navigate } from 'gatsby'
 
 const isBrowser = typeof window !== 'undefined'
@@ -13,9 +13,15 @@ const auth: any = isBrowser
     } as any)
   : {}
 
-const tokens = {
-  accessToken: false,
-  idToken: false,
+type Tokens = {
+  accessToken: string
+  idToken: string
+  expiresAt: number | null
+}
+
+const tokens: Tokens = {
+  accessToken: '',
+  idToken: '',
   expiresAt: null,
 }
 
@@ -40,7 +46,7 @@ export const login = () => {
   })
 }
 
-const setSession = (cb = () => {}) => (err, authResult) => {
+const setSession = (cb = () => {}) => (err: any, authResult: any) => {
   if (err) {
     navigate('/')
     cb()
