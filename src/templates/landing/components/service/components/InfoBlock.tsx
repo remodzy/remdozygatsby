@@ -11,6 +11,7 @@ const styles = {
   root: {
     maxWidth: 375,
     marginBottom: 195,
+    position: 'relative' as const,
   },
   title: {
     fontSize: 36,

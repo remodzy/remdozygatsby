@@ -4,7 +4,6 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV || 'development'}`,
 })
 
-console.log(process.env.NODE_ENV)
 const contentfulConfig = {
   spaceId: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
@@ -29,7 +28,13 @@ if (!spaceId || !accessToken) {
 module.exports = {
   pathPrefix: '/remodzy',
   siteMetadata: {
-    title: 'Remdozy',
+    defaultTitle: 'Remodzy',
+    titleTemplate: '%s · The Remodzy',
+    defaultDescription: 'Description',
+    defaultImage: '',
+    siteUrl: 'https://remodzy.com',
+    article: '',
+    twitterUsername: '',
   },
   plugins: [
     {
