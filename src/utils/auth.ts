@@ -42,7 +42,7 @@ export const login = () => {
 
   auth.authorize({
     hasError: false,
-    signUp: false,
+    signUp: true,
   })
 }
 
@@ -54,7 +54,7 @@ const setSession = (cb = () => {}) => (err: any, authResult: any) => {
   }
 
   if (authResult && authResult.accessToken && authResult.idToken) {
-    let expiresAt = authResult.expiresIn * 1000 + new Date().getTime()
+    const expiresAt = authResult.expiresIn * 1000 + new Date().getTime()
     tokens.accessToken = authResult.accessToken
     tokens.idToken = authResult.idToken
     tokens.expiresAt = expiresAt
