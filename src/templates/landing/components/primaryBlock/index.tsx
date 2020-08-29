@@ -3,12 +3,13 @@ import React, { ReactElement, useContext } from 'react'
 import Button from '~components/button'
 import Label from '~components/Label'
 import { CircleArtifact, CircleName } from '~components/circleArtifact'
+import { DeviceDetectContext } from '~components/layout'
 import DotsArtifact from '~components/dot'
 import BlockWrapper from '~components/blockWrapper'
+
 import CompaniesLogos from '../companiesLogos'
 import PrimaryImage from './primaryImage'
 import primaryBlockStyles from './PrimaryBlock.module.css'
-import { DeviceDetectContext } from '~components/layout'
 
 export default function PrimaryBlock(): ReactElement<any, any> {
   const { isMobile } = useContext(DeviceDetectContext)

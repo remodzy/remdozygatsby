@@ -7,10 +7,12 @@ type Props = {
   url: string
 }
 
-export default function FooterLink({ text, url }: Props) {
+const FooterLink: React.FC<Props> = ({ text, url }) => {
   return (
     <a className={footerLinkStyles.link} href={url}>
       {text}
     </a>
   )
 }
+
+export default FooterLink

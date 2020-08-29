@@ -22,12 +22,51 @@
   font-size: 23px;
   font-weight: 600;
   line-height: 31px;
-  color: #22344b;
+  color: var(--main-text-color);
   padding-bottom: 24px;
+  word-spacing: nowrap;
 }
 
 .backToTop {
   font-weight: 500;
   font-size: 14px;
   line-height: 19px;
+}
+
+.copyrightContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--second-text-color);
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 0;
+  }
+  .linksContainer {
+    padding: 0;
+    column-gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+  }
+  .columnTitle {
+    margin-top: 34px;
+    font-size: 20px;
+    line-height: 27px;
+  }
+  hr {
+    margin-top: 34px;
+  }
+  .backToTop {
+    font-size: 13px;
+    line-height: 18px;
+  }
+  .copyrightContainer {
+    font-size: 13px;
+    line-height: 18px;
+  }
 }
