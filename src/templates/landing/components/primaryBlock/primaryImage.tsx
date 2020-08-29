@@ -1,12 +1,14 @@
-import React, { ReactElement } from 'react'
+import React, { ReactElement, useContext } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
+import { DeviceDetectContext } from '~components/layout'
 
 export default function PrimaryImage(): ReactElement<any, any> {
-  const data = useStaticQuery(
+  const { isMobile } = useContext(DeviceDetectContext)
+  const { desktop, mobile } = useStaticQuery(
     graphql`
       query {
-        file(relativePath: { eq: "landing/primary-image.png" }) {
+        desktop: file(relativePath: { eq: "landing/primary-image.png" }) {
           childImageSharp {
             # Specify the image processing specifications right in the query.
             # Makes it trivial to update as your page's design changes.
@@ -16,11 +18,21 @@ export default function PrimaryImage(): ReactElement<any, any> {
             }
           }
         }
+        mobile: file(relativePath: { eq: "landing/primary-image-mobile.png" }) {
+          childImageSharp {
+            # Specify the image processing specifications right in the query.
+            # Makes it trivial to update as your page's design changes.
+            fluid(maxWidth: 768) {
+              ...GatsbyImageSharpFluid_noBase64
+              ...GatsbyImageSharpFluidLimitPresentationSize
+            }
+          }
+        }
       }
     `
   )
 
-  return (
-    <Img fluid={data.file.childImageSharp.fluid} style={{ width: '100%' }} />
-  )
+  const image = isMobile ? mobile : desktop
+
+  return <Img fluid={image.childImageSharp.fluid} style={{ width: '100%' }} />
 }
