@@ -10,19 +10,19 @@ import companiesLogosStyles from './CompaniesLogos.module.css'
 export default function CompaniesLogos() {
   return (
     <div className={companiesLogosStyles.root}>
-      <div>
+      <div className={companiesLogosStyles.item} style={{ gridArea: 'a' }}>
         <ChubbLogo />
       </div>
-      <div>
+      <div className={companiesLogosStyles.item} style={{ gridArea: 'b' }}>
         <CatLogo />
       </div>
-      <div>
+      <div className={companiesLogosStyles.item} style={{ gridArea: 'c' }}>
         <MailchimpLogo />
       </div>
-      <div>
+      <div className={companiesLogosStyles.item} style={{ gridArea: 'd' }}>
         <LyaLogo />
       </div>
-      <div>
+      <div className={companiesLogosStyles.item} style={{ gridArea: 'e' }}>
         <SapLogo />
       </div>
     </div>

@@ -1,8 +1,24 @@
 .root {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   width: 82%;
   padding: 80px 0 0;
   margin: 0 15.4375%;
+  display: grid;
+  gap: 20px 10px;
+  grid-template-columns: repeat(3, 200px);
+  grid-template-areas: 'a b c d e';
+}
+
+.item {
+  align-self: center;
+  justify-self: center;
+}
+
+@media (max-width: 768px) {
+  .root {
+    padding: 0;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      'b e d'
+      'a . c';
+  }
 }
