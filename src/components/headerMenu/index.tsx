@@ -2,7 +2,6 @@ import React, { useContext, useState, useCallback } from 'react'
 import { Link } from 'gatsby'
 
 import { DeviceDetectContext } from '../layout'
-import IconButton from '../iconButton'
 
 import headerMenuStyles from './HeaderMenu.module.css'
 import FloatMenu from './FloatMenu'
