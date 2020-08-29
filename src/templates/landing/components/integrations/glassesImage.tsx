@@ -3,31 +3,32 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
 export default function GlassesImage(): ReactElement<any, any> {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        file(relativePath: { eq: "landing/glasses-image.png" }) {
-          childImageSharp {
-            # Specify the image processing specifications right in the query.
-            # Makes it trivial to update as your page's design changes.
-            fluid(maxWidth: 664) {
-              ...GatsbyImageSharpFluid_noBase64
-            }
-          }
-        }
-      }
-    `
-  )
+  const data = useStaticQuery(query)
 
   return (
     <Img
       fluid={data.file.childImageSharp.fluid}
       style={{
         width: '100%',
-        maxWidth: 664,
+        // maxWidth: 664,
         marginTop: 119,
         marginBottom: 174,
       }}
     />
   )
 }
+
+const query = graphql`
+  query {
+    file(relativePath: { eq: "landing/glasses-image.png" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(maxWidth: 664) {
+          ...GatsbyImageSharpFluid_noBase64
+          ...GatsbyImageSharpFluidLimitPresentationSize
+        }
+      }
+    }
+  }
+`

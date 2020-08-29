@@ -1,0 +1,33 @@
+.root {
+  position: relative;
+}
+
+.container {
+  display: flex;
+  padding-bottom: 80px;
+}
+.linksContainer {
+  display: grid;
+  flex: 0.8;
+  /* max-width: 50%; */
+  grid-template-columns: repeat(auto-fit, minmax(173px, auto));
+  column-gap: 130px;
+  padding-left: 15%;
+}
+.linkColumn {
+  display: flex;
+  flex-direction: column;
+}
+.columnTitle {
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 31px;
+  color: #22344b;
+  padding-bottom: 24px;
+}
+
+.backToTop {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+}

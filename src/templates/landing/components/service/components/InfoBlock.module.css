@@ -1,0 +1,20 @@
+.root {
+  max-width: 375px;
+  /* margin-bottom: 195px; */
+  position: relative;
+}
+.title {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 49px;
+  color: var(--main-text-color);
+  margin-top: 28px;
+}
+.text {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 182.3%;
+  color: var(--second-text-color);
+  margin-top: 20px;
+  margin-bottom: 24px;
+}

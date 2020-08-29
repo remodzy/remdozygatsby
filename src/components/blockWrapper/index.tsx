@@ -1,15 +1,5 @@
 import React, { ReactElement } from 'react'
-
-const styles = {
-  root: {
-    width: '100%',
-  },
-  wrapper: {
-    margin: '0 auto',
-    maxWidth: 1600,
-    position: 'relative' as const,
-  },
-}
+import blockWrapperStyles from './BlockWrapper.module.css'
 
 type Props = {
   children: ReactElement | ReactElement[]
@@ -18,8 +8,10 @@ type Props = {
 
 export default function BlockWrapper({ children, styleWrapper = {} }: Props) {
   return (
-    <div style={styles.root}>
-      <div style={{ ...styles.wrapper, ...styleWrapper }}>{children}</div>
+    <div className={blockWrapperStyles.root}>
+      <div className={blockWrapperStyles.wrapper} style={styleWrapper}>
+        {children}
+      </div>
     </div>
   )
 }

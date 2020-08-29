@@ -1,0 +1,10 @@
+.root {
+  padding-top: 155px;
+  position: relative;
+}
+.itemsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 100px 10%;
+}

@@ -8,60 +8,41 @@ import BlockWrapper from '~components/blockWrapper'
 import SectionLabel from '../sectionLabel'
 import SectionTitle from '../sectionTitle'
 import ResourceItem from './resourceItem'
-
-const styles = {
-  root: {
-    position: 'relative' as const,
-    paddingTop: 50,
-    paddingBottom: 116,
-    background: `linear-gradient(180deg, rgba(246, 249, 251, 0) 0%, #F5F8FB 100%)`,
-  },
-  list: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(328px, 1fr))',
-    columnGap: 56,
-    padding: '86px 234px 0',
-  },
-  buttonContainer: {
-    display: 'flex',
-    justifyContent: 'center',
-    marginTop: 80,
-  },
-}
+import blogStyles from './Blog.module.css'
 
 export default function Blog() {
   const images = useStaticQuery(query)
 
   return (
-    <div style={styles.root}>
+    <div className={blogStyles.root}>
       <BlockWrapper>
         <SectionLabel text='BLOG' color='success' />
         <SectionTitle text='Useful Resources' />
-        <div style={styles.list}>
+        <div className={blogStyles.list}>
           <ResourceItem
             imageTitle='Business Management'
-            imageTitleColor={'#5D9A78'}
-            image={images?.first?.childImageSharp?.fixed}
+            imageTitleColor='#5D9A78'
+            image={images?.first?.childImageSharp?.fluid}
             title='Four Ways to Improve Mobile Workforce Productivity'
             text='Looking to increase productivity levels and improve compliance? This ebook will look at four ways you can equip your mobile...'
           />
           <ResourceItem
             imageTitle='Business Management'
-            imageTitleColor={'#ED7B73'}
-            image={images.second.childImageSharp.fixed}
+            imageTitleColor='#ED7B73'
+            image={images.second.childImageSharp.fluid}
             title='Four Ways to Improve Mobile Workforce Productivity'
             text='Looking to increase productivity levels and improve compliance? This ebook will look at four ways you can equip your mobile...'
           />
           <ResourceItem
             imageTitle='Business Management'
-            imageTitleColor={'#E0B14B'}
-            image={images.third.childImageSharp.fixed}
+            imageTitleColor='#E0B14B'
+            image={images.third.childImageSharp.fluid}
             title='Four Ways to Improve Mobile Workforce Productivity'
             text='Looking to increase productivity levels and improve compliance? This ebook will look at four ways you can equip your mobile...'
           />
         </div>
 
-        <div style={styles.buttonContainer}>
+        <div className={blogStyles.buttonContainer}>
           <Button
             className='primary-btn'
             label='Learn More'
@@ -122,22 +103,25 @@ const query = graphql`
   query {
     first: file(relativePath: { eq: "landing/useful-resource1.png" }) {
       childImageSharp {
-        fixed(width: 340, height: 292) {
-          ...GatsbyImageSharpFixed_withWebp_noBase64
+        fluid(maxWidth: 340) {
+          ...GatsbyImageSharpFluid_noBase64
+          ...GatsbyImageSharpFluidLimitPresentationSize
         }
       }
     }
     second: file(relativePath: { eq: "landing/useful-resource2.png" }) {
       childImageSharp {
-        fixed(width: 340, height: 292) {
-          ...GatsbyImageSharpFixed_withWebp_noBase64
+        fluid(maxWidth: 340) {
+          ...GatsbyImageSharpFluid_noBase64
+          ...GatsbyImageSharpFluidLimitPresentationSize
         }
       }
     }
     third: file(relativePath: { eq: "landing/useful-resource3.png" }) {
       childImageSharp {
-        fixed(width: 340, height: 292) {
-          ...GatsbyImageSharpFixed_withWebp_noBase64
+        fluid(maxWidth: 340) {
+          ...GatsbyImageSharpFluid_noBase64
+          ...GatsbyImageSharpFluidLimitPresentationSize
         }
       }
     }

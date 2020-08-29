@@ -8,113 +8,74 @@ import DotsArtifact from '~components/dot'
 import BlockWrapper from '~components/blockWrapper'
 import CompaniesLogos from '../companiesLogos'
 import PrimaryImage from './primaryImage'
-
-const textColor = getTextColor()
-
-const styles = {
-  root: {
-    display: 'flex',
-    marginTop: 95,
-    marginBottom: 112,
-    position: 'relative' as const,
-  },
-  primaryLabel: {
-    color: textColor.main,
-    fontSize: 54,
-    lineHeight: '63px',
-    fontWeight: 600,
-    padding: '0 150px',
-    textAlign: 'center' as const,
-    textTransform: 'capitalize' as const,
-    marginBottom: 22,
-    maxWidth: 600,
-  },
-  secondaryLabel: {
-    color: textColor.sub,
-    fontSize: 17,
-    fontWeight: 500,
-    textAlign: 'center' as const,
-    padding: '0 60px',
-    lineHeight: '182.3%',
-    marginBottom: 45,
-    maxWidth: 800,
-  },
-  buttonContainer: {
-    textAlign: 'center' as const,
-  },
-  labelContainer: {
-    marginTop: 10,
-  },
-}
+import primaryBlockStyles from './PrimaryBlock.module.css'
 
 export default function PrimaryBlock(): ReactElement<any, any> {
   return (
-    <div style={styles.root}>
-      <BlockWrapper>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          <DotsArtifact
-            columns={8}
-            right={256}
-            top={344}
-            size={5.78}
-            gap={27.56}
-            // prettier-ignore
-            list={[
+    <div className={primaryBlockStyles.root}>
+      <BlockWrapper
+        styleWrapper={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        <DotsArtifact
+          columns={8}
+          right={256}
+          top={344}
+          size={5.78}
+          gap={27.56}
+          // prettier-ignore
+          list={[
               0,1,1,0,0,0,0,0,
               0,0,0,0,0,0,1,0,
               0,0,0,0,0,0,1,0,
               0,0,0,0,0,0,0,0,
             ]}
-          />
-          <CircleArtifact
-            name={CircleName.Purple}
-            mainSize={64}
-            centerSize={12}
-            left='13.6875%'
-            top={30}
-          />
-          <CircleArtifact
-            name={CircleName.Blue}
-            mainSize={40}
-            centerSize={12}
-            left='82.6875%'
-            top={238}
-          />
-          <CircleArtifact
-            name={CircleName.Green}
-            mainSize={62}
-            centerSize={12}
-            left='92.5625%'
-            top={611}
-          />
-          <div style={styles.primaryLabel}>
-            Field service management software
-          </div>
-          <div style={styles.secondaryLabel}>
-            With Remodzy Services from Remodzy, you can schedule and manage
-            jobs, dispatch them to field technicians, and provide ETAs to
-            customers with notifications.
-          </div>
-          <div style={styles.buttonContainer}>
-            <Button
-              label='Start Free Trial'
-              className='primary-btn'
-              handleClick={() => {}}
-            />
-            <div style={styles.labelContainer}>
-              <Label text='No credit card required' />
-            </div>
-          </div>
-
-          <PrimaryImage />
-          <CompaniesLogos />
+        />
+        <CircleArtifact
+          name={CircleName.Purple}
+          mainSize={64}
+          centerSize={12}
+          left='13.6875%'
+          top={30}
+        />
+        <CircleArtifact
+          name={CircleName.Blue}
+          mainSize={40}
+          centerSize={12}
+          left='82.6875%'
+          top={238}
+        />
+        <CircleArtifact
+          name={CircleName.Green}
+          mainSize={62}
+          centerSize={12}
+          left='92.5625%'
+          top={611}
+        />
+        <div className={primaryBlockStyles.primaryLabel}>
+          Field service management software
         </div>
+        <div className={primaryBlockStyles.secondaryLabel}>
+          With Remodzy Services from Remodzy, you can schedule and manage jobs,
+          dispatch them to field technicians, and provide ETAs to customers with
+          notifications.
+        </div>
+        <div className={primaryBlockStyles.buttonContainer}>
+          <Button
+            label='Start Free Trial'
+            className='primary-btn'
+            handleClick={() => {}}
+          />
+          <div className={primaryBlockStyles.labelContainer}>
+            <Label text='No credit card required' />
+          </div>
+        </div>
+
+        <PrimaryImage />
+        <CompaniesLogos />
       </BlockWrapper>
 
       <DotsArtifact
@@ -137,16 +98,7 @@ export default function PrimaryBlock(): ReactElement<any, any> {
         ]}
       />
 
-      <div
-        style={{
-          position: 'absolute',
-          zIndex: -1,
-          width: '100%',
-          height: 818,
-          background:
-            'linear-gradient(180deg, rgba(246, 249, 251, 0) 0%, #F5F8FB 100%)',
-        }}
-      ></div>
+      <div className={primaryBlockStyles.backgroundCover}></div>
     </div>
   )
 }

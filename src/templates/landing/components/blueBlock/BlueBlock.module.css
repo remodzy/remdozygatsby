@@ -1,0 +1,30 @@
+.root {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: #496ee5;
+  padding: 90px 0;
+}
+.wrapper {
+  max-width: 610px;
+}
+.title {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 52px;
+  line-height: 63px;
+  text-align: center;
+}
+.form {
+  display: flex;
+  margin-top: 60px;
+}
+.input {
+  height: 52px;
+  border: 0;
+  border-radius: 10px;
+  padding: 1px 10px;
+  outline: none;
+  margin-right: 18px;
+  flex: 1;
+}

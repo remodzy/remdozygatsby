@@ -1,9 +1,11 @@
 import React from 'react'
 import Logo from '../logo'
-import { getTextColor } from '../../utils/colors'
+import { getTextColor } from '~utils/colors'
 import Icon from '../icons'
 import DotsArtifact from '../dot'
 import BlockWrapper from '../blockWrapper'
+import footerStyles from './Footer.module.css'
+import FooterLink from './FooterLink'
 
 const textColors = getTextColor()
 
@@ -48,50 +50,34 @@ const styles = {
 
 export default function Footer() {
   return (
-    <footer style={styles.root}>
+    <footer className={footerStyles.root}>
       <BlockWrapper
         styleWrapper={{
-          padding: '60px 140px',
+          padding: '60px 8.75%',
         }}
       >
-        <div style={styles.container}>
-          <Logo />
-          <div style={styles.linksContainer}>
-            <div style={styles.linkColumn}>
-              <div style={styles.columnTitle}>Company</div>
-              <a style={styles.link} href='#'>
-                Products
-              </a>
-              <a style={styles.link} href='#'>
-                Integrations
-              </a>
-              <a style={styles.link} href='#'>
-                Pricing
-              </a>
+        <div className={footerStyles.container}>
+          <div>
+            <Logo />
+          </div>
+          <div className={footerStyles.linksContainer}>
+            <div className={footerStyles.linkColumn}>
+              <div className={footerStyles.columnTitle}>Company</div>
+              <FooterLink text='Products' url='#' />
+              <FooterLink text='Integrations' url='#' />
+              <FooterLink text='Pricing' url='#' />
             </div>
-            <div style={styles.linkColumn}>
-              <div style={styles.columnTitle}>About Remodzy</div>
-              <a style={styles.link} href='#'>
-                About Us
-              </a>
-              <a style={styles.link} href='#'>
-                Blog
-              </a>
-              <a style={styles.link} href='#'>
-                Privacy & Terms
-              </a>
+            <div className={footerStyles.linkColumn}>
+              <div className={footerStyles.columnTitle}>About Remodzy</div>
+              <FooterLink text='About Us' url='#' />
+              <FooterLink text='Blog' url='#' />
+              <FooterLink text='Privacy & Terms' url='#' />
             </div>
-            <div style={styles.linkColumn}>
-              <div style={styles.columnTitle}>Talk With Us</div>
-              <a style={styles.link} href='#'>
-                Request a Free Demo
-              </a>
-              <a style={styles.link} href='#'>
-                Contact Us
-              </a>
-              <a style={styles.link} href='#'>
-                Careers
-              </a>
+            <div className={footerStyles.linkColumn}>
+              <div className={footerStyles.columnTitle}>Talk With Us</div>
+              <FooterLink text='Request a Free Demo' url='#' />
+              <FooterLink text='Contact Us' url='#' />
+              <FooterLink text='Careers' url='#' />
             </div>
           </div>
         </div>
@@ -104,7 +90,7 @@ export default function Footer() {
           }}
         >
           <span>© {new Date().getFullYear()}, Remodzy LLC.</span>
-          <span style={styles.backToTop}>
+          <span className={footerStyles.backToTop}>
             <Icon name='arrowTop' />
             &nbsp;&nbsp;&nbsp;Back to top
           </span>

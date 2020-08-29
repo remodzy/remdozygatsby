@@ -1,0 +1,17 @@
+.root {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 116;
+  background: linear-gradient(180deg, rgba(246, 249, 251, 0) 0%, #f5f8fb 100%);
+}
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(328px, 1fr));
+  column-gap: 56px;
+  padding: 86px 234px 0;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}

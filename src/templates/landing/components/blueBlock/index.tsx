@@ -3,49 +3,22 @@ import React from 'react'
 import { getColor } from '../../../../utils/colors'
 import Button from '../../../../components/button'
 import DotsArtifact from '../../../../components/dot'
-
+import blueBlockStyles from './BlueBlock.module.css'
 const colors = getColor({ group: 'main', color: 'primary' })
-const styles = {
-  root: {
-    position: 'relative' as const,
-    display: 'flex',
-    justifyContent: 'center',
-    backgroundColor: colors.main,
-    padding: '90px 0',
-  },
-  title: {
-    color: '#ffffff',
-    fontWeight: 600,
-    fontSize: 52,
-    lineHeight: '63px',
-    textAlign: 'center' as const,
-  },
-  form: {
-    display: 'flex',
-    marginTop: 60,
-  },
-  input: {
-    height: 52,
-    border: 0,
-    borderRadius: 10,
-    padding: '1px 10px',
-    outline: 'none',
-    marginRight: 18,
-    flex: 1,
-  },
-}
 
 export default function BlueBlock() {
   return (
-    <div style={styles.root}>
-      <div style={{ maxWidth: 610 }}>
-        <div style={styles.title}>Field service management software</div>
-        <div style={styles.form}>
+    <div className={blueBlockStyles.root}>
+      <div className={blueBlockStyles.wrapper}>
+        <div className={blueBlockStyles.title}>
+          Field service management software
+        </div>
+        <div className={blueBlockStyles.form}>
           <input
             type='text'
             name='email'
             id='email'
-            style={styles.input}
+            className={blueBlockStyles.input}
             placeholder='Enter your email'
           />
           <Button

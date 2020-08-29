@@ -1,24 +1,16 @@
 import React from 'react'
 
-import {
-  CircleArtifact,
-  CircleName,
-} from '../../../../components/circleArtifact'
+import { CircleArtifact, CircleName } from '~components/circleArtifact'
+import DotsArtifact from '~components/dot'
+
 import SectionLabel from '../sectionLabel'
 import SectionTitle from '../sectionTitle'
 import ServiceList from './components/ServiceList'
-import DotsArtifact from '../../../../components/dot'
-
-const styles = {
-  root: {
-    position: 'relative' as const,
-    paddingTop: 38,
-  },
-}
+import serviceStyles from './Service.module.css'
 
 export default function Service() {
   return (
-    <div style={styles.root}>
+    <div className={serviceStyles.root}>
       <SectionLabel text='SERVICE' />
       <SectionTitle text='Remodzy Service' />
       <ServiceList />

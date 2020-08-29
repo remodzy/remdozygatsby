@@ -1,48 +1,22 @@
 import React, { ReactElement } from 'react'
 
 import Button from '~components/button'
-import { getTextColor } from '~utils/colors'
 import DotsArtifact from '~components/dot'
 import { CircleArtifact, CircleName } from '~components/circleArtifact'
 import BlockWrapper from '~components/blockWrapper'
 import SectionLabel from '../sectionLabel'
 import SectionTitle from '../sectionTitle'
 import GlassesImage from './glassesImage'
-
-const textColor = getTextColor()
-
-const styles = {
-  root: {
-    display: 'flex',
-    paddingBottom: 100,
-    position: 'relative' as const,
-    marginTop: 195,
-  },
-  wrapper: {
-    display: 'flex',
-    flexDirection: 'column' as const,
-    alignItems: 'center',
-    textAlign: 'center' as const,
-  },
-  subTitle: {
-    fontSize: 15,
-    fontWeight: 500,
-    lineHeight: '182.3%',
-    textAlign: 'center' as const,
-    marginTop: 22,
-    color: textColor.sub,
-    maxWidth: 610,
-  },
-}
+import integrationsStyles from './Integrations.module.css'
 
 export default function Integrations(): ReactElement<any, any> {
   return (
-    <div style={styles.root}>
+    <div className={integrationsStyles.root}>
       <BlockWrapper>
-        <div style={styles.wrapper}>
+        <div className={integrationsStyles.wrapper}>
           <SectionLabel text='INTEGRATIONS' />
           <SectionTitle text='Google Glass Remote Advisor' />
-          <div style={styles.subTitle}>
+          <div className={integrationsStyles.subTitle}>
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
             sint. Velit officia consequat duis enim velit mollit. Exercitation
             veniam consequat sunt nostrud amet.
@@ -102,17 +76,7 @@ export default function Integrations(): ReactElement<any, any> {
           />
         </div>
       </BlockWrapper>
-      <div
-        style={{
-          position: 'absolute',
-          bottom: 0,
-          width: '100%',
-          height: 764,
-          background:
-            'linear-gradient(180deg, rgba(246, 249, 251, 0) 0%, #F5F8FB 100%)',
-          zIndex: -1,
-        }}
-      ></div>
+      <div className={integrationsStyles.backgroundCover}></div>
     </div>
   )
 }
