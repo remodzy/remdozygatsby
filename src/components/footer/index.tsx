@@ -1,59 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
+
+import { DeviceDetectContext } from '../layout'
 import Logo from '../logo'
-import { getTextColor } from '~utils/colors'
 import Icon from '../icons'
 import DotsArtifact from '../dot'
 import BlockWrapper from '../blockWrapper'
 import footerStyles from './Footer.module.css'
 import FooterLink from './FooterLink'
 
-const textColors = getTextColor()
-
-const styles = {
-  root: {
-    position: 'relative' as const,
-  },
-  container: {
-    display: 'flex',
-    paddingBottom: 80,
-  },
-  linksContainer: {
-    display: 'flex',
-    paddingLeft: 240,
-  },
-  linkColumn: {
-    display: 'flex',
-    flexDirection: 'column' as const,
-    marginRight: 130,
-  },
-  columnTitle: {
-    fontSize: 23,
-    fontWeight: 600,
-    lineHeight: '31px',
-    color: textColors.main,
-    paddingBottom: 24,
-  },
-  link: {
-    fontWeight: 500,
-    fontSize: 16,
-    lineHeight: '22px',
-    color: textColors.sub,
-    marginTop: 26,
-    textDecoration: 'none',
-  },
-  backToTop: {
-    fontWeight: 500,
-    fontSize: 14,
-    lineHeight: '19px',
-  },
-}
-
 export default function Footer() {
+  const { isMobile } = useContext(DeviceDetectContext)
   return (
     <footer className={footerStyles.root}>
       <BlockWrapper
         styleWrapper={{
-          padding: '60px 8.75%',
+          padding: isMobile ? '80px 18px 50px' : '60px 8.75%',
         }}
       >
         <div className={footerStyles.container}>
@@ -82,13 +43,7 @@ export default function Footer() {
           </div>
         </div>
         <hr />
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}
-        >
+        <div className={footerStyles.copyrightContainer}>
           <span>© {new Date().getFullYear()}, Remodzy LLC.</span>
           <span className={footerStyles.backToTop}>
             <Icon name='arrowTop' />
@@ -96,6 +51,52 @@ export default function Footer() {
           </span>
         </div>
       </BlockWrapper>
+      {isMobile ? <MobileArtifacts /> : DesktopArtifacts}
+    </footer>
+  )
+}
+
+function MobileArtifacts() {
+  return (
+    <>
+      <DotsArtifact
+        top={29}
+        right={33}
+        columns={8}
+        gap={15.9}
+        size={3.34}
+        // prettier-ignore
+        list={[
+        0,1,1,0,0,0,0,0,
+        0,0,0,0,0,0,1,0,
+        0,0,0,1,0,0,1,0,
+        1,0,0,0,0,0,0,0,
+      ]}
+      />
+      <DotsArtifact
+        top={357}
+        right={65}
+        columns={4}
+        gap={16.4}
+        size={3.44}
+        // prettier-ignore
+        list={[
+        1,0,0,0,
+        0,0,0,1,
+        0,1,0,1,
+        0,0,0,0,
+        0,0,0,0,
+        0,0,0,0,
+        0,1,1,0,
+        0,0,0,0,
+      ]}
+      />
+    </>
+  )
+}
+function DesktopArtifacts() {
+  return (
+    <>
       <DotsArtifact
         top={151}
         left={11}
@@ -104,15 +105,15 @@ export default function Footer() {
         size={3.99}
         // prettier-ignore
         list={[
-          0,0,0,
-          0,0,1,
-          0,0,1,
-          1,0,0,
-          0,0,0,
-          0,0,0,
-          1,1,0,
-          0,0,0,
-        ]}
+        0,0,0,
+        0,0,1,
+        0,0,1,
+        1,0,0,
+        0,0,0,
+        0,0,0,
+        1,1,0,
+        0,0,0,
+      ]}
       />
       <DotsArtifact
         top={98}
@@ -122,12 +123,12 @@ export default function Footer() {
         gap={18.71}
         // prettier-ignore
         list={[
-          0,1,1,0,0,
-          0,0,0,0,0,
-          0,0,0,1,0,
-          1,0,0,0,0,
-        ]}
+        0,1,1,0,0,
+        0,0,0,0,0,
+        0,0,0,1,0,
+        1,0,0,0,0,
+      ]}
       />
-    </footer>
+    </>
   )
 }
