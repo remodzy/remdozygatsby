@@ -12,6 +12,7 @@ export default function PrimaryImage(): ReactElement<any, any> {
             # Makes it trivial to update as your page's design changes.
             fluid(maxWidth: 1290) {
               ...GatsbyImageSharpFluid_noBase64
+              ...GatsbyImageSharpFluidLimitPresentationSize
             }
           }
         }
@@ -20,9 +21,6 @@ export default function PrimaryImage(): ReactElement<any, any> {
   )
 
   return (
-    <Img
-      fluid={data.file.childImageSharp.fluid}
-      style={{ width: '100%', maxWidth: 1290 }}
-    />
+    <Img fluid={data.file.childImageSharp.fluid} style={{ width: '100%' }} />
   )
 }

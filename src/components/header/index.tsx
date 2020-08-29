@@ -1,52 +1,36 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useContext } from 'react'
 import { Link } from 'gatsby'
 
+import { login } from '~utils/auth'
+
+import { DeviceDetectContext } from '../layout'
 import Logo from '../logo'
 import HeaderMenu from '../headerMenu'
-import Button from '../button'
 import LinkButton from '../linkButton'
-import { login } from '../../utils/auth'
+import Button from '../button'
+import headerStyles from './Header.module.css'
 
 const Header = () => {
+  const { isMobile } = useContext(DeviceDetectContext)
+
   const handleLogin = useCallback(() => {
     login()
   }, [])
   return (
-    <header
-      style={{
-        background: `#ffffff`,
-        marginBottom: `1.45rem`,
-        boxShadow: `0px 4px 20px rgba(179, 192, 213, 0.25)`,
-      }}
-    >
-      <div
+    <header className={headerStyles.root}>
+      <Link
+        to='/'
         style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          margin: `0 auto`,
-          maxWidth: 1600,
-          padding: `1.45rem 1.0875rem`,
+          color: `white`,
+          textDecoration: `none`,
         }}
       >
-        <Link
-          to='/'
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          <Logo />
-        </Link>
-        <HeaderMenu />
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-          }}
-        >
-          <div style={{ marginRight: 32 }}>
+        <Logo />
+      </Link>
+      <HeaderMenu />
+      {!isMobile && (
+        <div className={headerStyles.buttonsContainer}>
+          <div className={headerStyles.loginContainer}>
             <LinkButton label='Log In' handleClick={handleLogin} />
           </div>
           <Button
@@ -55,7 +39,7 @@ const Header = () => {
             handleClick={() => {}}
           />
         </div>
-      </div>
+      )}
     </header>
   )
 }

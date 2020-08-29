@@ -1,0 +1,8 @@
+.root {
+  width: 100%;
+}
+.wrapper {
+  margin: 0 auto;
+  max-width: 1600px;
+  position: relative;
+}

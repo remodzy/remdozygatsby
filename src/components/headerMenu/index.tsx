@@ -1,43 +1,64 @@
-import React from 'react'
+import React, { useContext, useState, useCallback } from 'react'
 import { Link } from 'gatsby'
-import { getColor } from '../../utils/colors'
 
-const linkColor = getColor({
-  group: 'main',
-  color: 'text',
-})
+import { DeviceDetectContext } from '../layout'
+import IconButton from '../iconButton'
 
-const styles = {
-  root: {
-    display: 'flex',
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    maxWidth: 516,
-  },
-  link: {
-    textDecoration: `none`,
-    color: linkColor.main,
-    fontSize: 16,
-    fontWeight: 500,
-  },
+import headerMenuStyles from './HeaderMenu.module.css'
+import FloatMenu from './FloatMenu'
+import MenuToggle from './MenuToggle'
+
+export type MenuItem = {
+  link: string
+  text: string
 }
 
-export default function HeaderMenu() {
+const menuList: MenuItem[] = [
+  {
+    link: 'home',
+    text: 'Products',
+  },
+  {
+    link: 'home',
+    text: 'Integrations',
+  },
+  {
+    link: 'home',
+    text: 'Pricing',
+  },
+  {
+    link: 'home',
+    text: 'Blog',
+  },
+]
+
+type Props = {
+  handleLogin: () => void
+}
+
+export default function HeaderMenu({ handleLogin }: Props) {
+  const [show, setShow] = useState(false)
+  const { isMobile } = useContext(DeviceDetectContext)
+  const handleClick = useCallback(() => {
+    setShow(!show)
+  }, [show])
+
+  if (isMobile) {
+    return (
+      <>
+        <MenuToggle show={show} handleClick={handleClick} />
+        {show && <FloatMenu menuList={menuList} handleLogin={handleLogin} />}
+      </>
+    )
+  }
+
   return (
-    <div style={styles.root}>
-      <Link style={styles.link} to="home">
-        Products
-      </Link>
-      <Link style={styles.link} to="home">
-        Integrations
-      </Link>
-      <Link style={styles.link} to="home">
-        Pricing
-      </Link>
-      <Link style={styles.link} to="home">
-        Blog
-      </Link>
+    <div className={headerMenuStyles.root}>
+      {menuList.map(item => (
+        <Link className={headerMenuStyles.link} to={item.link}>
+          {item.text}
+        </Link>
+      ))}
     </div>
   )
 }

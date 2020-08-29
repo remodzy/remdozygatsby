@@ -1,67 +1,23 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Img, { FluidObject } from 'gatsby-image'
 
-import { getTextColor } from '~utils/colors'
 import { CircleArtifact, CircleName } from '~components/circleArtifact'
 import DotsArtifact from '~components/dot'
 import BlockWrapper from '~components/blockWrapper'
 
 import SectionLabel from '../sectionLabel'
 import SectionTitle from '../sectionTitle'
-
-const textColors = getTextColor()
-
-const styles = {
-  root: { paddingTop: 155, position: 'relative' as const },
-  itemsContainer: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    padding: '100px 10%',
-  },
-  text: {
-    fontSize: '1.2rem',
-    fontWeight: 500,
-    lineHeight: '31px',
-    textAlign: 'center' as const,
-    color: textColors.main,
-    maxWidth: 306,
-  },
-}
+import { Item } from './item'
+import styles from './HowItWorks.module.css'
 
 export default function HowItWorks() {
-  const images = useStaticQuery(graphql`
-    query {
-      first: file(relativePath: { eq: "landing/integrations-1.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 239) {
-            ...GatsbyImageSharpFluid_noBase64
-          }
-        }
-      }
-      second: file(relativePath: { eq: "landing/integrations-2.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 239) {
-            ...GatsbyImageSharpFluid_noBase64
-          }
-        }
-      }
-      third: file(relativePath: { eq: "landing/integrations-3.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 239) {
-            ...GatsbyImageSharpFluid_noBase64
-          }
-        }
-      }
-    }
-  `)
+  const images = useStaticQuery(query)
   return (
-    <div style={styles.root}>
+    <div className={styles.root}>
       <BlockWrapper>
         <SectionLabel text='How it works' color='warning' />
         <SectionTitle text='How Remodzy Service works' />
-        <div style={styles.itemsContainer}>
+        <div className={styles.itemsContainer}>
           <Item
             image={images.first}
             size={239}
@@ -127,30 +83,28 @@ export default function HowItWorks() {
   )
 }
 
-type ItemProps = {
-  image: {
-    childImageSharp: {
-      fluid: FluidObject
+const query = graphql`
+  query {
+    first: file(relativePath: { eq: "landing/integrations-1.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 239) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    second: file(relativePath: { eq: "landing/integrations-2.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 239) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    third: file(relativePath: { eq: "landing/integrations-3.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 239) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
     }
   }
-  text: string
-  size: number
-}
-
-function Item({ image, text, size }: ItemProps) {
-  return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-      }}
-    >
-      <Img
-        fluid={image.childImageSharp.fluid}
-        style={{ width: '100%', maxWidth: size }}
-      />
-      <div style={styles.text}>{text}</div>
-    </div>
-  )
-}
+`

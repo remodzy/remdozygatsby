@@ -1,101 +1,14 @@
-import React, { ReactElement } from 'react'
+import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
 
-import { getTextColor } from '~utils/colors'
-import IconWrapper from '../service/components/IconWrapper'
-
-const textColors = getTextColor()
-
-const styles = {
-  root: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-    gap: '60px 100px',
-    justifyContent: 'center',
-    marginTop: 90,
-    padding: '0 240px',
-  },
-}
+import featureListStyles from './FeatureList.module.css'
+import { FeatureItem } from './featureItem'
 
 export default function FeatureList() {
-  const images = useStaticQuery(
-    graphql`
-      query {
-        scheduling: file(relativePath: { eq: "landing/icons/scheduling.png" }) {
-          childImageSharp {
-            fixed(width: 24) {
-              ...GatsbyImageSharpFixed_noBase64
-            }
-          }
-        }
-        dispatching: file(
-          relativePath: { eq: "landing/icons/dispatching.png" }
-        ) {
-          childImageSharp {
-            fixed(width: 26) {
-              ...GatsbyImageSharpFixed_noBase64
-            }
-          }
-        }
-        management: file(relativePath: { eq: "landing/icons/management.png" }) {
-          childImageSharp {
-            fixed(width: 26) {
-              ...GatsbyImageSharpFixed_noBase64
-            }
-          }
-        }
-        notifications: file(
-          relativePath: { eq: "landing/icons/notifications.png" }
-        ) {
-          childImageSharp {
-            fixed(width: 26) {
-              ...GatsbyImageSharpFixed_noBase64
-            }
-          }
-        }
-        technicalStatus: file(
-          relativePath: { eq: "landing/icons/technical-status.png" }
-        ) {
-          childImageSharp {
-            fixed(width: 26) {
-              ...GatsbyImageSharpFixed_noBase64
-            }
-          }
-        }
-        proofService: file(
-          relativePath: { eq: "landing/icons/proof-service.png" }
-        ) {
-          childImageSharp {
-            fixed(width: 24) {
-              ...GatsbyImageSharpFixed_noBase64
-            }
-          }
-        }
-        customerNotifications: file(
-          relativePath: { eq: "landing/icons/customer-notifications.png" }
-        ) {
-          childImageSharp {
-            fixed(width: 27) {
-              ...GatsbyImageSharpFixed_noBase64
-            }
-          }
-        }
-        multiVisit: file(
-          relativePath: { eq: "landing/icons/multi-visit.png" }
-        ) {
-          childImageSharp {
-            fixed(width: 28) {
-              ...GatsbyImageSharpFixed_noBase64
-            }
-          }
-        }
-      }
-    `
-  )
+  const images = useStaticQuery(query)
 
   return (
-    <div style={styles.root}>
+    <div className={featureListStyles.root}>
       <FeatureItem
         image={images.scheduling.childImageSharp.fixed}
         title='Simple Scheduling'
@@ -140,42 +53,71 @@ export default function FeatureList() {
   )
 }
 
-const itemStyles = {
-  root: {},
-  title: {
-    fontSize: 23,
-    lineHeight: '31px',
-    fontWeight: 600,
-    color: textColors.main,
-    marginTop: 24,
-  },
-  text: {
-    fontSize: 15,
-    fontWeight: 500,
-    lineHeight: '182.3%',
-    color: textColors.sub,
-    marginTop: 16,
-  },
-}
-
-type ItemProps = {
-  title: string
-  text: string
-  image: any
-}
-
-function FeatureItem({
-  title,
-  text,
-  image,
-}: ItemProps): ReactElement<any, any> {
-  return (
-    <div style={itemStyles.root}>
-      <IconWrapper color='hsla(226, 74%, 59%, 0.2)'>
-        <Img fixed={image} alt={title} />
-      </IconWrapper>
-      <div style={itemStyles.title}>{title}</div>
-      <div style={itemStyles.text}>{text}</div>
-    </div>
-  )
-}
+const query = graphql`
+  query {
+    scheduling: file(relativePath: { eq: "landing/icons/scheduling.png" }) {
+      childImageSharp {
+        fixed(width: 24) {
+          ...GatsbyImageSharpFixed_noBase64
+        }
+      }
+    }
+    dispatching: file(relativePath: { eq: "landing/icons/dispatching.png" }) {
+      childImageSharp {
+        fixed(width: 26) {
+          ...GatsbyImageSharpFixed_noBase64
+        }
+      }
+    }
+    management: file(relativePath: { eq: "landing/icons/management.png" }) {
+      childImageSharp {
+        fixed(width: 26) {
+          ...GatsbyImageSharpFixed_noBase64
+        }
+      }
+    }
+    notifications: file(
+      relativePath: { eq: "landing/icons/notifications.png" }
+    ) {
+      childImageSharp {
+        fixed(width: 26) {
+          ...GatsbyImageSharpFixed_noBase64
+        }
+      }
+    }
+    technicalStatus: file(
+      relativePath: { eq: "landing/icons/technical-status.png" }
+    ) {
+      childImageSharp {
+        fixed(width: 26) {
+          ...GatsbyImageSharpFixed_noBase64
+        }
+      }
+    }
+    proofService: file(
+      relativePath: { eq: "landing/icons/proof-service.png" }
+    ) {
+      childImageSharp {
+        fixed(width: 24) {
+          ...GatsbyImageSharpFixed_noBase64
+        }
+      }
+    }
+    customerNotifications: file(
+      relativePath: { eq: "landing/icons/customer-notifications.png" }
+    ) {
+      childImageSharp {
+        fixed(width: 27) {
+          ...GatsbyImageSharpFixed_noBase64
+        }
+      }
+    }
+    multiVisit: file(relativePath: { eq: "landing/icons/multi-visit.png" }) {
+      childImageSharp {
+        fixed(width: 28) {
+          ...GatsbyImageSharpFixed_noBase64
+        }
+      }
+    }
+  }
+`

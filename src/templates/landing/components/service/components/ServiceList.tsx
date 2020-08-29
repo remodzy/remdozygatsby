@@ -9,8 +9,8 @@ export type ListItem = {
   title: string
   text: string
   paddingTop?: number
-  paddingRight?: number
-  paddingLeft?: number
+  paddingRight?: string
+  paddingLeft?: string
   color: {
     group: string
     color: string
@@ -47,6 +47,7 @@ const query = graphql`
       childImageSharp {
         fluid(maxWidth: 696) {
           ...GatsbyImageSharpFluid_noBase64
+          ...GatsbyImageSharpFluidLimitPresentationSize
         }
       }
     }
@@ -56,6 +57,7 @@ const query = graphql`
       childImageSharp {
         fluid(maxWidth: 199) {
           ...GatsbyImageSharpFluid_noBase64
+          ...GatsbyImageSharpFluidLimitPresentationSize
         }
       }
     }
@@ -63,6 +65,7 @@ const query = graphql`
       childImageSharp {
         fluid(maxWidth: 766) {
           ...GatsbyImageSharpFluid_noBase64
+          ...GatsbyImageSharpFluidLimitPresentationSize
         }
       }
     }
@@ -70,6 +73,7 @@ const query = graphql`
       childImageSharp {
         fluid(maxWidth: 789) {
           ...GatsbyImageSharpFluid_noBase64
+          ...GatsbyImageSharpFluidLimitPresentationSize
         }
       }
     }
@@ -78,6 +82,7 @@ const query = graphql`
       childImageSharp {
         fluid(maxWidth: 682) {
           ...GatsbyImageSharpFluid_noBase64
+          ...GatsbyImageSharpFluidLimitPresentationSize
         }
       }
     }
@@ -86,6 +91,7 @@ const query = graphql`
       childImageSharp {
         fluid(maxWidth: 754) {
           ...GatsbyImageSharpFluid_noBase64
+          ...GatsbyImageSharpFluidLimitPresentationSize
         }
       }
     }

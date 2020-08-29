@@ -16,13 +16,13 @@ export default function Landing() {
   return (
     <div style={styles.root}>
       <PrimaryBlock />
-      <Service />
+      {/* <Service />
       <Integrations />
       <HowItWorks />
       <Benefits />
       <Blog />
       <Testimonials />
-      <BlueBlock />
+      <BlueBlock /> */}
     </div>
   )
 }

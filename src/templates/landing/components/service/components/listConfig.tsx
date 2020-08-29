@@ -19,13 +19,13 @@ export function getConfigList(): ListItem[] {
       },
       buttonLabel: 'Learn More',
       imageSize: 766,
-      paddingRight: 72,
+      paddingRight: '4.5%',
       OutArtifacts: () => <></>,
       InArtifacts: () => (
         <>
           <DotsArtifact
             top={-3}
-            right={85}
+            right='5.3125%'
             columns={8}
             // prettier-ignore
             list={[
@@ -46,7 +46,7 @@ export function getConfigList(): ListItem[] {
             top={600}
           />
           <DotsArtifact
-            left={697}
+            left='43.5625%'
             bottom={25}
             columns={4}
             // prettier-ignore
@@ -76,11 +76,11 @@ export function getConfigList(): ListItem[] {
       buttonLabel: 'Learn More',
       imageSize: 789,
       paddingTop: 172,
-      paddingLeft: 118,
+      paddingLeft: '7.375%',
       OutArtifacts: () => (
         <DotsArtifact
           top={172}
-          right={26}
+          right='1.625%'
           columns={4}
           size={4.71}
           gap={22.45}
@@ -97,7 +97,7 @@ export function getConfigList(): ListItem[] {
         <>
           <DotsArtifact
             top={20}
-            left={98}
+            left='6.125%'
             columns={8}
             size={6.75}
             gap={32.15}
@@ -111,7 +111,7 @@ export function getConfigList(): ListItem[] {
           />
           <DotsArtifact
             top={540}
-            right={710}
+            right='44.375%'
             columns={4}
             size={3.69}
             gap={17.57}
@@ -148,12 +148,12 @@ export function getConfigList(): ListItem[] {
       },
       buttonLabel: 'Learn More',
       paddingTop: 207,
-      paddingRight: 50,
+      paddingRight: '3.125%',
       imageSize: 682,
       OutArtifacts: () => (
         <DotsArtifact
           top={468}
-          left={24}
+          left='1.5%'
           columns={3}
           size={6.71}
           gap={31.97}
@@ -174,7 +174,7 @@ export function getConfigList(): ListItem[] {
         <>
           <DotsArtifact
             top={-21}
-            left={1100}
+            left='68.75%'
             columns={8}
             size={4.28}
             gap={20.04}
@@ -225,7 +225,7 @@ export function getConfigList(): ListItem[] {
       OutArtifacts: () => (
         <DotsArtifact
           top={389}
-          right={45}
+          right='2.8125%'
           columns={2}
           size={8.11}
           gap={38.65}
@@ -246,7 +246,7 @@ export function getConfigList(): ListItem[] {
         <>
           <DotsArtifact
             top={110}
-            left={20}
+            left='1.25%'
             columns={8}
             size={4.28}
             gap={20.4}
@@ -260,7 +260,7 @@ export function getConfigList(): ListItem[] {
           />
           <DotsArtifact
             top={490}
-            left={470}
+            left='29.375%'
             columns={4}
             size={4.28}
             gap={20.4}
@@ -304,7 +304,7 @@ function MapIcon1() {
       style={{
         position: 'absolute',
         top: 0,
-        left: 1006,
+        left: '62.875%',
         filter,
       }}
     >
@@ -330,7 +330,7 @@ function MapIcon2() {
     <div
       style={{
         position: 'absolute',
-        left: 1026,
+        left: '64.125%',
         bottom: 19,
         filter,
       }}
@@ -357,7 +357,7 @@ function MapIcon3() {
     <div
       style={{
         position: 'absolute',
-        left: 1337,
+        left: '83.5625%',
         bottom: 91,
         filter,
       }}

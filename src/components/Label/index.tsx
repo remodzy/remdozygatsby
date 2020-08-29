@@ -1,17 +1,11 @@
 import React from 'react'
 
-const styles = {
-  root: {
-    fontSize: 12,
-    lineHeight: '16px',
-    color: '#A9B2BB',
-  },
-}
+import labelStyles from './Label.module.css'
 
 type Props = {
   text: string
 }
 
 export default function Label({ text }: Props) {
-  return <span style={styles.root}>{text}</span>
+  return <span className={labelStyles.root}>{text}</span>
 }

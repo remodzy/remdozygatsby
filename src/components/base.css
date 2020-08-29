@@ -1,8 +1,13 @@
+:root {
+  --main-text-color: #091f3e;
+  --second-text-color: #6c7787;
+}
+
 body {
   font-family: 'Manrope', sans-serif;
   font-size: 1em;
   line-height: 1.65;
-  color: #22344b;
+  color: var(--main-text-color);
   background: #ffffff;
   margin: 0;
 }
