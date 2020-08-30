@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
-import { getColor } from '../../../../utils/colors'
-import Button from '../../../../components/button'
-import DotsArtifact from '../../../../components/dot'
+import { getColor } from '~utils/colors'
+import Button from '~components/button'
+import DotsArtifact from '~components/dot'
+import { DeviceDetectContext } from '~components/layout'
+
 import blueBlockStyles from './BlueBlock.module.css'
+
 const colors = getColor({ group: 'main', color: 'primary' })
 
 export default function BlueBlock() {
+  const { isMobile } = useContext(DeviceDetectContext)
   return (
     <div className={blueBlockStyles.root}>
       <div className={blueBlockStyles.wrapper}>
@@ -14,23 +18,102 @@ export default function BlueBlock() {
           Field service management software
         </div>
         <div className={blueBlockStyles.form}>
-          <input
-            type='text'
-            name='email'
-            id='email'
-            className={blueBlockStyles.input}
-            placeholder='Enter your email'
-          />
-          <Button
-            label='Get Started'
-            colors={{
-              background: '#ffffff',
-              text: colors.main,
-            }}
-            handleClick={() => {}}
-          />
+          <div className={blueBlockStyles.inputWrapper}>
+            <input
+              type='text'
+              name='email'
+              id='email'
+              className={blueBlockStyles.input}
+              placeholder='Enter your email'
+            />
+          </div>
+          <div className={blueBlockStyles.buttonWrapper}>
+            <Button
+              label='Get Started'
+              colors={{
+                background: '#ffffff',
+                text: colors.main,
+              }}
+              handleClick={() => {}}
+            />
+          </div>
         </div>
       </div>
+      {isMobile ? <MobileArtifacts /> : <DesktopArtifacts />}
+    </div>
+  )
+}
+
+function MobileArtifacts() {
+  return (
+    <>
+      <DotsArtifact
+        top={9}
+        left={10}
+        columns={3}
+        size={2.79}
+        gap={13.29}
+        background={{
+          default: '#ffffff',
+          primary: 'hsla(0,0%,100%,0.6)',
+        }}
+        zIndex={1}
+        opacity={0.2}
+        // prettier-ignore
+        list={[
+      0,0,0,
+      0,0,0,
+      0,0,0,
+      0,0,0,
+      0,0,0,
+    ]}
+      />
+      <DotsArtifact
+        top={33}
+        right={10}
+        columns={3}
+        size={3.57}
+        gap={17.01}
+        background={{
+          default: '#ffffff',
+          primary: 'hsla(0,0%,100%,0.6)',
+        }}
+        zIndex={1}
+        opacity={0.2}
+        // prettier-ignore
+        list={[
+      0,0,0,
+      0,0,0,
+      0,0,0,
+      0,0,0,
+    ]}
+      />
+      <DotsArtifact
+        bottom={9}
+        left={9}
+        columns={6}
+        size={3.01}
+        gap={14.33}
+        background={{
+          default: '#ffffff',
+          primary: 'hsla(0,0%,100%,0.6)',
+        }}
+        zIndex={1}
+        opacity={0.2}
+        // prettier-ignore
+        list={[
+      0,0,0,0,0,0,
+      0,0,0,0,0,0,
+      0,0,0,0,0,0,
+    ]}
+      />
+    </>
+  )
+}
+
+function DesktopArtifacts() {
+  return (
+    <>
       <DotsArtifact
         top={17}
         left={95}
@@ -45,11 +128,11 @@ export default function BlueBlock() {
         opacity={0.2}
         // prettier-ignore
         list={[
-          0,1,0,0,
-          1,0,0,0,
-          0,0,1,0,
-          0,0,0,0,
-        ]}
+      0,1,0,0,
+      1,0,0,0,
+      0,0,1,0,
+      0,0,0,0,
+    ]}
       />
       <DotsArtifact
         top={238}
@@ -65,12 +148,12 @@ export default function BlueBlock() {
         opacity={0.2}
         // prettier-ignore
         list={[
-          0,0,0,0,
-          0,1,0,0,
-          0,0,0,1,
-          0,0,1,0,
-          0,0,0,0,
-        ]}
+      0,0,0,0,
+      0,1,0,0,
+      0,0,0,1,
+      0,0,1,0,
+      0,0,0,0,
+    ]}
       />
       <DotsArtifact
         top={189}
@@ -86,12 +169,12 @@ export default function BlueBlock() {
         opacity={0.2}
         // prettier-ignore
         list={[
-          0,0,1,0,0,
-          0,0,0,1,0,
-          0,1,0,0,0,
-          0,0,0,0,0,
-        ]}
+      0,0,1,0,0,
+      0,0,0,1,0,
+      0,1,0,0,0,
+      0,0,0,0,0,
+    ]}
       />
-    </div>
+    </>
   )
 }

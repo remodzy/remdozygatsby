@@ -22,3 +22,14 @@
       'a . c';
   }
 }
+
+@media (max-width: 320px) {
+  .root {
+    padding: 0;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      'b e'
+      'd a'
+      'c c';
+  }
+}

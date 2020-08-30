@@ -21,8 +21,8 @@ export default function Landing() {
       <HowItWorks />
       <Benefits />
       <Blog />
-      <Testimonials />
-      <BlueBlock /> */}
+      <Testimonials /> */}
+      <BlueBlock />
     </div>
   )
 }
