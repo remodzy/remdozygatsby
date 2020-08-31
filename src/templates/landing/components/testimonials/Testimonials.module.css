@@ -37,3 +37,19 @@
   line-height: 182.3%;
   color: var(--second-text-color);
 }
+
+@media (max-width: 768px) {
+  .text {
+    font-size: 23px;
+    line-height: 170.1%;
+  }
+  .author {
+    font-size: 20px;
+    line-height: 27px;
+  }
+
+  .work {
+    font-size: 15px;
+    line-height: 182.3%;
+  }
+}

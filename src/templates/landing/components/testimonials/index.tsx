@@ -31,7 +31,7 @@ export default function Testimonials() {
             <div className={testimonialsStyles.work}>CEO, Dell</div>
           </div>
           <div>
-            <Img fixed={images.first.childImageSharp.fixed} />
+            <Img fluid={images.first.childImageSharp.fluid} />
           </div>
         </div>
         <DotsArtifact
@@ -102,17 +102,18 @@ const query = graphql`
   query {
     first: file(relativePath: { eq: "landing/testimonials-1.png" }) {
       childImageSharp {
-        fixed(width: 724, height: 570) {
-          ...GatsbyImageSharpFixed_withWebp_noBase64
+        fluid(maxWidth: 724) {
+          ...GatsbyImageSharpFluid_noBase64
+          ...GatsbyImageSharpFluidLimitPresentationSize
         }
       }
     }
-    second: file(relativePath: { eq: "landing/testimonials-2.png" }) {
-      childImageSharp {
-        fixed(width: 170) {
-          ...GatsbyImageSharpFixed_noBase64
-        }
-      }
-    }
+    # second: file(relativePath: { eq: "landing/testimonials-2.png" }) {
+    #   childImageSharp {
+    #     fixed(width: 170) {
+    #       ...GatsbyImageSharpFixed_noBase64
+    #     }
+    #   }
+    # }
   }
 `
