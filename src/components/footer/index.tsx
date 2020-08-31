@@ -6,7 +6,7 @@ import Icon from '../icons'
 import DotsArtifact from '../dot'
 import BlockWrapper from '../blockWrapper'
 import FooterLink from './FooterLink'
-import footerStyles from './Footer.module.css'
+import footerStyles from './AppFooter.module.css'
 
 export default function Footer() {
   const { isMobile } = useContext(DeviceDetectContext)
