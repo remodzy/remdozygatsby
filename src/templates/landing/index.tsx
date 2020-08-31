@@ -20,8 +20,8 @@ export default function Landing() {
       <Integrations />
       <HowItWorks />
       <Benefits />
-      <Blog />
-      <Testimonials /> */}
+      <Blog /> */}
+      <Testimonials />
       <BlueBlock />
     </div>
   )
