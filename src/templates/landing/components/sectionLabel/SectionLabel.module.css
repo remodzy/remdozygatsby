@@ -5,3 +5,10 @@
   text-transform: uppercase;
   color: var(--main-text-color);
 }
+
+@media (max-width: 768px) {
+  .root {
+    font-size: 13px;
+    line-height: 23px;
+  }
+}
