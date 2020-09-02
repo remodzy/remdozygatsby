@@ -1,5 +1,4 @@
-import React, { ReactElement } from 'react'
-import { isMobile } from 'react-device-detect'
+import React, { ReactElement, useEffect, useState } from 'react'
 
 import Header from '../header'
 import Footer from '../footer'
@@ -15,13 +14,22 @@ export const DeviceDetectContext = React.createContext({
   isMobile: false,
 })
 
+function detectMobileDevice() {
+  if (typeof window !== 'undefined') {
+    return window.innerWidth < 800
+  }
+  return false
+}
+
 export default function Layout({ children }: Props) {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    setIsMobile(detectMobileDevice())
+  })
+
   return (
-    <DeviceDetectContext.Provider
-      value={{
-        isMobile,
-      }}
-    >
+    <DeviceDetectContext.Provider value={{ isMobile }}>
       <SEO />
       <Header />
       <div>
