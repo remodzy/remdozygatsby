@@ -7,11 +7,27 @@
 .list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(328px, 1fr));
-  column-gap: 56px;
+  gap: 44px 56px;
   padding: 86px 234px 0;
 }
 .buttonContainer {
   display: flex;
   justify-content: center;
   margin-top: 80px;
+}
+
+@media (max-width: 768px) {
+  .list {
+    padding: 54px 4.8% 0;
+  }
+
+  .gatsby-image-wrapper {
+    max-width: 100%;
+  }
+
+  .buttonContainer {
+    margin-top: 0;
+    padding-top: 68px;
+    padding-bottom: 70px;
+  }
 }

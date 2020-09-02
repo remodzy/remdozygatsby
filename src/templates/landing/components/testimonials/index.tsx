@@ -67,6 +67,7 @@ function OutMobileArtifacts() {
       columns={4}
       size={2.79}
       gap={13.28}
+      zIndex={1}
       // prettier-ignore
       list={[
         1,0,0,0,

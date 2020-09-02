@@ -19,8 +19,8 @@ export default function Landing() {
       {/* <Service />
       <Integrations />
       <HowItWorks />
-      <Benefits />
-      <Blog /> */}
+      <Benefits /> */}
+      <Blog />
       <Testimonials />
       <BlueBlock />
     </div>
