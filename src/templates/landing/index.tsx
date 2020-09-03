@@ -18,8 +18,8 @@ export default function Landing() {
       <PrimaryBlock />
       {/* <Service />
       <Integrations />
-      <HowItWorks />
-      <Benefits /> */}
+      <HowItWorks /> */}
+      <Benefits />
       <Blog />
       <Testimonials />
       <BlueBlock />

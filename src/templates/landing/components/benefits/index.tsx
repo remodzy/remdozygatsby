@@ -1,50 +1,150 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import { CircleArtifact, CircleName } from '~components/circleArtifact'
 import DotsArtifact from '~components/dot'
 import BlockWrapper from '~components/blockWrapper'
+import { DeviceDetectContext } from '~components/layout'
 
 import SectionLabel from '../sectionLabel'
 import SectionTitle from '../sectionTitle'
 import FeatureList from './featureList'
-
-const styles = {
-  root: {
-    paddingTop: 150,
-    paddingBottom: 100,
-    position: 'relative' as const,
-  },
-}
+import benefitsStyles from './Benefits.module.css'
 
 export default function Benefits() {
+  const { isMobile } = useContext(DeviceDetectContext)
+
   return (
-    <div style={styles.root}>
+    <div className={benefitsStyles.root}>
       <BlockWrapper>
         <SectionLabel text='Benefits' color='primary' />
         <SectionTitle text='Features' />
         <FeatureList />
-        <CircleArtifact
-          name={CircleName.Green}
-          mainSize={64}
-          centerSize={11.43}
-          left='76.0625%'
-          top={-24}
-        />
-        <CircleArtifact
-          name={CircleName.Violet}
-          mainSize={24}
-          centerSize={4.29}
-          left='13.3125%'
-          top={60}
-        />
-        <CircleArtifact
-          name={CircleName.Purple}
-          mainSize={52}
-          centerSize={10.4}
-          top={849}
-          left='85.875%'
-        />
+        {isMobile ? <InMobileArtifacts /> : <InDesktopArtifacts />}
       </BlockWrapper>
+      {isMobile ? <OutMobileArtifacts /> : <OutDesktopArtifacts />}
+    </div>
+  )
+}
+
+function InMobileArtifacts() {
+  return (
+    <>
+      <DotsArtifact
+        top={90}
+        right={12.74}
+        columns={6}
+        size={3.9}
+        gap={18.57}
+        // prettier-ignore
+        list={[
+            0,1,1,0,0,0,
+            0,0,0,0,0,0,
+            0,0,0,1,0,0,
+            1,0,0,0,0,0,
+          ]}
+      />
+      <DotsArtifact
+        top={566}
+        right={12.74}
+        columns={2}
+        size={3.9}
+        gap={18.57}
+        // prettier-ignore
+        list={[
+            0,0,
+            0,1,
+            0,0,
+            0,0,
+            0,0,
+            1,0,
+            1,0,
+            0,0,
+          ]}
+      />
+      <DotsArtifact
+        top={1115}
+        right={15.16}
+        columns={3}
+        size={3.9}
+        gap={18.57}
+        // prettier-ignore
+        list={[
+            0,0,0,
+            0,1,0,
+            0,1,0,
+            0,0,0,
+          ]}
+      />
+      <CircleArtifact
+        name={CircleName.Violet}
+        mainSize={40}
+        centerSize={7.14}
+        left='53.33%'
+        top={846}
+      />
+      <CircleArtifact
+        name={CircleName.Purple}
+        mainSize={44}
+        centerSize={8.8}
+        left='94.13%'
+        top={1455}
+      />
+      <CircleArtifact
+        name={CircleName.Green}
+        mainSize={24}
+        centerSize={4.29}
+        left='62.4%'
+        top={1770}
+      />
+    </>
+  )
+}
+
+function OutMobileArtifacts() {
+  return (
+    <>
+      <CircleArtifact
+        name={CircleName.Green}
+        mainSize={24}
+        centerSize={4.29}
+        left='8%'
+        top={52}
+      />
+    </>
+  )
+}
+
+function InDesktopArtifacts() {
+  return (
+    <>
+      <CircleArtifact
+        name={CircleName.Green}
+        mainSize={64}
+        centerSize={11.43}
+        left='76.0625%'
+        top={-24}
+      />
+      <CircleArtifact
+        name={CircleName.Violet}
+        mainSize={24}
+        centerSize={4.29}
+        left='13.3125%'
+        top={60}
+      />
+      <CircleArtifact
+        name={CircleName.Purple}
+        mainSize={52}
+        centerSize={10.4}
+        top={849}
+        left='85.875%'
+      />
+    </>
+  )
+}
+
+function OutDesktopArtifacts() {
+  return (
+    <>
       <DotsArtifact
         top={516}
         left={26}
@@ -77,6 +177,6 @@ export default function Benefits() {
             1,0,
           ]}
       />
-    </div>
+    </>
   )
 }
