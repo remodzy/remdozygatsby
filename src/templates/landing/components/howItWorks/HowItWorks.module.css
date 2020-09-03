@@ -2,9 +2,16 @@
   padding-top: 155px;
   position: relative;
 }
+
 .itemsContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 100px 10%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 54px 18px;
+  gap: 44px 100px;
+}
+
+@media screen and (max-width: 768px) {
+  .root {
+    padding-top: 80px;
+  }
 }
