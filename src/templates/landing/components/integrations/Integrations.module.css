@@ -9,6 +9,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  padding: 0 18px;
 }
 .subTitle {
   font-size: 15px;
@@ -26,4 +27,20 @@
   height: 764px;
   background: linear-gradient(180deg, rgba(246, 249, 251, 0) 0%, #f5f8fb 100%);
   z-index: -1;
+}
+
+@media screen and (max-width: 768px) {
+  .root {
+    margin-top: 80px;
+    padding-bottom: 70px;
+  }
+
+  .backgroundCover {
+    height: 638px;
+    background: linear-gradient(
+      180deg,
+      rgba(246, 249, 251, 0) 0%,
+      #f5f8fb 100%
+    );
+  }
 }

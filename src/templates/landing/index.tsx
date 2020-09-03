@@ -16,8 +16,8 @@ export default function Landing() {
   return (
     <div style={styles.root}>
       <PrimaryBlock />
-      {/* <Service />
-      <Integrations /> */}
+      {/* <Service /> */}
+      <Integrations />
       <HowItWorks />
       <Benefits />
       <Blog />

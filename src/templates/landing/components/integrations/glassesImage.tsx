@@ -1,8 +1,11 @@
-import React, { ReactElement } from 'react'
+import React, { ReactElement, useContext } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
+import { DeviceDetectContext } from '~components/layout'
+
 export default function GlassesImage(): ReactElement<any, any> {
+  const { isMobile } = useContext(DeviceDetectContext)
   const data = useStaticQuery(query)
 
   return (
@@ -10,9 +13,8 @@ export default function GlassesImage(): ReactElement<any, any> {
       fluid={data.file.childImageSharp.fluid}
       style={{
         width: '100%',
-        // maxWidth: 664,
-        marginTop: 119,
-        marginBottom: 174,
+        marginTop: isMobile ? 90 : 119,
+        marginBottom: isMobile ? 100 : 174,
       }}
     />
   )

@@ -51,7 +51,7 @@ export default function Footer() {
           </span>
         </div>
       </BlockWrapper>
-      {isMobile ? <MobileArtifacts /> : DesktopArtifacts}
+      {isMobile ? <MobileArtifacts /> : <DesktopArtifacts />}
     </footer>
   )
 }

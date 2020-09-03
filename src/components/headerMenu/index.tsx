@@ -54,7 +54,7 @@ export default function HeaderMenu({ handleLogin }: Props) {
   return (
     <div className={headerMenuStyles.root}>
       {menuList.map(item => (
-        <Link className={headerMenuStyles.link} to={item.link}>
+        <Link key={item.text} className={headerMenuStyles.link} to={item.link}>
           {item.text}
         </Link>
       ))}
