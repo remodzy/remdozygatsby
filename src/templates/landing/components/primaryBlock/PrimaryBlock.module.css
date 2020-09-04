@@ -44,6 +44,7 @@
 @media (max-width: 768px) {
   .root {
     padding-top: 56px;
+    margin-bottom: 43px;
   }
   .primaryLabel {
     font-size: 30px;

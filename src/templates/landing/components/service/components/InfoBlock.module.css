@@ -1,6 +1,5 @@
 .root {
   max-width: 375px;
-  /* margin-bottom: 195px; */
   position: relative;
 }
 .title {
@@ -17,4 +16,18 @@
   color: var(--second-text-color);
   margin-top: 20px;
   margin-bottom: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  .root {
+    padding: 0 18px;
+  }
+  .title {
+    font-size: 20px;
+    line-height: 27px;
+    padding-right: 30%;
+  }
+  .text {
+    margin-bottom: 34px;
+  }
 }

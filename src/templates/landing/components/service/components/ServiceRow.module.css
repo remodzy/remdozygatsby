@@ -16,3 +16,24 @@
     #f5f8fb 98.08%
   );
 }
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px 60px;
+}
+
+@media screen and (max-width: 768px) {
+  .backgroundCover {
+    height: 643px;
+    background: linear-gradient(
+      102.33deg,
+      rgba(246, 249, 251, 0) 4.99%,
+      rgba(245, 248, 251, 0.21) 62.88%,
+      #f5f8fb 98.08%
+    );
+  }
+  .container {
+    padding-bottom: 40px;
+  }
+}

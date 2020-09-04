@@ -1,0 +1,4 @@
+.map {
+  position: absolute;
+  filter: drop-shadow(22px 26px 80px rgba(153, 174, 186, 0.25));
+}

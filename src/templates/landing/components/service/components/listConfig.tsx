@@ -3,8 +3,7 @@ import React from 'react'
 import { CircleArtifact, CircleName } from '~components/circleArtifact'
 import DotsArtifact from '~components/dot'
 import { ListItem } from './ServiceList'
-
-const filter = 'drop-shadow(22px 26px 80px rgba(153, 174, 186, 0.25))'
+import { MapIcon1, MapIcon2, MapIcon3 } from './MapIcons'
 
 export function getConfigList(): ListItem[] {
   return [
@@ -20,8 +19,37 @@ export function getConfigList(): ListItem[] {
       buttonLabel: 'Learn More',
       imageSize: 766,
       paddingRight: '4.5%',
-      OutArtifacts: () => <></>,
-      InArtifacts: () => (
+      OutMobileArtifacts: () => <></>,
+      InMobileArtifacts: () => (
+        <>
+          <MapIcon1 isMobile />
+          <MapIcon2 isMobile />
+          <MapIcon3 isMobile />
+          <DotsArtifact
+            top={290}
+            right='2.5%'
+            columns={5}
+            size={3}
+            gap={15.07}
+            // prettier-ignore
+            list={[
+              0,0,0,0,0,
+              0,1,0,0,1,
+              0,1,0,0,0,
+              0,0,0,0,0,
+            ]}
+          />
+          <CircleArtifact
+            name={CircleName.Green}
+            mainSize={30}
+            centerSize={6}
+            left='70.93%'
+            bottom={85}
+          />
+        </>
+      ),
+      OutDesktopArtifacts: () => <></>,
+      InDesktopArtifacts: () => (
         <>
           <DotsArtifact
             top={-3}
@@ -77,23 +105,72 @@ export function getConfigList(): ListItem[] {
       imageSize: 789,
       paddingTop: 172,
       paddingLeft: '7.375%',
-      OutArtifacts: () => (
-        <DotsArtifact
-          top={172}
-          right='1.625%'
-          columns={4}
-          size={4.71}
-          gap={22.45}
-          // prettier-ignore
-          list={[
+      OutMobileArtifacts: () => (
+        <>
+          <DotsArtifact
+            bottom={-28}
+            right='18.0453%'
+            columns={4}
+            size={3}
+            gap={14.04}
+            zIndex={1}
+            // prettier-ignore
+            list={[
+              1,0,0,0,
+              0,0,0,1,
+              0,0,0,1,
+              0,1,0,0,
+              0,0,0,0,
+              0,0,0,0,
+              0,1,1,0,
+              0,0,0,0,
+            ]}
+          />
+        </>
+      ),
+      InMobileArtifacts: () => (
+        <>
+          <DotsArtifact
+            top={250}
+            right='19.797%'
+            columns={8}
+            size={3}
+            gap={15.07}
+            // prettier-ignore
+            list={[
+              0,1,0,0,1,0,0,0,
+              0,1,0,0,0,0,0,0,
+              0,0,0,0,0,1,1,0,
+            ]}
+          />
+          <CircleArtifact
+            name={CircleName.Purple}
+            mainSize={54}
+            centerSize={10.8}
+            top={430}
+            left='92%'
+          />
+        </>
+      ),
+      OutDesktopArtifacts: () => (
+        <>
+          <DotsArtifact
+            bottom={284}
+            right={-27}
+            columns={4}
+            size={4.71}
+            gap={22.45}
+            // prettier-ignore
+            list={[
           0,1,1,0,
           0,0,0,0,
           0,0,0,1,
           1,0,0,0,
         ]}
-        />
+          />
+        </>
       ),
-      InArtifacts: () => (
+      InDesktopArtifacts: () => (
         <>
           <DotsArtifact
             top={20}
@@ -150,7 +227,33 @@ export function getConfigList(): ListItem[] {
       paddingTop: 207,
       paddingRight: '3.125%',
       imageSize: 682,
-      OutArtifacts: () => (
+      OutMobileArtifacts: () => <></>,
+      InMobileArtifacts: () => (
+        <>
+          <DotsArtifact
+            top={300}
+            left='34.408%'
+            columns={8}
+            size={3}
+            gap={14.04}
+            // prettier-ignore
+            list={[
+              0,0,0,0,0,0,0,0,
+              0,1,0,0,1,0,0,0,
+              0,1,0,0,0,0,0,0,
+              0,0,0,0,0,1,1,0,
+            ]}
+          />
+          <CircleArtifact
+            name={CircleName.Violet}
+            mainSize={38}
+            centerSize={6.79}
+            bottom={11}
+            left='70.4%'
+          />
+        </>
+      ),
+      OutDesktopArtifacts: () => (
         <DotsArtifact
           top={468}
           left='1.5%'
@@ -170,7 +273,7 @@ export function getConfigList(): ListItem[] {
           ]}
         />
       ),
-      InArtifacts: () => (
+      InDesktopArtifacts: () => (
         <>
           <DotsArtifact
             top={-21}
@@ -222,7 +325,51 @@ export function getConfigList(): ListItem[] {
       buttonLabel: 'Learn More',
       paddingTop: 109,
       imageSize: 754,
-      OutArtifacts: () => (
+      OutMobileArtifacts: () => (
+        <>
+          <CircleArtifact
+            name={CircleName.Purple}
+            mainSize={46}
+            centerSize={9.2}
+            bottom={-23}
+            left='65.33%'
+          />
+        </>
+      ),
+      InMobileArtifacts: () => (
+        <>
+          <DotsArtifact
+            top={68}
+            left='1.9947%'
+            columns={5}
+            size={4}
+            gap={16.12}
+            // prettier-ignore
+            list={[
+              0,0,0,0,1,
+              0,1,0,0,0,
+              0,0,0,0,0,
+              0,0,0,0,0,
+            ]}
+          />
+          <DotsArtifact
+            top={340}
+            right='2.6373%'
+            columns={7}
+            size={4}
+            gap={16.12}
+            zIndex={1}
+            // prettier-ignore
+            list={[
+              0,0,0,0,0,0,0,
+              0,1,0,0,1,0,0,
+              0,1,0,0,0,0,0,
+              0,0,0,0,0,1,1,
+            ]}
+          />
+        </>
+      ),
+      OutDesktopArtifacts: () => (
         <DotsArtifact
           top={389}
           right='2.8125%'
@@ -242,7 +389,7 @@ export function getConfigList(): ListItem[] {
           ]}
         />
       ),
-      InArtifacts: () => (
+      InDesktopArtifacts: () => (
         <>
           <DotsArtifact
             top={110}
@@ -296,85 +443,4 @@ export function getConfigList(): ListItem[] {
       ),
     },
   ]
-}
-
-function MapIcon1() {
-  return (
-    <div
-      style={{
-        position: 'absolute',
-        top: 0,
-        left: '62.875%',
-        filter,
-      }}
-    >
-      <svg
-        width='40'
-        height='40'
-        fill='none'
-        xmlns='http://www.w3.org/2000/svg'
-      >
-        <circle cx='20' cy='20' r='20' fill='#7177C2' />
-        <circle cx='19.999' cy='19.999' r='16.191' fill='#5A60A6' />
-        <path
-          d='M23.692 20.35a4.828 4.828 0 10-7.385 0l2.131 2.664a2 2 0 003.123 0l2.131-2.663zM20 15.73a1.513 1.513 0 110 3.025 1.513 1.513 0 010-3.026zM19.998 27.863c1.6 0 2.897-.433 2.897-.966 0-.533-1.297-.965-2.897-.965-1.6 0-2.896.432-2.896.965 0 .534 1.296.966 2.896.966z'
-          fill='#fff'
-        />
-      </svg>
-    </div>
-  )
-}
-
-function MapIcon2() {
-  return (
-    <div
-      style={{
-        position: 'absolute',
-        left: '64.125%',
-        bottom: 19,
-        filter,
-      }}
-    >
-      <svg
-        width='32'
-        height='32'
-        fill='none'
-        xmlns='http://www.w3.org/2000/svg'
-      >
-        <circle cx='16' cy='16' r='16' fill='#FE958C' />
-        <circle cx='15.999' cy='15.999' r='12.952' fill='#FC7266' />
-        <path
-          d='M18.953 16.28a3.862 3.862 0 10-5.908 0l1.392 1.741a2 2 0 003.124 0l1.392-1.74zM16 12.585a1.21 1.21 0 110 2.42 1.21 1.21 0 010-2.42zM15.997 22.291c1.28 0 2.317-.346 2.317-.773 0-.426-1.037-.772-2.317-.772-1.28 0-2.317.346-2.317.773 0 .426 1.037.772 2.317.772z'
-          fill='#fff'
-        />
-      </svg>
-    </div>
-  )
-}
-
-function MapIcon3() {
-  return (
-    <div
-      style={{
-        position: 'absolute',
-        left: '83.5625%',
-        bottom: 91,
-        filter,
-      }}
-    >
-      <svg
-        width='30'
-        height='30'
-        fill='none'
-        xmlns='http://www.w3.org/2000/svg'
-      >
-        <circle cx='15' cy='15' r='15' fill='#97BFAB' />
-        <circle cx='14.998' cy='15' r='12.143' fill='#5B9976' />
-        <path
-          d='M17.77 15.263a3.62 3.62 0 10-5.54 0l1.208 1.51a2 2 0 003.123 0l1.208-1.51zM15 11.797a1.135 1.135 0 110 2.27 1.135 1.135 0 010-2.27zM15 20.898c1.2 0 2.173-.325 2.173-.725 0-.4-.972-.724-2.172-.724-1.2 0-2.173.324-2.173.724 0 .4.973.725 2.173.725z'
-          fill='#fff'
-        />
-      </svg>
-    </div>
-  )
 }

@@ -8,21 +8,17 @@ import Blog from './components/blog'
 import Testimonials from './components/testimonials'
 import BlueBlock from './components/blueBlock'
 
-const styles = {
-  root: {},
-}
+const Landing = () => (
+  <div>
+    <PrimaryBlock />
+    <Service />
+    <Integrations />
+    <HowItWorks />
+    <Benefits />
+    <Blog />
+    <Testimonials />
+    <BlueBlock />
+  </div>
+)
 
-export default function Landing() {
-  return (
-    <div style={styles.root}>
-      <PrimaryBlock />
-      {/* <Service /> */}
-      <Integrations />
-      <HowItWorks />
-      <Benefits />
-      <Blog />
-      <Testimonials />
-      <BlueBlock />
-    </div>
-  )
-}
+export default Landing
