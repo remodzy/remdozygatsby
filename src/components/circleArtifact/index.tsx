@@ -10,7 +10,8 @@ export enum CircleName {
 type Props = {
   mainSize: number
   centerSize: number
-  top: number
+  top?: number
+  bottom?: number
   left: string
   name: CircleName
 }
@@ -30,7 +31,14 @@ type Style = {
   center: React.CSSProperties
 }
 
-function getStyles({ mainSize, centerSize, top, left, name }: Props): Style {
+function getStyles({
+  mainSize,
+  centerSize,
+  top,
+  bottom,
+  left,
+  name,
+}: Props): Style {
   const colors = getCircleColors(name)
   const root = {
     position: 'absolute' as const,
@@ -42,6 +50,7 @@ function getStyles({ mainSize, centerSize, top, left, name }: Props): Style {
     width: mainSize,
     height: mainSize,
     top,
+    bottom,
     left,
     background: colors.main,
   }

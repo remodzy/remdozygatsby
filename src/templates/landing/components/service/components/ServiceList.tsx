@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import ServiceRow from './ServiceRow'
 import { getConfigList } from './listConfig'
+import serviceListStyles from './ServiceList.module.css'
 
 export type ListItem = {
   key: string
@@ -17,14 +18,10 @@ export type ListItem = {
   }
   buttonLabel: string
   imageSize: number
-  OutArtifacts: () => ReactElement<any, any>
-  InArtifacts: () => ReactElement<any, any>
-}
-
-const styles = {
-  root: {
-    marginTop: 150,
-  },
+  OutDesktopArtifacts: () => ReactElement<any, any>
+  InDesktopArtifacts: () => ReactElement<any, any>
+  OutMobileArtifacts: () => ReactElement<any, any>
+  InMobileArtifacts: () => ReactElement<any, any>
 }
 
 export default function ServiceList() {
@@ -33,7 +30,7 @@ export default function ServiceList() {
   const list = getConfigList()
 
   return (
-    <div key='service-list' style={styles.root}>
+    <div key='service-list' className={serviceListStyles.root}>
       {list.map((item, index) => (
         <ServiceRow key={item.key} images={images} item={item} index={index} />
       ))}

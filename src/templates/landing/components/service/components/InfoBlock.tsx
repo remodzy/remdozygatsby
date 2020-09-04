@@ -26,8 +26,7 @@ export default function InfoBlock({ item, isEven, icon }: Props) {
     <div
       className={infoBlockStyles.root}
       style={{
-        marginLeft: isEven ? '9.375%' : 0,
-        marginRight: !isEven ? '9.375%' : 0,
+        justifySelf: isEven ? 'flex-start' : 'flex-end',
       }}
     >
       <IconWrapper color={color.sub}>
