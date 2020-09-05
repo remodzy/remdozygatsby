@@ -48,12 +48,11 @@ export function getConfigList(): ListItem[] {
           />
         </>
       ),
-      OutDesktopArtifacts: () => <></>,
-      InDesktopArtifacts: () => (
+      OutDesktopArtifacts: () => (
         <>
           <DotsArtifact
-            top={-3}
-            right='5.3125%'
+            top={-40}
+            right='4%'
             columns={8}
             // prettier-ignore
             list={[
@@ -64,6 +63,10 @@ export function getConfigList(): ListItem[] {
             ]}
           />
           <MapIcon1 />
+        </>
+      ),
+      InDesktopArtifacts: () => (
+        <>
           <MapIcon2 />
           <MapIcon3 />
           <CircleArtifact
@@ -74,9 +77,11 @@ export function getConfigList(): ListItem[] {
             top={600}
           />
           <DotsArtifact
-            left='43.5625%'
-            bottom={25}
+            left='54.5%'
+            bottom={12}
             columns={4}
+            size={4}
+            gap={17.57}
             // prettier-ignore
             list={[
               1,0,0,0,
@@ -155,18 +160,37 @@ export function getConfigList(): ListItem[] {
       OutDesktopArtifacts: () => (
         <>
           <DotsArtifact
-            bottom={284}
-            right={-27}
+            top={172}
+            right={25.93}
             columns={4}
             size={4.71}
             gap={22.45}
             // prettier-ignore
             list={[
-          0,1,1,0,
-          0,0,0,0,
-          0,0,0,1,
-          1,0,0,0,
-        ]}
+              0,1,1,0,
+              0,0,0,0,
+              0,0,0,1,
+              1,0,0,0,
+            ]}
+          />
+          <DotsArtifact
+            bottom={-25}
+            right='56.375%'
+            columns={4}
+            size={3.69}
+            gap={17.57}
+            zIndex={1}
+            // prettier-ignore
+            list={[
+            0,0,0,0,
+            0,0,1,0,
+            0,0,0,0,
+            0,0,0,0,
+            0,0,1,0,
+            1,0,0,0,
+            1,0,0,0,
+            0,0,0,1,
+          ]}
           />
         </>
       ),
@@ -184,24 +208,6 @@ export function getConfigList(): ListItem[] {
             0,0,0,0,0,0,1,0,
             0,0,0,0,0,0,0,0,
             1,0,0,0,0,0,0,0,
-          ]}
-          />
-          <DotsArtifact
-            top={540}
-            right='44.375%'
-            columns={4}
-            size={3.69}
-            gap={17.57}
-            // prettier-ignore
-            list={[
-            0,0,0,0,
-            0,0,1,0,
-            0,0,0,0,
-            0,0,0,0,
-            0,0,1,0,
-            1,0,0,0,
-            1,0,0,0,
-            0,0,0,1,
           ]}
           />
           <CircleArtifact
@@ -331,15 +337,15 @@ export function getConfigList(): ListItem[] {
             name={CircleName.Purple}
             mainSize={46}
             centerSize={9.2}
-            bottom={-23}
-            left='65.33%'
+            bottom={60}
+            left='70%'
           />
         </>
       ),
       InMobileArtifacts: () => (
         <>
           <DotsArtifact
-            top={68}
+            top={20}
             left='1.9947%'
             columns={5}
             size={4}

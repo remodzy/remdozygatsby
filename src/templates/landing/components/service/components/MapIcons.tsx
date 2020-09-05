@@ -3,7 +3,7 @@ import React from 'react'
 import mapStyles from './MapIcon.module.css'
 
 export function MapIcon1({ isMobile = false }) {
-  const top = isMobile ? 14 : 0
+  const top = isMobile ? -40 : 0
   const left = isMobile ? '57.07%' : '62.875%'
   const size = isMobile ? 20 : 40
 

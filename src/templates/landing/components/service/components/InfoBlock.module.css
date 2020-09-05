@@ -1,6 +1,7 @@
 .root {
-  max-width: 375px;
+  max-width: 415px;
   position: relative;
+  align-self: center;
 }
 .title {
   font-size: 36px;
