@@ -1,6 +1,6 @@
 .root {
-  display: flex;
   position: relative;
+  overflow: hidden;
 }
 
 .backgroundCover {
@@ -20,7 +20,7 @@
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 10px 60px;
+  gap: 10px 128px;
 }
 
 @media screen and (max-width: 768px) {
@@ -35,5 +35,6 @@
   }
   .container {
     padding-bottom: 40px;
+    gap: 10px 60px;
   }
 }

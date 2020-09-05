@@ -13,6 +13,11 @@ body {
   margin: 0;
 }
 
+.hide-scroll {
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
 img {
   display: block;
   width: 100%;

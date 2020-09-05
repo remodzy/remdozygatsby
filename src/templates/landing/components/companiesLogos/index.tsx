@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
+
+import { DeviceDetectContext } from '~components/layout'
 
 import ChubbLogo from './chubb'
 import CatLogo from './cat'
@@ -7,7 +9,8 @@ import LyaLogo from './lya'
 import SapLogo from './cap'
 import companiesLogosStyles from './CompaniesLogos.module.css'
 
-export default function CompaniesLogos() {
+const CompaniesLogos = () => {
+  const { isMobile } = useContext(DeviceDetectContext)
   return (
     <div className={companiesLogosStyles.root}>
       <div className={companiesLogosStyles.item} style={{ gridArea: 'a' }}>
@@ -16,7 +19,10 @@ export default function CompaniesLogos() {
       <div className={companiesLogosStyles.item} style={{ gridArea: 'b' }}>
         <CatLogo />
       </div>
-      <div className={companiesLogosStyles.item} style={{ gridArea: 'c' }}>
+      <div
+        className={companiesLogosStyles.item}
+        style={{ gridArea: 'c', justifySelf: isMobile ? 'flex-end' : 'center' }}
+      >
         <MailchimpLogo />
       </div>
       <div className={companiesLogosStyles.item} style={{ gridArea: 'd' }}>
@@ -28,3 +34,5 @@ export default function CompaniesLogos() {
     </div>
   )
 }
+
+export default CompaniesLogos
