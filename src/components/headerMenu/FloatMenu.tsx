@@ -5,6 +5,8 @@ import floatMenuStyles from './FloatMenu.module.css'
 import LinkButton from '~components/linkButton'
 import Button from '~components/button'
 import { MenuItem } from './index'
+import Accordion from '~components/accordion'
+import ProductList from './ProductList'
 
 type Props = {
   handleLogin: () => void
@@ -12,18 +14,14 @@ type Props = {
 }
 
 const FloatMenu: React.FC<Props> = ({ handleLogin, menuList }) => {
-  useEffect(() => {
-    document.body.classList.add('hide-scroll')
-    return () => {
-      document.body.classList.remove('hide-scroll')
-    }
-  })
-
   return (
     <>
       <div className={floatMenuStyles.root}>
         <div className={floatMenuStyles.menuWrapper}>
-          {menuList.map(item => (
+          <Accordion title={'Products'}>
+            <ProductList />
+          </Accordion>
+          {menuList.slice(1).map(item => (
             <Link className={floatMenuStyles.menuItem} to={item.link}>
               {item.text}
             </Link>
@@ -40,7 +38,11 @@ const FloatMenu: React.FC<Props> = ({ handleLogin, menuList }) => {
           <LinkButton label='Log In' handleClick={handleLogin} />
         </div>
       </div>
-      <div className={floatMenuStyles.backgroundOverlay}></div>
+      <div className={floatMenuStyles.backgroundOverlay}>
+        <div
+          style={{ width: '100%', height: '100%', background: '#ffffff' }}
+        ></div>
+      </div>
     </>
   )
 }

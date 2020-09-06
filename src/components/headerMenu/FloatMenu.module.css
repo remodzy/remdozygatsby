@@ -1,5 +1,9 @@
 .root {
   position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   top: 114px;
   max-width: 340px;
   width: 100%;
@@ -23,6 +27,10 @@
   border-bottom: 1px solid #e9eef3;
 }
 
+.menuItem:first-of-type {
+  border-top: 1px solid #e9eef3;
+}
+
 .buttonsContainer {
   display: flex;
   flex-direction: column;
@@ -38,10 +46,10 @@
 .backgroundOverlay {
   overflow: hidden;
   position: absolute;
-  height: calc(100% - 80px);
+  height: calc(100% - 100px);
   width: 100%;
   z-index: 1;
-  top: 80px;
+  bottom: 0;
   left: 0;
   background: linear-gradient(180deg, rgba(246, 249, 251, 0) 0%, #f5f8fb 100%);
 }

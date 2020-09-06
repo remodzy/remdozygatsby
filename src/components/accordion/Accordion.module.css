@@ -1,0 +1,35 @@
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  all: unset;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  transition: 0.4s;
+}
+
+.panel {
+  padding: 0 24px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.active {
+}
+
+.icon {
+  transform: rotate(180deg);
+}
+
+.title {
+  color: var(--main-text-color);
+  font-size: 16px;
+  font-weight: 500;
+}
