@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
 
 import floatMenuStyles from './FloatMenu.module.css'
@@ -6,7 +6,7 @@ import LinkButton from '~components/linkButton'
 import Button from '~components/button'
 import { MenuItem } from './index'
 import Accordion from '~components/accordion'
-import ProductList from './ProductList'
+import ProductListMenu from './ProductList'
 
 type Props = {
   handleLogin: () => void
@@ -19,7 +19,7 @@ const FloatMenu: React.FC<Props> = ({ handleLogin, menuList }) => {
       <div className={floatMenuStyles.root}>
         <div className={floatMenuStyles.menuWrapper}>
           <Accordion title={'Products'}>
-            <ProductList />
+            <ProductListMenu isMobile />
           </Accordion>
           {menuList.slice(1).map(item => (
             <Link className={floatMenuStyles.menuItem} to={item.link}>

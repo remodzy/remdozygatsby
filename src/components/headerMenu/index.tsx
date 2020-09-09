@@ -6,6 +6,7 @@ import { DeviceDetectContext } from '../layout'
 import headerMenuStyles from './HeaderMenu.module.css'
 import FloatMenu from './FloatMenu'
 import MenuToggle from './MenuToggle'
+import DesktopProductsMenu from './DesktopProductsMenu'
 
 export type MenuItem = {
   link: string
@@ -13,10 +14,6 @@ export type MenuItem = {
 }
 
 const menuList: MenuItem[] = [
-  {
-    link: 'home',
-    text: 'Products',
-  },
   {
     link: 'home',
     text: 'Integrations',
@@ -53,6 +50,7 @@ export default function HeaderMenu({ handleLogin }: Props) {
 
   return (
     <div className={headerMenuStyles.root}>
+      <DesktopProductsMenu menuList={[]} />
       {menuList.map(item => (
         <Link key={item.text} className={headerMenuStyles.link} to={item.link}>
           {item.text}
