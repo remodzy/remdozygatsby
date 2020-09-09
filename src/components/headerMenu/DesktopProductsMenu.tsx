@@ -2,12 +2,11 @@ import React, {
   useState,
   useRef,
   MutableRefObject,
-  useEffect,
-  RefObject,
-  useCallback,
   useLayoutEffect,
 } from 'react'
+
 import Icon from '~components/icons'
+import { useOnClickOutside } from '~utils/hooks'
 
 import styles from './DesktopProductsMenu.module.css'
 import ProductListMenu from './ProductList'
@@ -21,6 +20,8 @@ const DesktopProductsMenu = () => {
   const handleClick = () => {
     setOpen(!open)
   }
+
+  useOnClickOutside([buttonRef, menuRef], handleClick, open)
 
   useLayoutEffect(() => {
     if (buttonRef.current && menuRef.current) {
