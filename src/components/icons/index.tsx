@@ -24,7 +24,22 @@ export function Circle() {
   )
 }
 
-const icons: { [key: string]: () => ReactElement } = {
+type SvgProps = {
+  color?: string
+}
+
+const icons: { [key: string]: (props: SvgProps) => ReactElement } = {
+  arrow: ({ color }: SvgProps) => (
+    <svg width='10' height='6' fill='none' xmlns='http://www.w3.org/2000/svg'>
+      <path
+        d='M1 1l4 4 4-4'
+        stroke={color || '#091F3E'}
+        strokeWidth='1.6'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+      />
+    </svg>
+  ),
   cross: () => (
     <svg width='14' height='14' fill='none' xmlns='http://www.w3.org/2000/svg'>
       <path
@@ -383,9 +398,10 @@ const icons: { [key: string]: () => ReactElement } = {
 
 type IconProps = {
   name: string
+  color?: string
 }
 
-export default function Icon({ name }: IconProps) {
+export default function Icon({ name, ...props }: IconProps) {
   const Icon = icons[name]
-  return <Icon />
+  return <Icon {...props} />
 }

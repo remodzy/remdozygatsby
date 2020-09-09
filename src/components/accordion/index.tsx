@@ -1,6 +1,7 @@
 import React, { useState, useRef, RefObject, MutableRefObject } from 'react'
 
 import accordionStyles from './Accordion.module.css'
+import Icon from '~components/icons'
 
 type Props = {
   title: string
@@ -29,7 +30,7 @@ const Accordion: React.FC<Props> = ({ children, title }) => {
       <button onClick={handleClick} className={accordionStyles.button}>
         <span className={accordionStyles.title}>{title}</span>
         <span className={`${open ? accordionStyles.icon : ''}`}>
-          <Arrow />
+          <Icon name='arrow' />
         </span>
       </button>
       <div
@@ -45,17 +46,3 @@ const Accordion: React.FC<Props> = ({ children, title }) => {
 }
 
 export default Accordion
-
-function Arrow() {
-  return (
-    <svg width='10' height='6' fill='none' xmlns='http://www.w3.org/2000/svg'>
-      <path
-        d='M1 1l4 4 4-4'
-        stroke='#091F3E'
-        strokeWidth='1.6'
-        strokeLinecap='round'
-        strokeLinejoin='round'
-      />
-    </svg>
-  )
-}
