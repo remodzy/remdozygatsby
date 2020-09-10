@@ -9,8 +9,9 @@
 .linksContainer {
   display: grid;
   flex: 0.8;
-  grid-template-columns: repeat(auto-fit, minmax(173px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(130px, auto));
   column-gap: 130px;
+  row-gap: 30px;
   padding-left: 15%;
 }
 .linkColumn {
@@ -74,6 +75,6 @@
   .linksContainer {
     padding: 0;
     column-gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(130px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(110px, auto));
   }
 }
