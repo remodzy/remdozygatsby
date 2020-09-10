@@ -9,6 +9,11 @@
   padding: 1rem 1.0875rem;
 }
 
+.wrapper {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
 .buttonsContainer {
   display: flex;
   align-items: center;

@@ -18,28 +18,30 @@ const Header = () => {
   }, [])
   return (
     <header className={headerStyles.root}>
-      <Link
-        to='/'
-        style={{
-          color: `white`,
-          textDecoration: `none`,
-        }}
-      >
-        <Logo />
-      </Link>
-      <HeaderMenu />
-      {!isMobile && (
-        <div className={headerStyles.buttonsContainer}>
-          <div className={headerStyles.loginContainer}>
-            <LinkButton label='Log In' handleClick={handleLogin} />
+      <div className={headerStyles.wrapper}>
+        <Link
+          to='/'
+          style={{
+            color: `white`,
+            textDecoration: `none`,
+          }}
+        >
+          <Logo />
+        </Link>
+        <HeaderMenu handleLogin={handleLogin} />
+        {!isMobile && (
+          <div className={headerStyles.buttonsContainer}>
+            <div className={headerStyles.loginContainer}>
+              <LinkButton label='Log In' handleClick={handleLogin} />
+            </div>
+            <Button
+              label='Get Started'
+              className='primary-btn'
+              handleClick={() => {}}
+            />
           </div>
-          <Button
-            label='Get Started'
-            className='primary-btn'
-            handleClick={() => {}}
-          />
-        </div>
-      )}
+        )}
+      </div>
     </header>
   )
 }
