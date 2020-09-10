@@ -118,13 +118,6 @@ function InDesktopArtifacts() {
   return (
     <>
       <CircleArtifact
-        name={CircleName.Green}
-        mainSize={64}
-        centerSize={11.43}
-        left='76.0625%'
-        top={-24}
-      />
-      <CircleArtifact
         name={CircleName.Violet}
         mainSize={24}
         centerSize={4.29}
@@ -176,6 +169,13 @@ function OutDesktopArtifacts() {
             0,0,
             1,0,
           ]}
+      />
+      <CircleArtifact
+        name={CircleName.Green}
+        mainSize={64}
+        centerSize={11.43}
+        left='76.0625%'
+        top={116}
       />
     </>
   )

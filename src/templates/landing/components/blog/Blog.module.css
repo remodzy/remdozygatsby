@@ -1,12 +1,12 @@
 .root {
   position: relative;
   padding-top: 50px;
-  padding-bottom: 116;
+  padding-bottom: 116px;
   background: linear-gradient(180deg, rgba(246, 249, 251, 0) 0%, #f5f8fb 100%);
 }
 .list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 44px 56px;
   padding: 86px 234px 0;
 }
