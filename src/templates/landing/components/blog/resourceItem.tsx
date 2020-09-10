@@ -1,7 +1,7 @@
-import React, { ReactElement } from 'react'
+import React from 'react'
 import Img from 'gatsby-image'
 
-import LinkButton from '../../../../components/linkButton'
+import LinkButton from '~components/linkButton'
 import resourceItemStyles from './ResourceItem.module.css'
 
 type Props = {

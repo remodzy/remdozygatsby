@@ -22,7 +22,11 @@ const FloatMenu: React.FC<Props> = ({ handleLogin, menuList }) => {
             <ProductListMenu isMobile />
           </Accordion>
           {menuList.slice(1).map(item => (
-            <Link className={floatMenuStyles.menuItem} to={item.link}>
+            <Link
+              key={item.text}
+              className={floatMenuStyles.menuItem}
+              to={item.link}
+            >
               {item.text}
             </Link>
           ))}
