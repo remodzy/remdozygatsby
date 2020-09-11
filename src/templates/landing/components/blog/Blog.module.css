@@ -17,6 +17,10 @@
 }
 
 @media (max-width: 768px) {
+  .root {
+    padding-bottom: 0;
+  }
+
   .list {
     padding: 54px 4.8% 0;
   }
