@@ -1,17 +1,25 @@
-import { WebAuth } from 'auth0-js'
+import { Auth0Client } from '@auth0/auth0-spa-js'
 import { navigate } from 'gatsby'
 
 const isBrowser = typeof window !== 'undefined'
 
-const auth: any = isBrowser
-  ? new WebAuth({
-      domain: process.env.AUTH0_DOMAIN,
-      clientID: process.env.AUTH0_CLIENTID,
-      redirectUri: process.env.AUTH0_CALLBACK,
-      responseType: 'code',
-      scope: 'openid profile email',
-    } as any)
-  : {}
+let auth0: any
+export const getClient: any = () => {
+  if (!isBrowser) {
+    return auth0
+  }
+
+  if (!auth0) {
+    auth0 = new Auth0Client({
+      domain: process.env.AUTH0_DOMAIN as string,
+      client_id: process.env.AUTH0_CLIENTID as string,
+      redirect_uri: process.env.AUTH0_CALLBACK,
+    })
+    return auth0
+  }
+
+  return auth0
+}
 
 type Tokens = {
   accessToken: string
@@ -35,16 +43,24 @@ export const isAuthenticated = () => {
   return localStorage.getItem('isLoggedIn') === 'true'
 }
 
-type AuthorizeMode = 'login' | 'signUp'
+type AuthorizeOptions = {
+  hasError?: boolean
+  signUp?: boolean
+}
 
-export const authorize = (mode: AuthorizeMode = 'login') => {
+export const authorize = ({
+  hasError = false,
+  signUp = false,
+}: AuthorizeOptions) => {
   if (!isBrowser) {
     return
   }
+  const client = getClient()
 
-  auth.authorize({
-    hasError: false,
-    mode,
+  client.loginWithRedirect({
+    redirect_uri: process.env.AUTH0_CALLBACK, // TODO: change 'service' to 'common' after debugging
+    hasError,
+    signUp,
   })
 }
 
@@ -65,14 +81,6 @@ const setSession = (cb = () => {}) => (err: any, authResult: any) => {
     navigate('/account')
     cb()
   }
-}
-
-export const handleAuthentication = () => {
-  if (!isBrowser) {
-    return
-  }
-
-  auth.parseHash(setSession())
 }
 
 export const getProfile = () => {

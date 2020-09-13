@@ -1,12 +1,25 @@
-import React from 'react'
-import { isAuthenticated, authorize, getProfile } from '~utils/auth'
+import React, { useEffect } from 'react'
+import { getClient } from '~utils/auth'
+
+const auth0 = getClient()
 
 export default function Account() {
-  if (!isAuthenticated()) {
-    authorize()
-    return <p>Redirecting to login...</p>
-  }
+  let usr
+  useEffect(() => {
+    window.addEventListener('load', () => {
+      auth0.handleRedirectCallback().then((redirectResult: any) => {
+        console.log(redirectResult)
+        //logged in. you can get the user profile like this:
+        auth0.getUser().then((user: any) => {
+          usr = user
+          console.log(user)
+        })
+      })
+    })
 
-  const user = getProfile()
-  return <div>{JSON.stringify(user)}</div>
+    return () => {
+      window.removeEventListener('load', () => {})
+    }
+  }, [])
+  return <div>{JSON.stringify(usr)}</div>
 }
