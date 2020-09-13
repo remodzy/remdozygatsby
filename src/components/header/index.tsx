@@ -1,7 +1,7 @@
 import React, { useCallback, useContext } from 'react'
 import { Link } from 'gatsby'
 
-import { login } from '~utils/auth'
+import { authorize } from '~utils/auth'
 
 import { DeviceDetectContext } from '../layout'
 import Logo from '../logo'
@@ -14,8 +14,13 @@ const Header = () => {
   const { isMobile } = useContext(DeviceDetectContext)
 
   const handleLogin = useCallback(() => {
-    login()
+    authorize()
   }, [])
+
+  const handleSignup = useCallback(() => {
+    authorize('signUp')
+  }, [])
+
   return (
     <header className={headerStyles.root}>
       <div className={headerStyles.wrapper}>
@@ -37,7 +42,7 @@ const Header = () => {
             <Button
               label='Get Started'
               className='primary-btn'
-              handleClick={() => {}}
+              handleClick={handleSignup}
             />
           </div>
         )}

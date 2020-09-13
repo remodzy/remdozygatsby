@@ -1,9 +1,9 @@
 import React from 'react'
-import { isAuthenticated, login, getProfile } from '../utils/auth'
+import { isAuthenticated, authorize, getProfile } from '~utils/auth'
 
 export default function Account() {
   if (!isAuthenticated()) {
-    login()
+    authorize()
     return <p>Redirecting to login...</p>
   }
 
