@@ -1,4 +1,4 @@
-import { WebAuth, Auth0Result } from 'auth0-js'
+import { WebAuth } from 'auth0-js'
 import { navigate } from 'gatsby'
 
 const isBrowser = typeof window !== 'undefined'
@@ -35,14 +35,16 @@ export const isAuthenticated = () => {
   return localStorage.getItem('isLoggedIn') === 'true'
 }
 
-export const login = () => {
+type AuthorizeMode = 'login' | 'signUp'
+
+export const authorize = (mode: AuthorizeMode = 'login') => {
   if (!isBrowser) {
     return
   }
 
   auth.authorize({
     hasError: false,
-    signUp: true,
+    mode,
   })
 }
 

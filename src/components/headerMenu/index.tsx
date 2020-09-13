@@ -50,7 +50,7 @@ export default function HeaderMenu({ handleLogin }: Props) {
 
   return (
     <div className={headerMenuStyles.root}>
-      <DesktopProductsMenu menuList={[]} />
+      <DesktopProductsMenu />
       {menuList.map(item => (
         <Link key={item.text} className={headerMenuStyles.link} to={item.link}>
           {item.text}

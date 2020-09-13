@@ -1,12 +1,14 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import floatMenuStyles from './FloatMenu.module.css'
 import LinkButton from '~components/linkButton'
 import Button from '~components/button'
-import { MenuItem } from './index'
 import Accordion from '~components/accordion'
+import { authorize } from '~utils/auth'
+
+import { MenuItem } from './index'
 import ProductListMenu from './ProductList'
+import floatMenuStyles from './FloatMenu.module.css'
 
 type Props = {
   handleLogin: () => void
@@ -36,7 +38,7 @@ const FloatMenu: React.FC<Props> = ({ handleLogin, menuList }) => {
             <Button
               label='Get Started'
               className='primary-btn'
-              handleClick={() => {}}
+              handleClick={authorize}
             />
           </div>
           <LinkButton label='Log In' handleClick={handleLogin} />
