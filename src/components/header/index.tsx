@@ -14,11 +14,11 @@ const Header = () => {
   const { isMobile } = useContext(DeviceDetectContext)
 
   const handleLogin = useCallback(() => {
-    authorize()
+    authorize({})
   }, [])
 
   const handleSignup = useCallback(() => {
-    authorize('signUp')
+    authorize({ signUp: true })
   }, [])
 
   return (

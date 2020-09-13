@@ -15,15 +15,15 @@ export type MenuItem = {
 
 const menuList: MenuItem[] = [
   {
-    link: 'home',
+    link: '/',
     text: 'Integrations',
   },
   {
-    link: 'home',
+    link: '/',
     text: 'Pricing',
   },
   {
-    link: 'home',
+    link: '/',
     text: 'Blog',
   },
 ]
