@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { FluidObject } from 'gatsby-image'
 
 import { CircleArtifact, CircleName } from '~components/circleArtifact'
 import DotsArtifact from '~components/dot'
@@ -7,34 +7,35 @@ import BlockWrapper from '~components/blockWrapper'
 import SectionLabel from '~templates/shared/sectionLabel'
 import SectionTitle from '~templates/shared/sectionTitle'
 
-import { Item } from './item'
+import Item from './item'
 import styles from './HowItWorks.module.css'
 import { DeviceDetectContext } from '~components/layout'
 
-export default function HowItWorks() {
+export type HowItWorksItem = {
+  key: string
+  image: FluidObject
+  size: number
+  title?: string
+  text: string
+}
+
+type Props = {
+  title: string
+  list: HowItWorksItem[]
+}
+
+const HowItWorks: React.FC<Props> = ({ title, list }) => {
   const { isMobile } = useContext(DeviceDetectContext)
-  const images = useStaticQuery(query)
+
   return (
     <div className={styles.root}>
       <BlockWrapper>
         <SectionLabel text='How it works' color='warning' />
-        <SectionTitle text='How Remodzy Service works' />
+        <SectionTitle text={title} />
         <div className={styles.itemsContainer}>
-          <Item
-            image={images.first}
-            size={239}
-            text='Get an appointment confirmation and reminder via text message or email.'
-          />
-          <Item
-            image={images.second}
-            size={255}
-            text='Receive a notification when the technician is on the way.'
-          />
-          <Item
-            image={images.third}
-            size={264}
-            text='Once a job is complete, submit a rating and review of the job and technician.'
-          />
+          {list.map(props => (
+            <Item {...props} />
+          ))}
         </div>
         {isMobile ? <InMobileArtifacts /> : <InDesktopArtifacts />}
       </BlockWrapper>
@@ -43,31 +44,7 @@ export default function HowItWorks() {
   )
 }
 
-const query = graphql`
-  query {
-    first: file(relativePath: { eq: "landing/integrations-1.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 239) {
-          ...GatsbyImageSharpFluid_noBase64
-        }
-      }
-    }
-    second: file(relativePath: { eq: "landing/integrations-2.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 239) {
-          ...GatsbyImageSharpFluid_noBase64
-        }
-      }
-    }
-    third: file(relativePath: { eq: "landing/integrations-3.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 239) {
-          ...GatsbyImageSharpFluid_noBase64
-        }
-      }
-    }
-  }
-`
+export default HowItWorks
 
 function InMobileArtifacts() {
   return (

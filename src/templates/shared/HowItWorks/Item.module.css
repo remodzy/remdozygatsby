@@ -1,0 +1,33 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 240px;
+}
+
+.title {
+  font-size: 23px;
+  line-height: 63px;
+  font-weight: 700;
+}
+
+.text {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 31px;
+  text-align: center;
+  color: var(--main-text-color);
+}
+
+.imageWrapper {
+  width: 239px;
+  height: 239px;
+}
+
+@media screen and (max-width: 768px) {
+  .text {
+    font-size: 15px;
+    line-height: 20px;
+    margin: 0 25px;
+  }
+}

@@ -2,9 +2,9 @@ import React, { useContext } from 'react'
 
 import { CircleArtifact, CircleName } from '~components/circleArtifact'
 import DotsArtifact from '~components/dot'
+import SectionLabel from '~templates/shared/sectionLabel'
+import SectionTitle from '~templates/shared/sectionTitle'
 
-import SectionLabel from '../sectionLabel'
-import SectionTitle from '../sectionTitle'
 import ServiceList from './components/ServiceList'
 import serviceStyles from './Service.module.css'
 import { DeviceDetectContext } from '~components/layout'

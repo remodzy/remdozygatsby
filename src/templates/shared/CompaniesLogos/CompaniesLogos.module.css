@@ -4,7 +4,7 @@
   /* margin: 0 15.4375%; */
   display: grid;
   gap: 20px 10px;
-  grid-template-columns: repeat(3, 200px);
+  grid-template-columns: repeat(3, 300px);
   grid-template-areas: 'a b c d e';
 }
 
