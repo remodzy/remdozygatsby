@@ -6,9 +6,9 @@ import DotsArtifact from '~components/dot'
 import { CircleArtifact, CircleName } from '~components/circleArtifact'
 import BlockWrapper from '~components/blockWrapper'
 import { DeviceDetectContext } from '~components/layout'
+import SectionLabel from '~templates/shared/sectionLabel'
+import SectionTitle from '~templates/shared/sectionTitle'
 
-import SectionLabel from '../sectionLabel'
-import SectionTitle from '../sectionTitle'
 import ResourceItem from './resourceItem'
 import blogStyles from './Blog.module.css'
 

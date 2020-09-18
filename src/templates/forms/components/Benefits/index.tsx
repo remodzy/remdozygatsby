@@ -7,7 +7,7 @@ import { DeviceDetectContext } from '~components/layout'
 import SectionLabel from '~templates/shared/sectionLabel'
 import SectionTitle from '~templates/shared/sectionTitle'
 
-import FeatureList from './featureList'
+import FeatureList from './FeatureList'
 import benefitsStyles from './Benefits.module.css'
 
 export default function Benefits() {

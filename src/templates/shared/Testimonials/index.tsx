@@ -6,9 +6,9 @@ import Icon from '~components/icons'
 import DotsArtifact from '~components/dot'
 import BlockWrapper from '~components/blockWrapper'
 import { CircleArtifact, CircleName } from '~components/circleArtifact'
+import SectionLabel from '~templates/shared/sectionLabel'
+import SectionTitle from '~templates/shared/sectionTitle'
 
-import SectionLabel from '../sectionLabel'
-import SectionTitle from '../sectionTitle'
 import testimonialsStyles from './Testimonials.module.css'
 import { DeviceDetectContext } from '~components/layout'
 
