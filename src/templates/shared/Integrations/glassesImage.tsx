@@ -1,11 +1,11 @@
-import React, { ReactElement, useContext } from 'react'
+import React, { ReactElement } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
-import { DeviceDetectContext } from '~components/layout'
+import { useDeviceDetect } from '~utils/hooks'
 
 export default function GlassesImage(): ReactElement<any, any> {
-  const { isMobile } = useContext(DeviceDetectContext)
+  const { isMobile } = useDeviceDetect()
   const data = useStaticQuery(query)
 
   return (

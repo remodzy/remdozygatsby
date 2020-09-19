@@ -1,11 +1,11 @@
-import React, { ReactElement, useContext } from 'react'
+import React, { ReactElement } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 
-import { DeviceDetectContext } from '~components/layout'
+import { useDeviceDetect } from '~utils/hooks'
 import PrimaryContent from '~templates/shared/PrimaryContent'
 
 export default function PrimaryBlock(): ReactElement<any, any> {
-  const { isMobile } = useContext(DeviceDetectContext)
+  const { isMobile } = useDeviceDetect()
   const { desktop, mobile } = useStaticQuery(query)
   const image = isMobile ? mobile : desktop
 

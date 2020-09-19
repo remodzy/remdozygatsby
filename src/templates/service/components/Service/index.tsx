@@ -1,16 +1,16 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
 import { CircleArtifact, CircleName } from '~components/circleArtifact'
 import DotsArtifact from '~components/dot'
 import SectionLabel from '~templates/shared/sectionLabel'
 import SectionTitle from '~templates/shared/sectionTitle'
+import { useDeviceDetect } from '~utils/hooks'
 
 import ServiceList from './components/ServiceList'
 import serviceStyles from './Service.module.css'
-import { DeviceDetectContext } from '~components/layout'
 
 export default function Service() {
-  const { isMobile } = useContext(DeviceDetectContext)
+  const { isMobile } = useDeviceDetect()
 
   return (
     <div className={serviceStyles.root}>

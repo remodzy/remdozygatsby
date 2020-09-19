@@ -1,12 +1,12 @@
-import React, { ReactElement, useContext } from 'react'
+import React from 'react'
 import Img, { FluidObject } from 'gatsby-image'
 
 import Button from '~components/button'
 import Label from '~components/Label'
 import { CircleArtifact, CircleName } from '~components/circleArtifact'
-import { DeviceDetectContext } from '~components/layout'
 import DotsArtifact from '~components/dot'
 import BlockWrapper from '~components/blockWrapper'
+import { useDeviceDetect } from '~utils/hooks'
 
 import CompaniesLogos from '../CompaniesLogos'
 import primaryContentStyles from './PrimaryContent.module.css'
@@ -18,7 +18,7 @@ type Props = {
 }
 
 const PrimaryContent: React.FC<Props> = ({ title, subTitle, image }) => {
-  const { isMobile } = useContext(DeviceDetectContext)
+  const { isMobile } = useDeviceDetect()
   return (
     <div className={primaryContentStyles.root}>
       <BlockWrapper

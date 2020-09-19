@@ -1,11 +1,12 @@
-import React, { ReactElement, useContext } from 'react'
+import React, { ReactElement } from 'react'
 import Img, { FluidObject } from 'gatsby-image'
 
 import BlockWrapper from '~components/blockWrapper'
+import { useDeviceDetect } from '~utils/hooks'
+
 import InfoBlock from './InfoBlock'
 import { ListItem } from './ServiceList'
 import serviceRowStyles from './ServiceRow.module.css'
-import { DeviceDetectContext } from '~components/layout'
 
 type ImageProps = {
   image: FluidObject
@@ -27,7 +28,7 @@ export default function ServiceRow({
   item,
   index,
 }: Props): ReactElement<any, any> {
-  const { isMobile } = useContext(DeviceDetectContext)
+  const { isMobile } = useDeviceDetect()
   const isEven = (index + 1) % 2 === 0
 
   return (

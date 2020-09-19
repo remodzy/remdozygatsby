@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
-import { DeviceDetectContext } from '../layout'
+import { useDeviceDetect } from '~utils/hooks'
 
 export default function Logo() {
-  const { isMobile } = useContext(DeviceDetectContext)
+  const { isMobile } = useDeviceDetect()
   return isMobile ? <MobileLogo /> : <DesktopLogo />
 }
 

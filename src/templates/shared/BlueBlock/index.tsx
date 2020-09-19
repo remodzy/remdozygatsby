@@ -1,16 +1,17 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
 import { getColor } from '~utils/colors'
 import Button from '~components/button'
 import DotsArtifact from '~components/dot'
-import { DeviceDetectContext } from '~components/layout'
 
 import blueBlockStyles from './BlueBlock.module.css'
+import { useDeviceDetect } from '~utils/hooks'
 
 const colors = getColor({ group: 'main', color: 'primary' })
 
 export default function BlueBlock() {
-  const { isMobile } = useContext(DeviceDetectContext)
+  const { isMobile } = useDeviceDetect()
+
   return (
     <div className={blueBlockStyles.root}>
       <div className={blueBlockStyles.wrapper}>

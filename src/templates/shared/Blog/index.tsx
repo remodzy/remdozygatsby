@@ -1,19 +1,19 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import Button from '~components/button'
 import DotsArtifact from '~components/dot'
 import { CircleArtifact, CircleName } from '~components/circleArtifact'
 import BlockWrapper from '~components/blockWrapper'
-import { DeviceDetectContext } from '~components/layout'
 import SectionLabel from '~templates/shared/sectionLabel'
 import SectionTitle from '~templates/shared/sectionTitle'
+import { useDeviceDetect } from '~utils/hooks'
 
 import ResourceItem from './resourceItem'
 import blogStyles from './Blog.module.css'
 
 export default function Blog() {
-  const { isMobile } = useContext(DeviceDetectContext)
+  const { isMobile } = useDeviceDetect()
   const images = useStaticQuery(query)
 
   return (

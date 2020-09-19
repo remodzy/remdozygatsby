@@ -1,9 +1,9 @@
-import React, { useCallback, useContext } from 'react'
+import React, { useCallback } from 'react'
 import { Link } from 'gatsby'
 
 import { authorize } from '~utils/auth'
+import { useDeviceDetect } from '~utils/hooks'
 
-import { DeviceDetectContext } from '../layout'
 import Logo from '../logo'
 import HeaderMenu from '../headerMenu'
 import LinkButton from '../linkButton'
@@ -11,7 +11,7 @@ import Button from '../button'
 import headerStyles from './Header.module.css'
 
 const Header = () => {
-  const { isMobile } = useContext(DeviceDetectContext)
+  const { isMobile } = useDeviceDetect()
 
   const handleLogin = useCallback(() => {
     authorize({})

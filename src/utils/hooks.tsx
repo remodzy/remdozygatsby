@@ -1,4 +1,4 @@
-import { RefObject, useEffect } from 'react'
+import { RefObject, useEffect, useState } from 'react'
 
 export const useOnClickOutside = (
   ref: RefObject<HTMLElement> | RefObject<HTMLElement>[],
@@ -31,4 +31,28 @@ export const useOnClickOutside = (
       document.removeEventListener('touchstart', listener)
     }
   }, [ref, handler, active])
+}
+
+export const useDeviceDetect = () => {
+  const [isMobile, setIsMobile] = useState(false)
+  useEffect(() => {
+    setIsMobile(detectMobileDevice())
+    window.addEventListener('resize', e => {
+      setIsMobile(detectMobileDevice())
+    })
+    return () => {
+      window.removeEventListener('resize', () => {})
+    }
+  }, [])
+
+  return {
+    isMobile,
+  }
+}
+
+function detectMobileDevice() {
+  if (typeof window !== 'undefined') {
+    return window.innerWidth < 800
+  }
+  return false
 }

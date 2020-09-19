@@ -1,6 +1,6 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
-import { DeviceDetectContext } from '~components/layout'
+import { useDeviceDetect } from '~utils/hooks'
 
 import ChubbLogo from './chubb'
 import CatLogo from './cat'
@@ -10,7 +10,7 @@ import SapLogo from './cap'
 import companiesLogosStyles from './CompaniesLogos.module.css'
 
 const CompaniesLogos = () => {
-  const { isMobile } = useContext(DeviceDetectContext)
+  const { isMobile } = useDeviceDetect()
   return (
     <div className={companiesLogosStyles.root}>
       <div className={companiesLogosStyles.item} style={{ gridArea: 'a' }}>
