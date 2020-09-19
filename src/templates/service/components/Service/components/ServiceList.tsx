@@ -58,7 +58,7 @@ const query = graphql`
         }
       }
     }
-    settings: file(relativePath: { eq: "landing/settings-image.png" }) {
+    settings: file(relativePath: { eq: "service/settings-image.png" }) {
       childImageSharp {
         fluid(maxWidth: 766) {
           ...GatsbyImageSharpFluid_noBase64
@@ -66,7 +66,7 @@ const query = graphql`
         }
       }
     }
-    calendar: file(relativePath: { eq: "landing/calendar-image.png" }) {
+    calendar: file(relativePath: { eq: "service/calendar-image.png" }) {
       childImageSharp {
         fluid(maxWidth: 789) {
           ...GatsbyImageSharpFluid_noBase64
@@ -75,7 +75,7 @@ const query = graphql`
       }
     }
 
-    communicate: file(relativePath: { eq: "landing/communicate-image.png" }) {
+    communicate: file(relativePath: { eq: "service/communicate-image.png" }) {
       childImageSharp {
         fluid(maxWidth: 682) {
           ...GatsbyImageSharpFluid_noBase64
@@ -84,7 +84,7 @@ const query = graphql`
       }
     }
 
-    messaging: file(relativePath: { eq: "landing/messaging-image.png" }) {
+    messaging: file(relativePath: { eq: "service/messaging-image.png" }) {
       childImageSharp {
         fluid(maxWidth: 754) {
           ...GatsbyImageSharpFluid_noBase64
@@ -93,7 +93,7 @@ const query = graphql`
       }
     }
 
-    settingsIcon: file(relativePath: { eq: "landing/icons/settings.png" }) {
+    settingsIcon: file(relativePath: { eq: "service/icons/settings.png" }) {
       childImageSharp {
         fixed(width: 24) {
           ...GatsbyImageSharpFixed_noBase64
@@ -101,7 +101,7 @@ const query = graphql`
       }
     }
 
-    calendarIcon: file(relativePath: { eq: "landing/icons/calendar.png" }) {
+    calendarIcon: file(relativePath: { eq: "service/icons/calendar.png" }) {
       childImageSharp {
         fixed(width: 24) {
           ...GatsbyImageSharpFixed_noBase64
@@ -109,7 +109,7 @@ const query = graphql`
       }
     }
 
-    communicateIcon: file(relativePath: { eq: "landing/icons/worker.png" }) {
+    communicateIcon: file(relativePath: { eq: "service/icons/worker.png" }) {
       childImageSharp {
         fixed(width: 24) {
           ...GatsbyImageSharpFixed_noBase64
@@ -117,7 +117,7 @@ const query = graphql`
       }
     }
 
-    messagingIcon: file(relativePath: { eq: "landing/icons/messaging.png" }) {
+    messagingIcon: file(relativePath: { eq: "service/icons/messaging.png" }) {
       childImageSharp {
         fixed(width: 24) {
           ...GatsbyImageSharpFixed_noBase64

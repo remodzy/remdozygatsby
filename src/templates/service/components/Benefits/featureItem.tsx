@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react'
 import Img from 'gatsby-image'
 
-import IconWrapper from '../service/components/IconWrapper'
+import IconWrapper from '../Service/components/IconWrapper'
 import featureItemStyles from './FeatureItem.module.css'
 
 type ItemProps = {

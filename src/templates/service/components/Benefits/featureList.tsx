@@ -55,21 +55,21 @@ export default function FeatureList() {
 
 const query = graphql`
   query {
-    scheduling: file(relativePath: { eq: "landing/icons/scheduling.png" }) {
+    scheduling: file(relativePath: { eq: "service/icons/scheduling.png" }) {
       childImageSharp {
         fixed(width: 24) {
           ...GatsbyImageSharpFixed_noBase64
         }
       }
     }
-    dispatching: file(relativePath: { eq: "landing/icons/dispatching.png" }) {
+    dispatching: file(relativePath: { eq: "service/icons/dispatching.png" }) {
       childImageSharp {
         fixed(width: 26) {
           ...GatsbyImageSharpFixed_noBase64
         }
       }
     }
-    management: file(relativePath: { eq: "landing/icons/management.png" }) {
+    management: file(relativePath: { eq: "service/icons/management.png" }) {
       childImageSharp {
         fixed(width: 26) {
           ...GatsbyImageSharpFixed_noBase64
@@ -77,7 +77,7 @@ const query = graphql`
       }
     }
     notifications: file(
-      relativePath: { eq: "landing/icons/notifications.png" }
+      relativePath: { eq: "service/icons/notifications.png" }
     ) {
       childImageSharp {
         fixed(width: 26) {
@@ -86,7 +86,7 @@ const query = graphql`
       }
     }
     technicalStatus: file(
-      relativePath: { eq: "landing/icons/technical-status.png" }
+      relativePath: { eq: "service/icons/technical-status.png" }
     ) {
       childImageSharp {
         fixed(width: 26) {
@@ -95,7 +95,7 @@ const query = graphql`
       }
     }
     proofService: file(
-      relativePath: { eq: "landing/icons/proof-service.png" }
+      relativePath: { eq: "service/icons/proof-service.png" }
     ) {
       childImageSharp {
         fixed(width: 24) {
@@ -104,7 +104,7 @@ const query = graphql`
       }
     }
     customerNotifications: file(
-      relativePath: { eq: "landing/icons/customer-notifications.png" }
+      relativePath: { eq: "service/icons/customer-notifications.png" }
     ) {
       childImageSharp {
         fixed(width: 27) {
@@ -112,7 +112,7 @@ const query = graphql`
         }
       }
     }
-    multiVisit: file(relativePath: { eq: "landing/icons/multi-visit.png" }) {
+    multiVisit: file(relativePath: { eq: "service/icons/multi-visit.png" }) {
       childImageSharp {
         fixed(width: 28) {
           ...GatsbyImageSharpFixed_noBase64
