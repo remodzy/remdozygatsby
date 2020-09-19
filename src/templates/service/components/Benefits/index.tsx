@@ -1,17 +1,17 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
 import { CircleArtifact, CircleName } from '~components/circleArtifact'
 import DotsArtifact from '~components/dot'
 import BlockWrapper from '~components/blockWrapper'
-import { DeviceDetectContext } from '~components/layout'
 import SectionLabel from '~templates/shared/sectionLabel'
 import SectionTitle from '~templates/shared/sectionTitle'
+import { useDeviceDetect } from '~utils/hooks'
 
 import FeatureList from './featureList'
 import benefitsStyles from './Benefits.module.css'
 
 export default function Benefits() {
-  const { isMobile } = useContext(DeviceDetectContext)
+  const { isMobile } = useDeviceDetect()
 
   return (
     <div className={benefitsStyles.root}>

@@ -1,7 +1,7 @@
+import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import React, { useContext } from 'react'
 
-import { DeviceDetectContext } from '~components/layout'
+import { useDeviceDetect } from '~utils/hooks'
 import Blog from '~templates/shared/Blog'
 import BlueBlock from '~templates/shared/BlueBlock'
 import Integrations from '~templates/shared/Integrations'
@@ -12,7 +12,7 @@ import Benefits from './components/Benefits'
 import HowItWorks from './components/HowItWorks'
 
 export default function Forms() {
-  const { isMobile } = useContext(DeviceDetectContext)
+  const { isMobile } = useDeviceDetect()
   const { desktop, mobile } = useStaticQuery(query)
   const image = isMobile ? mobile : desktop
 

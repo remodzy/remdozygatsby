@@ -1,17 +1,17 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
 import { CircleArtifact, CircleName } from '~components/circleArtifact'
 import DotsArtifact from '~components/dot'
 import BlockWrapper from '~components/blockWrapper'
 import SectionLabel from '~templates/shared/sectionLabel'
 import SectionTitle from '~templates/shared/sectionTitle'
+import { useDeviceDetect } from '~utils/hooks'
 
 import { Item } from './item'
 import styles from './HowItWorks.module.css'
-import { DeviceDetectContext } from '~components/layout'
 
 export default function HowItWorks() {
-  const { isMobile } = useContext(DeviceDetectContext)
+  const { isMobile } = useDeviceDetect()
   return (
     <div className={styles.root}>
       <BlockWrapper>

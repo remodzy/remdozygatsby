@@ -1,6 +1,7 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
-import { DeviceDetectContext } from '../layout'
+import { useDeviceDetect } from '~utils/hooks'
+
 import Logo from '../logo'
 import Icon from '../icons'
 import DotsArtifact from '../dot'
@@ -9,7 +10,8 @@ import FooterLink from './FooterLink'
 import footerStyles from './AppFooter.module.css'
 
 export default function Footer() {
-  const { isMobile } = useContext(DeviceDetectContext)
+  const { isMobile } = useDeviceDetect()
+
   return (
     <footer className={footerStyles.root}>
       <BlockWrapper

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
@@ -8,12 +8,12 @@ import BlockWrapper from '~components/blockWrapper'
 import { CircleArtifact, CircleName } from '~components/circleArtifact'
 import SectionLabel from '~templates/shared/sectionLabel'
 import SectionTitle from '~templates/shared/sectionTitle'
+import { useDeviceDetect } from '~utils/hooks'
 
 import testimonialsStyles from './Testimonials.module.css'
-import { DeviceDetectContext } from '~components/layout'
 
 export default function Testimonials() {
-  const { isMobile } = useContext(DeviceDetectContext)
+  const { isMobile } = useDeviceDetect()
   const images = useStaticQuery(query)
   return (
     <div className={testimonialsStyles.root}>

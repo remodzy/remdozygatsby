@@ -1,7 +1,7 @@
-import React, { useContext, useState, useCallback } from 'react'
+import React, { useState, useCallback } from 'react'
 import { Link } from 'gatsby'
 
-import { DeviceDetectContext } from '../layout'
+import { useDeviceDetect } from '~utils/hooks'
 
 import headerMenuStyles from './HeaderMenu.module.css'
 import FloatMenu from './FloatMenu'
@@ -34,7 +34,7 @@ type Props = {
 
 export default function HeaderMenu({ handleLogin }: Props) {
   const [show, setShow] = useState(false)
-  const { isMobile } = useContext(DeviceDetectContext)
+  const { isMobile } = useDeviceDetect()
   const handleClick = useCallback(() => {
     setShow(!show)
   }, [show])

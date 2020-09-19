@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
-import { DeviceDetectContext } from '~components/layout'
+import React from 'react'
+import { useDeviceDetect } from '~utils/hooks'
 
 export default function CatLogo() {
-  const { isMobile } = useContext(DeviceDetectContext)
+  const { isMobile } = useDeviceDetect()
 
   return isMobile ? (
     <svg width='66' height='35' fill='none' xmlns='http://www.w3.org/2000/svg'>
