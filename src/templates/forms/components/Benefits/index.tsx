@@ -30,38 +30,6 @@ function InMobileArtifacts() {
   return (
     <>
       <DotsArtifact
-        top={90}
-        right={12.74}
-        columns={6}
-        size={3.9}
-        gap={18.57}
-        // prettier-ignore
-        list={[
-            0,1,1,0,0,0,
-            0,0,0,0,0,0,
-            0,0,0,1,0,0,
-            1,0,0,0,0,0,
-          ]}
-      />
-      <DotsArtifact
-        top={566}
-        right={12.74}
-        columns={2}
-        size={3.9}
-        gap={18.57}
-        // prettier-ignore
-        list={[
-            0,0,
-            0,1,
-            0,0,
-            0,0,
-            0,0,
-            1,0,
-            1,0,
-            0,0,
-          ]}
-      />
-      <DotsArtifact
         top={1115}
         right={15.16}
         columns={3}
@@ -76,25 +44,18 @@ function InMobileArtifacts() {
           ]}
       />
       <CircleArtifact
-        name={CircleName.Violet}
-        mainSize={40}
-        centerSize={7.14}
-        left='53.33%'
-        top={846}
-      />
-      <CircleArtifact
         name={CircleName.Purple}
-        mainSize={44}
-        centerSize={8.8}
-        left='94.13%'
-        top={1455}
+        mainSize={40}
+        centerSize={8}
+        left='-20px'
+        top={419}
       />
       <CircleArtifact
         name={CircleName.Green}
-        mainSize={24}
-        centerSize={4.29}
-        left='62.4%'
-        top={1770}
+        mainSize={48}
+        centerSize={9.6}
+        left='94%'
+        top={560}
       />
     </>
   )
@@ -103,12 +64,55 @@ function InMobileArtifacts() {
 function OutMobileArtifacts() {
   return (
     <>
-      <CircleArtifact
-        name={CircleName.Green}
-        mainSize={24}
-        centerSize={4.29}
-        left='8%'
-        top={52}
+      <DotsArtifact
+        top={0}
+        left={11.88}
+        columns={4}
+        size={3.9}
+        gap={18.58}
+        // prettier-ignore
+        list={[
+          0,0,1,0,
+          0,0,1,0,
+          0,0,1,0,
+          0,0,0,0,
+        ]}
+      />
+      <DotsArtifact
+        top={74}
+        right={7.51}
+        columns={2}
+        size={3}
+        gap={14.18}
+        // prettier-ignore
+        list={[
+            0,0,
+            0,1,
+            0,0,
+            0,0,
+            0,0,
+            1,0,
+            1,0,
+            0,0,
+          ]}
+      />
+      <DotsArtifact
+        bottom={0}
+        right={40}
+        columns={4}
+        size={3}
+        gap={13.74}
+        // prettier-ignore
+        list={[
+            1,0,0,0,
+            0,0,0,1,
+            0,0,0,1,
+            0,1,0,0,
+            0,0,0,0,
+            0,0,0,0,
+            0,1,1,0,
+            0,0,0,0,
+          ]}
       />
     </>
   )

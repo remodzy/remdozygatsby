@@ -1,20 +1,18 @@
 import React, { useContext } from 'react'
-import { FluidObject } from 'gatsby-image'
 
 import { CircleArtifact, CircleName } from '~components/circleArtifact'
 import DotsArtifact from '~components/dot'
 import BlockWrapper from '~components/blockWrapper'
+import { DeviceDetectContext } from '~components/layout'
 import SectionLabel from '~templates/shared/sectionLabel'
 import SectionTitle from '~templates/shared/sectionTitle'
 
-import Item from './item'
+import Item from './Item'
 import styles from './HowItWorks.module.css'
-import { DeviceDetectContext } from '~components/layout'
 
 export type HowItWorksItem = {
   key: string
-  image: FluidObject
-  size: number
+  icon: () => React.ReactElement<any, any>
   title?: string
   text: string
 }

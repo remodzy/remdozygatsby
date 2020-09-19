@@ -48,7 +48,7 @@ export default function Testimonials() {
 
 const query = graphql`
   query {
-    first: file(relativePath: { eq: "landing/testimonials-1.png" }) {
+    first: file(relativePath: { eq: "service/testimonials-1.png" }) {
       childImageSharp {
         fluid(maxWidth: 724) {
           ...GatsbyImageSharpFluid_noBase64

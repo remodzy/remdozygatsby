@@ -10,7 +10,7 @@ type Props = {
 }
 
 export const FeatureItem: React.FC<Props> = ({ title, icon: Icon }) => (
-  <div>
+  <div className={featureItemStyles.root}>
     <IconWrapper color='hsla(226, 74%, 59%, 0.2)'>
       <Icon />
     </IconWrapper>

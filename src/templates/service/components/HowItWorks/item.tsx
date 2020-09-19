@@ -4,22 +4,14 @@ import Img, { FluidObject } from 'gatsby-image'
 import itemStyles from './Item.module.css'
 
 type Props = {
-  image: {
-    childImageSharp: {
-      fluid: FluidObject
-    }
-  }
+  image: () => React.ReactElement
   text: string
-  size: number
 }
 
-export function Item({ image, text, size }: Props) {
+export function Item({ image: Image, text }: Props) {
   return (
     <div className={itemStyles.root}>
-      <Img
-        fluid={image.childImageSharp.fluid}
-        style={{ width: '100%', maxWidth: size }}
-      />
+      <Image />
       <div className={itemStyles.text}>{text}</div>
     </div>
   )

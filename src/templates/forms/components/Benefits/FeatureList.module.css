@@ -16,3 +16,13 @@
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 }
+
+@media screen and (max-width: 425px) {
+  .root {
+    margin-top: 54px;
+    padding: 0 18px;
+    row-gap: 44px;
+    column-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+}

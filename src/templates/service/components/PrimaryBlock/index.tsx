@@ -20,7 +20,7 @@ export default function PrimaryBlock(): ReactElement<any, any> {
 
 const query = graphql`
   query {
-    desktop: file(relativePath: { eq: "landing/primary-image.png" }) {
+    desktop: file(relativePath: { eq: "service/primary-image.png" }) {
       childImageSharp {
         fluid(maxWidth: 1290) {
           ...GatsbyImageSharpFluid_noBase64
@@ -28,7 +28,7 @@ const query = graphql`
         }
       }
     }
-    mobile: file(relativePath: { eq: "landing/primary-image-mobile.png" }) {
+    mobile: file(relativePath: { eq: "service/primary-image-mobile.png" }) {
       childImageSharp {
         fluid(maxWidth: 768) {
           ...GatsbyImageSharpFluid_noBase64
