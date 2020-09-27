@@ -22,7 +22,7 @@ export default function GlassesImage(): ReactElement<any, any> {
 
 const query = graphql`
   query {
-    file(relativePath: { eq: "service/glasses-image.png" }) {
+    file(relativePath: { eq: "shared/glasses-image.png" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.

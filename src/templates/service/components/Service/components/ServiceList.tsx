@@ -58,7 +58,7 @@ const query = graphql`
         }
       }
     }
-    settings: file(relativePath: { eq: "service/settings-image.png" }) {
+    settings: file(relativePath: { eq: "service/service-first.png" }) {
       childImageSharp {
         fluid(maxWidth: 766) {
           ...GatsbyImageSharpFluid_noBase64
@@ -66,7 +66,7 @@ const query = graphql`
         }
       }
     }
-    calendar: file(relativePath: { eq: "service/calendar-image.png" }) {
+    calendar: file(relativePath: { eq: "service/service-second.png" }) {
       childImageSharp {
         fluid(maxWidth: 789) {
           ...GatsbyImageSharpFluid_noBase64
@@ -75,7 +75,7 @@ const query = graphql`
       }
     }
 
-    communicate: file(relativePath: { eq: "service/communicate-image.png" }) {
+    communicate: file(relativePath: { eq: "service/service-third.png" }) {
       childImageSharp {
         fluid(maxWidth: 682) {
           ...GatsbyImageSharpFluid_noBase64
@@ -84,7 +84,7 @@ const query = graphql`
       }
     }
 
-    messaging: file(relativePath: { eq: "service/messaging-image.png" }) {
+    messaging: file(relativePath: { eq: "service/service-fourth.png" }) {
       childImageSharp {
         fluid(maxWidth: 754) {
           ...GatsbyImageSharpFluid_noBase64

@@ -61,27 +61,24 @@ export default function Blog() {
 
 const query = graphql`
   query {
-    first: file(relativePath: { eq: "service/useful-resource1.png" }) {
+    first: file(relativePath: { eq: "shared/useful-resource1.png" }) {
       childImageSharp {
         fluid(maxWidth: 340) {
           ...GatsbyImageSharpFluid_noBase64
-          # ...GatsbyImageSharpFluidLimitPresentationSize
         }
       }
     }
-    second: file(relativePath: { eq: "service/useful-resource2.png" }) {
+    second: file(relativePath: { eq: "shared/useful-resource2.png" }) {
       childImageSharp {
         fluid(maxWidth: 340) {
           ...GatsbyImageSharpFluid_noBase64
-          # ...GatsbyImageSharpFluidLimitPresentationSize
         }
       }
     }
-    third: file(relativePath: { eq: "service/useful-resource3.png" }) {
+    third: file(relativePath: { eq: "shared/useful-resource3.png" }) {
       childImageSharp {
         fluid(maxWidth: 340) {
           ...GatsbyImageSharpFluid_noBase64
-          # ...GatsbyImageSharpFluidLimitPresentationSize
         }
       }
     }
