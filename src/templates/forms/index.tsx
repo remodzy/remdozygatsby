@@ -10,6 +10,7 @@ import Testimonials from '~templates/shared/Testimonials'
 
 import Benefits from './components/Benefits'
 import HowItWorks from './components/HowItWorks'
+import FormsBlock from './components/Forms'
 
 export default function Forms() {
   const { isMobile } = useDeviceDetect()
@@ -23,6 +24,7 @@ export default function Forms() {
         subTitle='Remodzy Forms by Remodzy is an inspection app now used  50,000 times a day in over 80 countries'
         image={image?.childImageSharp?.fluid}
       />
+      <FormsBlock />
       <Integrations />
       <HowItWorks />
       <Benefits />
@@ -37,15 +39,15 @@ const query = graphql`
   query {
     desktop: file(relativePath: { eq: "forms/primary-image.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1290) {
+        fluid(maxWidth: 1427) {
           ...GatsbyImageSharpFluid_noBase64
           ...GatsbyImageSharpFluidLimitPresentationSize
         }
       }
     }
-    mobile: file(relativePath: { eq: "forms/primary-image-mobile.png" }) {
+    mobile: file(relativePath: { eq: "forms/primary-image-m.png" }) {
       childImageSharp {
-        fluid(maxWidth: 768) {
+        fluid {
           ...GatsbyImageSharpFluid_noBase64
           ...GatsbyImageSharpFluidLimitPresentationSize
         }

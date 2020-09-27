@@ -41,7 +41,10 @@ const PrimaryContent: React.FC<Props> = ({ title, subTitle, image }) => {
           </div>
         </div>
 
-        <Img fluid={image} style={{ width: '100%' }} />
+        <Img
+          fluid={image}
+          style={{ width: '100%', maxWidth: isMobile ? 768 : 1430 }}
+        />
         <CompaniesLogos />
         {isMobile ? <InMobileArtifacts /> : <InDesktopArtifacts />}
       </BlockWrapper>

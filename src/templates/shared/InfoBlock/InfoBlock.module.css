@@ -9,6 +9,7 @@
   line-height: 49px;
   color: var(--main-text-color);
   margin-top: 28px;
+  text-transform: capitalize;
 }
 .text {
   font-size: 15px;
@@ -26,7 +27,8 @@
   }
   .title {
     font-size: 20px;
-    line-height: 27px;
+    font-weight: 700;
+    line-height: 27.32px;
     padding-right: 30%;
   }
   .text {

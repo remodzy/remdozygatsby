@@ -22,13 +22,13 @@ const query = graphql`
   query {
     desktop: file(relativePath: { eq: "service/primary-image.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1290) {
+        fluid(maxWidth: 1450) {
           ...GatsbyImageSharpFluid_noBase64
           ...GatsbyImageSharpFluidLimitPresentationSize
         }
       }
     }
-    mobile: file(relativePath: { eq: "service/primary-image-mobile.png" }) {
+    mobile: file(relativePath: { eq: "service/primary-image-m.png" }) {
       childImageSharp {
         fluid(maxWidth: 768) {
           ...GatsbyImageSharpFluid_noBase64

@@ -111,7 +111,6 @@ function InDesktopArtifacts() {
           0,0,0,0,0,1,1,0,
         ]}
       />
-      ,
       <CircleArtifact
         name={CircleName.Green}
         mainSize={54}

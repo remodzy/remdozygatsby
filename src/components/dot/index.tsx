@@ -65,7 +65,7 @@ export default function DotsArtifact({
         zIndex,
       }}
     >
-      {list.map((el, index) =>
+      {list.map((el: number, index: number): any =>
         el ? (
           <Dot background={background.primary} size={size} key={index} />
         ) : (
