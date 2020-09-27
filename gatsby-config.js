@@ -64,3 +64,11 @@ module.exports = {
     'gatsby-plugin-sharp',
   ],
 }
+
+exports.onPostBuild = () => {
+  fs.copyFile(`./firebase.json`, `./public/firebase.json`, err => {
+    if (err) {
+      throw err
+    }
+  })
+}
