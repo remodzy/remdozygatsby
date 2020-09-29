@@ -10,8 +10,8 @@ export const CircleArtifact: React.FC<Props> = (
   const styles = getStyles(props)
 
   return (
-    <div style={styles.root}>
-      <div style={styles.center}></div>
-    </div>
+    <i style={styles.root}>
+      <i style={styles.center}></i>
+    </i>
   )
 }
