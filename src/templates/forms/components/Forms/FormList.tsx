@@ -63,10 +63,7 @@ const MobileBackgroundImage = () => (
 
 const FirstRow: React.FC<RowProps> = ({ isMobile, image, sizes }) => (
   <div className={formListStyles.row}>
-    <div
-      className={formListStyles.infoBlockWrapper}
-      style={{ width: `${sizes?.infoBlock}%` }}
-    >
+    <div className={formListStyles.infoBlockWrapper}>
       <InfoBlock
         icon={FirstIcon}
         isEven={false}
@@ -81,7 +78,7 @@ const FirstRow: React.FC<RowProps> = ({ isMobile, image, sizes }) => (
         }}
       />
     </div>
-    <Img fluid={image} style={{ width: `${sizes?.image}%` }} />
+    <Img fluid={image} style={{ width: '100%' }} />
     {!isMobile && (
       <>
         <div
@@ -110,15 +107,15 @@ const FirstRow: React.FC<RowProps> = ({ isMobile, image, sizes }) => (
           gap={17.57}
           // prettier-ignore
           list={[
-        1,0,0,0,
-        0,0,0,0,
-        0,0,0,1,
-        0,1,0,0,
-        0,0,0,0,
-        0,0,0,0,
-        0,1,1,0,
-        0,0,0,0,
-      ]}
+            1,0,0,0,
+            0,0,0,0,
+            0,0,0,1,
+            0,1,0,0,
+            0,0,0,0,
+            0,0,0,0,
+            0,1,1,0,
+            0,0,0,0,
+          ]}
         />
         <CircleArtifact
           name={CircleName.Purple}
@@ -181,17 +178,8 @@ const FirstRow: React.FC<RowProps> = ({ isMobile, image, sizes }) => (
 
 const SecondRow: React.FC<RowProps> = ({ isMobile, image, sizes }) => (
   <div className={formListStyles.row}>
-    <Img
-      fluid={image}
-      style={{ width: `${sizes?.image}%`, marginLeft: isMobile ? 0 : 89 }}
-    />
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'flex-start',
-        width: `${sizes?.infoBlock}%`,
-      }}
-    >
+    <Img fluid={image} style={{ width: '100%' }} />
+    <div className={formListStyles.infoBlockWrapper}>
       <InfoBlock
         icon={SecondIcon}
         isEven
@@ -300,10 +288,7 @@ const SecondRow: React.FC<RowProps> = ({ isMobile, image, sizes }) => (
 
 const ThirdRow: React.FC<RowProps> = ({ isMobile, image, sizes }) => (
   <div className={formListStyles.row}>
-    <div
-      className={formListStyles.infoBlockWrapper}
-      style={{ width: `${sizes?.infoBlock}%` }}
-    >
+    <div className={formListStyles.infoBlockWrapper}>
       <InfoBlock
         icon={ThirdIcon}
         isEven
@@ -318,7 +303,7 @@ const ThirdRow: React.FC<RowProps> = ({ isMobile, image, sizes }) => (
         }}
       />
     </div>
-    <Img fluid={image} style={{ width: `${sizes?.image}%` }} />
+    <Img fluid={image} style={{ width: '100%' }} />
     {!isMobile && (
       <>
         <div
@@ -383,7 +368,7 @@ export const desktopImage = graphql`
     childImageSharp {
       fluid(maxWidth: 990) {
         ...GatsbyImageSharpFluid_noBase64
-        ...GatsbyImageSharpFluidLimitPresentationSize
+        # ...GatsbyImageSharpFluidLimitPresentationSize
       }
     }
   }
@@ -393,7 +378,7 @@ export const mobileImage = graphql`
     childImageSharp {
       fluid(maxWidth: 768) {
         ...GatsbyImageSharpFluid_noBase64
-        ...GatsbyImageSharpFluidLimitPresentationSize
+        # ...GatsbyImageSharpFluidLimitPresentationSize
       }
     }
   }
@@ -411,7 +396,7 @@ const query = graphql`
       childImageSharp {
         fluid(maxWidth: 943) {
           ...GatsbyImageSharpFluid_noBase64
-          ...GatsbyImageSharpFluidLimitPresentationSize
+          # ...GatsbyImageSharpFluidLimitPresentationSize
         }
       }
     }

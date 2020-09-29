@@ -25,6 +25,14 @@ if (!spaceId || !accessToken) {
   )
 }
 
+module.exports.onPostBuild = () => {
+  fs.copyFile(`./firebase.json`, `./public/firebase.json`, err => {
+    if (err) {
+      throw err
+    }
+  })
+}
+
 module.exports = {
   pathPrefix: '/remodzy',
   siteMetadata: {
@@ -62,13 +70,12 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
+    {
+      resolve: `gatsby-plugin-minify-classnames`,
+      options: {
+        dictionary: 'bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ0123456789',
+        enableOnDevelopment: false,
+      },
+    },
   ],
-}
-
-exports.onPostBuild = () => {
-  fs.copyFile(`./firebase.json`, `./public/firebase.json`, err => {
-    if (err) {
-      throw err
-    }
-  })
 }

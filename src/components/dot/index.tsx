@@ -1,19 +1,14 @@
 import React, { ReactElement } from 'react'
 
+import dotStyles from './Dot.module.css'
+
 export const gradient = 'linear-gradient(180deg, #8AA5ED 0%, #507CF5 100%)'
 
 export function Dot({ background = '#CCD0D3', size = 6 }) {
   return (
-    <div style={{ width: size, height: size }}>
-      <div
-        style={{
-          width: '100%',
-          height: '100%',
-          background,
-          borderRadius: '50%',
-        }}
-      ></div>
-    </div>
+    <i style={{ width: size, height: size }}>
+      <i className={dotStyles.wrapper} style={{ background }}></i>
+    </i>
   )
 }
 
@@ -65,13 +60,13 @@ export default function DotsArtifact({
         zIndex,
       }}
     >
-      {list.map((el: number, index: number): any =>
-        el ? (
-          <Dot background={background.primary} size={size} key={index} />
-        ) : (
-          <Dot size={size} background={background.default} key={index} />
-        )
-      )}
+      {list.map((el: number, index: number): any => (
+        <Dot
+          background={el ? background.primary : background.default}
+          size={size}
+          key={index}
+        />
+      ))}
     </div>
   )
 }
