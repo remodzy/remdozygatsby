@@ -40,8 +40,10 @@
     padding-top: 40px;
   }
   .row {
-    /* flex-direction: column; */
     padding-bottom: 40px;
+    grid-template-areas:
+      'image'
+      'info';
   }
   .row:last-child {
     padding-bottom: 40px;
@@ -49,9 +51,13 @@
   .row:nth-child(odd) {
     flex-direction: column-reverse;
   }
+  .image {
+    grid-area: image;
+  }
   .infoBlockWrapper {
     justify-content: flex-start;
     padding: 0;
+    grid-area: info;
   }
 
   .mobileBackground {
