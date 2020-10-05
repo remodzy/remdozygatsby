@@ -40,7 +40,7 @@ const query = graphql`
     desktop: file(relativePath: { eq: "forms/primary-image.png" }) {
       childImageSharp {
         fluid(maxWidth: 1427) {
-          ...GatsbyImageSharpFluid_noBase64
+          ...GatsbyImageSharpFluid
           ...GatsbyImageSharpFluidLimitPresentationSize
         }
       }
@@ -48,7 +48,7 @@ const query = graphql`
     mobile: file(relativePath: { eq: "forms/primary-image-m.png" }) {
       childImageSharp {
         fluid {
-          ...GatsbyImageSharpFluid_noBase64
+          ...GatsbyImageSharpFluid
           ...GatsbyImageSharpFluidLimitPresentationSize
         }
       }

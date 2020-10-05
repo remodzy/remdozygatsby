@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useState } from 'react'
+import { RefObject, useEffect, useRef, useState } from 'react'
 
 export const useOnClickOutside = (
   ref: RefObject<HTMLElement> | RefObject<HTMLElement>[],
@@ -34,9 +34,8 @@ export const useOnClickOutside = (
 }
 
 export const useDeviceDetect = () => {
-  const [isMobile, setIsMobile] = useState(false)
+  const [isMobile, setIsMobile] = useState(detectMobileDevice())
   useEffect(() => {
-    setIsMobile(detectMobileDevice())
     window.addEventListener('resize', e => {
       setIsMobile(detectMobileDevice())
     })
@@ -48,6 +47,23 @@ export const useDeviceDetect = () => {
   return {
     isMobile,
   }
+}
+
+export function usePortal(id: string) {
+  const rootElemRef = useRef(document.createElement('div'))
+
+  useEffect(() => {
+    const parentElem: HTMLElement = document.querySelector(
+      `#${id}`
+    ) as HTMLElement
+    parentElem.appendChild(rootElemRef.current)
+
+    return function removeElement() {
+      rootElemRef.current.remove()
+    }
+  }, [])
+
+  return rootElemRef.current
 }
 
 function detectMobileDevice() {

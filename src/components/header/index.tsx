@@ -5,7 +5,7 @@ import { authorize } from '~utils/auth'
 import { useDeviceDetect } from '~utils/hooks'
 
 import Logo from '../logo'
-import HeaderMenu from '../headerMenu'
+import HeaderMenu from '../HeaderMenu'
 import LinkButton from '../linkButton'
 import Button from '../button'
 import headerStyles from './Header.module.css'
@@ -17,7 +17,7 @@ const Header = () => {
     authorize({})
   }, [])
 
-  const handleSignup = useCallback(() => {
+  const handleSignUp = useCallback(() => {
     authorize({ signUp: true })
   }, [])
 
@@ -33,7 +33,7 @@ const Header = () => {
         >
           <Logo />
         </Link>
-        <HeaderMenu handleLogin={handleLogin} />
+        <HeaderMenu />
         {!isMobile && (
           <div className={headerStyles.buttonsContainer}>
             <div className={headerStyles.loginContainer}>
@@ -42,7 +42,7 @@ const Header = () => {
             <Button
               label='Get Started'
               className='primary-btn'
-              handleClick={handleSignup}
+              handleClick={handleSignUp}
             />
           </div>
         )}

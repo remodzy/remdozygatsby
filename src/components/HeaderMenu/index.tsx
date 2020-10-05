@@ -7,6 +7,7 @@ import headerMenuStyles from './HeaderMenu.module.css'
 import FloatMenu from './FloatMenu'
 import MenuToggle from './MenuToggle'
 import DesktopProductsMenu from './DesktopProductsMenu'
+import ModalContainer from '~components/ModalContainer'
 
 export type MenuItem = {
   link: string
@@ -28,13 +29,10 @@ const menuList: MenuItem[] = [
   },
 ]
 
-type Props = {
-  handleLogin: () => void
-}
-
-export default function HeaderMenu({ handleLogin }: Props) {
+export default function HeaderMenu() {
   const [show, setShow] = useState(false)
   const { isMobile } = useDeviceDetect()
+
   const handleClick = useCallback(() => {
     setShow(!show)
   }, [show])
@@ -42,8 +40,16 @@ export default function HeaderMenu({ handleLogin }: Props) {
   if (isMobile) {
     return (
       <>
-        <MenuToggle show={show} handleClick={handleClick} />
-        {show && <FloatMenu menuList={menuList} handleLogin={handleLogin} />}
+        <MenuToggle show={false} handleClick={handleClick} />
+        {show && (
+          <ModalContainer>
+            <FloatMenu
+              show={show}
+              menuList={menuList}
+              handleClose={handleClick}
+            />
+          </ModalContainer>
+        )}
       </>
     )
   }
