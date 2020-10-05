@@ -1,0 +1,13 @@
+.root {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 516px;
+}
+.link {
+  text-decoration: none;
+  color: var(--main-text-color);
+  font-size: 16px;
+  font-weight: 500;
+}

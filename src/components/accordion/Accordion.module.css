@@ -12,6 +12,7 @@
   justify-content: space-between;
   padding: 24px;
   transition: 0.4s;
+  border-style: none;
 }
 
 .panel {

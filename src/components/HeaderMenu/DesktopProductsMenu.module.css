@@ -1,0 +1,31 @@
+.rootTitle {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.rootTitle.active {
+  color: var(--primary-color);
+}
+
+.title {
+  margin-right: 10px;
+}
+
+.openedMenu {
+  transform: rotate(180deg);
+}
+
+.rootMenu {
+  position: absolute;
+  z-index: 3;
+  top: 70px;
+  width: 365px;
+  padding: 24px 0;
+  background: #ffffff;
+  border: 1px solid #e9eef3;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 43px rgba(59, 97, 163, 0.1);
+  border-radius: 12px;
+}
