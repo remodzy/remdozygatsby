@@ -24,7 +24,11 @@ export default function SEO({ title, description, image, article }: Props) {
   }
 
   return (
-    <Helmet defaultTitle={seo.title} titleTemplate={siteMetadata.titleTemplate}>
+    <Helmet
+      defaultTitle={seo.title}
+      htmlAttributes={{ lang: 'en' }}
+      titleTemplate={siteMetadata.titleTemplate}
+    >
       <meta
         http-equiv='Accept-CH'
         content='DPR, Width, Viewport-Width, Downlink'

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import Img, { FluidObject } from 'gatsby-image'
 
 import Button from '~components/button'
@@ -10,6 +10,7 @@ import { useDeviceDetect } from '~utils/hooks'
 
 import CompaniesLogos from '../CompaniesLogos'
 import primaryContentStyles from './PrimaryContent.module.css'
+import { authorize } from '~utils/auth'
 
 type Props = {
   title: string
@@ -19,6 +20,11 @@ type Props = {
 
 const PrimaryContent: React.FC<Props> = ({ title, subTitle, image }) => {
   const { isMobile } = useDeviceDetect()
+
+  const handleClick = useCallback(() => {
+    authorize({ signUp: true })
+  }, [])
+
   return (
     <div className={primaryContentStyles.root}>
       <BlockWrapper
@@ -34,7 +40,7 @@ const PrimaryContent: React.FC<Props> = ({ title, subTitle, image }) => {
           <Button
             label='Start Free Trial'
             className='primary-btn'
-            handleClick={() => {}}
+            handleClick={handleClick}
           />
           <div className={primaryContentStyles.labelContainer}>
             <Label text='No credit card required' />
@@ -43,7 +49,8 @@ const PrimaryContent: React.FC<Props> = ({ title, subTitle, image }) => {
 
         <Img
           fluid={image}
-          style={{ width: '100%', maxWidth: isMobile ? 768 : 1430 }}
+          style={{ width: '100%', maxWidth: isMobile ? 732 : 1430 }}
+          loading='eager'
         />
         <CompaniesLogos />
         {isMobile ? <InMobileArtifacts /> : <InDesktopArtifacts />}
