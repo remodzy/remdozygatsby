@@ -5,7 +5,7 @@ import { authorize } from '~utils/auth'
 import { useDeviceDetect } from '~utils/hooks'
 
 import Logo from '../logo'
-import HeaderMenu from '../HeaderMenu1'
+import HeaderMenu from '../HeaderMenu'
 import LinkButton from '../linkButton'
 import Button from '../button'
 import headerStyles from './Header.module.css'
