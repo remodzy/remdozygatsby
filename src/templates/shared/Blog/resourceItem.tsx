@@ -30,7 +30,7 @@ const ResourceItem: React.FC<Props> = ({
   imageTitleColor,
 }) => (
   <div className={resourceItemStyles.root}>
-    <Img fluid={image} style={imageStyles} />
+    <Img fluid={image} style={imageStyles} loading='eager' />
     <div
       className={resourceItemStyles.imageTitle}
       style={{ color: imageTitleColor, marginTop: 24 }}

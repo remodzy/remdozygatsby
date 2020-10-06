@@ -16,6 +16,7 @@ export default function GlassesImage(): ReactElement<any, any> {
         marginTop: isMobile ? 90 : 119,
         marginBottom: isMobile ? 100 : 174,
       }}
+      loading='eager'
     />
   )
 }
