@@ -30,7 +30,7 @@ export default function InfoBlock({ item, isEven, icon }: Props) {
       }}
     >
       <IconWrapper color={color.sub}>
-        <Img fixed={icon} />
+        <Img fixed={icon} loading='eager' />
       </IconWrapper>
       <div className={infoBlockStyles.title}>{item.title}</div>
       <div className={infoBlockStyles.text}>{item.text}</div>

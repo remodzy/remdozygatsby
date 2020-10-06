@@ -10,16 +10,14 @@ type Props = {
   children: ReactElement | ReactElement[]
 }
 
-const Layout: React.FC<Props> = ({ children }) => {
-  return (
-    <>
-      <SEO />
-      <Header />
-      <div>
-        <main>{children}</main>
-        <Footer />
-      </div>
-    </>
-  )
-}
+const Layout: React.FC<Props> = ({ children }) => (
+  <>
+    <SEO />
+    <Header />
+    <div>
+      <main>{children}</main>
+      <Footer />
+    </div>
+  </>
+)
 export default Layout

@@ -14,7 +14,7 @@ type ImageProps = {
 }
 
 const Image = ({ image, size }: ImageProps) => (
-  <Img fluid={image} style={{ width: '100%' }} />
+  <Img fluid={image} style={{ width: '100%' }} loading='eager' />
 )
 
 type Props = {

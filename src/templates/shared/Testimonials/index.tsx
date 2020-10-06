@@ -36,6 +36,7 @@ export default function Testimonials() {
             <Img
               fluid={images.first.childImageSharp.fluid}
               style={{ width: '100%' }}
+              loading='eager'
             />
           </div>
         </div>

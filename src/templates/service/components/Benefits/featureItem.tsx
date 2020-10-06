@@ -18,7 +18,7 @@ export function FeatureItem({
   return (
     <div>
       <IconWrapper color='hsla(226, 74%, 59%, 0.2)'>
-        <Img fixed={image} alt={title} />
+        <Img fixed={image} alt={title} loading='eager' />
       </IconWrapper>
       <div className={featureItemStyles.title}>{title}</div>
       <div className={featureItemStyles.text}>{text}</div>

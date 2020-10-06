@@ -110,7 +110,7 @@ function OutMobileArtifacts() {
         columns={3}
         left={10}
         top={42}
-        size={2.93}
+        size={3}
         gap={13.96}
         zIndex={0}
         // prettier-ignore
@@ -129,7 +129,7 @@ function OutMobileArtifacts() {
         columns={4}
         right={10}
         top={318}
-        size={3.67}
+        size={4}
         gap={17.5}
         zIndex={0}
         // prettier-ignore
@@ -144,7 +144,7 @@ function OutMobileArtifacts() {
         columns={3}
         left={15}
         top={676}
-        size={3.67}
+        size={4}
         gap={17.5}
         zIndex={0}
         // prettier-ignore

@@ -82,6 +82,7 @@ const FirstRow: React.FC<RowProps> = ({ isMobile, image, sizes }) => (
       fluid={image}
       style={{ width: '100%' }}
       className={formListStyles.image}
+      loading='eager'
     />
     {!isMobile && (
       <>
@@ -186,6 +187,7 @@ const SecondRow: React.FC<RowProps> = ({ isMobile, image, sizes }) => (
       fluid={image}
       style={{ width: '100%' }}
       className={formListStyles.image}
+      loading='eager'
     />
     <div className={formListStyles.infoBlockWrapper}>
       <InfoBlock
@@ -315,6 +317,7 @@ const ThirdRow: React.FC<RowProps> = ({ isMobile, image, sizes }) => (
       fluid={image}
       style={{ width: '100%' }}
       className={formListStyles.image}
+      loading='eager'
     />
     {!isMobile && (
       <>

@@ -34,9 +34,11 @@ export const useOnClickOutside = (
 }
 
 export const useDeviceDetect = () => {
-  const [isMobile, setIsMobile] = useState(detectMobileDevice())
+  const [isMobile, setIsMobile] = useState(true)
+
   useEffect(() => {
-    window.addEventListener('resize', e => {
+    setIsMobile(detectMobileDevice())
+    window.addEventListener('resize', () => {
       setIsMobile(detectMobileDevice())
     })
     return () => {
