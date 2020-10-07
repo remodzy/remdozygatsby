@@ -5,7 +5,6 @@
 
 .button {
   all: unset;
-  display: flex;
   outline: none;
   cursor: pointer;
   display: flex;
