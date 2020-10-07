@@ -7,7 +7,7 @@ export default function Logo() {
   return isMobile ? <MobileLogo /> : <DesktopLogo />
 }
 
-const MobileLogo = () => (
+const MobileLogo = React.memo(() => (
   <svg width='112' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'>
     <path
       d='M12.6 15.753h-2.524v3.031a.966.966 0 01-.963.967H6.05a.967.967 0 01-.97-.965V5.079a.968.968 0 01.945-.967l2.92-.071h3.76c2.204.073 3.426.756 4.193 1.39a6.72 6.72 0 011.625 1.893c.442.796.67 1.694.66 2.605a5.486 5.486 0 01-1.728 4.003c.144.301 3.543 4.405 5.873 7.206V4.218A4.215 4.215 0 0020.722.32 4.22 4.22 0 0019.107 0H3.639A3.64 3.64 0 000 3.638v15.289a3.635 3.635 0 003.64 3.636h14.498l-5.295-6.832-.243.022z'
@@ -48,7 +48,7 @@ const MobileLogo = () => (
       </linearGradient>
     </defs>
   </svg>
-)
+))
 
 const DesktopLogo = () => (
   <svg width='174' height='38' fill='none' xmlns='http://www.w3.org/2000/svg'>

@@ -39,7 +39,7 @@ const Accordion: React.FC<Props> = ({ children, title }) => {
           open ? accordionStyles.active : ''
         }`}
       >
-        {children}
+        <div className={accordionStyles.listWrapper}>{children}</div>
       </div>
     </div>
   )

@@ -1,7 +1,7 @@
 import React from 'react'
 import HowItWorks from '~templates/shared/HowItWorks'
 
-export default function HowItWorksWrapper() {
+const HowItWorksWrapper = React.memo(() => {
   const list = [
     {
       key: 'actions',
@@ -25,7 +25,9 @@ export default function HowItWorksWrapper() {
     },
   ]
   return <HowItWorks title='How Remodzy Forms works' list={list} />
-}
+})
+
+export default HowItWorksWrapper
 
 function Actions(): React.ReactElement<any, any> {
   return (
@@ -37,13 +39,13 @@ function Actions(): React.ReactElement<any, any> {
     >
       <path
         d='M119.5 239c65.998 0 119.5-53.502 119.5-119.5C239 53.502 185.498 0 119.5 0 53.502 0 0 53.502 0 119.5 0 185.498 53.502 239 119.5 239z'
-        fill='url(#linearGradient0)'
+        fill='url(#ActionsLinearGradient0)'
       />
-      <g filter='url(#filter0D)'>
+      <g filter='url(#ActionsFilter0D)'>
         <rect x='20' y='45' width='198' height='140' rx='5' fill='#D7DBDF' />
       </g>
       <rect x='28' y='53' width='182' height='124' rx='4' fill='#fff' />
-      <g filter='url(#filter1D)'>
+      <g filter='url(#ActionsFilter1D)'>
         <rect x='20' y='189' width='198' height='7' rx='3.5' fill='#D7DBDF' />
       </g>
       <rect x='79' y='67' width='14' height='14' rx='1' fill='#507CF5' />
@@ -117,7 +119,7 @@ function Actions(): React.ReactElement<any, any> {
       />
       <defs>
         <filter
-          id='filter0D'
+          id='ActionsFilter0D'
           x='18'
           y='44'
           width='202'
@@ -137,7 +139,7 @@ function Actions(): React.ReactElement<any, any> {
           <feBlend in='SourceGraphic' in2='effect1DropShadow' result='shape' />
         </filter>
         <filter
-          id='filter1D'
+          id='ActionsFilter1D'
           x='18'
           y='188'
           width='202'
@@ -157,7 +159,7 @@ function Actions(): React.ReactElement<any, any> {
           <feBlend in='SourceGraphic' in2='effect1DropShadow' result='shape' />
         </filter>
         <linearGradient
-          id='linearGradient0'
+          id='ActionsLinearGradient0'
           x1='119.5'
           y1='236.188'
           x2='127.232'
@@ -184,11 +186,11 @@ function TeamManagement(): React.ReactElement<any, any> {
         d='M119.5 239c65.998 0 119.5-53.502 119.5-119.5C239 53.502 185.498 0 119.5 0 53.502 0 0 53.502 0 119.5 0 185.498 53.502 239 119.5 239z'
         fill='url(#TeamManagementPaint0Linear)'
       />
-      <g filter='url(#filter0D)'>
+      <g filter='url(#TeamManagementFilter0D)'>
         <rect x='21' y='45' width='198' height='140' rx='5' fill='#D7DBDF' />
       </g>
       <rect x='29' y='53' width='182' height='124' rx='4' fill='#fff' />
-      <g filter='url(#filter1D)'>
+      <g filter='url(#TeamManagementFilter1D)'>
         <rect x='21' y='189' width='198' height='7' rx='3.5' fill='#D7DBDF' />
       </g>
       <rect x='85' y='140' width='71' height='3' rx='1.5' fill='#D7DBDF' />
@@ -244,7 +246,7 @@ function TeamManagement(): React.ReactElement<any, any> {
         strokeLinecap='round'
         strokeLinejoin='round'
       />
-      <g filter='url(#filter2D)'>
+      <g filter='url(#TeamManagementFilter2D)'>
         <path
           d='M62.22 103H13.939A3.93 3.93 0 0010 106.921v96.363a3.93 3.93 0 003.938 3.921H62.22a3.93 3.93 0 003.938-3.921v-96.363A3.93 3.93 0 0062.22 103z'
           fill='#D7DBDF'
@@ -292,7 +294,7 @@ function TeamManagement(): React.ReactElement<any, any> {
       <rect x='165' y='197' width='19' height='2' rx='1' fill='#fff' />
       <defs>
         <filter
-          id='filter0D'
+          id='TeamManagementFilter0D'
           x='19'
           y='44'
           width='202'
@@ -312,7 +314,7 @@ function TeamManagement(): React.ReactElement<any, any> {
           <feBlend in='SourceGraphic' in2='effect1DropShadow' result='shape' />
         </filter>
         <filter
-          id='filter1D'
+          id='TeamManagementFilter1D'
           x='19'
           y='188'
           width='202'
@@ -332,7 +334,7 @@ function TeamManagement(): React.ReactElement<any, any> {
           <feBlend in='SourceGraphic' in2='effect1DropShadow' result='shape' />
         </filter>
         <filter
-          id='filter2D'
+          id='TeamManagementFilter2D'
           x='8'
           y='102'
           width='60.158'
@@ -379,11 +381,11 @@ function Integrations(): React.ReactElement<any, any> {
         d='M119.5 239c65.998 0 119.5-53.502 119.5-119.5C239 53.502 185.498 0 119.5 0 53.502 0 0 53.502 0 119.5 0 185.498 53.502 239 119.5 239z'
         fill='url(#IntegrationsPaint0Linear)'
       />
-      <g filter='url(#filter0D)'>
+      <g filter='url(#IntegrationsFilter0D)'>
         <rect x='21' y='45' width='198' height='140' rx='5' fill='#D7DBDF' />
       </g>
       <rect x='29' y='53' width='182' height='124' rx='4' fill='#fff' />
-      <g filter='url(#filter1D)'>
+      <g filter='url(#IntegrationsFilter1D)'>
         <rect x='21' y='189' width='198' height='7' rx='3.5' fill='#D7DBDF' />
       </g>
       <path
@@ -420,7 +422,7 @@ function Integrations(): React.ReactElement<any, any> {
         strokeLinecap='round'
         strokeLinejoin='round'
       />
-      <g filter='url(#filter2D)'>
+      <g filter='url(#IntegrationsFilter2D)'>
         <rect x='62' y='21' width='45' height='43' rx='2' fill='#D7DBDF' />
       </g>
       <ellipse cx='84.5' cy='37.417' rx='10.086' ry='10.164' fill='#fff' />
@@ -543,7 +545,7 @@ function Integrations(): React.ReactElement<any, any> {
       />
       <defs>
         <filter
-          id='filter0D'
+          id='IntegrationsFilter0D'
           x='19'
           y='44'
           width='202'
@@ -563,7 +565,7 @@ function Integrations(): React.ReactElement<any, any> {
           <feBlend in='SourceGraphic' in2='effect1DropShadow' result='shape' />
         </filter>
         <filter
-          id='filter1D'
+          id='IntegrationsFilter1D'
           x='19'
           y='188'
           width='202'
@@ -583,7 +585,7 @@ function Integrations(): React.ReactElement<any, any> {
           <feBlend in='SourceGraphic' in2='effect1DropShadow' result='shape' />
         </filter>
         <filter
-          id='filter2D'
+          id='IntegrationsFilter2D'
           x='60'
           y='20'
           width='49'
