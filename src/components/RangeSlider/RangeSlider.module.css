@@ -1,0 +1,43 @@
+.root {
+  display: flex;
+  width: 100%;
+}
+input[type='range'] {
+  margin: auto;
+  outline: none;
+  padding: 0;
+  width: 100%;
+  height: 6px;
+  background-color: #dedede;
+  background-image: -webkit-gradient(
+    linear,
+    50% 0%,
+    50% 100%,
+    color-stop(0%, var(--primary-color)),
+    color-stop(100%, var(--primary-color))
+  );
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  box-shadow: none;
+  border: none;
+  background: transparent;
+  -webkit-appearance: none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  background: var(--primary-color)
+    url('data:image/svg+xml,%3Csvg%20width%3D%2216%22%20height%3D%2211%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M.183315%205.55692L4.59835%209.98708c.25704.24192.65016.24192.89208%200%20.24192-.24192.24192-.65016%200-.89208L1.51387%205.11844l3.97656-3.97656c.24192-.257041.24192-.650161%200-.892081-.24192-.2419196-.63504-.2419197-.89208%200L.183315%204.66484c-.2419204.25704-.2419204.65016%200%20.89208zM15.4886%205.55692l-4.4151%204.43016c-.257.24192-.6501.24192-.8921%200-.24188-.24192-.24188-.65016%200-.89208l3.9766-3.97656-3.9766-3.97656c-.24188-.257041-.24188-.650161%200-.892081.242-.2419196.6351-.2419197.8921%200l4.4151%204.415041c.2419.25704.2419.65016%200%20.89208z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E')
+    no-repeat center center;
+  border-radius: 15px;
+  box-shadow: 0 0 1px 0px rgba(0, 0, 0, 0.1);
+  -webkit-appearance: none;
+}

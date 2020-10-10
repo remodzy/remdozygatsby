@@ -1,0 +1,8 @@
+.root {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 182.3%;
+  text-align: center;
+  margin-top: 22px;
+  color: var(--second-text-color);
+}
