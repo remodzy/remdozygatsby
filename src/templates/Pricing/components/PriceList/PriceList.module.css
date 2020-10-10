@@ -1,0 +1,50 @@
+.root {
+  position: relative;
+  padding: 95px 18% 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 34px;
+  justify-items: center;
+  margin-top: 50px;
+}
+
+.switcherContainer {
+  position: relative;
+  margin-top: 18px;
+}
+.switcherWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.switcherLabel:first-child {
+  margin-right: 24px;
+}
+.switcherLabel:last-child {
+  margin-left: 18px;
+}
+
+.switcherLabel {
+  color: var(--main-text-color);
+  font-weight: 600;
+  font-size: 23px;
+  line-height: 31px;
+}
+
+.switcherLabel.active {
+  color: var(--primary-color);
+}
+
+.saleIconWrapper {
+  position: absolute;
+  top: 0;
+  width: 200px;
+  padding-left: 55px;
+}

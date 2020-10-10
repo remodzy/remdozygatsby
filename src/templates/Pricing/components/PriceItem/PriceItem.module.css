@@ -1,0 +1,136 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 315px;
+  height: 494px;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  box-sizing: border-box;
+  box-shadow: 0px 1px 12px rgba(59, 97, 163, 0.05);
+  border-radius: 12px;
+}
+
+.active {
+}
+
+.header {
+  border-bottom: 1px solid var(--border-color);
+  color: var(--primary-color);
+  font-size: 23px;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.active .header {
+  color: var(--second-text-color);
+}
+
+.planLabel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.planLabel::after {
+  position: absolute;
+  bottom: -2px;
+  content: '';
+  width: 70px;
+  height: 3px;
+  background: var(--primary-color);
+}
+
+.active .planLabel::after {
+  background: var(--second-text-color);
+}
+
+.content {
+  padding: 24px 46px 0;
+}
+
+.employeesAmount {
+  background: var(--background-color);
+  border-radius: 10px;
+  padding: 16px 32px;
+  text-align: center;
+}
+
+.employeesLabel {
+  color: var(--grey-text-color);
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 23px;
+  white-space: nowrap;
+}
+
+.employeesCount {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 49px;
+}
+
+.active .employeesCount {
+  color: var(--second-text-color);
+}
+
+.rangeContainer {
+  height: 55px;
+  display: flex;
+  width: 100%;
+}
+
+.priceContainer {
+  position: relative;
+  text-align: center;
+}
+
+.price {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 49px;
+}
+
+.active .price {
+  color: var(--second-text-color);
+}
+
+.currency {
+  color: rgba(72, 101, 235, 0.5);
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 23px;
+  margin-right: 5px;
+}
+
+.period {
+  color: var(--main-text-color);
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 23px;
+}
+
+.infoLabelContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+.infoLabel {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  color: #a9b2bb;
+  text-align: center;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 0 46px 36px;
+}

@@ -18,15 +18,7 @@ export default function Button({
   label,
   handleClick,
 }: Props): ReactElement<any, any> {
-  let style: any = {
-    padding: '18px 32px',
-    borderRadius: '10px',
-    border: 'none',
-    fontSize: '16px',
-    fontWeight: 600,
-    color: 'white',
-    outline: 'none',
-  }
+  let style: any = {}
   if (!className && colors) {
     style.backgroundColor = colors.background
     style.color = colors.text
@@ -35,7 +27,7 @@ export default function Button({
   return (
     <button
       type='button'
-      className={className}
+      className={`${className} btn`}
       style={style}
       onClick={handleClick}
     >
