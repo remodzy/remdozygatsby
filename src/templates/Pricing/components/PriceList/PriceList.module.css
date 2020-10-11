@@ -48,3 +48,24 @@
   width: 200px;
   padding-left: 55px;
 }
+
+@media screen and (max-width: 768px) {
+  .root {
+    padding: 66px 0 70px;
+  }
+
+  .container {
+    gap: 44px;
+  }
+
+  .saleIconWrapper {
+    padding-left: 25px;
+  }
+
+  .switcherLabel:first-child {
+    margin-right: 14px;
+  }
+  .switcherLabel:last-child {
+    margin-left: 6px;
+  }
+}
