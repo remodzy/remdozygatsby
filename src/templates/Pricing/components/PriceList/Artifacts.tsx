@@ -79,5 +79,116 @@ export default function Artifacts() {
     )
   }
 
-  return <></>
+  return (
+    <>
+      <DotsArtifact
+        top={110}
+        left='2.909%'
+        size={3}
+        columns={2}
+        gap={14}
+        // prettier-ignore
+        list={[
+            0,0,
+            0,1,
+            0,1,
+            0,0,
+            0,0,
+            0,0,
+            1,0,
+            0,0,
+          ]}
+      />
+      <DotsArtifact
+        top={0}
+        right='2.744%'
+        size={3}
+        columns={5}
+        gap={14}
+        // prettier-ignore
+        list={[
+            0,1,1,0,0,
+            0,0,0,0,0,
+            0,0,0,1,0,
+            1,0,0,0,0,
+          ]}
+      />
+      <DotsArtifact
+        top={800}
+        right='13.333%'
+        size={3}
+        columns={8}
+        gap={14}
+        // prettier-ignore
+        list={[
+            0,0,0,1,0,0,1,0,
+            1,0,0,0,0,0,0,0,
+          ]}
+      />
+      <DotsArtifact
+        top={989}
+        right='1.912%'
+        size={4}
+        columns={1}
+        gap={14}
+        // prettier-ignore
+        list={[
+           0,
+           0,
+           0,
+           0,
+           0,
+           0,
+           0,
+           0,
+          ]}
+      />
+      <DotsArtifact
+        top={1330}
+        left='14.933%'
+        size={3}
+        columns={4}
+        gap={20}
+        // prettier-ignore
+        list={[
+            0,0,0,0,
+            0,1,1,0,
+          ]}
+      />
+      <DotsArtifact
+        bottom={26}
+        left='14.437%'
+        size={4}
+        columns={8}
+        gap={16}
+        // prettier-ignore
+        list={[
+            0,0,0,0,0,0,1,0,
+            0,0,0,1,0,0,1,0,
+            1,0,0,0,0,0,0,0,
+          ]}
+      />
+      <CircleArtifact
+        name={CircleName.Purple}
+        mainSize={22}
+        centerSize={4}
+        left='13.6%'
+        top={35}
+      />
+      <CircleArtifact
+        name={CircleName.Green}
+        mainSize={24}
+        centerSize={5}
+        left='17.067%'
+        top={811}
+      />
+      <CircleArtifact
+        name={CircleName.Purple}
+        mainSize={38}
+        centerSize={8}
+        right='-5%'
+        bottom={16}
+      />
+    </>
+  )
 }
