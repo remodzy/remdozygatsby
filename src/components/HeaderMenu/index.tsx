@@ -2,12 +2,12 @@ import React, { useState, useCallback } from 'react'
 import { Link } from 'gatsby'
 
 import { useDeviceDetect } from '~utils/hooks'
+import ModalContainer from '~components/ModalContainer'
 
 import headerMenuStyles from './HeaderMenu.module.css'
 import FloatMenu from './FloatMenu'
 import MenuToggle from './MenuToggle'
 import DesktopProductsMenu from './DesktopProductsMenu'
-import ModalContainer from '~components/ModalContainer'
 
 export type MenuItem = {
   link: string
@@ -20,11 +20,11 @@ const menuList: MenuItem[] = [
     text: 'Integrations',
   },
   {
-    link: '/',
+    link: '/pricing',
     text: 'Pricing',
   },
   {
-    link: '/',
+    link: '/blog',
     text: 'Blog',
   },
 ]

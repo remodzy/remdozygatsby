@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { CircleArtifact, CircleName } from '~components/circleArtifact'
-import DotsArtifact from '~components/dot'
+import { CircleArtifact, CircleName } from '~components/CircleArtifact'
+import DotsArtifact from '~components/Dot'
 import SectionLabel from '~templates/shared/sectionLabel'
 import SectionTitle from '~templates/shared/sectionTitle'
 import { useDeviceDetect } from '~utils/hooks'

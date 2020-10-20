@@ -1,6 +1,6 @@
 import React from 'react'
-import { CircleArtifact, CircleName } from '~components/circleArtifact'
-import DotsArtifact from '~components/dot'
+import { CircleArtifact, CircleName } from '~components/CircleArtifact'
+import DotsArtifact from '~components/Dot'
 import { useDeviceDetect } from '~utils/hooks'
 
 export default function Artifacts() {

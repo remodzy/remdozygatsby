@@ -1,47 +1,79 @@
-// const Promise = require('bluebird')
-// const path = require('path')
-
-// exports.createPages = ({ graphql, actions }) => {
-//   const { createPage } = actions
-
-//   return new Promise((resolve, reject) => {
-//     const blogPost = path.resolve('./src/templates/blog-post.js')
-//     resolve(
-//       graphql(
-//         `
-//           {
-//             allContentfulBlogPost {
-//               edges {
-//                 node {
-//                   title
-//                   slug
-//                 }
-//               }
-//             }
-//           }
-//         `
-//       ).then(result => {
-//         if (result.errors) {
-//           console.log(result.errors)
-//           reject(result.errors)
-//         }
-
-//         const posts = result.data.allContentfulBlogPost.edges
-//         posts.forEach(post => {
-//           createPage({
-//             path: `/blog/${post.node.slug}/`,
-//             component: blogPost,
-//             context: {
-//               slug: post.node.slug,
-//             },
-//           })
-//         })
-//       })
-//     )
-//   })
-// }
-
 const path = require('path')
+// const { createFilePath } = require("gatsby-source-filesystem")
+const { exit } = require('process')
+const chunk = require('lodash/chunk')
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+
+  const result = await graphql(
+    `
+      {
+        articles: allContentfulBlogPost(
+          sort: { order: DESC, fields: [createdAt] }
+        ) {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
+      }
+    `
+  )
+
+  if (result.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+
+  // Create blog-list pages
+  const blogListTemplate = path.resolve('./src/templates/BlogList/index.tsx')
+  const blogTemplate = path.resolve('./src/templates/Blog/index.tsx')
+
+  const articles = result.data.articles.edges
+  const PAGE_SIZE = 9
+
+  const chunks = chunk(articles, PAGE_SIZE)
+
+  chunks.forEach((_, index) => {
+    createPage({
+      path: index === 0 ? `blog` : `blog/${index + 1}`,
+      component: blogListTemplate,
+      context: {
+        skip: PAGE_SIZE * index,
+        limit: PAGE_SIZE,
+        pageNumber: index + 1,
+        hasNextPage: index != chunks.length - 1,
+        nextPageLink: `/blog/${index + 2}`,
+      },
+    })
+  })
+
+  articles.forEach(({ node }) => {
+    // loop over split pages
+    createPage({
+      path: `/blog/${node.slug}`,
+      component: blogTemplate,
+      context: {
+        slug: node.slug,
+      },
+    })
+  })
+}
+
+// exports.onCreateNode = ({ node, actions, getNode }) => {
+//   const { createNodeField } = actions
+//   const fileNode = getNode(node)
+//   if (node.internal.type === `MarkdownRemark` && fileNode && fileNode.relativePath) {
+//     const value = createFilePath({ node, getNode  })
+//     createNodeField({
+//       name: `slug`,
+//       node,
+//       value,
+//     })
+//   }
+// }
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions, getConfig }) => {
   const config = getConfig()

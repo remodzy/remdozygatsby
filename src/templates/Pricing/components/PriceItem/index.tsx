@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
 
-import Button from '~components/button'
+import Button from '~components/Button'
 import RangeSlider from '~components/RangeSlider'
 import { authorize } from '~utils/auth'
 import { ListItem, Plans } from '../PriceList'

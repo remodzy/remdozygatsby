@@ -1,10 +1,10 @@
 import React, { useCallback } from 'react'
 import { Link } from 'gatsby'
 
-import LinkButton from '~components/linkButton'
-import Button from '~components/button'
-import Accordion from '~components/accordion'
-import Logo from '~components/logo'
+import LinkButton from '~components/LinkButton'
+import Button from '~components/Button'
+import Accordion from '~components/Accordion'
+import Logo from '~components/Logo'
 import { authorize } from '~utils/auth'
 
 import { MenuItem } from './index'

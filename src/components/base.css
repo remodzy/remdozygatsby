@@ -100,6 +100,19 @@ hr {
   background: rgba(92, 110, 128, 0.3);
 }
 
+p {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 27.34px;
+  color: var(--second-text-color);
+}
+strong {
+  font-weight: 600;
+  font-size: 23px;
+  line-height: 31px;
+  color: var(--main-text-color);
+}
+
 ::placeholder {
   color: rgba(92, 110, 128, 0.2);
   font-weight: 500;

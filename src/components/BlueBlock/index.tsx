@@ -1,8 +1,8 @@
 import React from 'react'
 
 import { getColor } from '~utils/colors'
-import Button from '~components/button'
-import DotsArtifact from '~components/dot'
+import Button from '~components/Button'
+import DotsArtifact from '~components/Dot'
 
 import blueBlockStyles from './BlueBlock.module.css'
 import { useDeviceDetect } from '~utils/hooks'

@@ -1,7 +1,7 @@
 import React, { useState, useRef, RefObject, MutableRefObject } from 'react'
 
 import accordionStyles from './Accordion.module.css'
-import Icon from '~components/icons'
+import Icon from '~components/Icons'
 
 type Props = {
   title: string
