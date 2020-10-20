@@ -1,5 +1,5 @@
 import React from 'react'
-import IconButton from '~components/IconButton'
+import IconButton from '../IconButton'
 
 type Props = {
   show: boolean
