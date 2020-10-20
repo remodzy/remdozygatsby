@@ -31,8 +31,8 @@ export type Pagination = {
   skip: number
 }
 
-export default function Blog({ pathContext, pageResources }: Props) {
-  const items = prepareArticles(pageResources.json.data)
+export default function BlogList({ pathContext, pageResources }: Props) {
+  const items = prepareArticles(pageResources?.json?.data)
 
   return (
     <Layout>

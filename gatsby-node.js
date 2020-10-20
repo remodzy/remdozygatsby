@@ -15,6 +15,7 @@ exports.createPages = async ({ graphql, actions }) => {
           edges {
             node {
               slug
+              id
             }
           }
         }
@@ -56,24 +57,11 @@ exports.createPages = async ({ graphql, actions }) => {
       path: `/blog/${node.slug}`,
       component: blogTemplate,
       context: {
-        slug: node.slug,
+        id: node.id,
       },
     })
   })
 }
-
-// exports.onCreateNode = ({ node, actions, getNode }) => {
-//   const { createNodeField } = actions
-//   const fileNode = getNode(node)
-//   if (node.internal.type === `MarkdownRemark` && fileNode && fileNode.relativePath) {
-//     const value = createFilePath({ node, getNode  })
-//     createNodeField({
-//       name: `slug`,
-//       node,
-//       value,
-//     })
-//   }
-// }
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions, getConfig }) => {
   const config = getConfig()
