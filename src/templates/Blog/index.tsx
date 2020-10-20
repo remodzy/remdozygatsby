@@ -16,9 +16,13 @@ const imageStyle = {
   borderRadius: 12,
 }
 
-export default function Blog() {
-  const data = useStaticQuery(blogQuery)
-  const item = prepareArticle(data.contentfulBlogPost)
+export default function Blog({ pathContext, pageResources }) {
+  console.log(pageResources)
+  if (!pageResources) {
+    return null
+  }
+
+  const item = prepareArticle(pageResources?.json?.data?.article)
   return (
     <Layout>
       <div className={styles.root}>
@@ -38,8 +42,8 @@ export default function Blog() {
 }
 
 export const blogQuery = graphql`
-  query BlogPageQuery {
-    contentfulBlogPost {
+  query BlogPageQuery($id: String) {
+    article: contentfulBlogPost(id: { eq: $id }) {
       body {
         childMarkdownRemark {
           html

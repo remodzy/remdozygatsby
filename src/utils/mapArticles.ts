@@ -54,10 +54,10 @@ export const prepareArticles = (data: InputParams): Article[] => {
 
 export const prepareArticle = (node: ResourceNode): Article => ({
   body: node?.body?.childMarkdownRemark?.html,
-  createdAt: node.createdAt,
-  description: node.description.description,
-  id: node.id,
-  image: node.image,
-  slug: node.slug,
-  title: node.title,
+  createdAt: node?.createdAt,
+  description: node?.description?.description,
+  id: node?.id,
+  image: node?.image,
+  slug: node?.slug,
+  title: node?.title,
 })
