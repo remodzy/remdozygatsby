@@ -4,10 +4,10 @@ import { Link } from 'gatsby'
 import { authorize } from '~utils/auth'
 import { useDeviceDetect } from '~utils/hooks'
 
-import Logo from '../logo'
+import Logo from '../Logo'
 import HeaderMenu from '../HeaderMenu'
-import LinkButton from '../linkButton'
-import Button from '../button'
+import LinkButton from '../LinkButton'
+import Button from '../Button'
 import headerStyles from './Header.module.css'
 
 const Header = () => {

@@ -6,7 +6,9 @@ import { prepareArticle } from '~utils/mapArticles'
 import Layout from '~components/Layout'
 import SectionLabel from '~templates/shared/sectionLabel'
 import SectionTitle from '~templates/shared/sectionTitle'
+
 import styles from './Blog.module.css'
+import SocialShare from './components/SocialShare'
 
 const imageStyle = {
   margin: '80px 0',
@@ -24,12 +26,13 @@ export default function Blog() {
         <SectionTitle text={item.title} />
         <div>
           <Img fluid={item.image.fluid} style={imageStyle} />
-          <div
-            className={styles.contentWrapper}
-            dangerouslySetInnerHTML={createMarkup(item.body)}
-          ></div>
+          <div className={styles.contentWrapper}>
+            <div dangerouslySetInnerHTML={createMarkup(item.body)}></div>
+            <SocialShare />
+          </div>
         </div>
       </div>
+      <div className={styles.background}></div>
     </Layout>
   )
 }
