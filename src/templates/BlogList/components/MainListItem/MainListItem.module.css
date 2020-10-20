@@ -1,0 +1,29 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+
+.imageTitle {
+}
+.infoContainer {
+  flex: 0.35;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--main-text-color);
+  margin-top: 34px;
+}
+
+.description {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--second-text-color);
+  margin-top: 16px;
+}
+
+.linkContainer {
+  margin-top: 34px;
+}

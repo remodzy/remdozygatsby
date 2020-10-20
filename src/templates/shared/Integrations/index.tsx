@@ -1,9 +1,9 @@
 import React, { ReactElement } from 'react'
 
-import Button from '~components/button'
-import DotsArtifact from '~components/dot'
-import { CircleArtifact, CircleName } from '~components/circleArtifact'
-import BlockWrapper from '~components/blockWrapper'
+import Button from '~components/Button'
+import DotsArtifact from '~components/Dot'
+import { CircleArtifact, CircleName } from '~components/CircleArtifact'
+import BlockWrapper from '~components/BlockWrapper'
 import { useDeviceDetect } from '~utils/hooks'
 
 import SectionLabel from '../sectionLabel'

@@ -1,6 +1,7 @@
 .root {
   display: flex;
   flex-direction: column;
+  max-width: 100%;
 }
 .title {
   font-size: 23px;
@@ -15,6 +16,10 @@
   font-weight: 500;
   color: var(--second-text-color);
   margin-top: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .linkContainer {
   margin-top: 34px;

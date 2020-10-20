@@ -1,11 +1,11 @@
 import React, { useCallback } from 'react'
 import Img, { FluidObject } from 'gatsby-image'
 
-import Button from '~components/button'
+import Button from '~components/Button'
 import Label from '~components/Label'
-import { CircleArtifact, CircleName } from '~components/circleArtifact'
-import DotsArtifact from '~components/dot'
-import BlockWrapper from '~components/blockWrapper'
+import { CircleArtifact, CircleName } from '~components/CircleArtifact'
+import DotsArtifact from '~components/Dot'
+import BlockWrapper from '~components/BlockWrapper'
 import { useDeviceDetect } from '~utils/hooks'
 
 import CompaniesLogos from '../CompaniesLogos'

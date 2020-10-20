@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react'
 
 import SectionTitle from '~templates/shared/sectionTitle'
 import SectionSubTitle from '~templates/shared/SectionSubTitle'
+import ToggleSwitch from '~components/ToggleSwitch'
+
 import PriceItem from '../PriceItem'
 import styles from './PriceList.module.css'
-import ToggleSwitch from '~components/ToggleSwitch'
 import Artifacts from './Artifacts'
 
 export type ListItem = {

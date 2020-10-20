@@ -1,6 +1,6 @@
 import React from 'react'
 
-import BlueBlock from '~templates/shared/BlueBlock'
+import BlueBlock from '~components/BlueBlock'
 import BlogBlock from '~templates/shared/Blog'
 import IntegrationsBlock from '~templates/shared/Integrations'
 import TestimonialsBlock from '~templates/shared/Testimonials'

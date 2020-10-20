@@ -1,20 +1,22 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import Button from '~components/button'
-import DotsArtifact from '~components/dot'
-import { CircleArtifact, CircleName } from '~components/circleArtifact'
-import BlockWrapper from '~components/blockWrapper'
+import Button from '~components/Button'
+import DotsArtifact from '~components/Dot'
+import { CircleArtifact, CircleName } from '~components/CircleArtifact'
+import BlockWrapper from '~components/BlockWrapper'
 import SectionLabel from '~templates/shared/sectionLabel'
 import SectionTitle from '~templates/shared/sectionTitle'
 import { useDeviceDetect } from '~utils/hooks'
 
-import ResourceItem from './resourceItem'
 import blogStyles from './Blog.module.css'
+import ArticlePreview from '../ArticlePreview'
+import { Article, prepareArticles } from '~utils/mapArticles'
 
 export default function Blog() {
   const { isMobile } = useDeviceDetect()
-  const images = useStaticQuery(query)
+  const items = useStaticQuery(query)
+  const articles = prepareArticles(items)
 
   return (
     <div className={blogStyles.root}>
@@ -22,27 +24,17 @@ export default function Blog() {
         <SectionLabel text='BLOG' color='success' />
         <SectionTitle text='Useful Resources' />
         <div className={blogStyles.list}>
-          <ResourceItem
-            imageTitle='Business Management'
-            imageTitleColor='#5D9A78'
-            image={images?.first?.childImageSharp?.fluid}
-            title='Four Ways to Improve Mobile Workforce Productivity'
-            text='Looking to increase productivity levels and improve compliance? This ebook will look at four ways you can equip your mobile...'
-          />
-          <ResourceItem
-            imageTitle='Business Management'
-            imageTitleColor='#ED7B73'
-            image={images.second.childImageSharp.fluid}
-            title='Four Ways to Improve Mobile Workforce Productivity'
-            text='Looking to increase productivity levels and improve compliance? This ebook will look at four ways you can equip your mobile...'
-          />
-          <ResourceItem
-            imageTitle='Business Management'
-            imageTitleColor='#E0B14B'
-            image={images.third.childImageSharp.fluid}
-            title='Four Ways to Improve Mobile Workforce Productivity'
-            text='Looking to increase productivity levels and improve compliance? This ebook will look at four ways you can equip your mobile...'
-          />
+          {articles.map((item: Article) => (
+            <ArticlePreview
+              key={item.id}
+              imageTitle='Business Management'
+              imageTitleColor='#5D9A78'
+              image={item?.image?.fluid}
+              title={item?.title}
+              text={item?.description}
+              slug={item?.slug}
+            />
+          ))}
         </div>
 
         <div className={blogStyles.buttonContainer}>
@@ -59,26 +51,16 @@ export default function Blog() {
   )
 }
 
-const query = graphql`
-  query {
-    first: file(relativePath: { eq: "shared/useful-resource1.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 340) {
-          ...GatsbyImageSharpFluid_noBase64
-        }
-      }
-    }
-    second: file(relativePath: { eq: "shared/useful-resource2.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 340) {
-          ...GatsbyImageSharpFluid_noBase64
-        }
-      }
-    }
-    third: file(relativePath: { eq: "shared/useful-resource3.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 340) {
-          ...GatsbyImageSharpFluid_noBase64
+export const query = graphql`
+  query BlogBlockQuery {
+    articles: allContentfulBlogPost(
+      skip: 0
+      limit: 3
+      sort: { order: DESC, fields: [createdAt] }
+    ) {
+      edges {
+        node {
+          ...Article
         }
       }
     }

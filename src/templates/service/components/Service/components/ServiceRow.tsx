@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react'
 import Img, { FluidObject } from 'gatsby-image'
 
-import BlockWrapper from '~components/blockWrapper'
+import BlockWrapper from '~components/BlockWrapper'
 import { useDeviceDetect } from '~utils/hooks'
 
 import InfoBlock from './InfoBlock'

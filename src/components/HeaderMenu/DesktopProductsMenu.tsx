@@ -5,7 +5,7 @@ import React, {
   useLayoutEffect,
 } from 'react'
 
-import Icon from '~components/icons'
+import Icon from '~components/Icons'
 import { useOnClickOutside } from '~utils/hooks'
 
 import styles from './DesktopProductsMenu.module.css'

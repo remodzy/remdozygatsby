@@ -3,7 +3,6 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 import { useDeviceDetect } from '~utils/hooks'
 import Blog from '~templates/shared/Blog'
-import BlueBlock from '~templates/shared/BlueBlock'
 import Integrations from '~templates/shared/Integrations'
 import PrimaryContent from '~templates/shared/PrimaryContent'
 import Testimonials from '~templates/shared/Testimonials'
@@ -30,7 +29,6 @@ export default function Forms() {
       <Benefits />
       <Blog />
       <Testimonials />
-      <BlueBlock />
     </>
   )
 }

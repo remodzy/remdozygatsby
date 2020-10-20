@@ -1,0 +1,14 @@
+.root {
+  padding: 86px 234px 0;
+}
+.listContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 44px 56px;
+}
+
+@media (max-width: 768px) {
+  .root {
+    padding: 54px 4.8% 0;
+  }
+}

@@ -2,7 +2,7 @@ import React from 'react'
 import Img, { FixedObject } from 'gatsby-image'
 
 import { getColor } from '~utils/colors'
-import Button, { ButtonColors } from '~components/button'
+import Button, { ButtonColors } from '~components/Button'
 
 import IconWrapper from './IconWrapper'
 import { ListItem } from './ServiceList'

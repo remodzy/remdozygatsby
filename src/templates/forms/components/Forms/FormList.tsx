@@ -4,11 +4,11 @@ import Img, { FluidObject } from 'gatsby-image'
 
 import { useDeviceDetect } from '~utils/hooks'
 import InfoBlock from '~templates/shared/InfoBlock'
-import DotsArtifact from '~components/dot'
+import DotsArtifact from '~components/Dot'
+import { CircleArtifact, CircleName } from '~components/CircleArtifact'
 
 import formListStyles from './FormList.module.css'
 import { FirstIcon, SecondIcon, ThirdIcon } from './Icons'
-import { CircleArtifact, CircleName } from '~components/circleArtifact'
 
 type RowProps = {
   image: FluidObject
