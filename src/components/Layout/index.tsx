@@ -1,10 +1,10 @@
 import React, { ReactElement } from 'react'
 
 import Header from '../Header'
-import Footer from '../footer'
+import Footer from '../Footer'
 
 import '../base.css'
-import SEO from '../seo'
+import SEO from '../Seo'
 import BlueBlock from '../BlueBlock'
 
 type Props = {

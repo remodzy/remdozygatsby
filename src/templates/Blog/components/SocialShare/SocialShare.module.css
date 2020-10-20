@@ -1,4 +1,18 @@
 .root {
   display: flex;
   flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.root > div {
+  margin-bottom: 16px;
+}
+
+.title {
+  text-align: center;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 32px;
 }

@@ -2,10 +2,10 @@ import React from 'react'
 
 import { useDeviceDetect } from '~utils/hooks'
 
-import Logo from '../logo'
-import Icon from '../icons'
-import DotsArtifact from '../dot'
-import BlockWrapper from '../blockWrapper'
+import Logo from '../Logo'
+import Icon from '../Icons'
+import DotsArtifact from '../Dot'
+import BlockWrapper from '../BlockWrapper'
 import FooterLink from './FooterLink'
 import footerStyles from './AppFooter.module.css'
 

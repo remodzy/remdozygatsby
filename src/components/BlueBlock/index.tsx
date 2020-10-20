@@ -1,11 +1,11 @@
 import React from 'react'
 
 import { getColor } from '~utils/colors'
+import { useDeviceDetect } from '~utils/hooks'
 import Button from '~components/Button'
 import DotsArtifact from '~components/Dot'
 
 import blueBlockStyles from './BlueBlock.module.css'
-import { useDeviceDetect } from '~utils/hooks'
 
 const colors = getColor({ group: 'main', color: 'primary' })
 
