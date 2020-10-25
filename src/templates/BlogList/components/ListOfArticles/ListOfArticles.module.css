@@ -1,5 +1,5 @@
 .root {
-  padding: 86px 234px 0;
+  padding-top: 86px;
 }
 .listContainer {
   display: grid;
@@ -9,6 +9,6 @@
 
 @media (max-width: 768px) {
   .root {
-    padding: 54px 4.8% 0;
+    padding-top: 54px;
   }
 }

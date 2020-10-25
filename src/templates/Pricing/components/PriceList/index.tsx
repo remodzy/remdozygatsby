@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
-import SectionTitle from '~templates/shared/sectionTitle'
-import SectionSubTitle from '~templates/shared/SectionSubTitle'
+import SectionTitle from '~components/SectionTitle'
+import SectionSubTitle from '~components/SectionSubTitle'
 import ToggleSwitch from '~components/ToggleSwitch'
 
 import PriceItem from '../PriceItem'

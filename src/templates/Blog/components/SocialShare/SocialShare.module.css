@@ -16,3 +16,22 @@
   color: var(--primary-color);
   margin-bottom: 32px;
 }
+
+@media screen and (max-width: 768px) {
+  .root {
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 40px;
+  }
+
+  .root > * {
+    margin-left: 16px;
+  }
+
+  .title {
+    margin-bottom: 0;
+    margin-right: 34px;
+  }
+}

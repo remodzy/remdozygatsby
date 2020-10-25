@@ -2,7 +2,7 @@ import { graphql } from 'gatsby'
 import React from 'react'
 
 import Layout from '~components/Layout'
-import Forms from '~templates/forms'
+import Forms from '~templates/Forms'
 
 export default function FormsPage() {
   return (
