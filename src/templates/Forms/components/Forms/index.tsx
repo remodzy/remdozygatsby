@@ -1,5 +1,3 @@
-import React from 'react'
-
 import BlockWrapper from '~components/BlockWrapper'
 import { CircleArtifact, CircleName } from '~components/CircleArtifact'
 import DotsArtifact from '~components/Dot'

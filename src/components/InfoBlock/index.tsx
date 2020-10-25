@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 
 import { getColor } from '~utils/colors'
 import Button, { ButtonColors } from '~components/Button'

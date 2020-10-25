@@ -1,5 +1,3 @@
-import React from 'react'
-
 import BlueBlock from '~components/BlueBlock'
 import BlogBlock from '~components/Blog'
 import IntegrationsBlock from '~components/Integrations'

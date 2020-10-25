@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 
 import { CircleArtifact, CircleName } from '~components/CircleArtifact'
 import DotsArtifact from '~components/Dot'

@@ -1,4 +1,5 @@
-import React, { useState, useRef, RefObject, MutableRefObject } from 'react'
+import { useState, useRef, RefObject, MutableRefObject } from 'react'
+import * as React from 'react'
 
 import accordionStyles from './Accordion.module.css'
 import Icon from '~components/Icons'

@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import { ReactElement } from 'react'
 import { getColor } from '~utils/colors'
 import sectionLabelStyles from './SectionLabel.module.css'
 

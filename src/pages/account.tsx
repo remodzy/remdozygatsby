@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { getClient } from '~utils/auth'
 
 const auth0 = getClient()

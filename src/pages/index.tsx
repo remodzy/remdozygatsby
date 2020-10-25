@@ -1,5 +1,4 @@
 import { graphql } from 'gatsby'
-import React from 'react'
 
 import Layout from '~components/Layout'
 import Forms from '~templates/Forms'

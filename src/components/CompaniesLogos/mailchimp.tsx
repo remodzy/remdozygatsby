@@ -1,4 +1,3 @@
-import React from 'react'
 import { useDeviceDetect } from '~utils/hooks'
 
 export default function MailchimpLogo() {

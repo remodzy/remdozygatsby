@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import { ReactElement } from 'react'
 import { useDeviceDetect } from '~utils/hooks'
 
 export function Circle() {

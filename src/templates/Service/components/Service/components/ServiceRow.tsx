@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import { ReactElement } from 'react'
 import Img, { FluidObject } from 'gatsby-image'
 
 import BlockWrapper from '~components/BlockWrapper'

@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import { ReactElement } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 
 import { useDeviceDetect } from '~utils/hooks'

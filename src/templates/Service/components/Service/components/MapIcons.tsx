@@ -1,5 +1,3 @@
-import React from 'react'
-
 import mapStyles from './MapIcon.module.css'
 
 export function MapIcon1({ isMobile = false }) {

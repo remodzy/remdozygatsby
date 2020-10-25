@@ -1,5 +1,3 @@
-import React from 'react'
-
 import ArticlePreview from '~components/ArticlePreview'
 import PaginationBlock, { Pagination } from '~components/Pagination'
 import { useDeviceDetect } from '~utils/hooks'

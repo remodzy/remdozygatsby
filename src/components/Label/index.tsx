@@ -1,5 +1,3 @@
-import React from 'react'
-
 import labelStyles from './Label.module.css'
 
 type Props = {

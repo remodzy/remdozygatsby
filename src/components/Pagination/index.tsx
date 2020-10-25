@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { Link } from 'gatsby'
 import PaginationItem from './components/PaginationItem'
 import styles from './Pagination.module.css'

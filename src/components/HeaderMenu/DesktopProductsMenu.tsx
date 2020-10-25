@@ -1,9 +1,4 @@
-import React, {
-  useState,
-  useRef,
-  MutableRefObject,
-  useLayoutEffect,
-} from 'react'
+import { useState, useRef, MutableRefObject, useLayoutEffect } from 'react'
 
 import Icon from '~components/Icons'
 import { useOnClickOutside } from '~utils/hooks'

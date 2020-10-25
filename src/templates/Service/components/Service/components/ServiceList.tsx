@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import { ReactElement } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import ServiceRow from './ServiceRow'
