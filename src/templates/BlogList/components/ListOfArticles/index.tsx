@@ -36,7 +36,7 @@ export default function ListOfArticles({ pagination, items }: Props) {
           />
         ))}
       </div>
-      <PaginationBlock data={pagination} />
+      {/* <PaginationBlock data={pagination} /> */}
     </div>
   )
 }
