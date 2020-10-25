@@ -1,3 +1,4 @@
+import React from 'react'
 import Img, { FixedObject } from 'gatsby-image'
 
 import { getColor } from '~utils/colors'

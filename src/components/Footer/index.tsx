@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { useDeviceDetect } from '~utils/hooks'
 
 import Logo from '../Logo'

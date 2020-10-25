@@ -1,4 +1,4 @@
-import { ReactElement } from 'react'
+import React from 'react'
 
 export type ButtonColors = {
   background?: string
@@ -17,7 +17,7 @@ export default function Button({
   className = '',
   label,
   handleClick,
-}: Props): ReactElement<any, any> {
+}: Props) {
   let style: any = {}
   if (!className && colors) {
     style.backgroundColor = colors.background

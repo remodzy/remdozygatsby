@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
 import PaginationItem from './components/PaginationItem'
 import styles from './Pagination.module.css'
@@ -19,7 +19,6 @@ type Props = {
 }
 
 const PaginationBlock: React.FC<Props> = ({ data }) => {
-  console.log(data)
   return (
     <div className={styles.root}>
       <Link

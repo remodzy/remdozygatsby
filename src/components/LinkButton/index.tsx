@@ -1,4 +1,4 @@
-import { ReactElement } from 'react'
+import React from 'react'
 
 type Props = {
   className?: string
@@ -10,7 +10,7 @@ export default function LinkButton({
   label,
   className = 'primary-link-btn',
   handleClick,
-}: Props): ReactElement<any, any> {
+}: Props) {
   return (
     <button className={className} onClick={handleClick}>
       {label}

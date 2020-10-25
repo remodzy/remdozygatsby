@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+import React, { useCallback } from 'react'
 import { Link } from 'gatsby'
 
 import { authorize } from '~utils/auth'

@@ -1,4 +1,4 @@
-import { ReactElement } from 'react'
+import React, { ReactElement } from 'react'
 
 import Button from '~components/Button'
 import DotsArtifact from '~components/Dot'

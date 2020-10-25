@@ -41,6 +41,7 @@ module.exports = {
     'space-in-parens': [1, 'always'],
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
+    'react/react-in-tsx-scope': 'off',
   },
   overrides: [
     // Override some TypeScript rules just for .js files
@@ -48,6 +49,8 @@ module.exports = {
       files: ['*.js'],
       rules: {
         '@typescript-eslint/no-var-requires': 'off', //
+        'react/jsx-uses-react': 'off',
+        'react/react-in-jsx-scope': 'off',
       },
     },
   ],

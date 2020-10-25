@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { getColor } from '~utils/colors'
 import { useDeviceDetect } from '~utils/hooks'
 import Button from '~components/Button'

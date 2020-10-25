@@ -1,3 +1,5 @@
+import React from 'react'
+
 import featureListStyles from './FeatureList.module.css'
 import { FeatureItem } from './FeatureItem'
 

@@ -1,3 +1,4 @@
+import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import featureListStyles from './FeatureList.module.css'

@@ -1,13 +1,13 @@
-import { ReactElement } from 'react'
+import React, { ReactElement } from 'react'
 
 import iconWrapperStyles from './IconWrapper.module.css'
 
 type Props = {
-  children: ReactElement
+  children: ReactElement<any>
   color?: string
 }
 
-const IconWrapper = ({ children, color }: Props): ReactElement => (
+const IconWrapper = ({ children, color }: Props) => (
   <div className={iconWrapperStyles.root} style={{ backgroundColor: color }}>
     {children}
   </div>

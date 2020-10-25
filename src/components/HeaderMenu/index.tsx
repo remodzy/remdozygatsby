@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import React, { useState, useCallback } from 'react'
 import { Link } from 'gatsby'
 
 import { useDeviceDetect } from '~utils/hooks'

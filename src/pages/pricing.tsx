@@ -1,3 +1,5 @@
+import React from 'react'
+
 import Layout from '~components/Layout'
 import Pricing from '~templates/Pricing'
 

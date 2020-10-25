@@ -1,6 +1,5 @@
-import * as React from 'react'
+import React from 'react'
 
-import { getColor } from '~utils/colors'
 import Button, { ButtonColors } from '~components/Button'
 
 import IconWrapper from '../IconWrapper'

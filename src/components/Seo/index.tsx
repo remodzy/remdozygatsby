@@ -1,3 +1,4 @@
+import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { useLocation } from '@reach/router'
 import { Helmet } from 'react-helmet'

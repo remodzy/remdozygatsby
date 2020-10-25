@@ -1,5 +1,4 @@
-import { useCallback } from 'react'
-import * as React from 'react'
+import React, { useCallback } from 'react'
 import Img, { FluidObject } from 'gatsby-image'
 
 import Button from '~components/Button'
