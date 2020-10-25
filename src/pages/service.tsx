@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '~components/Layout'
-import Service from '~templates/service'
+import Service from '~templates/Service'
 
 function Home() {
   return (

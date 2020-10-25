@@ -36,6 +36,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const PAGE_SIZE = 9
 
   const chunks = chunk(articles, PAGE_SIZE)
+  const numPages = Math.ceil(articles.length / PAGE_SIZE)
 
   chunks.forEach((_, index) => {
     createPage({
@@ -44,9 +45,12 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         skip: PAGE_SIZE * index,
         limit: PAGE_SIZE,
-        pageNumber: index + 1,
-        hasNextPage: index != chunks.length - 1,
-        nextPageLink: `/blog/${index + 2}`,
+        numPages,
+        currentPage: index + 1,
+        hasNextPage: index != numPages - 1,
+        hasPrevPage: index + 1 > 1,
+        nextPageLink: index != numPages - 1 ? `/blog/${index + 2}` : null,
+        prevPageLink: index + 1 > 1 ? `/blog/${index - 2}` : null,
       },
     })
   })

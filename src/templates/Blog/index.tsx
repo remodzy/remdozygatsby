@@ -1,14 +1,16 @@
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 import React from 'react'
 import Img from 'gatsby-image'
 
-import { prepareArticle } from '~utils/mapArticles'
+import { prepareArticle, ResourceNode } from '~utils/mapArticles'
 import Layout from '~components/Layout'
-import SectionLabel from '~templates/shared/sectionLabel'
-import SectionTitle from '~templates/shared/sectionTitle'
+import SectionLabel from '~components/SectionLabel'
+import SectionTitle from '~components/SectionTitle'
+import { Pagination } from '~components/Pagination'
 
-import styles from './Blog.module.css'
 import SocialShare from './components/SocialShare'
+import styles from './Blog.module.css'
+import { useDeviceDetect } from '~utils/hooks'
 
 const imageStyle = {
   margin: '80px 0',
@@ -16,13 +18,29 @@ const imageStyle = {
   borderRadius: 12,
 }
 
-export default function Blog({ pathContext, pageResources }) {
-  console.log(pageResources)
+type Props = {
+  pathContext: Pagination
+  pageResources: {
+    json: {
+      data: {
+        article: ResourceNode
+      }
+    }
+  }
+}
+
+const Blog: React.FC<Props> = ({ pathContext, pageResources }) => {
+  const { isMobile } = useDeviceDetect()
   if (!pageResources) {
     return null
   }
 
+  if (isMobile) {
+    imageStyle.margin = '54px 0'
+  }
+
   const item = prepareArticle(pageResources?.json?.data?.article)
+
   return (
     <Layout>
       <div className={styles.root}>
@@ -36,10 +54,12 @@ export default function Blog({ pathContext, pageResources }) {
           </div>
         </div>
       </div>
-      <div className={styles.background}></div>
+      {!isMobile && <div className={styles.background}></div>}
     </Layout>
   )
 }
+
+export default Blog
 
 export const blogQuery = graphql`
   query BlogPageQuery($id: String) {

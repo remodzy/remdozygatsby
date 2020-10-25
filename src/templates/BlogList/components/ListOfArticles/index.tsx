@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { Pagination } from '~templates/BlogList'
-import ArticlePreview from '~templates/shared/ArticlePreview'
+import ArticlePreview from '~components/ArticlePreview'
+import PaginationBlock, { Pagination } from '~components/Pagination'
+import { useDeviceDetect } from '~utils/hooks'
 import { Article } from '~utils/mapArticles'
 
 import MainListItem from '../MainListItem'
@@ -13,28 +14,29 @@ type Props = {
 }
 
 export default function ListOfArticles({ pagination, items }: Props) {
+  const { isMobile } = useDeviceDetect()
+
   if (!items.length) {
     return null
   }
 
-  const mainItem = items.splice(0, 1)[0]
-
   return (
     <div className={styles.root}>
-      <MainListItem item={mainItem} />
+      {!isMobile && <MainListItem item={items.splice(0, 1)[0]} />}
       <div className={styles.listContainer}>
         {items.map((item: Article) => (
           <ArticlePreview
             key={item.id}
             image={item.image.fluid}
             imageTitle={item.image.imageTitle}
-            imageTitleColor={'red'}
+            imageTitleColor={'blue'}
             title={item.title}
             text={item.description}
             slug={item.slug}
           />
         ))}
       </div>
+      <PaginationBlock data={pagination} />
     </div>
   )
 }
