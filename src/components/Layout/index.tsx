@@ -8,7 +8,7 @@ import SEO from '../Seo'
 import BlueBlock from '../BlueBlock'
 
 type Props = {
-  children: ReactElement | ReactElement[]
+  children: ReactElement | (false | null | ReactElement)[]
 }
 
 const Layout: React.FC<Props> = ({ children }) => (
@@ -16,8 +16,10 @@ const Layout: React.FC<Props> = ({ children }) => (
     <SEO />
     <Header />
     <div>
-      <main>{children}</main>
-      <BlueBlock />
+      <main>
+        {children}
+        <BlueBlock />
+      </main>
       <Footer />
     </div>
   </>

@@ -35,7 +35,7 @@ export default function BlogList({ pathContext, pageResources }: Props) {
       <div className={styles.pageWrapper}>
         <SectionTitle text='Insights from the Remodzy team' />
         <ListOfArticles pagination={pathContext} items={items} />
-        <Artifacts />
+        {/* <Artifacts /> */}
       </div>
     </Layout>
   )
