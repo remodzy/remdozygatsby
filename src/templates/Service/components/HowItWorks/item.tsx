@@ -1,5 +1,4 @@
-import React from 'react'
-import Img, { FluidObject } from 'gatsby-image'
+import * as React from 'react'
 
 import itemStyles from './Item.module.css'
 

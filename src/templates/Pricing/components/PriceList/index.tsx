@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 
 import SectionTitle from '~components/SectionTitle'
 import SectionSubTitle from '~components/SectionSubTitle'
@@ -83,7 +83,7 @@ export default function PriceList() {
   )
 }
 
-const SaleIcon = React.memo(() => (
+const SaleIcon = memo(() => (
   <div className={styles.saleIconWrapper}>
     <svg width='103' height='43' fill='none' xmlns='http://www.w3.org/2000/svg'>
       <path

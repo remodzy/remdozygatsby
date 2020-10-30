@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'gatsby'
 import PaginationItem from './components/PaginationItem'
 import styles from './Pagination.module.css'
+import { paginationRange, PageRangeItem } from '~utils/paginationRange'
 
 export type Pagination = {
   hasNextPage: boolean
@@ -19,7 +20,17 @@ type Props = {
 }
 
 const PaginationBlock: React.FC<Props> = ({ data }) => {
-  console.log(data)
+  const [pageList, setPageList] = useState<PageRangeItem[]>([])
+
+  useEffect(() => {
+    const pageRange = paginationRange(data?.currentPage, data?.numPages)
+    setPageList(pageRange)
+  }, [data])
+
+  if (pageList.length < 2) {
+    return null
+  }
+
   return (
     <div className={styles.root}>
       <Link
@@ -30,8 +41,9 @@ const PaginationBlock: React.FC<Props> = ({ data }) => {
       >
         Prev
       </Link>
-      <PaginationItem num={1} isActive={data.currentPage === 1} />
-      <PaginationItem num={2} isActive={data.currentPage === 2} />
+      {pageList.map((el: PageRangeItem) => (
+        <PaginationItem item={el} isActive={data.currentPage === el} />
+      ))}
       <Link
         to={data.nextPageLink}
         className={`${styles.link} ${

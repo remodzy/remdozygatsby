@@ -114,5 +114,5 @@ export default function Artifacts() {
     )
   }
 
-  return <></>
+  return null
 }

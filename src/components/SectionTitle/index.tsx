@@ -1,5 +1,4 @@
 import React from 'react'
-
 import sectionTitleStyles from './SectionTitle.module.css'
 
 type Props = {

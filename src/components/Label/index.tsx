@@ -6,6 +6,8 @@ type Props = {
   text: string
 }
 
-export default function Label({ text }: Props) {
-  return <span className={labelStyles.root}>{text}</span>
-}
+const Label: React.FC<Props> = ({ text }) => (
+  <span className={labelStyles.root}>{text}</span>
+)
+
+export default Label

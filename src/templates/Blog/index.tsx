@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby'
-import React from 'react'
+import * as React from 'react'
 import Img from 'gatsby-image'
 
 import { prepareArticle, ResourceNode } from '~utils/mapArticles'

@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React from 'react'
 
 import dotStyles from './Dot.module.css'
 
@@ -44,7 +44,7 @@ export default function DotsArtifact({
     default: '#CCD0D3',
     primary: gradient,
   },
-}: Props): ReactElement<any, any> {
+}: Props) {
   return (
     <div
       style={{

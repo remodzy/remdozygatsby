@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import { ReactElement } from 'react'
 import { createPortal } from 'react-dom'
 
 import { usePortal } from '~utils/hooks'

@@ -1,10 +1,10 @@
-import React, { ReactElement } from 'react'
+import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
 import { useDeviceDetect } from '~utils/hooks'
 
-export default function GlassesImage(): ReactElement<any, any> {
+export default function GlassesImage() {
   const { isMobile } = useDeviceDetect()
   const data = useStaticQuery(query)
 
