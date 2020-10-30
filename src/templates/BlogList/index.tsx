@@ -1,3 +1,4 @@
+import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '~components/Layout'
@@ -7,7 +8,6 @@ import { prepareArticles, ResourceNode } from '~utils/mapArticles'
 import ListOfArticles from './components/ListOfArticles'
 
 import styles from './BlogList.module.css'
-import Artifacts from './components/Artifacts'
 
 type Props = {
   pageResources: ContextPageResource
