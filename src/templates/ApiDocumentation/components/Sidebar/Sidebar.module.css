@@ -1,0 +1,24 @@
+.root {
+  background: linear-gradient(180deg, rgba(246, 249, 251, 0) 0%, #f5f8fb 100%);
+  border-right: 1px solid rgba(44, 73, 122, 0.1);
+  height: 100vh;
+  top: 89px;
+  position: absolute;
+  width: 17.1875%;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 23px;
+  line-height: 31px;
+  color: var(--main-text-color);
+  margin-left: 15.2727%;
+  margin-top: 34px;
+}
+
+.titleHighlighted {
+  color: var(--primary-color);
+}
+
+.content {
+}

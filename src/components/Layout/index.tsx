@@ -8,19 +8,20 @@ import SEO from '../Seo'
 import BlueBlock from '../BlueBlock'
 
 type Props = {
+  isTiny?: boolean
   children: ReactElement | (false | null | ReactElement)[]
 }
 
-const Layout: React.FC<Props> = ({ children }) => (
+const Layout: React.FC<Props> = ({ children, isTiny = false }) => (
   <>
     <SEO />
     <Header />
     <div>
       <main>
         {children}
-        <BlueBlock />
+        {!isTiny && <BlueBlock />}
       </main>
-      <Footer />
+      {!isTiny && <Footer />}
     </div>
   </>
 )
