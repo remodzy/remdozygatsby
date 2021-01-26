@@ -2,12 +2,12 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '~components/Layout'
-import LandingTemplate from '~templates/Landing'
+import Forms from '~templates/Forms'
 
 export default function FormsPage() {
   return (
     <Layout>
-      <LandingTemplate />
+      <Forms />
     </Layout>
   )
 }

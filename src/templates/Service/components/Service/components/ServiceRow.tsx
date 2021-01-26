@@ -27,7 +27,7 @@ export default function ServiceRow({
   images,
   item,
   index,
-}: Props): ReactElement<any, any> {
+}: Props): ReactElement {
   const { isMobile } = useDeviceDetect()
   const isEven = (index + 1) % 2 === 0
 

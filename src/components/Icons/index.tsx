@@ -80,10 +80,10 @@ const icons: { [key: string]: (props: SvgProps) => ReactElement } = {
       />
     </svg>
   ),
-  arrowTop: () => (
+  arrowTop: (): ReactElement => (
     <svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' fill='none'>
       <path
-        stroke='#091F3E'
+        stroke='#929CAD'
         strokeLinecap='round'
         strokeLinejoin='round'
         strokeWidth='1.8'

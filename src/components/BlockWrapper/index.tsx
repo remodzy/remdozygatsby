@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
-import blockWrapperStyles from './BlockWrapper.module.css'
+import blockWrapperStyles from './styles.module.css'
 
 type Props = {
   children: ReactElement | ReactElement[]
