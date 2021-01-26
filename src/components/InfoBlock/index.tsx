@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
 import Button, { ButtonColors } from '~components/Button'
 
@@ -7,16 +7,20 @@ import infoBlockStyles from './InfoBlock.module.css'
 
 type Props = {
   item: {
-    color: any
+    color: ButtonColors
     title: string
     text: string
     buttonLabel?: string
   }
-  isEven: boolean
-  icon: () => React.ReactElement<any, any>
+  isEven?: boolean
+  icon: () => ReactElement
 }
 
-export default function InfoBlock({ item, isEven, icon: Icon }: Props) {
+export default function InfoBlock({
+  item,
+  isEven,
+  icon: Icon,
+}: Props): ReactElement {
   const { color, title, text, buttonLabel = 'Learn More' } = item
   const buttonColors: ButtonColors = color
 

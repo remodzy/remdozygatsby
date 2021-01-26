@@ -1,9 +1,9 @@
 .link {
+  font-style: normal;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 22px;
+  font-size: 14px;
+  line-height: 40px;
   color: var(--second-text-color);
-  margin-bottom: 26px;
   text-decoration: none;
 }
 .link:last-child {

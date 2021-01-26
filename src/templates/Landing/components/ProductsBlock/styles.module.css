@@ -1,0 +1,47 @@
+.root {
+  padding-top: 178px;
+  padding-bottom: 238px;
+  position: relative;
+}
+
+.rowContainer > :nth-child(2),
+.rowContainer > :nth-child(3) {
+  margin-top: 192px;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 72px;
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.product-image {
+  max-height: 554px;
+  z-index: 2;
+}
+
+.product-image img {
+  width: initial;
+  height: 100%;
+}
+
+.betaLabel {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  color: #5b9976;
+  margin-left: 32px;
+}
+
+.comingSoonLabel {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  color: #e19763;
+  margin-left: 32px;
+}

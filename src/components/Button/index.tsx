@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
 export type ButtonColors = {
   background?: string
@@ -17,7 +17,7 @@ export default function Button({
   className = '',
   label,
   handleClick,
-}: Props) {
+}: Props): ReactElement {
   let style: any = {}
   if (!className && colors) {
     style.backgroundColor = colors.background
@@ -31,7 +31,7 @@ export default function Button({
       style={style}
       onClick={handleClick}
     >
-      {label}
+      <span>{label}</span>
     </button>
   )
 }

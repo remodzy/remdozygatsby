@@ -69,3 +69,4 @@ public
 .netlify
 
 **/.DS_Store
+.idea

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
 import { useDeviceDetect } from '~utils/hooks'
 
@@ -9,14 +9,14 @@ import BlockWrapper from '../BlockWrapper'
 import FooterLink from './FooterLink'
 import footerStyles from './AppFooter.module.css'
 
-export default function Footer() {
+export default function Footer(): ReactElement {
   const { isMobile } = useDeviceDetect()
 
   return (
     <footer className={footerStyles.root}>
       <BlockWrapper
         styleWrapper={{
-          padding: isMobile ? '80px 18px 50px' : '60px 8.75%',
+          padding: isMobile ? '80px 18px 50px' : '60px 0',
         }}
       >
         <div className={footerStyles.container}>

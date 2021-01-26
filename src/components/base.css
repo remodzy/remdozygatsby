@@ -11,7 +11,7 @@
 }
 @font-face {
   font-family: 'Manrope VF';
-  src: url(../fonts/manrope/variable/Manrope[wght].ttf)
+  src: url(../fonts/manrope/variable/ManropeGX.ttf)
     format('truetype-variations');
   font-style: normal;
   font-variation-settings: 'wght' 500;
@@ -64,9 +64,26 @@
 body,
 html,
 input {
-  font-family: 'Manrope VF', Manrope;
+  font-family: Manrope, sans-serif;
   font-variation-settings: 'wght' 500;
 }
+
+/**
+Main
+ */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/**
+end Main
+ */
 
 body {
   font-size: 1em;
@@ -98,7 +115,7 @@ a {
 }
 
 hr {
-  background: rgba(92, 110, 128, 0.3);
+  border-top: 1px solid rgba(44, 73, 122, 0.1);
 }
 
 p {
@@ -163,11 +180,12 @@ strong {
 
 /** BUTTONS **/
 .btn {
-  padding: 18px 32px;
+  padding: 15px 38px;
   border-radius: 10px;
   border: none;
-  font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
   color: #ffffff;
   outline: none;
   border: 1.5px solid transparent;
