@@ -9,7 +9,7 @@ const Artifacts: FC<unknown> = (): ReactElement => (
       mainSize={32}
       centerSize={6.4}
       left='24.9306%'
-      top={179}
+      top={130}
     />
     <CircleArtifact
       name={CircleName.Green}
@@ -23,46 +23,46 @@ const Artifacts: FC<unknown> = (): ReactElement => (
       mainSize={40}
       centerSize={8}
       left='5.9028%'
-      top={796}
+      top={644}
     />
     <CircleArtifact
       name={CircleName.Purple}
       mainSize={44}
       centerSize={8.8}
       right='39.1667%'
-      top={905}
+      top={755}
     />
     <CircleArtifact
       name={CircleName.Green}
       mainSize={44}
       centerSize={8.8}
       left='24.9306%'
-      top={1007}
+      top={827}
     />
     <CircleArtifact
       name={CircleName.Purple}
       mainSize={44}
       centerSize={8.8}
       left='27.7083%'
-      bottom={802}
+      bottom={602}
     />
     <CircleArtifact
       name={CircleName.Green}
       mainSize={56}
       centerSize={11.2}
       right='29.1667%'
-      bottom={901}
+      bottom={651}
     />
     <CircleArtifact
       name={CircleName.Purple}
       mainSize={40}
       centerSize={8}
       left='40.7639%'
-      bottom={207}
+      bottom={107}
     />
 
     <DotsArtifact
-      top={302}
+      top={170}
       left='1.7361%'
       size={5}
       columns={3}
@@ -81,7 +81,7 @@ const Artifacts: FC<unknown> = (): ReactElement => (
       ]}
     />
     <DotsArtifact
-      top={1038}
+      top={838}
       right='0'
       size={6}
       columns={8}
@@ -96,7 +96,7 @@ const Artifacts: FC<unknown> = (): ReactElement => (
       ]}
     />
     <DotsArtifact
-      top={910}
+      top={810}
       left='1.1111%'
       size={6}
       columns={6}
@@ -111,7 +111,7 @@ const Artifacts: FC<unknown> = (): ReactElement => (
       ]}
     />
     <DotsArtifact
-      top={362}
+      top={235}
       right='4.4444%'
       size={6}
       columns={8}
@@ -126,7 +126,7 @@ const Artifacts: FC<unknown> = (): ReactElement => (
       ]}
     />
     <DotsArtifact
-      top={1826}
+      top={1526}
       left='0.9028%'
       size={4}
       columns={5}
@@ -141,7 +141,7 @@ const Artifacts: FC<unknown> = (): ReactElement => (
       ]}
     />
     <DotsArtifact
-      top={1390}
+      top={1190}
       left='13%'
       size={4}
       columns={4}
@@ -160,7 +160,7 @@ const Artifacts: FC<unknown> = (): ReactElement => (
       ]}
     />
     <DotsArtifact
-      bottom={645}
+      bottom={518}
       right='11%'
       size={4}
       columns={4}
@@ -179,7 +179,7 @@ const Artifacts: FC<unknown> = (): ReactElement => (
       ]}
     />
     <DotsArtifact
-      bottom={316}
+      bottom={156}
       left='43.4%'
       size={5}
       columns={8}

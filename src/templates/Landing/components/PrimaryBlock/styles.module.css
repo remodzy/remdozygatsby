@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 694px;
+  height: 494px;
   margin-top: 84px;
   background: linear-gradient(180deg, rgba(246, 249, 251, 0) 0%, #f5f8fb 100%);
   position: relative;
@@ -19,13 +19,13 @@
 .title {
   font-style: normal;
   font-weight: 800;
-  font-size: 72px;
+  font-size: 36px;
   line-height: 92px;
-  margin-bottom: 44px;
+  margin-bottom: 30px;
 }
 
 .subtitle {
-  padding: 0 140px;
+  padding: 0 100px;
   font-style: normal;
   font-weight: 500;
   font-size: 20px;

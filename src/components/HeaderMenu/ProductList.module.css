@@ -1,7 +1,8 @@
 .item {
   display: flex;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+  text-decoration: none;
 }
 
 .mainBlock {
@@ -24,21 +25,27 @@
   color: var(--grey-text-color);
 }
 
+.iconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #4864eb 0%, #2841b6 100%);
+  border-radius: 9px;
+}
+
 @media screen and (min-width: 801px) {
   .mainBlock {
-    height: 56px;
+    height: 40px;
     justify-content: space-around;
   }
 
   .item {
     cursor: pointer;
     position: relative;
-    padding: 16px 40px;
+    padding: 14px 30px;
     margin-bottom: 0;
-  }
-
-  .item:first-of-type {
-    margin-bottom: 8px;
   }
 
   .item:hover {

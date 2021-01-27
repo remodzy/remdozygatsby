@@ -2,57 +2,77 @@ import React, { FC, ReactElement } from 'react'
 
 import ProductRow from '../ProductRow'
 import InfoBlock from '../InfoBlock'
-import { RoxFlowIcon, RoxFormsIcon, RoxServiceIcon } from '../Icons'
 
 import Artifacts from './Artifacts'
 import styles from './styles.module.css'
+import {
+  RoxFlowIcon,
+  RoxFormsIcon,
+  RoxServiceIcon,
+} from '~components/ProductIcons'
+
+const productConfig = [
+  {
+    icon: () => <RoxFormsIcon isLarge />,
+    label: 'Forms',
+    link: '/forms',
+    linkLabel: 'Learn more',
+    extraItem: BetaLabel,
+    imageUrl: '/images/landing/landing-products-1.png',
+    imageWidth: 672,
+    title: 'Build checklists, conduct inspections, Communicate with your team',
+    text:
+      'roxForms by Roxabo is an inspection app now used  50,000 times a day in over 80 countries',
+  },
+  {
+    icon: () => <RoxFormsIcon isLarge />,
+    label: 'Service',
+    link: '/service',
+    linkLabel: 'Learn more',
+    extraItem: ComingSoonLabel,
+    imageUrl: '/images/landing/landing-products-2.png',
+    imageWidth: 672,
+    title: 'Field service management software',
+    text:
+      'With roxServices from Roxabo, you can schedule and manage jobs, dispatch them to field technicians,and provide ETAs to customers with notifications.',
+  },
+  {
+    icon: () => <RoxFlowIcon isLarge />,
+    label: 'Flow',
+    link: '/flow',
+    linkLabel: 'Learn more',
+    extraItem: ComingSoonLabel,
+    imageUrl: '/images/landing/landing-products-3.png',
+    imageWidth: 640,
+    title: 'Build checklists, conduct inspections, Communicate with your team',
+    text:
+      'roxForms by Roxabo is an inspection app now used 50,000 times a day in over 80 countries',
+  },
+]
 
 const ProductsBlock: FC<unknown> = (): ReactElement => (
   <div className={styles.root}>
     <div className={styles.title}>Our Products</div>
     <div className={styles.rowContainer}>
-      <ProductRow>
-        <InfoBlock
-          icon={RoxFormsIcon}
-          label='Forms'
-          buttonLabel='Learn more'
-          text='roxForms by Roxabo is an inspection app now used  50,000 times a day in over 80 countries'
-          title='Build checklists, conduct inspections, Communicate with your team'
-          buttonHandler={() => {}}
-          extraItem={BetaLabel}
-        />
-        <div className={styles.productImage} style={{ width: 672 }}>
-          <img src='/images/landing/landing-products-1.png' alt='' />
-        </div>
-      </ProductRow>
-      <ProductRow>
-        <div className={styles.productImage} style={{ width: 672 }}>
-          <img src='/images/landing/landing-products-2.png' alt='' />
-        </div>
-        <InfoBlock
-          icon={RoxServiceIcon}
-          label='Service'
-          buttonLabel='Learn more'
-          text='With roxServices from Roxabo, you can schedule and manage jobs, dispatch them to field technicians,and provide ETAs to customers with notifications.'
-          title='Field service management software'
-          buttonHandler={() => {}}
-          extraItem={ComingSoonLabel}
-        />
-      </ProductRow>
-      <ProductRow>
-        <InfoBlock
-          icon={RoxFlowIcon}
-          label='Flow'
-          buttonLabel='Learn more'
-          text='roxForms by Roxabo is an inspection app now used 50,000 times a day in over 80 countries'
-          title='Build checklists, conduct inspections, Communicate with your team'
-          buttonHandler={() => {}}
-          extraItem={ComingSoonLabel}
-        />
-        <div className={styles.productImage} style={{ width: 640 }}>
-          <img src='/images/landing/landing-products-3.png' alt='' />
-        </div>
-      </ProductRow>
+      {productConfig.map(product => (
+        <ProductRow key={product.label}>
+          <InfoBlock
+            icon={product.icon}
+            label={product.label}
+            linkLabel={product.linkLabel}
+            text={product.text}
+            title={product.title}
+            link={product.link}
+            extraItem={product.extraItem}
+          />
+          <div
+            className={styles.productImage}
+            style={{ width: product.imageWidth }}
+          >
+            <img src={product.imageUrl} alt='' />
+          </div>
+        </ProductRow>
+      ))}
     </div>
     <Artifacts />
   </div>
