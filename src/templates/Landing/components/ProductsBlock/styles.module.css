@@ -1,18 +1,18 @@
 .root {
-  padding-top: 178px;
-  padding-bottom: 238px;
+  padding-top: 78px;
+  padding-bottom: 78px;
   position: relative;
 }
 
 .rowContainer > :nth-child(2),
 .rowContainer > :nth-child(3) {
-  margin-top: 192px;
+  margin-top: 50px;
 }
 
 .title {
   font-style: normal;
   font-weight: 800;
-  font-size: 40px;
+  font-size: 32px;
   line-height: 72px;
   text-align: center;
   margin-bottom: 52px;

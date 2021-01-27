@@ -16,7 +16,7 @@ export default function Footer(): ReactElement {
     <footer className={footerStyles.root}>
       <BlockWrapper
         styleWrapper={{
-          padding: isMobile ? '80px 18px 50px' : '60px 0',
+          padding: isMobile ? '80px 18px 50px' : '60px 0 10px',
         }}
       >
         <div className={footerStyles.container}>
