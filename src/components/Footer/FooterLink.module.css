@@ -9,10 +9,3 @@
 .link:last-child {
   margin-bottom: 0;
 }
-
-@media (max-width: 768px) {
-  .link {
-    font-size: 15px;
-    line-height: 20px;
-  }
-}

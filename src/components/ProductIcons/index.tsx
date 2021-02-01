@@ -3,10 +3,10 @@ import React, { ReactElement } from 'react'
 import styles from './styles.module.css'
 
 type IconProps = {
-  isLarge: boolean
+  isLarge?: boolean
 }
 
-export function RoxFormsIcon({ isLarge }: IconProps): ReactElement {
+export function RoxFormsIcon({ isLarge = true }: IconProps): ReactElement {
   return (
     <IconWrapper isLarge={isLarge}>
       <svg
@@ -67,7 +67,7 @@ export function RoxFormsIcon({ isLarge }: IconProps): ReactElement {
   )
 }
 
-export function RoxServiceIcon({ isLarge }: IconProps): ReactElement {
+export function RoxServiceIcon({ isLarge = true }: IconProps): ReactElement {
   return (
     <IconWrapper isLarge={isLarge}>
       <svg
@@ -78,7 +78,7 @@ export function RoxServiceIcon({ isLarge }: IconProps): ReactElement {
       >
         <path
           d='M0 7a7 7 0 017-7h13.792c.115 0 .208.093.208.208v5.625C21 6.478 20.478 7 19.833 7H0z'
-          fill='url(#RoxServicepaint0Linear)'
+          fill='url(#RoxServicePaint0Linear)'
         />
         <path
           d='M0 22.167C0 21.522.522 21 1.167 21H21a7 7 0 01-7 7H.208A.208.208 0 010 27.792v-5.625z'
@@ -128,7 +128,7 @@ export function RoxServiceIcon({ isLarge }: IconProps): ReactElement {
   )
 }
 
-export function RoxFlowIcon({ isLarge }: IconProps): ReactElement {
+export function RoxFlowIcon({ isLarge = true }: IconProps): ReactElement {
   return (
     <IconWrapper isLarge={isLarge}>
       <svg

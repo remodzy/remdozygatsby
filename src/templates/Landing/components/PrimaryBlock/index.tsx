@@ -13,9 +13,9 @@ const PrimaryBlock: FC<unknown> = (): ReactElement => (
         </div>
       </div>
       <div className={styles.subtitle}>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry&apos;s standard dummy text
-        ever since the 1500s, when an unknown printer took a galley of type.
+        Unique and powerful suite of software to run your entire business,
+        brought to you by a company with the long term vision to transform the
+        way you work.
       </div>
     </div>
     <Artifacts />

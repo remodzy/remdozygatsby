@@ -34,7 +34,7 @@ module.exports.onPostBuild = () => {
 }
 
 module.exports = {
-  pathPrefix: '/remodzy',
+  pathPrefix: '/roxabo',
   siteMetadata: {
     defaultTitle: 'Roxabo',
     titleTemplate: '%s · The Roxabo',

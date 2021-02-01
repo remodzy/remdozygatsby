@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, ReactElement } from 'react'
 import { Link } from 'gatsby'
 
 import { useDeviceDetect } from '~utils/hooks'
@@ -29,7 +29,7 @@ const menuList: MenuItem[] = [
   },
 ]
 
-export default function HeaderMenu() {
+export default function HeaderMenu(): ReactElement {
   const [show, setShow] = useState(false)
   const { isMobile } = useDeviceDetect()
 
