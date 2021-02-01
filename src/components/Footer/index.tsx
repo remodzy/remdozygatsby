@@ -16,7 +16,7 @@ export default function Footer(): ReactElement {
     <footer className={footerStyles.root}>
       <BlockWrapper
         styleWrapper={{
-          padding: isMobile ? '80px 18px 50px' : '60px 0 10px',
+          padding: isMobile ? '80px 24px 18px' : '60px 0 10px',
         }}
       >
         <div className={footerStyles.container}>
@@ -59,42 +59,7 @@ export default function Footer(): ReactElement {
 }
 
 function MobileArtifacts() {
-  return (
-    <>
-      <DotsArtifact
-        top={29}
-        right={33}
-        columns={8}
-        gap={15.9}
-        size={3.34}
-        // prettier-ignore
-        list={[
-        0,1,1,0,0,0,0,0,
-        0,0,0,0,0,0,1,0,
-        0,0,0,1,0,0,1,0,
-        1,0,0,0,0,0,0,0,
-      ]}
-      />
-      <DotsArtifact
-        top={357}
-        right={65}
-        columns={4}
-        gap={16.4}
-        size={3.44}
-        // prettier-ignore
-        list={[
-        1,0,0,0,
-        0,0,0,1,
-        0,1,0,1,
-        0,0,0,0,
-        0,0,0,0,
-        0,0,0,0,
-        0,1,1,0,
-        0,0,0,0,
-      ]}
-      />
-    </>
-  )
+  return <></>
 }
 function DesktopArtifacts() {
   return (

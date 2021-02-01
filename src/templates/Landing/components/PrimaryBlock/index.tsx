@@ -1,6 +1,6 @@
 import React, { FC, ReactElement } from 'react'
 
-import styles from './styles.module.css'
+import styles from './PrimaryBlock.module.css'
 import Artifacts from './Artifacts'
 
 const PrimaryBlock: FC<unknown> = (): ReactElement => (

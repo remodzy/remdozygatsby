@@ -2,7 +2,11 @@ import * as React from 'react'
 
 export type Props = {
   mainSize: number
-  centerSize: number
+  /**
+   * @deprecated
+   *
+   */
+  centerSize?: number
   top?: number
   bottom?: number
   left?: string
@@ -29,7 +33,6 @@ type Result = {
 
 export const getStyles = ({
   mainSize,
-  centerSize,
   top,
   bottom,
   left,
@@ -37,6 +40,7 @@ export const getStyles = ({
   name,
 }: Props): Style => {
   const colors = getCircleColors(name)
+  const cSize = mainSize / 5
   const root = {
     position: 'absolute' as const,
     display: 'flex',
@@ -56,8 +60,8 @@ export const getStyles = ({
   const center = {
     borderRadius: '50%',
     transform: 'matrix(-1, 0, 0, 1, 0, 0)',
-    width: centerSize,
-    height: centerSize,
+    width: cSize,
+    height: cSize,
     background: colors.center,
   }
 

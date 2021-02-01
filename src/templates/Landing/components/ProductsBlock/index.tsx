@@ -4,12 +4,13 @@ import ProductRow from '../ProductRow'
 import InfoBlock from '../InfoBlock'
 
 import Artifacts from './Artifacts'
-import styles from './styles.module.css'
+import styles from './ProductsBlock.module.css'
 import {
   RoxFlowIcon,
   RoxFormsIcon,
   RoxServiceIcon,
 } from '~components/ProductIcons'
+import { useDeviceDetect } from '~utils/hooks'
 
 const productConfig = [
   {
@@ -18,19 +19,25 @@ const productConfig = [
     link: '/forms',
     linkLabel: 'Learn more',
     extraItem: BetaLabel,
-    imageUrl: '/images/landing/landing-products-1.png',
+    imageUrls: {
+      desktop: '/images/landing/landing-products-1.png',
+      mobile: '/images/landing/m-landing-products-1.png',
+    },
     imageWidth: 672,
     title: 'Build checklists, conduct inspections, Communicate with your team',
     text:
       'roxForms by Roxabo is an inspection app now used  50,000 times a day in over 80 countries',
   },
   {
-    icon: () => <RoxFormsIcon isLarge />,
+    icon: () => <RoxServiceIcon isLarge />,
     label: 'Service',
     link: '/service',
     linkLabel: 'Learn more',
     extraItem: ComingSoonLabel,
-    imageUrl: '/images/landing/landing-products-2.png',
+    imageUrls: {
+      desktop: '/images/landing/landing-products-2.png',
+      mobile: '/images/landing/m-landing-products-2.png',
+    },
     imageWidth: 672,
     title: 'Field service management software',
     text:
@@ -42,7 +49,10 @@ const productConfig = [
     link: '/flow',
     linkLabel: 'Learn more',
     extraItem: ComingSoonLabel,
-    imageUrl: '/images/landing/landing-products-3.png',
+    imageUrls: {
+      desktop: '/images/landing/landing-products-3.png',
+      mobile: '/images/landing/m-landing-products-3.png',
+    },
     imageWidth: 640,
     title: 'Build checklists, conduct inspections, Communicate with your team',
     text:
@@ -50,33 +60,41 @@ const productConfig = [
   },
 ]
 
-const ProductsBlock: FC<unknown> = (): ReactElement => (
-  <div className={styles.root}>
-    <div className={styles.title}>Our Products</div>
-    <div className={styles.rowContainer}>
-      {productConfig.map(product => (
-        <ProductRow key={product.label}>
-          <InfoBlock
-            icon={product.icon}
-            label={product.label}
-            linkLabel={product.linkLabel}
-            text={product.text}
-            title={product.title}
-            link={product.link}
-            extraItem={product.extraItem}
-          />
-          <div
-            className={styles.productImage}
-            style={{ width: product.imageWidth }}
-          >
-            <img src={product.imageUrl} alt='' />
-          </div>
-        </ProductRow>
-      ))}
+const ProductsBlock: FC<unknown> = (): ReactElement => {
+  const { isMobile } = useDeviceDetect()
+
+  return (
+    <div className={styles.root}>
+      <div className={styles.title}>Our Products</div>
+      <div className={styles.rowContainer}>
+        {productConfig.map(product => (
+          <ProductRow key={product.label}>
+            <InfoBlock
+              icon={product.icon}
+              label={product.label}
+              linkLabel={product.linkLabel}
+              text={product.text}
+              title={product.title}
+              link={product.link}
+              extraItem={product.extraItem}
+            />
+            <div className={styles.productImage}>
+              <img
+                src={
+                  isMobile
+                    ? product.imageUrls.mobile
+                    : product.imageUrls.desktop
+                }
+                alt=''
+              />
+            </div>
+          </ProductRow>
+        ))}
+      </div>
+      <Artifacts />
     </div>
-    <Artifacts />
-  </div>
-)
+  )
+}
 
 export default ProductsBlock
 

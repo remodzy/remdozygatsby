@@ -62,9 +62,17 @@ input[type='text'] {
     margin-top: 44px;
   }
   .input {
-    margin-bottom: 34px;
+    margin-bottom: 16px;
   }
   .inputWrapper {
     margin-right: 0;
+  }
+
+  .buttonWrapper {
+    width: 100%;
+  }
+
+  .buttonWrapper > button {
+    width: 100%;
   }
 }

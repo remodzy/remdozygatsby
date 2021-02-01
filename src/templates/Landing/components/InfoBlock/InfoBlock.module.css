@@ -1,5 +1,5 @@
 .root {
-  width: 352px;
+  max-width: 352px;
   align-self: center;
 }
 
@@ -22,8 +22,8 @@
 .title {
   font-style: normal;
   font-weight: bold;
-  font-size: 24px;
-  line-height: 36px;
+  font-size: 20px;
+  line-height: 28px;
   margin-top: 40px;
   text-transform: capitalize;
 }
@@ -32,7 +32,7 @@
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  line-height: 28px;
+  line-height: 24px;
   color: var(--grey-text-color);
   margin-top: 32px;
 }

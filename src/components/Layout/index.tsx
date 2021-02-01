@@ -16,7 +16,7 @@ const Layout: React.FC<Props> = ({ children }) => (
     <SEO />
     <Header />
     <div>
-      <main style={{ background: 'white' }}>
+      <main style={{ background: 'white', paddingTop: 84 }}>
         {children}
         <BlueBlock />
       </main>
