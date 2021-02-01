@@ -31,7 +31,7 @@ function DesktopArtifacts() {
         mainSize={40}
         centerSize={8}
         right='18.3333%'
-        top={111}
+        top={35}
       />
     </>
   )

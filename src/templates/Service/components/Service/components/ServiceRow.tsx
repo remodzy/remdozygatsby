@@ -10,10 +10,9 @@ import serviceRowStyles from './ServiceRow.module.css'
 
 type ImageProps = {
   image: FluidObject
-  size: number
 }
 
-const Image = ({ image, size }: ImageProps) => (
+const Image = ({ image }: ImageProps) => (
   <Img fluid={image} style={{ width: '100%' }} loading='eager' />
 )
 

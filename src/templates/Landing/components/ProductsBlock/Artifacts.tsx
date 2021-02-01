@@ -122,8 +122,8 @@ function MobileArtifacts(): ReactElement {
         ]}
       />
       <DotsArtifact
-        bottom={730}
-        right='4.7917%'
+        bottom={188}
+        right='4.9%'
         size={4}
         columns={3}
         gap={25}
@@ -135,6 +135,7 @@ function MobileArtifacts(): ReactElement {
           0,0,0,
           0,0,0,
           0,0,1,
+          0,0,0,
           0,0,0,
           0,0,0,
         ]}

@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 
 import { useDeviceDetect } from '~utils/hooks'
 import PrimaryContent from '~components/PrimaryContent'
 
-export default function PrimaryBlock() {
+export default function PrimaryBlock(): ReactElement {
   const { isMobile } = useDeviceDetect()
   const { desktop, mobile } = useStaticQuery(query)
   const image = isMobile ? mobile : desktop

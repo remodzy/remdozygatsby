@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
 import { CircleArtifact, CircleName } from '~components/CircleArtifact'
 import DotsArtifact from '~components/Dot'
@@ -9,7 +9,7 @@ import { useDeviceDetect } from '~utils/hooks'
 import ServiceList from './components/ServiceList'
 import serviceStyles from './Service.module.css'
 
-export default function Service() {
+export default function Service(): ReactElement {
   const { isMobile } = useDeviceDetect()
 
   return (

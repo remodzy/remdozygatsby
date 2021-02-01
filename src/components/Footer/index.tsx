@@ -46,11 +46,7 @@ export default function Footer(): ReactElement {
         </div>
         <hr />
         <div className={footerStyles.copyrightContainer}>
-          <span>© {new Date().getFullYear()}, ROXABO PTY LTD</span>
-          <span className={footerStyles.backToTop}>
-            <Icon name='arrowTop' />
-            &nbsp;&nbsp;&nbsp;Back to top
-          </span>
+          <span>© {new Date().getFullYear()}, ROXABO PTY LTD.</span>
         </div>
       </BlockWrapper>
       {isMobile ? <MobileArtifacts /> : <DesktopArtifacts />}
