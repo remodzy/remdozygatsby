@@ -52,13 +52,12 @@ const PrimaryContent: React.FC<Props> = ({ title, subTitle, image }) => {
           style={{ width: '100%', maxWidth: isMobile ? 732 : 1430 }}
           loading='eager'
         />
-        <CompaniesLogos />
         {isMobile ? <InMobileArtifacts /> : <InDesktopArtifacts />}
       </BlockWrapper>
 
       {isMobile ? <OutMobileArtifacts /> : <OutDesktopArtifacts />}
 
-      <div className={primaryContentStyles.backgroundCover}></div>
+      <div className={primaryContentStyles.backgroundCover} />
     </div>
   )
 }
