@@ -13,7 +13,7 @@
   align-items: center;
   max-width: 1120px;
   margin: 0 auto;
-  padding: 0.845rem 0;
+  padding: 1.25rem 0;
 }
 
 .buttonsContainer {
@@ -24,4 +24,11 @@
 
 .loginContainer {
   margin-right: 32px;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    padding-left: 1.25rem;
+    padding-right: 0.5rem;
+  }
 }

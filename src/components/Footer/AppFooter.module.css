@@ -53,7 +53,7 @@
   .linksContainer {
     padding: 0;
     gap: 15px 15px;
-    grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(148px, auto));
   }
   .columnTitle {
     margin-top: 34px;

@@ -54,14 +54,10 @@ const icons: { [key: string]: (props: SvgProps) => ReactElement } = {
     </svg>
   ),
   hamburger: () => (
-    <svg width='18' height='14' fill='none' xmlns='http://www.w3.org/2000/svg'>
-      <path
-        d='M1 1h16M1 7h16M1 13h16'
-        stroke='#091F3E'
-        strokeWidth='2'
-        strokeLinecap='round'
-        strokeLinejoin='round'
-      />
+    <svg width='24' height='17' fill='none' xmlns='http://www.w3.org/2000/svg'>
+      <rect width='24' height='3' rx='1.5' fill='#4864EB' />
+      <rect y='7' width='24' height='3' rx='1.5' fill='#4864EB' />
+      <rect y='14' width='24' height='3' rx='1.5' fill='#4864EB' />
     </svg>
   ),
   paragraph: () => (

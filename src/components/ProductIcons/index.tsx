@@ -78,19 +78,19 @@ export function RoxServiceIcon({ isLarge }: IconProps): ReactElement {
       >
         <path
           d='M0 7a7 7 0 017-7h13.792c.115 0 .208.093.208.208v5.625C21 6.478 20.478 7 19.833 7H0z'
-          fill='url(#RoxServiceIconPaint0Linear)'
+          fill='url(#RoxServicepaint0Linear)'
         />
         <path
           d='M0 22.167C0 21.522.522 21 1.167 21H21a7 7 0 01-7 7H.208A.208.208 0 010 27.792v-5.625z'
-          fill='url(#RoxServiceIconPaint1Linear)'
+          fill='url(#RoxServicePaint1Linear)'
         />
         <path
           d='M21 17.5a7 7 0 00-7-7H0a7 7 0 007 7h14z'
-          fill='url(#RoxServiceIconPaint2Linear)'
+          fill='url(#RoxServicePaint2Linear)'
         />
         <defs>
           <linearGradient
-            id='RoxServiceIconPaint0Linear'
+            id='RoxServicePaint0Linear'
             x1='-10.5'
             y1='14'
             x2='16.38'
@@ -101,7 +101,7 @@ export function RoxServiceIcon({ isLarge }: IconProps): ReactElement {
             <stop offset='1' stopColor='#fff' stopOpacity='.6' />
           </linearGradient>
           <linearGradient
-            id='RoxServiceIconPaint1Linear'
+            id='RoxServicePaint1Linear'
             x1='-10.5'
             y1='14'
             x2='16.38'
@@ -112,7 +112,7 @@ export function RoxServiceIcon({ isLarge }: IconProps): ReactElement {
             <stop offset='1' stopColor='#fff' stopOpacity='.6' />
           </linearGradient>
           <linearGradient
-            id='RoxServiceIconPaint2Linear'
+            id='RoxServicePaint2Linear'
             x1='-10.5'
             y1='14'
             x2='16.38'

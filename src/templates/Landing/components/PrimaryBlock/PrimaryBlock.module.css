@@ -2,14 +2,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 494px;
-  margin-top: 84px;
   background: linear-gradient(180deg, rgba(246, 249, 251, 0) 0%, #f5f8fb 100%);
   position: relative;
+  padding: 60px 6.6667% 65px;
+  overflow: hidden;
 }
 
 .wrapper {
-  margin: 0 15%;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -25,7 +24,6 @@
 }
 
 .subtitle {
-  padding: 0 100px;
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -35,4 +33,16 @@
 
 .highlight {
   color: var(--primary-color);
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 36px;
+    line-height: 48px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    line-height: 26px;
+  }
 }

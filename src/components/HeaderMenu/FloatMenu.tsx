@@ -14,12 +14,11 @@ import floatMenuStyles from './FloatMenu.module.css'
 import MenuToggle from './MenuToggle'
 
 type Props = {
-  show: boolean
   menuList: MenuItem[]
   handleClose: () => void
 }
 
-const FloatMenu: React.FC<Props> = ({ show, menuList, handleClose }) => {
+const FloatMenu: React.FC<Props> = ({ menuList, handleClose }) => {
   const handleLogin = useCallback(() => {
     authorize({})
   }, [])
@@ -30,7 +29,7 @@ const FloatMenu: React.FC<Props> = ({ show, menuList, handleClose }) => {
   return (
     <div className={floatMenuStyles.root}>
       <div className={floatMenuStyles.backgroundOverlay}>
-        <div className={floatMenuStyles.backgroundWrapper}></div>
+        <div className={floatMenuStyles.backgroundWrapper} />
       </div>
       <div className={floatMenuStyles.menuContainer}>
         <div className={floatMenuStyles.menuHeader}>

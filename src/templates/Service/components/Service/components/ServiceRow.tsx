@@ -18,7 +18,7 @@ const Image = ({ image, size }: ImageProps) => (
 )
 
 type Props = {
-  images: any
+  images: unknown
   item: ListItem
   index: number
 }
@@ -75,7 +75,7 @@ export default function ServiceRow({
         style={{
           transform: isEven || isMobile ? 'matrix(-1, 0, 0, 1, 0, 0)' : 'none',
         }}
-      ></div>
+      />
     </div>
   )
 }
