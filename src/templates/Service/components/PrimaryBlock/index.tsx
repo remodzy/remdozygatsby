@@ -12,7 +12,7 @@ export default function PrimaryBlock(): ReactElement {
   return (
     <PrimaryContent
       title='Field service management software'
-      subTitle='With RoxService from Roxabo,<br> you can schedule and manage jobs, dispatch them to field technicians, and provide ETAs to customers with notifications.'
+      subTitle='With RoxService from Roxabo, you can schedule and manage jobs, dispatch them to field technicians, and provide ETAs to customers with notifications.'
       image={image?.childImageSharp?.fluid}
     />
   )
