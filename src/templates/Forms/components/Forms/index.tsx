@@ -17,7 +17,7 @@ const FormsBlock = () => {
     <div className={formsStyles.root}>
       <BlockWrapper>
         <SectionLabel text='Forms' />
-        <SectionTitle text='Remodzy Forms' />
+        <SectionTitle text='RoxForms' />
         <FormList />
         {isMobile ? <InMobileArtifacts /> : <InDesktopArtifacts />}
       </BlockWrapper>

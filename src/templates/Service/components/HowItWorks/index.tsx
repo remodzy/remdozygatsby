@@ -16,7 +16,7 @@ export default function HowItWorks() {
     <div className={styles.root}>
       <BlockWrapper>
         <SectionLabel text='How it works' color='warning' />
-        <SectionTitle text='How Remodzy Service works' />
+        <SectionTitle text='How RoxService works' />
         <div className={styles.itemsContainer}>
           <Item
             image={FirstIcon}

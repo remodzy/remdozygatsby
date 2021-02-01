@@ -20,7 +20,7 @@ export default function Forms() {
     <>
       <PrimaryContent
         title='Build checklists, conduct inspections, file reports'
-        subTitle='Remodzy Forms by Remodzy is an inspection app now used  50,000 times a day in over 80 countries'
+        subTitle='RoxForms by Roxabo is an inspection app now used  50,000 times a day in over 80 countries'
         image={image?.childImageSharp?.fluid}
       />
       <FormsBlock />

@@ -21,10 +21,10 @@ const HowItWorksWrapper = React.memo(() => {
       icon: Integrations,
       title: 'Integrations',
       text:
-        'Connect Remodzy Forms to business software system such as Tableau, Sharepoint, and more.',
+        'Connect RoxForms to business software system such as Tableau, Sharepoint, and more.',
     },
   ]
-  return <HowItWorks title='How Remodzy Forms works' list={list} />
+  return <HowItWorks title='How RoxForms works' list={list} />
 })
 
 export default HowItWorksWrapper

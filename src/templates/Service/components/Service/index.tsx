@@ -15,7 +15,7 @@ export default function Service() {
   return (
     <div className={serviceStyles.root}>
       <SectionLabel text='SERVICE' />
-      <SectionTitle text='Remodzy Service' />
+      <SectionTitle text='RoxService' />
       <ServiceList />
       {isMobile ? <InMobileArtifacts /> : <InDesktopArtifacts />}
     </div>

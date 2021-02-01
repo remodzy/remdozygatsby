@@ -31,7 +31,7 @@ export default function Footer(): ReactElement {
               <FooterLink text='Pricing' url='#' />
             </div>
             <div className={footerStyles.linkColumn}>
-              <div className={footerStyles.columnTitle}>About Remodzy</div>
+              <div className={footerStyles.columnTitle}>About Roxabo</div>
               <FooterLink text='About Us' url='#' />
               <FooterLink text='Blog' url='#' />
               <FooterLink text='Privacy & Terms' url='#' />
@@ -46,7 +46,7 @@ export default function Footer(): ReactElement {
         </div>
         <hr />
         <div className={footerStyles.copyrightContainer}>
-          <span>© {new Date().getFullYear()}, Remodzy LLC.</span>
+          <span>© {new Date().getFullYear()}, ROXABO PTY LTD</span>
           <span className={footerStyles.backToTop}>
             <Icon name='arrowTop' />
             &nbsp;&nbsp;&nbsp;Back to top

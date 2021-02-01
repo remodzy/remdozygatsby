@@ -36,11 +36,11 @@ module.exports.onPostBuild = () => {
 module.exports = {
   pathPrefix: '/remodzy',
   siteMetadata: {
-    defaultTitle: 'Remodzy',
-    titleTemplate: '%s · The Remodzy',
+    defaultTitle: 'Roxabo',
+    titleTemplate: '%s · The Roxabo',
     defaultDescription: 'Description',
     defaultImage: '',
-    siteUrl: 'https://remodzy.com',
+    siteUrl: 'https://roxabo.com',
     article: '',
     twitterUsername: '',
   },
