@@ -4,7 +4,6 @@
   align-items: center;
   background: linear-gradient(180deg, rgba(246, 249, 251, 0) 0%, #f5f8fb 100%);
   position: relative;
-  padding: 60px 6.6667% 65px;
   overflow: hidden;
 }
 
@@ -13,6 +12,8 @@
   justify-content: center;
   text-align: center;
   flex-direction: column;
+  max-width: 1120px;
+  padding: 60px 6.6667% 65px;
 }
 
 .title {
