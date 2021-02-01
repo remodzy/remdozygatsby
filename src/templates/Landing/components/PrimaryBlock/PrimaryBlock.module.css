@@ -31,8 +31,11 @@
   color: var(--grey-text-color);
 }
 
-.highlight {
+.highlightBlue {
   color: var(--primary-color);
+}
+.highlightOrange {
+  color: #e19763;
 }
 
 @media screen and (max-width: 768px) {
