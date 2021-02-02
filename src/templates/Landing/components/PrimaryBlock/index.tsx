@@ -8,7 +8,7 @@ const PrimaryBlock: FC<unknown> = (): ReactElement => (
     <div className={styles.wrapper}>
       <div className={styles.title}>
         <div>
-          WE BUILD <span className={styles.highlightOrange}>GREAT</span>{' '}
+          WE BUILD <span className={styles.highlightOrange}>INTUITIVE</span>{' '}
           PRODUCTS FOR <span className={styles.highlightBlue}>GREAT</span> TEAMS
         </div>
       </div>
