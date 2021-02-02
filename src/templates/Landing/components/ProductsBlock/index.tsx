@@ -54,9 +54,9 @@ const productConfig = [
       mobile: '/images/landing/m-landing-products-3.png',
     },
     imageWidth: 640,
-    title: 'Build checklists, conduct inspections, Communicate with your team',
+    title: 'Tie your apps together, set yourself free.',
     text:
-      'roxForms by Roxabo is an inspection app now used 50,000 times a day in over 80 countries',
+      'Automate business workflows by connecting your apps with RoxFlow. Build smart integrations to break the information silos in your business.',
   },
 ]
 
