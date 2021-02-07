@@ -1,9 +1,9 @@
+import { graphql, useStaticQuery } from 'gatsby'
 import React, { ReactElement } from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
 
-import ServiceRow from './ServiceRow'
 import { getConfigList } from './listConfig'
 import serviceListStyles from './ServiceList.module.css'
+import ServiceRow from './ServiceRow'
 
 export type ListItem = {
   key: string

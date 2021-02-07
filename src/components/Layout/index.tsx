@@ -1,11 +1,11 @@
+import '../base.css'
+
 import React, { ReactElement } from 'react'
 
-import Header from '../Header'
-import Footer from '../Footer'
-
-import '../base.css'
-import SEO from '../Seo'
 import BlueBlock from '../BlueBlock'
+import Footer from '../Footer'
+import Header from '../Header'
+import SEO from '../Seo'
 
 type Props = {
   children: ReactElement | (false | null | ReactElement)[]

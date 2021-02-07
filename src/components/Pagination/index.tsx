@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react'
 import { Link } from 'gatsby'
+import React, { useEffect, useState } from 'react'
+
+import { PageRangeItem, paginationRange } from '~utils/paginationRange'
+
 import PaginationItem from './components/PaginationItem'
 import styles from './Pagination.module.css'
-import { paginationRange, PageRangeItem } from '~utils/paginationRange'
 
 export type Pagination = {
   hasNextPage: boolean

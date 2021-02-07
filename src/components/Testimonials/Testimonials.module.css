@@ -1,86 +1,42 @@
 .root {
   position: relative;
-  padding-top: 136px;
-}
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-template-areas: 'a b';
-  padding: 130px 0 225px 0;
-}
-/* .container {
-  display: flex;
-  justify-content: flex-end;
-  padding: 130px 190px 225px 0;
-} */
-.leftSide {
-  justify-self: flex-end;
-  align-self: center;
-  grid-area: a;
-  padding: 66px 0 0 68px;
-  max-width: 435px;
-  position: relative;
-  margin-top: 140px;
-}
-.rightSide {
-  grid-area: b;
+  padding-top: 138px;
+  padding-bottom: 144px;
 }
 
-.iconWrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
+.wrapper {
+  padding-top: 50px;
 }
-.text {
-  font-weight: 600;
-  font-size: 27px;
-  line-height: 50px;
+
+.infoRoot {
+  max-width: 510px;
+  padding: 88px 0 0 90px;
+  background: url('/images/testimonials/testimonials-background-slide-1.png')
+    no-repeat;
+  margin-top: 32px;
+}
+
+.infoText {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 36px;
   color: var(--main-text-color);
+  text-transform: capitalize;
+  margin-bottom: 16px;
 }
-.author {
-  font-weight: 600;
-  font-size: 23px;
-  line-height: 50px;
+
+.infoAuthor {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
   color: var(--main-text-color);
-  margin-top: 30px;
+  text-transform: capitalize;
+  margin-bottom: 4px;
 }
-.work {
+
+.infoWork {
   font-weight: 500;
-  font-size: 15px;
-  line-height: 182.3%;
+  font-size: 14px;
+  line-height: 22px;
   color: var(--second-text-color);
-}
-
-@media (max-width: 768px) {
-  .iconWrapper {
-    scale: 0.48;
-    top: -40px;
-    left: -40px;
-  }
-  .text {
-    font-size: 23px;
-    line-height: 170.1%;
-  }
-  .author {
-    font-size: 20px;
-    line-height: 27px;
-  }
-
-  .work {
-    font-size: 15px;
-    line-height: 182.3%;
-  }
-
-  .container {
-    padding-top: 48px;
-    padding-bottom: 77px;
-    grid-template-areas:
-      'b b'
-      'a a';
-  }
-  .leftSide {
-    margin-top: 20px;
-    padding: 24px 0 0 18px;
-    justify-self: center;
-  }
 }

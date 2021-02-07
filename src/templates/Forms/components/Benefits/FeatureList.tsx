@@ -1,7 +1,7 @@
 import React from 'react'
 
-import featureListStyles from './FeatureList.module.css'
 import { FeatureItem } from './FeatureItem'
+import featureListStyles from './FeatureList.module.css'
 
 export default function FeatureList() {
   const items = getItems()

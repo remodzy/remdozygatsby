@@ -1,10 +1,10 @@
-import React from 'react'
-import { CircleArtifact, CircleName } from '~components/CircleArtifact'
+import React, { ReactElement } from 'react'
 
+import { CircleArtifact, CircleName } from '~components/CircleArtifact'
 import DotsArtifact from '~components/Dot'
 import { useDeviceDetect } from '~utils/hooks'
 
-export default function Artifacts() {
+export default function Artifacts(): ReactElement {
   const { isMobile } = useDeviceDetect()
 
   if (isMobile) {
@@ -114,5 +114,5 @@ export default function Artifacts() {
     )
   }
 
-  return null
+  return <></>
 }

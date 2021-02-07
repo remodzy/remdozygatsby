@@ -1,16 +1,16 @@
 import { graphql } from 'gatsby'
-import * as React from 'react'
 import Img from 'gatsby-image'
+import * as React from 'react'
 
-import { prepareArticle, ResourceNode } from '~utils/mapArticles'
 import Layout from '~components/Layout'
+import { Pagination } from '~components/Pagination'
 import SectionLabel from '~components/SectionLabel'
 import SectionTitle from '~components/SectionTitle'
-import { Pagination } from '~components/Pagination'
-
-import SocialShare from './components/SocialShare'
-import styles from './Blog.module.css'
 import { useDeviceDetect } from '~utils/hooks'
+import { prepareArticle, ResourceNode } from '~utils/mapArticles'
+
+import styles from './Blog.module.css'
+import SocialShare from './components/SocialShare'
 
 const imageStyle = {
   margin: '80px 0',
@@ -49,12 +49,12 @@ const Blog: React.FC<Props> = ({ pathContext, pageResources }) => {
         <div>
           <Img fluid={item.image.fluid} style={imageStyle} />
           <div className={styles.contentWrapper}>
-            <div dangerouslySetInnerHTML={createMarkup(item.body)}></div>
+            <div dangerouslySetInnerHTML={createMarkup(item.body)} />
             <SocialShare />
           </div>
         </div>
       </div>
-      {!isMobile && <div className={styles.background}></div>}
+      {!isMobile && <div className={styles.background} />}
     </Layout>
   )
 }
@@ -74,6 +74,6 @@ export const blogQuery = graphql`
   }
 `
 
-function createMarkup(__html: string = '') {
+function createMarkup(__html = '') {
   return { __html }
 }

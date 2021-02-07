@@ -89,7 +89,7 @@ body {
   font-size: 1em;
   line-height: 1.65;
   color: var(--main-text-color);
-  background: #ffffff;
+  background: transparent;
   margin: 0;
 }
 

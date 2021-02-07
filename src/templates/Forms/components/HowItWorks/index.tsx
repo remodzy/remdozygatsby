@@ -1,4 +1,5 @@
-import * as React from 'react'
+import React, { ReactElement } from 'react'
+
 import HowItWorks from '~components/HowItWorks'
 
 const HowItWorksWrapper = React.memo(() => {
@@ -29,7 +30,7 @@ const HowItWorksWrapper = React.memo(() => {
 
 export default HowItWorksWrapper
 
-function Actions(): React.ReactElement<any, any> {
+function Actions(): ReactElement {
   return (
     <svg
       width='239'

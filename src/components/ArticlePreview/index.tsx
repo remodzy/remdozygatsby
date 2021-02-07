@@ -1,8 +1,9 @@
-import React from 'react'
-import Img from 'gatsby-image'
 import { navigate } from 'gatsby'
+import Img from 'gatsby-image'
+import React from 'react'
 
 import LinkButton from '~components/LinkButton'
+
 import articlePreviewStyles from './ArticlePreview.module.css'
 
 type Props = {

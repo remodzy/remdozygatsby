@@ -4,8 +4,8 @@ import * as React from 'react'
 import Button from '~components/Button'
 import RangeSlider from '~components/RangeSlider'
 import { authorize } from '~utils/auth'
-import { ListItem, Plans } from '../PriceList'
 
+import { ListItem, Plans } from '../PriceList'
 import styles from './PriceItem.module.css'
 
 type Props = {

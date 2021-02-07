@@ -3,12 +3,14 @@
   padding-top: 50px;
   padding-bottom: 116px;
   background: linear-gradient(180deg, rgba(246, 249, 251, 0) 0%, #f5f8fb 100%);
+  border-bottom-left-radius: 48px;
+  border-bottom-right-radius: 48px;
 }
 .list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 44px 56px;
-  padding: 86px 234px 0;
+  gap: 44px 32px;
+  padding-top: 86px;
 }
 .buttonContainer {
   display: flex;

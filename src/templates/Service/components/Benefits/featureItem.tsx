@@ -1,5 +1,5 @@
-import React, { ReactElement } from 'react'
 import Img from 'gatsby-image'
+import React, { ReactElement } from 'react'
 
 import IconWrapper from '../Service/components/IconWrapper'
 import featureItemStyles from './FeatureItem.module.css'

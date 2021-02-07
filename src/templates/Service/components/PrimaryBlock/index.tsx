@@ -1,8 +1,8 @@
-import React, { ReactElement } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
+import React, { ReactElement } from 'react'
 
-import { useDeviceDetect } from '~utils/hooks'
 import PrimaryContent from '~components/PrimaryContent'
+import { useDeviceDetect } from '~utils/hooks'
 
 export default function PrimaryBlock(): ReactElement {
   const { isMobile } = useDeviceDetect()

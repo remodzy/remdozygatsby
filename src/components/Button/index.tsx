@@ -18,7 +18,7 @@ export default function Button({
   label,
   handleClick,
 }: Props): ReactElement {
-  let style: any = {}
+  const style: any = {}
   if (!className && colors) {
     style.backgroundColor = colors.background
     style.color = colors.text

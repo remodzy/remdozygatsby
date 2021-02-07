@@ -1,27 +1,24 @@
 .root {
   display: flex;
   flex-wrap: wrap;
-  padding-top: 95px;
+  padding-top: 115px;
   margin-bottom: 112px;
   position: relative;
 }
 .primaryLabel {
   color: var(--main-text-color);
-  font-size: 54px;
+  font-weight: bold;
+  font-size: 40px;
   line-height: 63px;
-  font-weight: 600;
-  padding: 0 9.375%;
   text-align: center;
   text-transform: capitalize;
   margin-bottom: 22px;
-  max-width: 700px;
 }
 .secondaryLabel {
   color: var(--grey-text-color);
-  font-size: 17px;
   font-weight: 500;
+  font-size: 17px;
   text-align: center;
-  padding: 0 60px;
   line-height: 182.3%;
   margin-bottom: 45px;
   max-width: 800px;

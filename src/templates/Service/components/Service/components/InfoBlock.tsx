@@ -1,12 +1,12 @@
-import React from 'react'
 import Img, { FixedObject } from 'gatsby-image'
+import React from 'react'
 
-import { getColor } from '~utils/colors'
 import Button, { ButtonColors } from '~components/Button'
+import { getColor } from '~utils/colors'
 
 import IconWrapper from './IconWrapper'
-import { ListItem } from './ServiceList'
 import infoBlockStyles from './InfoBlock.module.css'
+import { ListItem } from './ServiceList'
 
 type Props = {
   item: ListItem

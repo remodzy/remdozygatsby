@@ -1,9 +1,10 @@
-import * as React from 'react'
 import { navigate } from 'gatsby'
 import Img from 'gatsby-image'
+import * as React from 'react'
 
-import { Article } from '~utils/mapArticles'
 import LinkButton from '~components/LinkButton'
+import { Article } from '~utils/mapArticles'
+
 import styles from './MainListItem.module.css'
 
 type Props = {

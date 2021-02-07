@@ -1,5 +1,5 @@
-import React, { ReactElement } from 'react'
 import Img, { FluidObject } from 'gatsby-image'
+import React, { ReactElement } from 'react'
 
 import BlockWrapper from '~components/BlockWrapper'
 import { useDeviceDetect } from '~utils/hooks'

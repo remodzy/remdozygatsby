@@ -1,19 +1,19 @@
-import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
+import React, { ReactElement } from 'react'
 
-import Button from '~components/Button'
-import DotsArtifact from '~components/Dot'
-import { CircleArtifact, CircleName } from '~components/CircleArtifact'
 import BlockWrapper from '~components/BlockWrapper'
+import Button from '~components/Button'
+import { CircleArtifact, CircleName } from '~components/CircleArtifact'
+import DotsArtifact from '~components/Dot'
 import SectionLabel from '~components/SectionLabel'
 import SectionTitle from '~components/SectionTitle'
 import { useDeviceDetect } from '~utils/hooks'
-
-import blogStyles from './Blog.module.css'
-import ArticlePreview from '../ArticlePreview'
 import { Article, prepareArticles } from '~utils/mapArticles'
 
-export default function Blog() {
+import ArticlePreview from '../ArticlePreview'
+import blogStyles from './Blog.module.css'
+
+export default function Blog(): ReactElement {
   const { isMobile } = useDeviceDetect()
   const items = useStaticQuery(query)
   const articles = prepareArticles(items)
@@ -110,7 +110,8 @@ function InMobileArtifacts() {
     </>
   )
 }
-function OutMobileArtifacts() {
+
+function OutMobileArtifacts(): ReactElement {
   return (
     <>
       <DotsArtifact
@@ -132,7 +133,7 @@ function OutMobileArtifacts() {
   )
 }
 
-function InDesktopArtifacts() {
+function InDesktopArtifacts(): ReactElement {
   return (
     <>
       <CircleArtifact
@@ -153,7 +154,7 @@ function InDesktopArtifacts() {
   )
 }
 
-function OutDesktopArtifacts() {
+function OutDesktopArtifacts(): ReactElement {
   return (
     <>
       <DotsArtifact

@@ -1,21 +1,19 @@
 import React, { useCallback } from 'react'
-import Img, { FluidObject } from 'gatsby-image'
 
+import BlockWrapper from '~components/BlockWrapper'
 import Button from '~components/Button'
-import Label from '~components/Label'
 import { CircleArtifact, CircleName } from '~components/CircleArtifact'
 import DotsArtifact from '~components/Dot'
-import BlockWrapper from '~components/BlockWrapper'
+import Label from '~components/Label'
+import { authorize } from '~utils/auth'
 import { useDeviceDetect } from '~utils/hooks'
 
-import CompaniesLogos from '../CompaniesLogos'
 import primaryContentStyles from './PrimaryContent.module.css'
-import { authorize } from '~utils/auth'
 
 type Props = {
   title: string
   subTitle: string
-  image: FluidObject
+  image: string
 }
 
 const PrimaryContent: React.FC<Props> = ({ title, subTitle, image }) => {
@@ -34,7 +32,10 @@ const PrimaryContent: React.FC<Props> = ({ title, subTitle, image }) => {
           alignItems: 'center',
         }}
       >
-        <div className={primaryContentStyles.primaryLabel}>{title}</div>
+        <div
+          className={primaryContentStyles.primaryLabel}
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
         <div className={primaryContentStyles.secondaryLabel}>{subTitle}</div>
         <div className={primaryContentStyles.buttonContainer}>
           <Button
@@ -47,15 +48,16 @@ const PrimaryContent: React.FC<Props> = ({ title, subTitle, image }) => {
           </div>
         </div>
 
-        <Img
-          fluid={image}
-          style={{ width: '100%', maxWidth: isMobile ? 732 : 1430 }}
-          loading='eager'
-        />
-        {isMobile ? <InMobileArtifacts /> : <InDesktopArtifacts />}
+        <img src={image} alt='' />
+        {/*<Img*/}
+        {/*  fluid={image}*/}
+        {/*  style={{ width: '100%', maxWidth: isMobile ? 732 : 1430 }}*/}
+        {/*  loading='eager'*/}
+        {/*/>*/}
+        {/*{isMobile ? <InMobileArtifacts /> : <InDesktopArtifacts />}*/}
       </BlockWrapper>
 
-      {isMobile ? <OutMobileArtifacts /> : <OutDesktopArtifacts />}
+      {/*{isMobile ? <OutMobileArtifacts /> : <OutDesktopArtifacts />}*/}
 
       <div className={primaryContentStyles.backgroundCover} />
     </div>

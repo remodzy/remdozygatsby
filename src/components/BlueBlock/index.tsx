@@ -1,10 +1,10 @@
 import React, { ReactElement } from 'react'
 
-import { getColor } from '~utils/colors'
 import Button from '~components/Button'
+import { getColor } from '~utils/colors'
 
-import blueBlockStyles from './styles.module.css'
 import Artifacts from './Artifacts'
+import blueBlockStyles from './styles.module.css'
 
 const colors = getColor({ group: 'main', color: 'primary' })
 

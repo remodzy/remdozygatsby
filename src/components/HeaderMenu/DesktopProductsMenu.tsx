@@ -1,8 +1,8 @@
 import React, {
-  useState,
-  useRef,
   MutableRefObject,
   useLayoutEffect,
+  useRef,
+  useState,
 } from 'react'
 
 import Icon from '~components/Icons'

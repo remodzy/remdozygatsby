@@ -1,12 +1,13 @@
 import { ReactElement } from 'react'
 import * as React from 'react'
 
-import productListStyles from './ProductList.module.css'
 import {
   RoxFlowIcon,
   RoxFormsIcon,
   RoxServiceIcon,
 } from '~components/ProductIcons'
+
+import productListStyles from './ProductList.module.css'
 
 type Props = {
   isMobile?: boolean
@@ -32,7 +33,7 @@ export const products: ProductMenuItem[] = [
   {
     key: 'forms',
     title: 'roxForms',
-    subTitle: 'Forms builder',
+    subTitle: 'Features builder',
     icon: getFormIcon,
     link: '/forms',
   },

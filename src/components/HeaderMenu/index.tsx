@@ -1,13 +1,13 @@
-import React, { useState, useCallback, ReactElement } from 'react'
 import { Link } from 'gatsby'
+import React, { ReactElement, useCallback, useState } from 'react'
 
-import { useDeviceDetect } from '~utils/hooks'
 import ModalContainer from '~components/ModalContainer'
+import { useDeviceDetect } from '~utils/hooks'
 
-import headerMenuStyles from './HeaderMenu.module.css'
-import FloatMenu from './FloatMenu'
-import MenuToggle from './MenuToggle'
 import DesktopProductsMenu from './DesktopProductsMenu'
+import FloatMenu from './FloatMenu'
+import headerMenuStyles from './HeaderMenu.module.css'
+import MenuToggle from './MenuToggle'
 
 export type MenuItem = {
   link: string

@@ -1,12 +1,12 @@
 import React, { memo, useEffect, useState } from 'react'
 
-import SectionTitle from '~components/SectionTitle'
 import SectionSubTitle from '~components/SectionSubTitle'
+import SectionTitle from '~components/SectionTitle'
 import ToggleSwitch from '~components/ToggleSwitch'
 
 import PriceItem from '../PriceItem'
-import styles from './PriceList.module.css'
 import Artifacts from './Artifacts'
+import styles from './PriceList.module.css'
 
 export type ListItem = {
   plan: string
