@@ -1,46 +1,56 @@
-import React, { ReactElement } from 'react'
+import React, { FC, ReactElement } from 'react'
 
-import Button, { ButtonColors } from '~components/Button'
-
-import IconWrapper from '../IconWrapper'
-import infoBlockStyles from './InfoBlock.module.css'
+import styles from './InfoBlock.module.css'
 
 type Props = {
-  item: {
-    color: ButtonColors
-    title: string
+  colors: {
+    background: string
     text: string
-    buttonLabel?: string
   }
-  isEven?: boolean
   icon: () => ReactElement
+  label?: string
+  title: string
+  text: string
+  link: string
+  extraItem?: () => ReactElement
 }
 
-export default function InfoBlock({
-  item,
-  isEven,
+const InfoBlock: FC<Props> = ({
+  colors = {},
   icon: Icon,
-}: Props): ReactElement {
-  const { color, title, text, buttonLabel = 'Learn More' } = item
-  const buttonColors: ButtonColors = color
-
-  return (
-    <div
-      className={infoBlockStyles.root}
-      style={{
-        justifySelf: isEven ? 'flex-start' : 'flex-end',
-      }}
-    >
-      <IconWrapper color={color.background}>
-        <Icon />
-      </IconWrapper>
-      <div className={infoBlockStyles.title}>{title}</div>
-      <div className={infoBlockStyles.text}>{text}</div>
-      <Button
-        colors={buttonColors}
-        label={buttonLabel}
-        handleClick={() => {}}
-      />
+  label,
+  title,
+  text,
+  link,
+  extraItem: ExtraItem,
+}): ReactElement => (
+  <div className={styles.root}>
+    <div className={styles.iconContainer}>
+      <Icon />
+      {label && (
+        <span className={styles.label}>
+          <strong>rox</strong>
+          {label}
+        </span>
+      )}
     </div>
-  )
-}
+    <div className={styles.title}>{title}</div>
+    <div className={styles.text}>{text}</div>
+    <div className={styles.footer}>
+      <a
+        className='btn primary-btn'
+        href={link}
+        style={{
+          textDecoration: 'none',
+          background: colors?.background,
+          color: colors?.text,
+        }}
+      >
+        Learn More
+      </a>
+      {ExtraItem && <ExtraItem />}
+    </div>
+  </div>
+)
+
+export default InfoBlock

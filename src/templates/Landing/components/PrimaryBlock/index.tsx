@@ -1,15 +1,15 @@
 import React, { FC, ReactElement } from 'react'
 
-import styles from './PrimaryBlock.module.css'
 import Artifacts from './Artifacts'
+import styles from './PrimaryBlock.module.css'
 
 const PrimaryBlock: FC<unknown> = (): ReactElement => (
   <div className={styles.root}>
     <div className={styles.wrapper}>
       <div className={styles.title}>
         <div>
-          WE BUILD <span className={styles.highlightOrange}>INTUITIVE</span>{' '}
-          PRODUCTS FOR <span className={styles.highlightBlue}>GREAT</span> TEAMS
+          We Build <span className={styles.highlightOrange}>Intuitive</span>{' '}
+          Products For <span className={styles.highlightBlue}>Great</span> Teams
         </div>
       </div>
       <div className={styles.subtitle}>

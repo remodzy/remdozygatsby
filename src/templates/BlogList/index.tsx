@@ -1,13 +1,13 @@
-import React from 'react'
 import { graphql } from 'gatsby'
+import React, { ReactElement } from 'react'
 
 import Layout from '~components/Layout'
-import SectionTitle from '~components/SectionTitle'
 import { Pagination } from '~components/Pagination'
+import SectionTitle from '~components/SectionTitle'
 import { prepareArticles, ResourceNode } from '~utils/mapArticles'
-import ListOfArticles from './components/ListOfArticles'
 
 import styles from './BlogList.module.css'
+import ListOfArticles from './components/ListOfArticles'
 
 type Props = {
   pageResources: ContextPageResource
@@ -26,7 +26,10 @@ type ContextPageResource = {
   }
 }
 
-export default function BlogList({ pathContext, pageResources }: Props) {
+export default function BlogList({
+  pathContext,
+  pageResources,
+}: Props): ReactElement {
   const items = prepareArticles(pageResources?.json?.data)
 
   return (

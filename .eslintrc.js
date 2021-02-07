@@ -27,7 +27,7 @@ module.exports = {
     node: true,
     es6: true,
   },
-  plugins: ['@typescript-eslint', 'react', 'react-hooks'],
+  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'simple-import-sort'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -48,12 +48,16 @@ module.exports = {
   overrides: [
     // Override some TypeScript rules just for .js files
     {
-      files: ['*.js'],
+      files: ['*.js', '*.ts', '*.tsx'],
       rules: {
         '@typescript-eslint/no-var-requires': 'off', //
         'react/jsx-uses-react': 'off',
         'react/react-in-jsx-scope': 'off',
         'max-len': ['error', { code: 180 }],
+        'simple-import-sort/imports': 'error',
+        'simple-import-sort/exports': 'error',
+        'sort-imports': 'off',
+        'import/order': 'off',
       },
     },
   ],

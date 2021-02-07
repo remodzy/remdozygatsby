@@ -3,8 +3,8 @@ import React from 'react'
 import { CircleArtifact, CircleName } from '~components/CircleArtifact'
 import DotsArtifact from '~components/Dot'
 
-import { ListItem } from './ServiceList'
 import { MapIcon1, MapIcon2, MapIcon3 } from './MapIcons'
+import { ListItem } from './ServiceList'
 
 export function getConfigList(): ListItem[] {
   return [

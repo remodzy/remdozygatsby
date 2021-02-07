@@ -1,10 +1,5 @@
 import React, { FC, ReactElement } from 'react'
 
-import ProductRow from '../ProductRow'
-import InfoBlock from '../InfoBlock'
-
-import Artifacts from './Artifacts'
-import styles from './ProductsBlock.module.css'
 import {
   RoxFlowIcon,
   RoxFormsIcon,
@@ -12,10 +7,15 @@ import {
 } from '~components/ProductIcons'
 import { useDeviceDetect } from '~utils/hooks'
 
+import InfoBlock from '../InfoBlock'
+import ProductRow from '../ProductRow'
+import Artifacts from './Artifacts'
+import styles from './ProductsBlock.module.css'
+
 const productConfig = [
   {
-    icon: () => <RoxFormsIcon isLarge />,
-    label: 'Forms',
+    icon: (): ReactElement => <RoxFormsIcon isLarge />,
+    label: 'Features',
     link: '/forms',
     linkLabel: 'Learn more',
     extraItem: BetaLabel,
@@ -29,7 +29,7 @@ const productConfig = [
       'roxForms by Roxabo is an inspection app now used  50,000 times a day in over 80 countries',
   },
   {
-    icon: () => <RoxServiceIcon isLarge />,
+    icon: (): ReactElement => <RoxServiceIcon isLarge />,
     label: 'Service',
     link: '/service',
     linkLabel: 'Learn more',
@@ -44,7 +44,7 @@ const productConfig = [
       'With roxServices from Roxabo, you can schedule and manage jobs, dispatch them to field technicians,and provide ETAs to customers with notifications.',
   },
   {
-    icon: () => <RoxFlowIcon isLarge />,
+    icon: (): ReactElement => <RoxFlowIcon isLarge />,
     label: 'Flow',
     link: '/flow',
     linkLabel: 'Learn more',

@@ -1,14 +1,14 @@
 import React from 'react'
 
-import BlueBlock from '~components/BlueBlock'
 import BlogBlock from '~components/Blog'
+import BlueBlock from '~components/BlueBlock'
 import IntegrationsBlock from '~components/Integrations'
 import TestimonialsBlock from '~components/Testimonials'
 
+import BenefitsBlock from './components/Benefits'
+import HowItWorksBlock from './components/HowItWorks'
 import PrimaryBlock from './components/PrimaryBlock'
 import ServiceBlock from './components/Service'
-import HowItWorksBlock from './components/HowItWorks'
-import BenefitsBlock from './components/Benefits'
 
 const Service = () => (
   <div>

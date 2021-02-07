@@ -2,12 +2,12 @@ import React from 'react'
 
 import { useDeviceDetect } from '~utils/hooks'
 
-import ChubbLogo from './chubb'
-import CatLogo from './cat'
-import MailchimpLogo from './mailchimp'
-import LyaLogo from './lya'
 import SapLogo from './cap'
+import CatLogo from './cat'
+import ChubbLogo from './chubb'
 import companiesLogosStyles from './CompaniesLogos.module.css'
+import LyaLogo from './lya'
+import MailchimpLogo from './mailchimp'
 
 const CompaniesLogos = () => {
   const { isMobile } = useDeviceDetect()

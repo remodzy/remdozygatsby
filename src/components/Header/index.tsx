@@ -1,13 +1,13 @@
-import React, { useCallback } from 'react'
 import { Link } from 'gatsby'
+import React, { useCallback } from 'react'
 
 import { authorize } from '~utils/auth'
 import { useDeviceDetect } from '~utils/hooks'
 
-import Logo from '../Logo'
+import Button from '../Button'
 import HeaderMenu from '../HeaderMenu'
 import LinkButton from '../LinkButton'
-import Button from '../Button'
+import Logo from '../Logo'
 import headerStyles from './styles.module.css'
 
 const Header = () => {

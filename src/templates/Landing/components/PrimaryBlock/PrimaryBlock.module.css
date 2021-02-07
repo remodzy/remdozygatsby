@@ -5,6 +5,8 @@
   background: linear-gradient(180deg, rgba(246, 249, 251, 0) 0%, #f5f8fb 100%);
   position: relative;
   overflow: hidden;
+  border-bottom-right-radius: 48px;
+  border-bottom-left-radius: 48px;
 }
 
 .wrapper {
@@ -19,7 +21,7 @@
 .title {
   font-style: normal;
   font-weight: 800;
-  font-size: 36px;
+  font-size: 40px;
   line-height: 92px;
   margin-bottom: 30px;
 }

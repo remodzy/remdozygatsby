@@ -1,8 +1,8 @@
+import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
 
-import featureListStyles from './FeatureList.module.css'
 import { FeatureItem } from './featureItem'
+import featureListStyles from './FeatureList.module.css'
 
 export default function FeatureList() {
   const images = useStaticQuery(query)

@@ -1,17 +1,17 @@
+import { Link } from 'gatsby'
 import { useCallback } from 'react'
 import * as React from 'react'
-import { Link } from 'gatsby'
 
-import LinkButton from '~components/LinkButton'
-import Button from '~components/Button'
 import Accordion from '~components/Accordion'
+import Button from '~components/Button'
+import LinkButton from '~components/LinkButton'
 import Logo from '~components/Logo'
 import { authorize } from '~utils/auth'
 
-import { MenuItem } from './index'
-import ProductListMenu from './ProductList'
 import floatMenuStyles from './FloatMenu.module.css'
+import { MenuItem } from './index'
 import MenuToggle from './MenuToggle'
+import ProductListMenu from './ProductList'
 
 type Props = {
   menuList: MenuItem[]

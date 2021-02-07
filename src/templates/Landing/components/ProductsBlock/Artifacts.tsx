@@ -1,4 +1,5 @@
 import React, { FC, ReactElement } from 'react'
+
 import { CircleArtifact, CircleName } from '~components/CircleArtifact'
 import DotsArtifact from '~components/Dot'
 import { useDeviceDetect } from '~utils/hooks'
@@ -153,25 +154,6 @@ function MobileArtifacts(): ReactElement {
           1,0,
           1,0,
           0,0,
-        ]}
-      />
-      <DotsArtifact
-        bottom={-50}
-        left='7.5%'
-        size={3}
-        columns={4}
-        gap={11}
-        zIndex={1}
-        // prettier-ignore
-        list={[
-          0,0,0,0,
-          0,0,0,0,
-          0,0,0,0,
-          0,0,0,0,
-          0,0,0,0,
-          0,0,0,0,
-          0,0,0,0,
-          0,0,0,0,
         ]}
       />
     </>

@@ -1,4 +1,5 @@
 import React, { FC, ReactElement } from 'react'
+
 import DotsArtifact from '~components/Dot'
 import { useDeviceDetect } from '~utils/hooks'
 
@@ -39,7 +40,26 @@ function DesktopArtifacts() {
   return (
     <>
       <DotsArtifact
-        top={189}
+        top={-118}
+        left='11.1111%'
+        size={6}
+        columns={4}
+        gap={27}
+        zIndex={1}
+        // prettier-ignore
+        list={[
+          0,0,0,0,
+          0,0,0,0,
+          0,0,0,0,
+          0,0,0,0,
+          0,0,0,0,
+          0,0,0,0,
+          0,0,0,0,
+          0,0,0,0,
+        ]}
+      />
+      <DotsArtifact
+        top={130}
         right={31}
         columns={5}
         size={8.52}
@@ -61,7 +81,7 @@ function DesktopArtifacts() {
         size={5}
         gap={25}
         zIndex={1}
-        opacity={0.2}
+        opacity={0.4}
         // prettier-ignore
         list={[
           0,0,0,0,

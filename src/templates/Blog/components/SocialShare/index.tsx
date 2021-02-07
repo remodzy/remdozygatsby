@@ -2,6 +2,7 @@ import React from 'react'
 
 import IconButton from '~components/IconButton'
 import { useDeviceDetect } from '~utils/hooks'
+
 import styles from './SocialShare.module.css'
 
 export default function SocialShare() {

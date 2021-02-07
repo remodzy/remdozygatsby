@@ -1,6 +1,6 @@
-import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
 import { useLocation } from '@reach/router'
+import { graphql, useStaticQuery } from 'gatsby'
+import React from 'react'
 import { Helmet } from 'react-helmet'
 
 type Props = {
@@ -30,7 +30,7 @@ export default function SEO({ title, description, image, article }: Props) {
       titleTemplate={siteMetadata.titleTemplate}
     >
       <meta
-        http-equiv='Accept-CH'
+        httpEquiv='Accept-CH'
         content='DPR, Width, Viewport-Width, Downlink'
       />
       <meta name='description' content={seo.description} />

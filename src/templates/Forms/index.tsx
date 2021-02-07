@@ -1,55 +1,30 @@
-import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import React, { ReactElement } from 'react'
 
-import { useDeviceDetect } from '~utils/hooks'
 import Blog from '~components/Blog'
-import Integrations from '~components/Integrations'
-import PrimaryContent from '~components/PrimaryContent'
 import Testimonials from '~components/Testimonials'
+import { useDeviceDetect } from '~utils/hooks'
 
 import Benefits from './components/Benefits'
-import HowItWorks from './components/HowItWorks'
-import FormsBlock from './components/Forms'
+import FeatureBlock from './components/Features'
+import PrimaryContent from './components/PrimaryContent'
 
-export default function Forms() {
+export default function Forms(): ReactElement {
   const { isMobile } = useDeviceDetect()
-  const { desktop, mobile } = useStaticQuery(query)
-  const image = isMobile ? mobile : desktop
+  const image = isMobile
+    ? '/images/forms/forms-primary.png'
+    : '/images/forms/forms-primary.png'
 
   return (
     <>
       <PrimaryContent
-        title='Build checklists, conduct inspections, file reports'
+        title='Build checklists,<br /> conduct inspections, file reports'
         subTitle='RoxForms by Roxabo is an inspection app now used  50,000 times a day in over 80 countries'
-        image={image?.childImageSharp?.fluid}
+        image={image}
       />
-      <FormsBlock />
-      <Integrations />
-      <HowItWorks />
+      <FeatureBlock />
       <Benefits />
       <Blog />
       <Testimonials />
     </>
   )
 }
-
-const query = graphql`
-  query {
-    desktop: file(relativePath: { eq: "forms/primary-image.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 1427) {
-          ...GatsbyImageSharpFluid
-          ...GatsbyImageSharpFluidLimitPresentationSize
-        }
-      }
-    }
-    mobile: file(relativePath: { eq: "forms/primary-image-m.png" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-          ...GatsbyImageSharpFluidLimitPresentationSize
-        }
-      }
-    }
-  }
-`

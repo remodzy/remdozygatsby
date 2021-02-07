@@ -1,18 +1,6 @@
 .root {
-  padding-top: 120px;
-}
-
-.row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
-  /* display: flex; */
+  padding-top: 58px;
   position: relative;
-  padding-bottom: 95px;
-}
-
-.row:last-child {
-  padding-bottom: 0;
 }
 
 .infoBlockWrapper {
@@ -22,17 +10,11 @@
   padding: 0 18px;
 }
 
-.backgroundCircle {
-  position: absolute;
-  width: 621px;
-  height: 621px;
-  border-radius: 320px;
-  background: linear-gradient(180deg, rgba(246, 249, 251, 0) 0%, #f5f8fb 100%);
-  z-index: -1;
-}
-
-.row:nth-child(odd) .backgroundCircle {
-  right: 0;
+.root > :last-child {
+  padding-bottom: 127px;
+  border-bottom-left-radius: 48px;
+  border-bottom-right-radius: 48px;
+  background: linear-gradient(180deg, rgba(245, 248, 251, 0) 0%, #f5f8fb 100%);
 }
 
 @media screen and (max-width: 768px) {
@@ -48,7 +30,7 @@
   .row:last-child {
     padding-bottom: 40px;
   }
-  .row:nth-child(odd) {
+  .row:nth-child(even) {
     flex-direction: column-reverse;
   }
   .image {

@@ -2,12 +2,12 @@ import React, { ReactElement } from 'react'
 
 import { useDeviceDetect } from '~utils/hooks'
 
-import Logo from '../Logo'
-import Icon from '../Icons'
-import DotsArtifact from '../Dot'
 import BlockWrapper from '../BlockWrapper'
-import FooterLink from './FooterLink'
+import DotsArtifact from '../Dot'
+import Icon from '../Icons'
+import Logo from '../Logo'
 import footerStyles from './AppFooter.module.css'
+import FooterLink from './FooterLink'
 
 export default function Footer(): ReactElement {
   const { isMobile } = useDeviceDetect()
