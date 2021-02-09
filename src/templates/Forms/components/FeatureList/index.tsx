@@ -52,7 +52,7 @@ const listConfig = [
     },
     images: {
       desktop: '/images/forms/forms-features-1.png',
-      mobile: '/images/forms/forms-features-1.png',
+      mobile: '/images/forms/m-forms-features-1.png',
     },
     link: '#',
     linkLabel: 'Learn more',
@@ -68,7 +68,7 @@ const listConfig = [
     },
     images: {
       desktop: '/images/forms/forms-features-2.png',
-      mobile: '/images/forms/forms-features-2.png',
+      mobile: '/images/forms/m-forms-features-2.png',
     },
     link: '#',
     linkLabel: 'Learn more',
@@ -84,7 +84,7 @@ const listConfig = [
     },
     images: {
       desktop: '/images/forms/forms-features-3.png',
-      mobile: '/images/forms/forms-features-3.png',
+      mobile: '/images/forms/m-forms-features-3.png',
     },
     link: '#',
   },
@@ -98,8 +98,8 @@ const listConfig = [
       text: 'rgba(169, 119, 215, 1)',
     },
     images: {
-      desktop: '/images/forms/forms-features-4.png',
-      mobile: '/images/forms/forms-features-4.png',
+      desktop: '/images/shared/shared-features-glasses.png',
+      mobile: '/images/shared/m-shared-features-glasses.png',
     },
     link: '#',
     linkLabel: 'Learn more',
@@ -115,7 +115,7 @@ const listConfig = [
     },
     images: {
       desktop: '/images/forms/forms-features-5.png',
-      mobile: '/images/forms/forms-features-5.png',
+      mobile: '/images/forms/m-forms-features-5.png',
     },
     link: '#',
     linkLabel: 'Learn more',

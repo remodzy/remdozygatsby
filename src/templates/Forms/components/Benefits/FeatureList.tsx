@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
 import { FeatureItem } from './FeatureItem'
-import featureListStyles from './FeatureList.module.css'
+import styles from './FeatureList.module.css'
 
-export default function FeatureList() {
+export default function FeatureList(): ReactElement {
   const items = getItems()
   return (
-    <div className={featureListStyles.root}>
+    <div className={styles.root}>
       {items.map(item => (
         <FeatureItem key={item.title} {...item} />
       ))}

@@ -1,16 +1,14 @@
 .root {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 60px 100px;
+  grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+  gap: 48px 32px;
   justify-content: center;
   margin-top: 90px;
-  padding: 0 240px;
 }
 
 @media screen and (max-width: 768px) {
   .root {
     margin-top: 54px;
-    padding: 0 18px;
     row-gap: 44px;
   }
 }

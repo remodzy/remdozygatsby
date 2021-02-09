@@ -15,7 +15,7 @@ import styles from './ProductsBlock.module.css'
 const productConfig = [
   {
     icon: (): ReactElement => <RoxFormsIcon isLarge />,
-    label: 'Features',
+    label: 'Forms',
     link: '/forms',
     linkLabel: 'Learn more',
     extraItem: BetaLabel,

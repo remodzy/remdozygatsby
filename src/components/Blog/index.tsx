@@ -11,7 +11,7 @@ import { useDeviceDetect } from '~utils/hooks'
 import { Article, prepareArticles } from '~utils/mapArticles'
 
 import ArticlePreview from '../ArticlePreview'
-import blogStyles from './Blog.module.css'
+import styles from './Blog.module.css'
 
 export default function Blog(): ReactElement {
   const { isMobile } = useDeviceDetect()
@@ -19,11 +19,11 @@ export default function Blog(): ReactElement {
   const articles = prepareArticles(items)
 
   return (
-    <div className={blogStyles.root}>
-      <BlockWrapper>
+    <div className={styles.root}>
+      <div className={styles.wrapper}>
         <SectionLabel text='BLOG' color='success' />
         <SectionTitle text='Useful Resources' />
-        <div className={blogStyles.list}>
+        <div className={styles.list}>
           {articles.map((item: Article) => (
             <ArticlePreview
               key={item.id}
@@ -37,7 +37,7 @@ export default function Blog(): ReactElement {
           ))}
         </div>
 
-        <div className={blogStyles.buttonContainer}>
+        <div className={styles.buttonContainer}>
           <Button
             className='primary-btn'
             label='Learn More'
@@ -45,7 +45,7 @@ export default function Blog(): ReactElement {
           />
         </div>
         {isMobile ? <InMobileArtifacts /> : <InDesktopArtifacts />}
-      </BlockWrapper>
+      </div>
       {isMobile ? <OutMobileArtifacts /> : <OutDesktopArtifacts />}
     </div>
   )

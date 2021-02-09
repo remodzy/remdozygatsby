@@ -2,42 +2,36 @@ import React, { ReactElement } from 'react'
 
 import { useDeviceDetect } from '~utils/hooks'
 
-import BlockWrapper from '../BlockWrapper'
 import DotsArtifact from '../Dot'
-import Icon from '../Icons'
 import Logo from '../Logo'
-import footerStyles from './AppFooter.module.css'
+import styles from './AppFooter.module.css'
 import FooterLink from './FooterLink'
 
 export default function Footer(): ReactElement {
   const { isMobile } = useDeviceDetect()
 
   return (
-    <footer className={footerStyles.root}>
-      <BlockWrapper
-        styleWrapper={{
-          padding: isMobile ? '80px 24px 18px' : '60px 0 10px',
-        }}
-      >
-        <div className={footerStyles.container}>
+    <footer className={styles.root}>
+      <div className={styles.wrapper}>
+        <div className={styles.container}>
           <div>
             <Logo />
           </div>
-          <div className={footerStyles.linksContainer}>
-            <div className={footerStyles.linkColumn}>
-              <div className={footerStyles.columnTitle}>Company</div>
+          <div className={styles.linksContainer}>
+            <div className={styles.linkColumn}>
+              <div className={styles.columnTitle}>Company</div>
               <FooterLink text='Products' url='#' />
               <FooterLink text='Integrations' url='#' />
               <FooterLink text='Pricing' url='#' />
             </div>
-            <div className={footerStyles.linkColumn}>
-              <div className={footerStyles.columnTitle}>About Roxabo</div>
+            <div className={styles.linkColumn}>
+              <div className={styles.columnTitle}>About Roxabo</div>
               <FooterLink text='About Us' url='#' />
               <FooterLink text='Blog' url='#' />
               <FooterLink text='Privacy & Terms' url='#' />
             </div>
-            <div className={footerStyles.linkColumn}>
-              <div className={footerStyles.columnTitle}>Talk With Us</div>
+            <div className={styles.linkColumn}>
+              <div className={styles.columnTitle}>Talk With Us</div>
               <FooterLink text='Request a Free Demo' url='#' />
               <FooterLink text='Contact Us' url='#' />
               <FooterLink text='Careers' url='#' />
@@ -45,10 +39,10 @@ export default function Footer(): ReactElement {
           </div>
         </div>
         <hr />
-        <div className={footerStyles.copyrightContainer}>
+        <div className={styles.copyrightContainer}>
           <span>© {new Date().getFullYear()}, ROXABO PTY LTD.</span>
         </div>
-      </BlockWrapper>
+      </div>
       {isMobile ? <MobileArtifacts /> : <DesktopArtifacts />}
     </footer>
   )

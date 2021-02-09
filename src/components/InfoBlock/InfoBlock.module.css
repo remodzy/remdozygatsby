@@ -46,5 +46,20 @@
 }
 
 .footer {
+  display: flex;
   margin-top: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    margin-top: 25px;
+  }
+
+  .text {
+    margin-top: 20px;
+  }
+
+  .footer {
+    margin-top: 25px;
+  }
 }
