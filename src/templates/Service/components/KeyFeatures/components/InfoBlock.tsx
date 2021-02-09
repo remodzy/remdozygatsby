@@ -6,7 +6,7 @@ import { getColor } from '~utils/colors'
 
 import IconWrapper from './IconWrapper'
 import infoBlockStyles from './InfoBlock.module.css'
-import { ListItem } from './ServiceList'
+import { ListItem } from './KeyFeaturesList'
 
 type Props = {
   item: ListItem

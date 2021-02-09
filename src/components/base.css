@@ -140,7 +140,7 @@ strong {
 
 .wrapper {
   width: calc(100% - 10vmin);
-  margin: 0 auto;
+  margin: 0 11.1111%;
   padding: 5vmin 0;
 }
 

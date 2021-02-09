@@ -8,7 +8,7 @@ import Button from '../Button'
 import HeaderMenu from '../HeaderMenu'
 import LinkButton from '../LinkButton'
 import Logo from '../Logo'
-import headerStyles from './styles.module.css'
+import headerStyles from './Header.module.css'
 
 const Header = () => {
   const { isMobile } = useDeviceDetect()

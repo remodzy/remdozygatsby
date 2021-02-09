@@ -1,27 +1,24 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
-import BlockWrapper from '~components/BlockWrapper'
 import { CircleArtifact, CircleName } from '~components/CircleArtifact'
 import DotsArtifact from '~components/Dot'
 import SectionLabel from '~components/SectionLabel'
 import SectionTitle from '~components/SectionTitle'
 import { useDeviceDetect } from '~utils/hooks'
 
-import benefitsStyles from './Benefits.module.css'
+import styles from './Benefits.module.css'
 import FeatureList from './FeatureList'
 
-export default function Benefits() {
+export default function Benefits(): ReactElement {
   const { isMobile } = useDeviceDetect()
 
   return (
-    <div className={benefitsStyles.root}>
-      <BlockWrapper>
+    <div className={styles.root}>
+      <div className={styles.wrapper}>
         <SectionLabel text='Benefits' color='primary' />
         <SectionTitle text='Variety Of Controls' />
         <FeatureList />
-        {isMobile ? <InMobileArtifacts /> : <InDesktopArtifacts />}
-      </BlockWrapper>
-      {isMobile ? <OutMobileArtifacts /> : <OutDesktopArtifacts />}
+      </div>
     </div>
   )
 }

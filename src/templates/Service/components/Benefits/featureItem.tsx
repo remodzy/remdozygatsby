@@ -1,27 +1,24 @@
-import Img from 'gatsby-image'
 import React, { ReactElement } from 'react'
 
-import IconWrapper from '../Service/components/IconWrapper'
+import IconWrapper from '../KeyFeatures/components/IconWrapper'
 import featureItemStyles from './FeatureItem.module.css'
 
 type ItemProps = {
   title: string
   text: string
-  image: any
+  icon: unknown
 }
 
-export function FeatureItem({
+export const FeatureItem = ({
   title,
   text,
-  image,
-}: ItemProps): ReactElement<any, any> {
-  return (
-    <div>
-      <IconWrapper color='hsla(226, 74%, 59%, 0.2)'>
-        <Img fixed={image} alt={title} loading='eager' />
-      </IconWrapper>
-      <div className={featureItemStyles.title}>{title}</div>
-      <div className={featureItemStyles.text}>{text}</div>
-    </div>
-  )
-}
+  icon: Icon,
+}: ItemProps): ReactElement => (
+  <div>
+    <IconWrapper color='hsla(226, 74%, 59%, 0.2)'>
+      <Icon />
+    </IconWrapper>
+    <div className={featureItemStyles.title}>{title}</div>
+    <div className={featureItemStyles.text}>{text}</div>
+  </div>
+)

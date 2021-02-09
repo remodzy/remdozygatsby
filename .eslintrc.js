@@ -53,7 +53,7 @@ module.exports = {
         '@typescript-eslint/no-var-requires': 'off', //
         'react/jsx-uses-react': 'off',
         'react/react-in-jsx-scope': 'off',
-        'max-len': ['error', { code: 180 }],
+        'max-len': ['error', { code: 180, ignoreStrings: true }],
         'simple-import-sort/imports': 'error',
         'simple-import-sort/exports': 'error',
         'sort-imports': 'off',

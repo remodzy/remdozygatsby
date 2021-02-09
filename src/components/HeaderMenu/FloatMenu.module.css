@@ -33,7 +33,7 @@
   justify-content: space-between;
   align-items: center;
   background: #ffffff;
-  padding: 1.25rem 0.5rem 1.25rem 1.25rem;
+  padding: 1.25rem 11.1111%;
   box-shadow: 0 4px 20px rgba(179, 192, 213, 0.25);
 }
 
@@ -77,4 +77,10 @@
   width: 100%;
   height: 100%;
   background: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .menuHeader {
+    padding: 1.25rem 6.6667%;
+  }
 }

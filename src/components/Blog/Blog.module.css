@@ -6,6 +6,11 @@
   border-bottom-left-radius: 48px;
   border-bottom-right-radius: 48px;
 }
+
+.wrapper {
+  padding: 0 11.1111%;
+}
+
 .list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -23,8 +28,12 @@
     padding-bottom: 0;
   }
 
+  .wrapper {
+    padding: 0 0 6.6667%;
+  }
+
   .list {
-    padding: 54px 4.8% 0;
+    padding: 54px 6.6667% 0;
   }
 
   .gatsby-image-wrapper {

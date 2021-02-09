@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
 import BlogBlock from '~components/Blog'
 import BlueBlock from '~components/BlueBlock'
@@ -7,19 +7,16 @@ import TestimonialsBlock from '~components/Testimonials'
 
 import BenefitsBlock from './components/Benefits'
 import HowItWorksBlock from './components/HowItWorks'
-import PrimaryBlock from './components/PrimaryBlock'
-import ServiceBlock from './components/Service'
+import PrimaryContent from './components/PrimaryContent'
+import ServiceBlock from './components/KeyFeatures'
 
-const Service = () => (
+const Service = (): ReactElement => (
   <div>
-    <PrimaryBlock />
+    <PrimaryContent />
     <ServiceBlock />
-    <IntegrationsBlock />
-    <HowItWorksBlock />
     <BenefitsBlock />
     <BlogBlock />
     <TestimonialsBlock />
-    <BlueBlock />
   </div>
 )
 

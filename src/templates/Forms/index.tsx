@@ -11,13 +11,13 @@ import PrimaryContent from './components/PrimaryContent'
 export default function Forms(): ReactElement {
   const { isMobile } = useDeviceDetect()
   const image = isMobile
-    ? '/images/forms/forms-primary.png'
+    ? '/images/forms/m-forms-primary.png'
     : '/images/forms/forms-primary.png'
 
   return (
     <>
       <PrimaryContent
-        title='Build checklists,<br /> conduct inspections, file reports'
+        title='Build checklists, conduct inspections, Communicate with your team'
         subTitle='RoxForms by Roxabo is an inspection app now used  50,000 times a day in over 80 countries'
         image={image}
       />
