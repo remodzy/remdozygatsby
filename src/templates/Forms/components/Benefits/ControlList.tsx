@@ -1,14 +1,14 @@
 import React, { ReactElement } from 'react'
 
-import { FeatureItem } from './FeatureItem'
-import styles from './FeatureList.module.css'
+import { ControlItem } from './ControlItem'
+import styles from './ControlList.module.css'
 
-export default function FeatureList(): ReactElement {
+export default function ControlList(): ReactElement {
   const items = getItems()
   return (
     <div className={styles.root}>
       {items.map(item => (
-        <FeatureItem key={item.title} {...item} />
+        <ControlItem key={item.title} {...item} />
       ))}
     </div>
   )

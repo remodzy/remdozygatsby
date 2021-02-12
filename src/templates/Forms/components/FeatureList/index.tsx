@@ -13,6 +13,7 @@ import {
   SecondIcon,
   ThirdIcon,
 } from './Icons'
+import RoxContainer from '~components/RoxContainer'
 
 const FeatureList: FC<unknown> = (): ReactElement => {
   const { isMobile } = useDeviceDetect()
@@ -20,20 +21,20 @@ const FeatureList: FC<unknown> = (): ReactElement => {
   return (
     <div className={styles.root}>
       <Artifacts />
-      {listConfig.map(({ title, icon, text, link, images, colors }) => (
-        <GridRow key={title}>
-          <InfoBlock
-            icon={icon}
-            text={text}
-            title={title}
-            link={link}
-            colors={colors}
-          />
-          <div>
+      <RoxContainer>
+        {listConfig.map(({ title, icon, text, link, images, colors }) => (
+          <GridRow key={title}>
+            <InfoBlock
+              icon={icon}
+              text={text}
+              title={title}
+              link={link}
+              colors={colors}
+            />
             <img src={isMobile ? images.mobile : images.desktop} alt='' />
-          </div>
-        </GridRow>
-      ))}
+          </GridRow>
+        ))}
+      </RoxContainer>
     </div>
   )
 }

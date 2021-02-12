@@ -13,8 +13,4 @@
     column-gap: 24px;
     grid-template-columns: repeat(auto-fit, minmax(144px, 1fr));
   }
-
-  .wrapper {
-    margin: 0 6.6667%;
-  }
 }

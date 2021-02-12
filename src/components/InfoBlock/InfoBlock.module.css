@@ -51,6 +51,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .root {
+    max-width: 100%;
+  }
+
   .title {
     margin-top: 25px;
   }

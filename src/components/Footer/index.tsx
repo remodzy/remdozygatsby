@@ -4,6 +4,7 @@ import { useDeviceDetect } from '~utils/hooks'
 
 import DotsArtifact from '../Dot'
 import Logo from '../Logo'
+import RoxContainer from '../RoxContainer'
 import styles from './AppFooter.module.css'
 import FooterLink from './FooterLink'
 
@@ -12,7 +13,7 @@ export default function Footer(): ReactElement {
 
   return (
     <footer className={styles.root}>
-      <div className={styles.wrapper}>
+      <RoxContainer>
         <div className={styles.container}>
           <div>
             <Logo />
@@ -42,7 +43,7 @@ export default function Footer(): ReactElement {
         <div className={styles.copyrightContainer}>
           <span>© {new Date().getFullYear()}, ROXABO PTY LTD.</span>
         </div>
-      </div>
+      </RoxContainer>
       {isMobile ? <MobileArtifacts /> : <DesktopArtifacts />}
     </footer>
   )

@@ -1,5 +1,6 @@
 .root {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   padding-top: 115px;
   padding-bottom: 112px;
@@ -22,15 +23,15 @@
   line-height: 63px;
   text-align: center;
   text-transform: capitalize;
-  margin-bottom: 22px;
+  margin: 0 96px 22px;
 }
 .secondaryLabel {
   color: var(--grey-text-color);
   font-weight: 500;
-  font-size: 17px;
+  font-size: 20px;
+  line-height: 32px;
   text-align: center;
-  line-height: 182.3%;
-  margin-bottom: 45px;
+  margin: 0 192px 45px;
   max-width: 800px;
 }
 .buttonContainer {
