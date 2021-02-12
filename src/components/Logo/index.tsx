@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 
-import styles from './styles.module.css'
+import styles from './Logo.module.css'
 
 function Logo() {
   return (

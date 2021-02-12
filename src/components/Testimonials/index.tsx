@@ -1,6 +1,7 @@
 import React, { memo, ReactElement } from 'react'
 
 import GridRow from '../GridRow'
+import RoxContainer from '../RoxContainer'
 import SectionLabel from '../SectionLabel'
 import SectionTitle from '../SectionTitle'
 import Artifacts from './Artifacts'
@@ -10,12 +11,12 @@ const Testimonials = (): ReactElement => (
   <div className={styles.root}>
     <SectionLabel text='testimonials' color='success' />
     <SectionTitle text='What People Say' />
-    <div className={styles.wrapper}>
+    <RoxContainer>
       <GridRow>
         <Info />
         <SlideImage1 />
       </GridRow>
-    </div>
+    </RoxContainer>
     <Artifacts />
   </div>
 )

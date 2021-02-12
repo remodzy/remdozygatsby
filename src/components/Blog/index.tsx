@@ -1,10 +1,10 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import React, { ReactElement } from 'react'
 
-import BlockWrapper from '~components/BlockWrapper'
 import Button from '~components/Button'
 import { CircleArtifact, CircleName } from '~components/CircleArtifact'
 import DotsArtifact from '~components/Dot'
+import RoxContainer from '~components/RoxContainer'
 import SectionLabel from '~components/SectionLabel'
 import SectionTitle from '~components/SectionTitle'
 import { useDeviceDetect } from '~utils/hooks'
@@ -20,7 +20,7 @@ export default function Blog(): ReactElement {
 
   return (
     <div className={styles.root}>
-      <div className={styles.wrapper}>
+      <RoxContainer>
         <SectionLabel text='BLOG' color='success' />
         <SectionTitle text='Useful Resources' />
         <div className={styles.list}>
@@ -45,7 +45,7 @@ export default function Blog(): ReactElement {
           />
         </div>
         {isMobile ? <InMobileArtifacts /> : <InDesktopArtifacts />}
-      </div>
+      </RoxContainer>
       {isMobile ? <OutMobileArtifacts /> : <OutDesktopArtifacts />}
     </div>
   )

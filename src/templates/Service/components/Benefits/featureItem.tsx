@@ -1,12 +1,13 @@
 import React, { ReactElement } from 'react'
 
-import IconWrapper from '../KeyFeatures/components/IconWrapper'
+import IconWrapper from '~components/IconWrapper'
+
 import featureItemStyles from './FeatureItem.module.css'
 
 type ItemProps = {
   title: string
   text: string
-  icon: unknown
+  icon: () => ReactElement
 }
 
 export const FeatureItem = ({

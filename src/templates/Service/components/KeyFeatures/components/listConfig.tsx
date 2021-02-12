@@ -1,4 +1,5 @@
-import { FourthIcon } from '~templates/Forms/components/FeatureList/Icons'
+import { ReactElement } from 'react'
+
 import {
   CalendarIcon,
   GlassesIcon,
@@ -19,7 +20,7 @@ export type ListItem = {
     desktop: string
     mobile: string
   }
-  icon: unknown
+  icon: () => ReactElement
   link: string
 }
 

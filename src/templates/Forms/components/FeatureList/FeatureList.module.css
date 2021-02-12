@@ -1,6 +1,9 @@
 .root {
   padding-top: 58px;
   position: relative;
+  background: linear-gradient(180deg, rgba(246, 249, 251, 0) 0%, #f5f8fb 100%);
+  border-bottom-left-radius: 48px;
+  border-bottom-right-radius: 48px;
 }
 
 .infoBlockWrapper {
@@ -10,16 +13,11 @@
   padding: 0 18px;
 }
 
-.root > :last-child {
-  padding-bottom: 127px;
-  border-bottom-left-radius: 48px;
-  border-bottom-right-radius: 48px;
-  background: linear-gradient(180deg, rgba(245, 248, 251, 0) 0%, #f5f8fb 100%);
-}
-
 @media screen and (max-width: 768px) {
   .root {
     padding-top: 40px;
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
   }
   .row {
     padding-bottom: 40px;
