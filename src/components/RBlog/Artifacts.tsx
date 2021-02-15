@@ -1,71 +1,12 @@
-import { graphql, useStaticQuery } from 'gatsby'
 import React, { ReactElement } from 'react'
 
-import Button from '~components/Button'
 import { CircleArtifact, CircleName } from '~components/CircleArtifact'
 import DotsArtifact from '~components/Dot'
-import RoxContainer from '~components/RoxContainer'
-import SectionLabel from '~components/SectionLabel'
-import SectionTitle from '~components/SectionTitle'
-import { useDeviceDetect } from '~utils/hooks'
-import { Article, prepareArticles } from '~utils/mapArticles'
 
-import ArticlePreview from '../ArticlePreview'
-import styles from './Blog.module.css'
-
-export default function Blog(): ReactElement {
-  const { isMobile } = useDeviceDetect()
-  const items = useStaticQuery(query)
-  const articles = prepareArticles(items)
-
-  return (
-    <div className={styles.root}>
-      <RoxContainer>
-        <SectionLabel text='BLOG' color='success' />
-        <SectionTitle text='Useful Resources' />
-        <div className={styles.list}>
-          {articles.map((item: Article) => (
-            <ArticlePreview
-              key={item.id}
-              imageTitle='Business Management'
-              imageTitleColor='#5D9A78'
-              image={item?.image?.fluid}
-              title={item?.title}
-              text={item?.description}
-              slug={item?.slug}
-            />
-          ))}
-        </div>
-
-        <div className={styles.buttonContainer}>
-          <Button
-            className='primary-btn'
-            label='Learn More'
-            handleClick={() => {}}
-          />
-        </div>
-        {isMobile ? <InMobileArtifacts /> : <InDesktopArtifacts />}
-      </RoxContainer>
-      {isMobile ? <OutMobileArtifacts /> : <OutDesktopArtifacts />}
-    </div>
-  )
-}
-
-export const query = graphql`
-  query BlogBlockQuery {
-    articles: allContentfulBlogPost(
-      skip: 0
-      limit: 3
-      sort: { order: DESC, fields: [createdAt] }
-    ) {
-      edges {
-        node {
-          ...Article
-        }
-      }
-    }
-  }
-`
+export const InArtifacts = ({ isMobile }) =>
+  isMobile ? <InMobileArtifacts /> : <InDesktopArtifacts />
+export const OutArtifacts = ({ isMobile }) =>
+  isMobile ? <OutMobileArtifacts /> : <OutDesktopArtifacts />
 
 function InMobileArtifacts() {
   return (

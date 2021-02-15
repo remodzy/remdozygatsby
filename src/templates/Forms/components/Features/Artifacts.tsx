@@ -1,8 +1,8 @@
 import React, { FC, ReactElement } from 'react'
 
 import { CircleArtifact, CircleName } from '~components/CircleArtifact'
-import { useDeviceDetect } from '~utils/hooks'
 import DotsArtifact from '~components/Dot'
+import { useDeviceDetect } from '~utils/hooks'
 
 const Artifacts: FC<unknown> = (): ReactElement => {
   const { isMobile } = useDeviceDetect()

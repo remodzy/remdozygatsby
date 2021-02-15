@@ -1,11 +1,32 @@
 .root {
   position: relative;
-  padding-top: 138px;
-  padding-bottom: 144px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 138px 0 144px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .wrapper {
   padding-top: 50px;
+}
+
+.slide {
+  display: flex;
+  margin-top: 50px;
+}
+
+.slideContent {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1120px;
+  width: 100%;
+  z-index: 2;
 }
 
 .infoRoot {
@@ -39,4 +60,24 @@
   font-size: 14px;
   line-height: 22px;
   color: var(--second-text-color);
+}
+
+@media screen and (max-width: 768px) {
+  .infoRoot {
+    padding: 50px 0 0;
+    background: url('/images/testimonials/m-testimonials-background-slide-1.png')
+      no-repeat;
+  }
+  .slideContent {
+    flex-direction: column-reverse;
+  }
+
+  .infoText {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .infoAuthor {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }

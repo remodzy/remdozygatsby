@@ -1,34 +1,40 @@
-import React, { useCallback } from 'react'
+import React, { FC, ReactElement, useCallback } from 'react'
 
 import Button from '~components/Button'
 import Label from '~components/Label'
-import RoxContainer from '~components/RoxContainer'
+import PrimarySubtitle from '~components/PrimarySubtitle'
+import RSectionTitle from '~components/RSectionTitle'
 import { authorize } from '~utils/auth'
 
 import Artifacts from './Artifacts'
 import styles from './PrimaryContent.module.css'
+import RSection from '~components/RSection'
 
 type Props = {
   title: string
   subTitle: string
-  image: string
+  image: () => ReactElement
 }
 
-const PrimaryContent: React.FC<Props> = ({ title, subTitle, image }) => {
+const Cover: FC<unknown> = (): ReactElement => (
+  <div className={styles.backgroundCover} />
+)
+
+const PrimaryContent: React.FC<Props> = ({
+  title,
+  subTitle,
+  image: PrimaryImage,
+}) => {
   const handleClick = useCallback(() => {
     authorize({ signUp: true })
   }, [])
 
   return (
-    <div className={styles.root}>
-      <div className={styles.backgroundCover} />
-      <RoxContainer>
+    <RSection artifacts={Artifacts} cover={Cover}>
+      <div className={styles.root}>
         <div className={styles.wrapper}>
-          <div
-            className={styles.primaryLabel}
-            dangerouslySetInnerHTML={{ __html: title }}
-          />
-          <div className={styles.secondaryLabel}>{subTitle}</div>
+          <RSectionTitle>{title}</RSectionTitle>
+          <PrimarySubtitle>{subTitle}</PrimarySubtitle>
           <div className={styles.buttonContainer}>
             <Button
               label='Start Free Trial'
@@ -39,12 +45,12 @@ const PrimaryContent: React.FC<Props> = ({ title, subTitle, image }) => {
               <Label text='No credit card required' />
             </div>
           </div>
-
-          <img src={image} alt='' />
+          <div className={styles.imageWrapper}>
+            <PrimaryImage />
+          </div>
         </div>
-      </RoxContainer>
-      <Artifacts />
-    </div>
+      </div>
+    </RSection>
   )
 }
 

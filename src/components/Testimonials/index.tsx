@@ -1,24 +1,26 @@
 import React, { memo, ReactElement } from 'react'
 
-import GridRow from '../GridRow'
-import RoxContainer from '../RoxContainer'
 import SectionLabel from '../SectionLabel'
-import SectionTitle from '../SectionTitle'
+import RSectionTitle from '../RSectionTitle'
 import Artifacts from './Artifacts'
 import styles from './Testimonials.module.css'
+import RSection from '~components/RSection'
 
 const Testimonials = (): ReactElement => (
-  <div className={styles.root}>
-    <SectionLabel text='testimonials' color='success' />
-    <SectionTitle text='What People Say' />
-    <RoxContainer>
-      <GridRow>
-        <Info />
-        <SlideImage1 />
-      </GridRow>
-    </RoxContainer>
-    <Artifacts />
-  </div>
+  <RSection artifacts={Artifacts}>
+    <div className={styles.root}>
+      <div className={styles.header}>
+        <SectionLabel text='testimonials' color='success' />
+        <RSectionTitle>What People Say</RSectionTitle>
+      </div>
+      <div className={styles.slide}>
+        <div className={styles.slideContent}>
+          <Info />
+          <SlideImage1 />
+        </div>
+      </div>
+    </div>
+  </RSection>
 )
 
 export default memo(Testimonials)
@@ -38,7 +40,13 @@ function Info() {
 function SlideImage1() {
   return (
     <div>
-      <img src='/images/testimonials/testimonials-slide-1.png' alt='' />
+      <picture>
+        <source
+          srcSet='/images/testimonials/m-testimonials-slide-1.png'
+          media='(max-width: 678px)'
+        />
+        <img src='/images/testimonials/testimonials-slide-1.png' alt='' />
+      </picture>
     </div>
   )
 }

@@ -1,9 +1,0 @@
-.root {
-  margin-top: 150px;
-}
-
-@media screen and (max-width: 768px) {
-  .root {
-    margin-top: 0;
-  }
-}

@@ -1,0 +1,16 @@
+.root {
+  color: var(--main-text-color);
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 63px;
+  text-align: center;
+  text-transform: capitalize;
+  max-width: 590px;
+}
+
+@media screen and (max-width: 768px) {
+  .root {
+    font-size: 36px;
+    line-height: 48px;
+  }
+}

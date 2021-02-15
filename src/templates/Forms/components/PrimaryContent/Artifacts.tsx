@@ -11,7 +11,28 @@ const Artifacts: FC<unknown> = (): ReactElement => {
 export default Artifacts
 
 function MobileArtifacts() {
-  return <></>
+  return (
+    <>
+      <CircleArtifact
+        name={CircleName.Green}
+        mainSize={32}
+        left='-16px'
+        top={38}
+      />
+      <CircleArtifact
+        name={CircleName.Blue}
+        mainSize={40}
+        right='-20px'
+        top={110}
+      />
+      <CircleArtifact
+        name={CircleName.Blue}
+        mainSize={40}
+        left='-20px'
+        top={340}
+      />
+    </>
+  )
 }
 
 function DesktopArtifacts() {

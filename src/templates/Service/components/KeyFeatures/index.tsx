@@ -1,15 +1,20 @@
 import React, { ReactElement } from 'react'
 
-import SectionTitle from '~components/SectionTitle'
+import RGrid from '~components/RGrid'
+import RSection from '~components/RSection'
 
-import KeyFeaturesList from './components/KeyFeaturesList'
-import serviceStyles from './Service.module.css'
+import Artifacts from './Artifacts'
+import styles from './KeyFeaturesList.module.css'
+import { getConfigList } from './listConfig'
 
-export default function KeyFeatures(): ReactElement {
-  return (
-    <div className={serviceStyles.root}>
-      <SectionTitle text='Key Features' />
-      <KeyFeaturesList />
+const list = getConfigList()
+
+const KeyFeatures = (): ReactElement => (
+  <RSection artifacts={Artifacts}>
+    <div className={styles.root}>
+      <RGrid items={list} title='Key Features' />
     </div>
-  )
-}
+  </RSection>
+)
+
+export default KeyFeatures

@@ -1,4 +1,4 @@
-import { ReactElement } from 'react'
+import { ListItem } from '~components/RGrid'
 
 import {
   CalendarIcon,
@@ -6,23 +6,7 @@ import {
   MessageIcon,
   SettingsIcon,
   WorkerIcon,
-} from '~templates/Service/components/KeyFeatures/components/Icons'
-
-export type ListItem = {
-  key: string
-  title: string
-  text: string
-  colors: {
-    background: string
-    text: string
-  }
-  images: {
-    desktop: string
-    mobile: string
-  }
-  icon: () => ReactElement
-  link: string
-}
+} from './Icons'
 
 export function getConfigList(): ListItem[] {
   return [

@@ -4,28 +4,26 @@ import Button from '~components/Button'
 import { getColor } from '~utils/colors'
 
 import Artifacts from './Artifacts'
-import blueBlockStyles from './styles.module.css'
+import styles from './BlueBlock.module.css'
 
 const colors = getColor({ group: 'main', color: 'primary' })
 
 export default function BlueBlock(): ReactElement {
   return (
-    <div className={blueBlockStyles.root}>
-      <div className={blueBlockStyles.wrapper}>
-        <div className={blueBlockStyles.title}>
-          Stay up to date with Updates
-        </div>
-        <div className={blueBlockStyles.form}>
-          <div className={blueBlockStyles.inputWrapper}>
+    <div className={styles.root}>
+      <div className={styles.wrapper}>
+        <div className={styles.title}>Stay up to date with Updates</div>
+        <div className={styles.form}>
+          <div className={styles.inputWrapper}>
             <input
               type='text'
               name='email'
               id='email'
-              className={blueBlockStyles.input}
+              className={styles.input}
               placeholder='Enter your email'
             />
           </div>
-          <div className={blueBlockStyles.buttonWrapper}>
+          <div className={styles.buttonWrapper}>
             <Button
               label='Subscribe'
               colors={{

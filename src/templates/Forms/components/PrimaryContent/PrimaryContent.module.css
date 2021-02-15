@@ -2,8 +2,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding-top: 115px;
-  padding-bottom: 112px;
+  padding: 115px 0 112px;
   position: relative;
 }
 
@@ -16,26 +15,12 @@
   z-index: 1;
 }
 
-.primaryLabel {
-  color: var(--main-text-color);
-  font-weight: bold;
-  font-size: 40px;
-  line-height: 63px;
-  text-align: center;
-  text-transform: capitalize;
-  margin: 0 96px 22px;
-}
-.secondaryLabel {
-  color: var(--grey-text-color);
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 32px;
-  text-align: center;
-  margin: 0 192px 45px;
-  max-width: 800px;
-}
 .buttonContainer {
   text-align: center;
+  margin-top: 45px;
+}
+.imageWrapper {
+  margin-top: 45px;
 }
 .labelContainer {
   margin-top: 10px;
@@ -44,7 +29,7 @@
 .backgroundCover {
   position: absolute;
   width: 100%;
-  height: 756px;
+  height: 968px;
   border-bottom-right-radius: 48px;
   border-bottom-left-radius: 48px;
   background: linear-gradient(180deg, rgba(246, 249, 251, 0) 0%, #f5f8fb 100%);
@@ -52,22 +37,10 @@
 
 @media (max-width: 768px) {
   .root {
-    padding-top: 56px;
-    padding-bottom: 43px;
-  }
-  .primaryLabel {
-    font-size: 36px;
-    line-height: 48px;
-    padding: 0 24px;
-    margin-bottom: 32px;
-  }
-  .secondaryLabel {
-    font-size: 16px;
-    line-height: 26px;
-    padding: 0 24px;
+    padding: 56px 0 0;
   }
   .backgroundCover {
-    top: -85px;
+    height: 708px;
     width: 100%;
     border-bottom-right-radius: 32px;
     border-bottom-left-radius: 32px;

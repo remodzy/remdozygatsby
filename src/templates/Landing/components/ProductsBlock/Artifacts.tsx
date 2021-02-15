@@ -51,7 +51,7 @@ function MobileArtifacts(): ReactElement {
         size={6}
         columns={3}
         gap={28}
-        zIndex={1}
+        zIndex={0}
         // prettier-ignore
         list={[
           0,1,1,
@@ -64,7 +64,7 @@ function MobileArtifacts(): ReactElement {
         size={6}
         columns={2}
         gap={28}
-        zIndex={1}
+        zIndex={0}
         // prettier-ignore
         list={[
           0,0,
@@ -79,7 +79,7 @@ function MobileArtifacts(): ReactElement {
         size={6}
         columns={2}
         gap={28}
-        zIndex={1}
+        zIndex={0}
         // prettier-ignore
         list={[
           0,1,
@@ -94,7 +94,7 @@ function MobileArtifacts(): ReactElement {
         size={4}
         columns={2}
         gap={17}
-        zIndex={1}
+        zIndex={0}
         // prettier-ignore
         list={[
           0,0,
@@ -113,7 +113,7 @@ function MobileArtifacts(): ReactElement {
         size={4}
         columns={5}
         gap={19}
-        zIndex={1}
+        zIndex={0}
         // prettier-ignore
         list={[
           0,1,1,0,0,
@@ -128,7 +128,7 @@ function MobileArtifacts(): ReactElement {
         size={4}
         columns={3}
         gap={25}
-        zIndex={1}
+        zIndex={0}
         // prettier-ignore
         list={[
           0,0,0,
@@ -147,7 +147,7 @@ function MobileArtifacts(): ReactElement {
         size={5}
         columns={2}
         gap={25}
-        zIndex={1}
+        zIndex={0}
         // prettier-ignore
         list={[
           0,0,
@@ -225,7 +225,7 @@ function DesktopArtifacts(): ReactElement {
         size={5}
         columns={3}
         gap={25}
-        zIndex={1}
+        zIndex={0}
         // prettier-ignore
         list={[
           0,0,0,
@@ -244,7 +244,7 @@ function DesktopArtifacts(): ReactElement {
         size={6}
         columns={8}
         gap={28}
-        zIndex={1}
+        zIndex={0}
         // prettier-ignore
         list={[
           0,1,1,0,0,0,0,0,
@@ -259,7 +259,7 @@ function DesktopArtifacts(): ReactElement {
         size={6}
         columns={6}
         gap={28}
-        zIndex={1}
+        zIndex={0}
         // prettier-ignore
         list={[
           1,0,0,0,0,0,
@@ -274,7 +274,7 @@ function DesktopArtifacts(): ReactElement {
         size={6}
         columns={8}
         gap={28}
-        zIndex={1}
+        zIndex={0}
         // prettier-ignore
         list={[
           0,1,1,0,0,0,0,0,
@@ -289,7 +289,7 @@ function DesktopArtifacts(): ReactElement {
         size={4}
         columns={5}
         gap={19}
-        zIndex={1}
+        zIndex={0}
         // prettier-ignore
         list={[
           0,0,0,0,0,
@@ -304,7 +304,7 @@ function DesktopArtifacts(): ReactElement {
         size={4}
         columns={4}
         gap={17}
-        zIndex={1}
+        zIndex={0}
         // prettier-ignore
         list={[
           0,0,0,0,
@@ -318,12 +318,12 @@ function DesktopArtifacts(): ReactElement {
         ]}
       />
       <DotsArtifact
-        bottom={518}
-        right='11%'
+        bottom={360}
+        right='13.5%'
         size={4}
         columns={4}
-        gap={17}
-        zIndex={1}
+        gap={25}
+        zIndex={0}
         // prettier-ignore
         list={[
           0,0,0,0,
@@ -342,7 +342,7 @@ function DesktopArtifacts(): ReactElement {
         size={5}
         columns={8}
         gap={25}
-        zIndex={1}
+        zIndex={0}
         // prettier-ignore
         list={[
           0,1,1,0,0,0,0,0,
@@ -357,7 +357,7 @@ function DesktopArtifacts(): ReactElement {
         size={6}
         columns={4}
         gap={27}
-        zIndex={1}
+        zIndex={0}
         // prettier-ignore
         list={[
           0,0,0,0,
