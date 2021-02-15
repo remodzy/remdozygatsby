@@ -1,19 +1,16 @@
 import React, { ReactElement } from 'react'
 
-import BlogBlock from '~components/Blog'
-import BlueBlock from '~components/BlueBlock'
-import IntegrationsBlock from '~components/Integrations'
+import BlogBlock from '~components/RBlog'
 import TestimonialsBlock from '~components/Testimonials'
 
 import BenefitsBlock from './components/Benefits'
-import HowItWorksBlock from './components/HowItWorks'
+import KeyFeatures from './components/KeyFeatures'
 import PrimaryContent from './components/PrimaryContent'
-import ServiceBlock from './components/KeyFeatures'
 
 const Service = (): ReactElement => (
   <div>
     <PrimaryContent />
-    <ServiceBlock />
+    <KeyFeatures />
     <BenefitsBlock />
     <BlogBlock />
     <TestimonialsBlock />

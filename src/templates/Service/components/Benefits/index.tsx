@@ -1,20 +1,23 @@
 import React, { ReactElement } from 'react'
 
-import RoxContainer from '~components/RoxContainer'
+import RContainer from '~components/RContainer'
 import SectionLabel from '~components/SectionLabel'
 import SectionTitle from '~components/SectionTitle'
 
 import styles from './Benefits.module.css'
 import FeatureList from './FeatureList'
+import RSection from '~components/RSection'
 
-export default function Benefits(): ReactElement {
-  return (
-    <div className={styles.root}>
-      <RoxContainer>
+const Benefits = (): ReactElement => (
+  <RSection>
+    <RContainer>
+      <div className={styles.root}>
         <SectionLabel text='Benefits' color='primary' />
         <SectionTitle text='Features' />
         <FeatureList />
-      </RoxContainer>
-    </div>
-  )
-}
+      </div>
+    </RContainer>
+  </RSection>
+)
+
+export default Benefits

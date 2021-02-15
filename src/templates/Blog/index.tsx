@@ -4,6 +4,7 @@ import * as React from 'react'
 
 import Layout from '~components/Layout'
 import { Pagination } from '~components/Pagination'
+import RSection from '~components/RSection'
 import SectionLabel from '~components/SectionLabel'
 import SectionTitle from '~components/SectionTitle'
 import { useDeviceDetect } from '~utils/hooks'
@@ -11,6 +12,7 @@ import { prepareArticle, ResourceNode } from '~utils/mapArticles'
 
 import styles from './Blog.module.css'
 import SocialShare from './components/SocialShare'
+import RSectionTitle from '~components/RSectionTitle'
 
 const imageStyle = {
   margin: '80px 0',
@@ -43,17 +45,19 @@ const Blog: React.FC<Props> = ({ pathContext, pageResources }) => {
 
   return (
     <Layout>
-      <div className={styles.root}>
-        <SectionLabel text={item.image.imageTitle} color='success' />
-        <SectionTitle text={item.title} />
-        <div>
-          <Img fluid={item.image.fluid} style={imageStyle} />
-          <div className={styles.contentWrapper}>
-            <div dangerouslySetInnerHTML={createMarkup(item.body)} />
-            <SocialShare />
+      <RSection>
+        <div className={styles.root}>
+          <SectionLabel text={item.image.imageTitle} color='success' />
+          <RSectionTitle>{item.title}</RSectionTitle>
+          <div>
+            <Img fluid={item.image.fluid} style={imageStyle} />
+            <div className={styles.contentWrapper}>
+              <div dangerouslySetInnerHTML={createMarkup(item.body)} />
+              <SocialShare />
+            </div>
           </div>
         </div>
-      </div>
+      </RSection>
       {!isMobile && <div className={styles.background} />}
     </Layout>
   )

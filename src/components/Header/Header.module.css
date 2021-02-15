@@ -1,17 +1,19 @@
 .root {
+  display: flex;
+  justify-content: center;
   position: fixed;
   top: 0;
   width: 100%;
   background: #ffffff;
   box-shadow: 0 4px 20px rgba(179, 192, 213, 0.25);
   z-index: 3;
+  padding: 1rem 1.5rem;
 }
 
 .wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.25rem 0;
 }
 
 .buttonsContainer {
@@ -21,5 +23,5 @@
 }
 
 .loginContainer {
-  margin-right: 32px;
+  margin-right: 2rem;
 }

@@ -1,11 +1,5 @@
-import React, { FC, ReactElement } from 'react'
+import { ListItem } from '~components/RGrid'
 
-import GridRow from '~components/GridRow'
-import InfoBlock from '~components/InfoBlock'
-import { useDeviceDetect } from '~utils/hooks'
-
-import Artifacts from '../FeatureList/Artifacts'
-import styles from './FeatureList.module.css'
 import {
   FifthIcon,
   FirstIcon,
@@ -13,35 +7,8 @@ import {
   SecondIcon,
   ThirdIcon,
 } from './Icons'
-import RoxContainer from '~components/RoxContainer'
 
-const FeatureList: FC<unknown> = (): ReactElement => {
-  const { isMobile } = useDeviceDetect()
-
-  return (
-    <div className={styles.root}>
-      <Artifacts />
-      <RoxContainer>
-        {listConfig.map(({ title, icon, text, link, images, colors }) => (
-          <GridRow key={title}>
-            <InfoBlock
-              icon={icon}
-              text={text}
-              title={title}
-              link={link}
-              colors={colors}
-            />
-            <img src={isMobile ? images.mobile : images.desktop} alt='' />
-          </GridRow>
-        ))}
-      </RoxContainer>
-    </div>
-  )
-}
-
-export default FeatureList
-
-const listConfig = [
+export const featureConfig: ListItem[] = [
   {
     icon: FirstIcon,
     title: 'Setup checklist forms in minutes',
@@ -56,7 +23,6 @@ const listConfig = [
       mobile: '/images/forms/m-forms-features-1.png',
     },
     link: '#',
-    linkLabel: 'Learn more',
   },
   {
     icon: SecondIcon,
@@ -72,7 +38,6 @@ const listConfig = [
       mobile: '/images/forms/m-forms-features-2.png',
     },
     link: '#',
-    linkLabel: 'Learn more',
   },
   {
     icon: ThirdIcon,
@@ -103,7 +68,6 @@ const listConfig = [
       mobile: '/images/shared/m-shared-features-glasses.png',
     },
     link: '#',
-    linkLabel: 'Learn more',
   },
   {
     icon: FifthIcon,
@@ -119,6 +83,5 @@ const listConfig = [
       mobile: '/images/forms/m-forms-features-5.png',
     },
     link: '#',
-    linkLabel: 'Learn more',
   },
 ]

@@ -11,8 +11,8 @@ type Props = {
 
 const IconButton: React.FC<Props> = ({ handleClick, iconName, size }) => {
   const style = {
-    width: size ?? 44,
-    height: size ?? 44,
+    width: size ?? 52,
+    height: size ?? 52,
   }
   return (
     <div onClick={handleClick} className={iconButtonStyles.root} style={style}>

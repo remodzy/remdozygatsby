@@ -1,6 +1,10 @@
 .root {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding-top: 38px;
+  width: 100%;
 }
 
 @media screen and (max-width: 768px) {

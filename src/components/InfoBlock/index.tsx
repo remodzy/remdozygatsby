@@ -1,17 +1,11 @@
 import React, { FC, ReactElement } from 'react'
 
+import { ListItem } from '~components/RGrid'
+
 import styles from './InfoBlock.module.css'
 
-type Props = {
-  colors: {
-    background: string
-    text: string
-  }
-  icon: () => ReactElement
+type Props = ListItem & {
   label?: string
-  title: string
-  text: string
-  link: string
   extraItem?: () => ReactElement
 }
 

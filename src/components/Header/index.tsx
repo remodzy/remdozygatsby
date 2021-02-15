@@ -8,7 +8,7 @@ import Button from '../Button'
 import HeaderMenu from '../HeaderMenu'
 import LinkButton from '../LinkButton'
 import Logo from '../Logo'
-import RoxContainer from '../RoxContainer'
+import RContainer from '../RContainer'
 import headerStyles from './Header.module.css'
 
 const Header = (): ReactElement => {
@@ -24,7 +24,7 @@ const Header = (): ReactElement => {
 
   return (
     <header className={headerStyles.root}>
-      <RoxContainer>
+      <RContainer>
         <div className={headerStyles.wrapper}>
           <Link
             to='/'
@@ -49,7 +49,7 @@ const Header = (): ReactElement => {
             </div>
           )}
         </div>
-      </RoxContainer>
+      </RContainer>
     </header>
   )
 }

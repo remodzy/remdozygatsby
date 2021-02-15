@@ -25,7 +25,7 @@
 .menuWrapper {
   display: flex;
   flex-direction: column;
-  padding: 18px;
+  padding: 1.125rem;
 }
 
 .menuHeader {
@@ -33,16 +33,16 @@
   justify-content: space-between;
   align-items: center;
   background: #ffffff;
-  padding: 1.25rem 11.1111%;
+  padding: 1rem 1.5rem;
   box-shadow: 0 4px 20px rgba(179, 192, 213, 0.25);
 }
 
 .menuItem {
   text-decoration: none;
   color: var(--main-text-color);
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
-  padding: 24px;
+  padding: 1.5rem;
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -54,8 +54,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 24px;
-  padding-bottom: 28px;
+  padding-top: 1.5rem;
+  padding-bottom: 1.625rem;
 }
 
 .buttonWrapper {
@@ -77,10 +77,4 @@
   width: 100%;
   height: 100%;
   background: #ffffff;
-}
-
-@media screen and (max-width: 768px) {
-  .menuHeader {
-    padding: 1.25rem 6.6667%;
-  }
 }

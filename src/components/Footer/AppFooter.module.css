@@ -1,13 +1,16 @@
 .root {
   position: relative;
-  padding-top: 82px;
-  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  padding: 5.125rem 1.5rem 1.25rem;
 }
 
 .container {
   display: flex;
-  padding-bottom: 80px;
+  padding-bottom: 5.125rem;
 }
+
 .linksContainer {
   display: grid;
   flex: 0.8;
@@ -23,11 +26,10 @@
 .columnTitle {
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 22px;
   color: var(--main-text-color);
   padding-bottom: 18px;
-  word-spacing: nowrap;
 }
 
 .backToTop {

@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react'
 
 import IconWrapper from '~components/IconWrapper'
 
-import featureItemStyles from './FeatureItem.module.css'
+import styles from './FeatureItem.module.css'
 
 type ItemProps = {
   title: string
@@ -19,7 +19,7 @@ export const FeatureItem = ({
     <IconWrapper color='hsla(226, 74%, 59%, 0.2)'>
       <Icon />
     </IconWrapper>
-    <div className={featureItemStyles.title}>{title}</div>
-    <div className={featureItemStyles.text}>{text}</div>
+    <div className={styles.title}>{title}</div>
+    <div className={styles.text}>{text}</div>
   </div>
 )
