@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React, { FC, ReactElement } from 'react'
 
 import { CircleArtifact, CircleName } from '~components/CircleArtifact'
 import RGrid from '~components/RGrid'
@@ -9,10 +9,12 @@ import Artifacts from './Artifacts'
 import { featureConfig } from './featureConfig'
 import styles from './Features.module.css'
 
+const Cover: FC<unknown> = (): ReactElement => <div className={styles.cover} />
+
 const FeaturesBlock = (): ReactElement => {
   const { isMobile } = useDeviceDetect()
   return (
-    <RSection artifacts={Artifacts}>
+    <RSection artifacts={Artifacts} cover={Cover}>
       <>
         <div className={styles.root}>
           <RGrid items={featureConfig} title='Key Features' />

@@ -2,15 +2,13 @@ import { graphql, useStaticQuery } from 'gatsby'
 import React, { FC, ReactElement } from 'react'
 
 import Button from '~components/Button'
-import { InArtifacts, OutArtifacts } from '~components/RBlog/Artifacts'
-import RContainer from '~components/RContainer'
 import RSection from '~components/RSection'
 import RSectionTitle from '~components/RSectionTitle'
 import SectionLabel from '~components/SectionLabel'
-import { useDeviceDetect } from '~utils/hooks'
 import { Article, prepareArticles } from '~utils/mapArticles'
 
 import ArticlePreview from '../ArticlePreview'
+import Artifacts from './Artifacts'
 import styles from './Blog.module.css'
 
 const Cover: FC<unknown> = (): ReactElement => <div className={styles.cover} />
@@ -20,7 +18,7 @@ export default function RBlog(): ReactElement {
   const articles = prepareArticles(items)
 
   return (
-    <RSection cover={Cover}>
+    <RSection cover={Cover} artifacts={Artifacts}>
       <div className={styles.root}>
         <div className={styles.header}>
           <SectionLabel text='BLOG' color='success' />

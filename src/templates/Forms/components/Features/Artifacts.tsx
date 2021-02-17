@@ -12,7 +12,48 @@ const Artifacts: FC<unknown> = (): ReactElement => {
 export default Artifacts
 
 function MobileArtifacts() {
-  return <></>
+  return (
+    <>
+      <DotsArtifact
+        top={140}
+        right='1.7278%'
+        size={6}
+        gap={28}
+        columns={1}
+        zIndex={1}
+        // prettier-ignore
+        list={[
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+      ]}
+      />
+      <DotsArtifact
+        top={535}
+        left='1.2222%'
+        size={6}
+        gap={28}
+        columns={3}
+        zIndex={0}
+        // prettier-ignore
+        list={[
+        0,0,0,
+        0,0,1,
+        0,0,0,
+        1,0,0,
+        0,0,0,
+        0,0,0,
+        1,1,0,
+        0,0,0,
+      ]}
+      />
+    </>
+  )
 }
 
 function DesktopArtifacts() {
@@ -51,8 +92,8 @@ function DesktopArtifacts() {
       <CircleArtifact
         name={CircleName.Purple}
         mainSize={40}
-        left='39.6527%'
-        bottom={1350}
+        left='37.5%'
+        bottom={1310}
       />
       <DotsArtifact
         top={108}
@@ -138,7 +179,7 @@ function DesktopArtifacts() {
         ]}
       />
       <DotsArtifact
-        top={1560}
+        top={1640}
         left='0.8806%'
         size={4}
         gap={19}
@@ -153,8 +194,8 @@ function DesktopArtifacts() {
         ]}
       />
       <DotsArtifact
-        top={1428}
-        right='14%'
+        top={1500}
+        right='15%'
         size={5}
         gap={25}
         columns={4}
@@ -163,6 +204,21 @@ function DesktopArtifacts() {
         list={[
           0,0,0,0,
           0,1,1,0,
+        ]}
+      />
+      <DotsArtifact
+        top={1955}
+        left='35.51%'
+        size={5}
+        gap={25}
+        columns={8}
+        zIndex={0}
+        // prettier-ignore
+        list={[
+          0,1,1,0,0,0,0,0,
+          0,0,0,0,0,0,1,0,
+          0,0,0,1,0,0,1,0,
+          1,0,0,0,0,0,0,0,
         ]}
       />
       <DotsArtifact
