@@ -37,8 +37,11 @@ const RGrid: FC<Props> = ({ items, title }): ReactElement => {
       {title && <RSectionTitle>{title}</RSectionTitle>}
       <div className={styles.root}>
         {items.map(
-          ({ key, colors, label, link, title, text, icon: Icon, images }) => (
-            <GridRow key={key}>
+          (
+            { key, colors, label, link, title, text, icon: Icon, images },
+            index
+          ) => (
+            <GridRow key={key || index}>
               <InfoBlock
                 colors={colors}
                 label={label}
