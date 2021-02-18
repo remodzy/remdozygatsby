@@ -2,16 +2,20 @@ import { graphql, PageProps } from 'gatsby'
 import React from 'react'
 import RichTextLayout from '~templates/RichText'
 
-const FormsPage: React.FC<PageProps> = ({ pageResources }) => {
-  const { body, title } = pageResources.json.data.privacyPage
-  return <RichTextLayout title={title} document={JSON.parse(body.body)} />
+const TermsPage: React.FC<PageProps> = ({ pageResources }) => {
+  const { body, title } = (pageResources?.json.data as {
+    termsPage?: any
+  })?.termsPage || { body: '', title: '' }
+  return (
+    <RichTextLayout title={title} document={JSON.parse(body.body || '{}')} />
+  )
 }
 
-export default FormsPage
+export default TermsPage
 
 export const pageQuery = graphql`
   {
-    privacyPage: contentfulInfoPages(title: { eq: "Terms" }) {
+    termsPage: contentfulInfoPages(title: { eq: "Terms" }) {
       id
       title
       body {
