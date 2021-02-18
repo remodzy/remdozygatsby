@@ -32,7 +32,7 @@ const RichTextLayout: React.FC<Props> = ({ title, document }) => {
                   documentToHtmlString(document)
                 )}
               />
-              <SocialShare />
+              {/*<SocialShare />*/}
             </div>
           </div>
         </div>
