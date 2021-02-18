@@ -23,13 +23,14 @@ export default function Footer(): ReactElement {
               <div className={styles.columnTitle}>Company</div>
               <FooterLink text='Products' url='#' />
               <FooterLink text='Integrations' url='#' />
-              <FooterLink text='Pricing' url='#' />
+              <FooterLink text='Pricing' url='/pricing' />
             </div>
             <div className={styles.linkColumn}>
               <div className={styles.columnTitle}>About Roxabo</div>
               <FooterLink text='About Us' url='#' />
-              <FooterLink text='Blog' url='#' />
-              <FooterLink text='Privacy & Terms' url='#' />
+              <FooterLink text='Blog' url='/blog' />
+              <FooterLink text='Privacy' url='/privacy' />
+              <FooterLink text='Terms & Conditions' url='/terms' />
             </div>
             <div className={styles.linkColumn}>
               <div className={styles.columnTitle}>Talk With Us</div>
