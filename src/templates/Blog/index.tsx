@@ -6,12 +6,11 @@ import Layout from '~components/Layout'
 import { Pagination } from '~components/Pagination'
 import RSection from '~components/RSection'
 import SectionLabel from '~components/SectionLabel'
-import SectionTitle from '~components/SectionTitle'
 import { useDeviceDetect } from '~utils/hooks'
 import { prepareArticle, ResourceNode } from '~utils/mapArticles'
 
 import styles from './Blog.module.css'
-import SocialShare from './components/SocialShare'
+import SocialShare from '~components/SocialShare'
 import RSectionTitle from '~components/RSectionTitle'
 
 const imageStyle = {
