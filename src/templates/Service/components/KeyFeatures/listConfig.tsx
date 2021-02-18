@@ -85,8 +85,8 @@ export function getConfigList(): ListItem[] {
         text: 'rgba(169, 119, 215, 1)',
       },
       images: {
-        desktop: '/images/shared/shared-features-glasses.png',
-        mobile: '/images/shared/m-shared-features-glasses.png',
+        desktop: '/images/shared/shared-features-glasses-white.png',
+        mobile: '/images/shared/m-shared-features-glasses-white.png',
       },
       link: '#',
     },

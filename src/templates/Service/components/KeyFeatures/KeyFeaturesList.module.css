@@ -4,11 +4,27 @@
   flex-direction: column;
   align-items: center;
   padding-top: 38px;
+  padding-bottom: 30px;
   width: 100%;
+}
+
+.cover {
+  position: absolute;
+  height: 616px;
+  width: 100%;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(246, 249, 251, 0) 0%, #f5f8fb 100%);
+  border-bottom-left-radius: 48px;
+  border-bottom-right-radius: 48px;
 }
 
 @media screen and (max-width: 768px) {
   .root {
     padding-top: 41px;
+  }
+
+  .cover {
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
   }
 }

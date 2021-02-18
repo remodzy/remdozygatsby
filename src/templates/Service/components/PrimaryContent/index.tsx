@@ -6,7 +6,7 @@ import { authorize } from '~utils/auth'
 import { useDeviceDetect } from '~utils/hooks'
 
 import styles from './PrimaryContent.module.css'
-import RoxContainer from '~components/RoxContainer'
+import Artifacts from './Artifacts'
 import RSectionTitle from '~components/RSectionTitle'
 import PrimarySubtitle from '~components/PrimarySubtitle'
 import RSection from '~components/RSection'
@@ -23,7 +23,7 @@ const PrimaryContent: React.FC<unknown> = (): ReactElement => {
   }, [])
 
   return (
-    <RSection className={styles.backgroundCover}>
+    <RSection artifacts={Artifacts} className={styles.backgroundCover}>
       {/*<div className={styles.backgroundCover} />*/}
       <div className={styles.root}>
         {/*<div className={styles.wrapper}>*/}

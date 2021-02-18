@@ -7,9 +7,10 @@ import SectionTitle from '~components/SectionTitle'
 import styles from './Benefits.module.css'
 import FeatureList from './FeatureList'
 import RSection from '~components/RSection'
+import Artifacts from './Artifacts'
 
 const Benefits = (): ReactElement => (
-  <RSection>
+  <RSection artifacts={Artifacts}>
     <RContainer>
       <div className={styles.root}>
         <SectionLabel text='Benefits' color='primary' />

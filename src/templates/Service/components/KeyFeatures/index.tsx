@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React, { FC, ReactElement } from 'react'
 
 import RGrid from '~components/RGrid'
 import RSection from '~components/RSection'
@@ -9,8 +9,10 @@ import { getConfigList } from './listConfig'
 
 const list = getConfigList()
 
+const Cover: FC<unknown> = (): ReactElement => <div className={styles.cover} />
+
 const KeyFeatures = (): ReactElement => (
-  <RSection artifacts={Artifacts}>
+  <RSection artifacts={Artifacts} cover={Cover}>
     <div className={styles.root}>
       <RGrid items={list} title='Key Features' />
     </div>
