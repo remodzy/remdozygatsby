@@ -25,9 +25,8 @@ const DesktopProductsMenu = () => {
 
   useLayoutEffect(() => {
     if (buttonRef.current && menuRef.current) {
-      const { left, top } = buttonRef.current.getBoundingClientRect()
-      menuRef.current.style.left = `${left - 138.5}px`
-      menuRef.current.style.top = `${top + 40}px`
+      const { top } = buttonRef.current.getBoundingClientRect()
+      menuRef.current.style.top = `${top + 27}px`
     }
   })
 

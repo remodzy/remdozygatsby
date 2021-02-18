@@ -20,6 +20,7 @@
 .rootMenu {
   position: absolute;
   z-index: 3;
+  left: 0;
   top: 70px;
   width: 300px;
   padding: 18px 0;
