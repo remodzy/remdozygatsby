@@ -23,10 +23,16 @@ function DesktopArtifacts() {
         name={CircleName.Purple}
         mainSize={68}
         right='7.3611%'
-        top={30}
+        top={120}
+      />
+      <CircleArtifact
+        name={CircleName.Violet}
+        mainSize={36}
+        left='18.3611%'
+        top={25}
       />
       <DotsArtifact
-        top={170}
+        top={240}
         right='0.7833%'
         size={6}
         gap={28}

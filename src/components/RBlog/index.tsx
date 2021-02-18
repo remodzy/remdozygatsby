@@ -41,7 +41,7 @@ export default function RBlog(): ReactElement {
         <div className={styles.buttonContainer}>
           <Button
             className='primary-btn'
-            label='Learn More'
+            label='View all'
             handleClick={() => {}}
           />
         </div>
