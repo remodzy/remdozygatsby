@@ -56,7 +56,7 @@ function DesktopArtifacts() {
   return (
     <>
       <DotsArtifact
-        top={151}
+        bottom={0}
         left={11}
         columns={3}
         gap={18.7}
@@ -64,12 +64,11 @@ function DesktopArtifacts() {
         // prettier-ignore
         list={[
         0,0,0,
-        0,0,1,
-        0,0,1,
-        1,0,0,
-        0,0,0,
-        0,0,0,
         1,1,0,
+        0,0,0,
+        0,0,0,
+        0,1,0,
+        0,0,0,
         0,0,0,
       ]}
       />
@@ -81,10 +80,10 @@ function DesktopArtifacts() {
         gap={18.71}
         // prettier-ignore
         list={[
-        0,1,1,0,0,
         0,0,0,0,0,
-        0,0,0,1,0,
-        1,0,0,0,0,
+        0,1,0,0,1,
+        0,1,0,0,0,
+        0,0,0,0,0,
       ]}
       />
     </>
