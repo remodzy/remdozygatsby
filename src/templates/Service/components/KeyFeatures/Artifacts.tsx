@@ -52,6 +52,98 @@ function MobileArtifacts() {
           0,0,0,
         ]}
       />
+      <CircleArtifact
+        name={CircleName.Blue}
+        mainSize={40}
+        right='35.9027%'
+        top={960}
+      />
+      <DotsArtifact
+        top={960}
+        right='3.2222%'
+        size={6}
+        gap={28}
+        columns={2}
+        zIndex={0}
+        // prettier-ignore
+        list={[
+          0,1,
+          0,0,
+          0,0,
+          1,0,
+        ]}
+      />
+      <CircleArtifact
+        name={CircleName.Green}
+        mainSize={66}
+        left='35.9027%'
+        top={1260}
+      />
+      <DotsArtifact
+        top={1360}
+        right='3.2222%'
+        size={6}
+        gap={28}
+        columns={5}
+        zIndex={0}
+        // prettier-ignore
+        list={[
+          0,0,1,0,0,
+          0,0,0,0,0,
+          0,0,0,1,0,
+          1,0,0,0,0,
+        ]}
+      />
+      <DotsArtifact
+        top={1660}
+        left='3.2222%'
+        size={6}
+        gap={28}
+        columns={2}
+        zIndex={0}
+        // prettier-ignore
+        list={[
+          0,1,
+          0,0,
+          0,0,
+          1,0,
+          0,0,
+          0,0,
+          0,1,
+          1,0,
+        ]}
+      />
+      <CircleArtifact
+        name={CircleName.Green}
+        mainSize={40}
+        right='35.9027%'
+        top={1960}
+      />
+      <DotsArtifact
+        top={1890}
+        right='3.2222%'
+        size={6}
+        gap={28}
+        columns={2}
+        zIndex={0}
+        // prettier-ignore
+        list={[
+          0,1,
+          0,0,
+          0,0,
+          1,0,
+          0,1,
+          0,0,
+          1,0,
+          1,0,
+        ]}
+      />
+      <CircleArtifact
+        name={CircleName.Green}
+        mainSize={40}
+        right='5.9027%'
+        top={2260}
+      />
     </>
   )
 }
