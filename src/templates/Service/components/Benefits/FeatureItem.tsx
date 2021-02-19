@@ -15,8 +15,8 @@ export const FeatureItem = ({
   text,
   icon: Icon,
 }: ItemProps): ReactElement => (
-  <div>
-    <IconWrapper color='hsla(226, 74%, 59%, 0.2)'>
+  <div className={styles.root}>
+    <IconWrapper className={styles.icon} color='hsla(226, 74%, 59%, 0.2)'>
       <Icon />
     </IconWrapper>
     <div className={styles.title}>{title}</div>
