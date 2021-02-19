@@ -12,11 +12,15 @@ import RSectionTitle from '~components/RSectionTitle'
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 
 type Props = {
-  title: string
-  document: Document
+  pageContext: {
+    title: string
+    document: Document
+  }
 }
 
-const RichTextLayout: React.FC<Props> = ({ title, document }) => {
+const RichTextLayout: React.FC<Props> = ({
+  pageContext: { title, document },
+}) => {
   const { isMobile } = useDeviceDetect()
 
   return (

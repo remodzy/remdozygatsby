@@ -2,9 +2,57 @@ const path = require('path')
 // const { createFilePath } = require("gatsby-source-filesystem")
 const chunk = require('lodash/chunk')
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
+  await Promise.all([
+    createBlogPages(graphql, createPage, reporter),
+    createPrivacyAndTermsPages(graphql, createPage, reporter),
+  ])
+}
+
+async function createPrivacyAndTermsPages(graphql, createPage, reporter) {
+  const result = await graphql(
+    `
+      {
+        info: allContentfulInfoPages {
+          edges {
+            node {
+              id
+              title
+              body {
+                body
+              }
+            }
+          }
+        }
+      }
+    `
+  )
+
+  if (result.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+
+  const richTextTemplate = path.resolve('./src/templates/RichText/index.tsx')
+
+  const pages = result.data.info.edges
+
+  pages.forEach(({ node: page }) => {
+    createPage({
+      path: page.title.toLowerCase(),
+      component: richTextTemplate,
+      context: {
+        title: page.title,
+        document: JSON.parse(page.body.body),
+      },
+    })
+  })
+}
+
+// Create blog-list pages
+async function createBlogPages(graphql, createPage, reporter) {
   const result = await graphql(
     `
       {
@@ -26,8 +74,6 @@ exports.createPages = async ({ graphql, actions }) => {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
-
-  // Create blog-list pages
   const blogListTemplate = path.resolve('./src/templates/BlogList/index.tsx')
   const blogTemplate = path.resolve('./src/templates/Blog/index.tsx')
 
