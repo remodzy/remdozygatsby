@@ -1,8 +1,9 @@
-import { Link } from 'gatsby'
 import React, { ReactElement, useCallback, useState } from 'react'
+import { Link } from 'gatsby'
 
 import ModalContainer from '~components/ModalContainer'
 import { useDeviceDetect } from '~utils/hooks'
+import { useLocation } from '@reach/router'
 
 import DesktopProductsMenu from './DesktopProductsMenu'
 import FloatMenu from './FloatMenu'
@@ -14,11 +15,18 @@ export type MenuItem = {
   text: string
 }
 
-const menuList: MenuItem[] = [
+const homeMenuList: MenuItem[] = [
   {
-    link: '/',
-    text: 'Integrations',
+    link: '/support',
+    text: 'Support',
   },
+  {
+    link: '/blog',
+    text: 'Blog',
+  },
+]
+
+const productMenuList: MenuItem[] = [
   {
     link: '/pricing',
     text: 'Pricing',
@@ -32,6 +40,12 @@ const menuList: MenuItem[] = [
 export default function HeaderMenu(): ReactElement {
   const [show, setShow] = useState(false)
   const { isMobile } = useDeviceDetect()
+
+  const { pathname } = useLocation()
+
+  let menuList = homeMenuList
+  if (['/service/', '/forms/', '/flow/'].indexOf(pathname) !== -1)
+    menuList = productMenuList
 
   const handleClick = useCallback(() => {
     setShow(!show)
