@@ -1,16 +1,13 @@
 import React, { useCallback } from 'react'
+import { navigate } from 'gatsby'
 
 import Button from '~components/Button'
 import PrimarySubtitle from '~components/PrimarySubtitle'
 import RSectionTitle from '~components/RSectionTitle'
-import { authorize } from '~utils/auth'
+import RSection from '~components/RSection'
 
 import Artifacts from './Artifacts'
 import styles from './PrimaryContent.module.css'
-import RSection from '~components/RSection'
-import { getColor } from '~utils/colors'
-
-const colors = getColor({ group: 'main', color: 'primary' })
 
 type Props = {
   title: string
@@ -19,7 +16,7 @@ type Props = {
 
 const PrimaryContent: React.FC<Props> = ({ title, subTitle }) => {
   const handleClick = useCallback(() => {
-    authorize({ signUp: true })
+    navigate('/')
   }, [])
 
   return (
