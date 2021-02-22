@@ -189,6 +189,7 @@ strong {
   color: #ffffff;
   outline: none;
   border: 1.5px solid transparent;
+  cursor: pointer;
 }
 
 .primary-btn {
