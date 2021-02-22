@@ -28,6 +28,10 @@ const homeMenuList: MenuItem[] = [
 
 const productMenuList: MenuItem[] = [
   {
+    link: '/support',
+    text: 'Support',
+  },
+  {
     link: '/pricing',
     text: 'Pricing',
   },
