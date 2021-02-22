@@ -2,11 +2,10 @@ import * as React from 'react'
 
 import Layout from '~components/Layout'
 import RSection from '~components/RSection'
-import SectionLabel from '~components/SectionLabel'
 import { useDeviceDetect } from '~utils/hooks'
 import { Document } from '@contentful/rich-text-types'
 
-import styles from './Blog.module.css'
+import styles from './RichText.module.css'
 import SocialShare from '~components/SocialShare'
 import RSectionTitle from '~components/RSectionTitle'
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
@@ -27,7 +26,6 @@ const RichTextLayout: React.FC<Props> = ({
     <Layout>
       <RSection>
         <div className={styles.root}>
-          <SectionLabel text={title} color='success' />
           <RSectionTitle>{title}</RSectionTitle>
           <div>
             <div className={styles.contentWrapper}>
