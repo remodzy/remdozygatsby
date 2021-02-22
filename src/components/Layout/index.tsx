@@ -21,6 +21,8 @@ const Layout: React.FC<Props> = ({ children }) => (
         <BlueBlock />
       </main>
       <Footer />
+      {/* TODO: style optout, see https://www.gatsbyjs.com/plugins/gatsby-plugin-google-analytics/#anonymize */}
+      {/*<a href="javascript:gaOptout();">Deactivate Google Analytics</a>*/}
     </div>
   </>
 )
