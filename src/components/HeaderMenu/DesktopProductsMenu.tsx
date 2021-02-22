@@ -17,16 +17,19 @@ const DesktopProductsMenu = () => {
 
   const [open, setOpen] = useState(false)
 
-  const handleClick = () => {
-    setOpen(!open)
+  const showDropdown = () => {
+    setOpen(true)
+  }
+  const hideDropdown = () => {
+    setOpen(false)
   }
 
-  useOnClickOutside([buttonRef, menuRef], handleClick, open)
+  useOnClickOutside([buttonRef, menuRef], hideDropdown, open)
 
   useLayoutEffect(() => {
     if (buttonRef.current && menuRef.current) {
       const { top } = buttonRef.current.getBoundingClientRect()
-      menuRef.current.style.top = `${top + 27}px`
+      menuRef.current.style.paddingTop = `${top - 15}px`
     }
   })
 
@@ -37,18 +40,21 @@ const DesktopProductsMenu = () => {
       <button
         ref={buttonRef}
         className={`${styles.rootTitle} ${open ? styles.active : ''}`}
-        onClick={handleClick}
+        onMouseEnter={showDropdown}
+        onMouseLeave={hideDropdown}
       >
         <span className={styles.title}>Products</span>
-        <span className={open ? styles.openedMenu : ''}>
-          <Icon name='arrow' color={iconColor} />
+        <span className={open ? styles.expandedMenu : styles.collapsedMenu}>
+          <Icon className={styles.svgIcon} name='arrow' color={iconColor} />
         </span>
+        {open && (
+          <div ref={menuRef} className={styles.rootContainer}>
+            <div className={`${styles.rootMenu} rootMenu`}>
+              <ProductListMenu />
+            </div>
+          </div>
+        )}
       </button>
-      {open && (
-        <div ref={menuRef} className={styles.rootMenu}>
-          <ProductListMenu />
-        </div>
-      )}
     </>
   )
 }

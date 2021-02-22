@@ -30,8 +30,22 @@
 .active {
 }
 
-.icon {
+.iconExpanded {
+  height: 6px;
   transform: rotate(180deg);
+  transform-origin: center center;
+  transition: transform 0.25s linear;
+}
+
+.iconCollapsed {
+  height: 6px;
+  transform: rotate(0deg);
+  transform-origin: center center;
+  transition: transform 0.25s linear;
+}
+
+.svgIcon {
+  display: block;
 }
 
 .title {

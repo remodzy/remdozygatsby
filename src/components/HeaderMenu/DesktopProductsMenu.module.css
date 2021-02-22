@@ -13,15 +13,37 @@
   margin-right: 10px;
 }
 
-.openedMenu {
+.expandedMenu {
+  height: 6px;
   transform: rotate(180deg);
+  transform-origin: center center;
+  transition: transform 0.25s linear;
+}
+
+.collapsedMenu {
+  height: 6px;
+  transform: rotate(0deg);
+  transform-origin: center center;
+  transition: transform 0.25s linear;
+}
+
+.svgIcon {
+  display: block;
+}
+
+.rootContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 25px;
+  left: -40px;
 }
 
 .rootMenu {
-  position: absolute;
+  position: relative;
   z-index: 3;
   left: 0;
-  top: 70px;
+  top: 0;
   width: 300px;
   padding: 18px 0;
   background: #ffffff;

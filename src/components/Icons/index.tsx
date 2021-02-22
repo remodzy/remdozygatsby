@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React, { ReactElement, SVGProps } from 'react'
 
 import { useDeviceDetect } from '~utils/hooks'
 
@@ -24,14 +24,20 @@ export const Circle = (): ReactElement => (
   </svg>
 )
 
-type SvgProps = {
+type Props = {
   color?: string
   isMobile?: boolean
-}
+} & SVGProps<SVGElement>
 
-const icons: { [key: string]: (props: SvgProps) => ReactElement } = {
-  arrow: ({ color }: SvgProps) => (
-    <svg width='10' height='6' fill='none' xmlns='http://www.w3.org/2000/svg'>
+const icons: { [key: string]: (props: Props) => ReactElement } = {
+  arrow: ({ color, className }: Props) => (
+    <svg
+      className={className}
+      width='10'
+      height='6'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+    >
       <path
         d='M1 1l4 4 4-4'
         stroke={color || '#091F3E'}
@@ -41,8 +47,14 @@ const icons: { [key: string]: (props: SvgProps) => ReactElement } = {
       />
     </svg>
   ),
-  cross: () => (
-    <svg width='14' height='14' fill='none' xmlns='http://www.w3.org/2000/svg'>
+  cross: ({ className }) => (
+    <svg
+      className={className}
+      width='14'
+      height='14'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+    >
       <path
         d='M13 1L1 13M1 1l12 12'
         stroke='#122745'
@@ -52,15 +64,22 @@ const icons: { [key: string]: (props: SvgProps) => ReactElement } = {
       />
     </svg>
   ),
-  hamburger: () => (
-    <svg width='24' height='17' fill='none' xmlns='http://www.w3.org/2000/svg'>
+  hamburger: ({ className }) => (
+    <svg
+      className={className}
+      width='24'
+      height='17'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+    >
       <rect width='24' height='3' rx='1.5' fill='#4864EB' />
       <rect y='7' width='24' height='3' rx='1.5' fill='#4864EB' />
       <rect y='14' width='24' height='3' rx='1.5' fill='#4864EB' />
     </svg>
   ),
-  paragraph: () => (
+  paragraph: ({ className }) => (
     <svg
+      className={className}
       xmlns='http://www.w3.org/2000/svg'
       width='170'
       height='160'
@@ -75,8 +94,14 @@ const icons: { [key: string]: (props: SvgProps) => ReactElement } = {
       />
     </svg>
   ),
-  arrowTop: (): ReactElement => (
-    <svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' fill='none'>
+  arrowTop: ({ className }): ReactElement => (
+    <svg
+      className={className}
+      xmlns='http://www.w3.org/2000/svg'
+      width='15'
+      height='15'
+      fill='none'
+    >
       <path
         stroke='#929CAD'
         strokeLinecap='round'
@@ -86,8 +111,14 @@ const icons: { [key: string]: (props: SvgProps) => ReactElement } = {
       />
     </svg>
   ),
-  settings: () => (
-    <svg width='27' height='26' fill='none' xmlns='http://www.w3.org/2000/svg'>
+  settings: ({ className }) => (
+    <svg
+      className={className}
+      width='27'
+      height='26'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+    >
       <defs>
         <linearGradient
           id='paint0_linear'
@@ -120,8 +151,14 @@ const icons: { [key: string]: (props: SvgProps) => ReactElement } = {
       />
     </svg>
   ),
-  calendar: () => (
-    <svg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+  calendar: ({ className }) => (
+    <svg
+      className={className}
+      width='24'
+      height='24'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+    >
       <path
         d='M19.944 2.834H18.11V1.61a.611.611 0 00-1.222 0v1.223H7.111V1.61a.611.611 0 00-1.222 0v1.223H4.056A3.06 3.06 0 001 5.889v14.055A3.06 3.06 0 004.056 23h15.888A3.06 3.06 0 0023 19.944V5.888a3.06 3.06 0 00-3.056-3.054zm1.833 17.11c0 1.01-.823 1.832-1.833 1.832H4.056a1.835 1.835 0 01-1.834-1.833V8.944h19.555v11zm0-12.222H2.222V5.888c0-1.011.823-1.833 1.834-1.833H5.89v.611a.61.61 0 001.22 0v-.61h9.778v.61a.611.611 0 001.222 0v-.61h1.834c1.01 0 1.833.821 1.833 1.832v1.834z'
         fill='url(#paint0_linear)'
@@ -244,8 +281,14 @@ const icons: { [key: string]: (props: SvgProps) => ReactElement } = {
       </defs>
     </svg>
   ),
-  communicate: () => (
-    <svg width='24' height='28' fill='none' xmlns='http://www.w3.org/2000/svg'>
+  communicate: ({ className }) => (
+    <svg
+      className={className}
+      width='24'
+      height='28'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+    >
       <path
         d='M21.566 15.905H2.434c-.791 0-1.435-.618-1.435-1.379v-1.214c0-.76.644-1.38 1.435-1.38h19.13c.792 0 1.435.62 1.435 1.38v1.214c0 .76-.643 1.38-1.434 1.38zM2.434 12.701c-.354 0-.642.274-.642.61v1.215c0 .337.288.611.642.611h19.13c.354 0 .642-.274.642-.611v-1.214c0-.337-.288-.611-.642-.611H2.436z'
         fill='url(#paint0_linear)'
@@ -370,8 +413,14 @@ const icons: { [key: string]: (props: SvgProps) => ReactElement } = {
       </defs>
     </svg>
   ),
-  messaging: () => (
-    <svg width='22' height='22' fill='none' xmlns='http://www.w3.org/2000/svg'>
+  messaging: ({ className }) => (
+    <svg
+      className={className}
+      width='22'
+      height='22'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+    >
       <path
         d='M3.135 0h15.73C20.59 0 22 1.442 22 3.204v10.69c0 1.763-1.412 3.204-3.135 3.204h-6.881L6.167 21.81c-.562.456-1.377.035-1.377-.679l-.002-4.033H3.135C1.409 17.098 0 15.658 0 13.894V3.204C0 1.44 1.409 0 3.135 0zm2.198 9.95c.664 0 1.202.549 1.202 1.227s-.538 1.227-1.202 1.227c-.663 0-1.2-.55-1.2-1.227 0-.678.537-1.227 1.2-1.227zm9.41 0c.662 0 1.2.549 1.2 1.227s-.538 1.227-1.2 1.227c-.664 0-1.202-.55-1.202-1.227 0-.678.538-1.227 1.201-1.227zm-4.705 0c.663 0 1.201.549 1.201 1.227s-.538 1.227-1.201 1.227c-.664 0-1.201-.55-1.201-1.227 0-.678.537-1.227 1.2-1.227zm-1.05-4.386c-1.12 0-1.12-1.739 0-1.739h8.88c1.119 0 1.119 1.739 0 1.739h-8.88zm9.877-3.826H3.135c-.787 0-1.434.661-1.434 1.466v10.69c0 .805.647 1.466 1.434 1.466H5.64c.47 0 .85.39.85.869v3.106l4.633-3.754a.837.837 0 01.567-.221h7.175c.789 0 1.434-.659 1.434-1.466V3.204c0-.806-.646-1.466-1.434-1.466z'
         fill='url(#MessagingPaint0Linear)'
@@ -391,9 +440,10 @@ const icons: { [key: string]: (props: SvgProps) => ReactElement } = {
       </defs>
     </svg>
   ),
-  linkedin: ({ isMobile }) =>
+  linkedin: ({ isMobile, className }) =>
     isMobile ? (
       <svg
+        className={className}
         width='40'
         height='40'
         fill='none'
@@ -407,6 +457,7 @@ const icons: { [key: string]: (props: SvgProps) => ReactElement } = {
       </svg>
     ) : (
       <svg
+        className={className}
         width='56'
         height='56'
         fill='none'
@@ -420,9 +471,10 @@ const icons: { [key: string]: (props: SvgProps) => ReactElement } = {
       </svg>
     ),
 
-  twitter: ({ isMobile }) =>
+  twitter: ({ isMobile, className }) =>
     isMobile ? (
       <svg
+        className={className}
         width='40'
         height='40'
         fill='none'
@@ -436,6 +488,7 @@ const icons: { [key: string]: (props: SvgProps) => ReactElement } = {
       </svg>
     ) : (
       <svg
+        className={className}
         width='56'
         height='56'
         fill='none'
@@ -449,9 +502,10 @@ const icons: { [key: string]: (props: SvgProps) => ReactElement } = {
       </svg>
     ),
 
-  facebook: ({ isMobile }) =>
+  facebook: ({ isMobile, className }) =>
     isMobile ? (
       <svg
+        className={className}
         width='40'
         height='40'
         fill='none'
@@ -467,6 +521,7 @@ const icons: { [key: string]: (props: SvgProps) => ReactElement } = {
       </svg>
     ) : (
       <svg
+        className={className}
         width='56'
         height='56'
         fill='none'
@@ -486,6 +541,7 @@ const icons: { [key: string]: (props: SvgProps) => ReactElement } = {
 type IconProps = {
   name: string
   color?: string
+  className?: string
 }
 
 export default function IconWrapper({

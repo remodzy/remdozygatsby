@@ -48,7 +48,7 @@ const FloatMenu: React.FC<Props> = ({ menuList, handleClose }) => {
           <Accordion title={'Products'}>
             <ProductListMenu isMobile />
           </Accordion>
-          {menuList.slice(1).map(item => (
+          {menuList.map(item => (
             <Link
               key={item.text}
               className={floatMenuStyles.menuItem}

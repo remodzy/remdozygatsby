@@ -57,11 +57,7 @@ export default function HeaderMenu(): ReactElement {
         <MenuToggle show={false} handleClick={handleClick} />
         {show && (
           <ModalContainer>
-            <FloatMenu
-              show={show}
-              menuList={menuList}
-              handleClose={handleClick}
-            />
+            <FloatMenu menuList={menuList} handleClose={handleClick} />
           </ModalContainer>
         )}
       </>

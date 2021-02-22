@@ -30,8 +30,12 @@ const Accordion: React.FC<Props> = ({ children, title }) => {
     <div className={accordionStyles.root}>
       <button onClick={handleClick} className={accordionStyles.button}>
         <span className={accordionStyles.title}>{title}</span>
-        <span className={`${open ? accordionStyles.icon : ''}`}>
-          <Icon name='arrow' />
+        <span
+          className={`${
+            open ? accordionStyles.iconExpanded : accordionStyles.iconCollapsed
+          }`}
+        >
+          <Icon className={accordionStyles.svgIcon} name='arrow' />
         </span>
       </button>
       <div
