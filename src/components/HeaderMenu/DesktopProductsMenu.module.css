@@ -33,16 +33,16 @@
 
 .rootContainer {
   position: absolute;
-  width: 100%;
-  height: 100%;
   top: 25px;
   left: -40px;
   opacity: 0;
+  display: none;
 }
 
 .rootContainerVisible {
   animation: fadeIn 0.4s;
   opacity: 1;
+  display: block;
 }
 @keyframes fadeIn {
   0% {
