@@ -374,7 +374,7 @@ strong {
 
 /** End Toggle Switcher */
 
-/** Root Menu corner arrow */
+/** Root Menu styles */
 .rootMenu:after {
   position: absolute;
   content: ' ';
@@ -387,3 +387,4 @@ strong {
   border-bottom: 10px solid white;
   box-shadow: -15px -15px 10px rgb(0 0 0 / 6%);
 }
+/** End Root Menu styles */

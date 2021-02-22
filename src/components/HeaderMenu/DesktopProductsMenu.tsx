@@ -47,13 +47,16 @@ const DesktopProductsMenu = () => {
         <span className={open ? styles.expandedMenu : styles.collapsedMenu}>
           <Icon className={styles.svgIcon} name='arrow' color={iconColor} />
         </span>
-        {open && (
-          <div ref={menuRef} className={styles.rootContainer}>
-            <div className={`${styles.rootMenu} rootMenu`}>
-              <ProductListMenu />
-            </div>
+        <div
+          ref={menuRef}
+          className={`${styles.rootContainer} ${
+            open ? styles.rootContainerVisible : ''
+          }`}
+        >
+          <div className={`${styles.rootMenu} rootMenu`}>
+            <ProductListMenu />
           </div>
-        )}
+        </div>
       </button>
     </>
   )
