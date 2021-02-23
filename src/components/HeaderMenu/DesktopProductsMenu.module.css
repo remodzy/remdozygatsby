@@ -36,13 +36,13 @@
   top: 25px;
   left: -40px;
   opacity: 0;
-  display: none;
+  visibility: hidden;
 }
 
 .rootContainerVisible {
   animation: fadeIn 0.4s;
   opacity: 1;
-  display: block;
+  visibility: visible;
 }
 @keyframes fadeIn {
   0% {
