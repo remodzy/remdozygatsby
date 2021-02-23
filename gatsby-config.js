@@ -101,6 +101,7 @@ module.exports = {
       options: {
         zendeskKey: process.env.ZENDESK_KEY,
         enableDuringDevelop: false, // Optional. Disables Zendesk chat widget when running Gatsby dev server. Defaults to true.
+        connectOnPageLoad: false,
       },
     },
   ],
