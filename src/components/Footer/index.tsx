@@ -15,7 +15,7 @@ export default function Footer(): ReactElement {
     <footer className={styles.root}>
       <RContainer>
         <div className={styles.container}>
-          <div>
+          <div className={styles.logo}>
             <Logo />
           </div>
           <div className={styles.linksContainer}>
