@@ -2,11 +2,11 @@ import React, { ReactElement, SVGProps } from 'react'
 
 import { useDeviceDetect } from '~utils/hooks'
 
-export const Circle = (): ReactElement => (
+export const Circle = ({ color = '#5A60A6' }): ReactElement => (
   <svg width='64' height='64' fill='none' xmlns='http://www.w3.org/2000/svg'>
     <g opacity='.2'>
       <circle cx='32' cy='32' r='32' fill='url(#paint0_linear)' />
-      <circle r='5.714' transform='matrix(-1 0 0 1 32 32)' fill='#5A60A6' />
+      <circle r='5.714' transform='matrix(-1 0 0 1 32 32)' fill={color} />
     </g>
     <defs>
       <linearGradient
@@ -30,6 +30,36 @@ type Props = {
 } & SVGProps<SVGElement>
 
 const icons: { [key: string]: (props: Props) => ReactElement } = {
+  pointEmpty: ({ color, className }: Props) => (
+    <svg
+      className={className}
+      xmlns='http://www.w3.org/2000/svg'
+      width='12'
+      height='12'
+      viewBox='0 0 12 12'
+      fill='none'
+    >
+      <circle
+        cx='6'
+        cy='6'
+        r='5'
+        stroke={color ? color : '#496EE5'}
+        strokeWidth='2'
+      />
+    </svg>
+  ),
+  pointFilled: ({ color, className }: Props) => (
+    <svg
+      className={className}
+      xmlns='http://www.w3.org/2000/svg'
+      width='12'
+      height='12'
+      viewBox='0 0 12 12'
+      fill='none'
+    >
+      <circle cx='6' cy='6' r='6' fill={color ? color : '#496EE5'} />
+    </svg>
+  ),
   arrow: ({ color, className }: Props) => (
     <svg
       className={className}

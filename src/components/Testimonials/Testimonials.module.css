@@ -18,10 +18,25 @@
 
 .slide {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-top: 50px;
+  width: 100%;
+}
+
+.pointsRoot {
+  width: 100%;
+  display: flex;
+  margin: 20px 0;
+  justify-content: center;
+}
+
+.point {
+  margin-left: 15px;
 }
 
 .slideContent {
+  position: relative;
   display: flex;
   justify-content: space-between;
   max-width: 1120px;
@@ -35,6 +50,12 @@
   background: url('/images/testimonials/testimonials-background-slide-1.png')
     no-repeat;
   margin-top: 32px;
+}
+
+.slideRoot {
+  position: relative;
+  width: 50%;
+  height: calc(100px + 25vw);
 }
 
 .infoText {
@@ -62,6 +83,54 @@
   color: var(--second-text-color);
 }
 
+.logoContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #0d69ab;
+  border-radius: 50%;
+  width: 8vw;
+  height: 8vw;
+}
+
+.personContainerSmall {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  width: 4em;
+  height: 4em;
+  margin: -2em;
+  border-radius: 50px;
+}
+
+.personContainerBigRoot {
+  display: flex;
+  justify-content: center;
+}
+.personContainerBig {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25vw;
+  height: 25vw;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 16px 32px rgba(17, 12, 46, 0.12);
+}
+.personContainerBigInner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding-top: max(10px, 15%);
+  width: 21vw;
+  height: 21vw;
+  border-radius: 50%;
+  background: #ffb675;
+}
+
 @media screen and (max-width: 768px) {
   .infoRoot {
     padding: 50px 0 0;
@@ -79,5 +148,23 @@
   .infoAuthor {
     font-size: 16px;
     line-height: 24px;
+  }
+  .slideRoot {
+    width: 100%;
+    height: 55vw;
+  }
+  .logoContainer {
+    width: max(min(115px, 10vw), 20vw);
+    height: max(min(115px, 10vw), 20vw);
+  }
+  .personContainerBig {
+    top: 0;
+    left: 0;
+    width: 60vw;
+    height: 60vw;
+  }
+  .personContainerBigInner {
+    width: 50vw;
+    height: 50vw;
   }
 }

@@ -1,52 +1,114 @@
-import React, { memo, ReactElement } from 'react'
+import useInterval from '@rooks/use-interval'
+import React, { memo, ReactElement, useCallback, useState } from 'react'
+import { useTransition } from 'react-spring'
 
-import SectionLabel from '../SectionLabel'
-import RSectionTitle from '../RSectionTitle'
-import Artifacts from './Artifacts'
-import styles from './Testimonials.module.css'
+import Icon from '~components/Icons'
 import RSection from '~components/RSection'
+import RSectionTitle from '~components/RSectionTitle'
+import SectionLabel from '~components/SectionLabel'
+import {
+  avatarPages,
+  miniAvatarPages,
+} from '~components/Testimonials/avatarPages'
 
-const Testimonials = (): ReactElement => (
-  <RSection artifacts={Artifacts}>
-    <div className={styles.root}>
-      <div className={styles.header}>
-        <SectionLabel text='testimonials' color='success' />
-        <RSectionTitle>What People Say</RSectionTitle>
-      </div>
-      <div className={styles.slide}>
-        <div className={styles.slideContent}>
-          <Info />
-          <SlideImage1 />
-        </div>
-      </div>
-    </div>
-  </RSection>
+import Artifacts from './Artifacts'
+import { infoPages } from './infoPages'
+import { logoPages } from './logoPages'
+import styles from './Testimonials.module.css'
+
+const SimpleSlider = ({
+  count,
+  selected,
+}: {
+  count: number
+  selected?: number
+}): JSX.Element => (
+  <div className={styles.pointsRoot}>
+    {Array.from(Array(count).keys()).map(i => (
+      <Icon
+        key={i}
+        name={i === selected ? 'pointFilled' : 'pointEmpty'}
+        className={styles.point}
+      />
+    ))}
+  </div>
 )
 
-export default memo(Testimonials)
+const Testimonials = (): ReactElement => {
+  const testimonialsCount = 4
+  const [index, set] = useState(0)
+  const onClick = useCallback(
+    () => set(state => (state + 1) % testimonialsCount),
+    []
+  )
+  const { start, stop } = useInterval(
+    () => {
+      set(state => (state + 1) % testimonialsCount)
+    },
+    4000,
+    true
+  )
+  const infoTransitions = useTransition(index, p => p, {
+    from: {
+      opacity: 0,
+      transform: 'translate3d(100%,0,0)',
+      position: 'relative',
+    },
+    enter: {
+      opacity: 1,
+      transform: 'translate3d(0%,0,0)',
+      position: 'relative',
+    },
+    leave: {
+      opacity: 0,
+      transform: 'translate3d(-50%,0,0)',
+      position: 'absolute',
+    },
+  })
+  const slideTransitions = useTransition(index, p => p, {
+    from: {
+      opacity: 0,
+      position: 'relative',
+    },
+    enter: {
+      opacity: 1,
+      position: 'relative',
+    },
+    leave: {
+      opacity: 0,
+      position: 'absolute',
+      right: 0,
+      left: 0,
+    },
+  })
 
-function Info() {
   return (
-    <div className={styles.infoRoot}>
-      <div className={styles.infoText}>
-        Capture job notes, photos and signatures from the field in the
-        technician mobile app.
+    <RSection artifacts={Artifacts}>
+      <div className={styles.root}>
+        <div className={styles.header}>
+          <SectionLabel text='testimonials' color='success' />
+          <RSectionTitle>What People Say</RSectionTitle>
+        </div>
+        <div className={styles.slide} onClick={onClick}>
+          <div className={styles.slideContent}>
+            <div className={styles.infoRoot}>
+              {infoTransitions.map(({ item, props, key }) => {
+                const Info = infoPages[item]
+                return <Info key={key} style={props} />
+              })}
+            </div>
+            <div className={styles.slideRoot}>
+              {slideTransitions.map(({ item, props, key }) => {
+                const Avatar = avatarPages[item]
+                return <Avatar key={key} style={props} logo={logoPages[item]} />
+              })}
+            </div>
+          </div>
+          <SimpleSlider count={testimonialsCount} selected={index} />
+        </div>
       </div>
-      <div className={styles.infoAuthor}>Jon Thomas</div>
-      <div className={styles.infoWork}>CEO, Dell</div>
-    </div>
+    </RSection>
   )
 }
-function SlideImage1() {
-  return (
-    <div>
-      <picture>
-        <source
-          srcSet='/images/testimonials/m-testimonials-slide-1.png'
-          media='(max-width: 678px)'
-        />
-        <img src='/images/testimonials/testimonials-slide-1.png' alt='' />
-      </picture>
-    </div>
-  )
-}
+
+export default memo(Testimonials)
