@@ -65,7 +65,7 @@ const Testimonials = (): ReactElement => {
       position: 'absolute',
     },
   })
-  const slideTransitions = useTransition(index, p => p, {
+  const avatarTransitions = useTransition(index, p => p, {
     from: {
       opacity: 0,
       position: 'relative',
@@ -77,9 +77,14 @@ const Testimonials = (): ReactElement => {
     leave: {
       opacity: 0,
       position: 'absolute',
-      right: 0,
-      left: 0,
+      //right: 0,
+      //left: 0,
     },
+  })
+  const slideTransitions = useTransition(index, p => p, {
+    from: { opacity: 1 /*transform: "translate3d(0%, 0px, 0px)"*/ },
+    enter: { opacity: 0 /*transform: "translate3d(-25%, 0px, 0px)"*/ },
+    leave: { opacity: 0 /*transform: "translate3d(25%, 0px, 0px)"*/ },
   })
 
   return (
@@ -98,9 +103,13 @@ const Testimonials = (): ReactElement => {
               })}
             </div>
             <div className={styles.slideRoot}>
-              {slideTransitions.map(({ item, props, key }) => {
+              {avatarTransitions.map(({ item, props, key }) => {
                 const Avatar = avatarPages[item]
                 return <Avatar key={key} style={props} logo={logoPages[item]} />
+              })}
+              {slideTransitions.map(({ item, props, key }) => {
+                const MiniAvatar = miniAvatarPages
+                return <MiniAvatar key={key} style={props} active={item} />
               })}
             </div>
           </div>
