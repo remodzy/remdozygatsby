@@ -112,6 +112,7 @@ h3 {
 
 a {
   color: currentColor;
+  -webkit-tap-highlight-color: transparent;
 }
 
 hr {
@@ -190,6 +191,7 @@ strong {
   outline: none;
   border: 1.5px solid transparent;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .primary-btn {
