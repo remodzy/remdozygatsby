@@ -22,12 +22,18 @@ type ProductMenuItem = {
   title: string
   subTitle: string
   icon: () => ReactElement
+  iconMobile: () => ReactElement
   link: string
 }
 
 const getFormIcon = (): ReactElement => <RoxFormsIcon />
 const getServiceIcon = (): ReactElement => <RoxServiceIcon isLarge />
 const getFlowIcon = (): ReactElement => <RoxFlowIcon isLarge />
+const getFormIconMobile = (): ReactElement => <RoxFormsIcon isMobile />
+const getServiceIconMobile = (): ReactElement => (
+  <RoxServiceIcon isLarge isMobile />
+)
+const getFlowIconMobile = (): ReactElement => <RoxFlowIcon isLarge isMobile />
 
 export const products: ProductMenuItem[] = [
   {
@@ -35,6 +41,7 @@ export const products: ProductMenuItem[] = [
     title: 'roxForms',
     subTitle: 'Features builder',
     icon: getFormIcon,
+    iconMobile: getFormIconMobile,
     link: '/forms',
   },
   {
@@ -42,6 +49,7 @@ export const products: ProductMenuItem[] = [
     title: 'roxService',
     subTitle: 'Project tracking',
     icon: getServiceIcon,
+    iconMobile: getServiceIconMobile,
     link: '/service',
   },
   {
@@ -49,13 +57,14 @@ export const products: ProductMenuItem[] = [
     title: 'roxFlow',
     subTitle: 'Powerful Workflows',
     icon: getFlowIcon,
+    iconMobile: getFlowIconMobile,
     link: '/flow',
   },
 ]
 
 const MobileProductListMenuItems: React.FC<MenuProps> = ({ list }) => (
   <>
-    {list.map(({ key, title, subTitle, icon: Icon, link }) => (
+    {list.map(({ key, title, subTitle, iconMobile: Icon, link }) => (
       <a href={link} key={key} className={productListStyles.item}>
         <Icon />
         <div className={productListStyles.mainBlock}>

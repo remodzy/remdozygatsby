@@ -18,3 +18,8 @@
   background: linear-gradient(135deg, #4864eb 0%, #2841b6 100%);
   border-radius: 9px;
 }
+.mobile {
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+}

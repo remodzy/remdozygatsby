@@ -8,10 +8,11 @@ import LinkButton from '~components/LinkButton'
 import Logo from '~components/Logo'
 import { authorize } from '~utils/auth'
 
-import floatMenuStyles from './FloatMenu.module.css'
 import { MenuItem } from './index'
 import MenuToggle from './MenuToggle'
 import ProductListMenu from './ProductList'
+
+import floatMenuStyles from './FloatMenu.module.css'
 
 type Props = {
   menuList: MenuItem[]
@@ -57,16 +58,12 @@ const FloatMenu: React.FC<Props> = ({ menuList, handleClose }) => {
               {item.text}
             </Link>
           ))}
-        </div>
-        <div className={floatMenuStyles.buttonsContainer}>
-          <div className={floatMenuStyles.buttonWrapper}>
-            <Button
-              label='Get Started'
-              className='primary-btn'
-              handleClick={handleSignUp}
-            />
+          <div className={floatMenuStyles.menuItem}>
+            <LinkButton label='Log In' handleClick={handleLogin} />
           </div>
-          <LinkButton label='Log In' handleClick={handleLogin} />
+          <div className={floatMenuStyles.menuItem}>
+            <LinkButton label='Get Started' handleClick={handleSignUp} />
+          </div>
         </div>
       </div>
     </div>

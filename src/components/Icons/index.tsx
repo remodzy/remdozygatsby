@@ -77,17 +77,18 @@ const icons: { [key: string]: (props: Props) => ReactElement } = {
       />
     </svg>
   ),
-  cross: ({ className }) => (
+  cross: ({ className, color }) => (
     <svg
       className={className}
       width='14'
       height='14'
+      viewBox='0 0 14 14'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
     >
       <path
         d='M13 1L1 13M1 1l12 12'
-        stroke='#122745'
+        stroke={color || '#122745'}
         strokeWidth='2'
         strokeLinecap='round'
         strokeLinejoin='round'
