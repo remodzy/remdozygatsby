@@ -9,7 +9,9 @@ type Props = {
   colors?: ButtonColors
   className?: string
   label: string
-  handleClick: () => any
+  handleClick?: () => any
+  type?: 'button' | 'submit' | 'reset' | undefined
+  disabled?: boolean
 }
 
 export default function Button({
@@ -17,6 +19,8 @@ export default function Button({
   className = '',
   label,
   handleClick,
+  type = 'button',
+  disabled,
 }: Props): ReactElement {
   const style: any = {}
   if (!className && colors) {
@@ -26,10 +30,11 @@ export default function Button({
 
   return (
     <button
-      type='button'
+      type={type}
       className={`${className} btn`}
       style={style}
       onClick={handleClick}
+      disabled={disabled}
     >
       <span>{label}</span>
     </button>
