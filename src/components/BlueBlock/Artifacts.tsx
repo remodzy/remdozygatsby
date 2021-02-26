@@ -14,6 +14,25 @@ function MobileArtifacts() {
   return (
     <>
       <DotsArtifact
+        top={-48}
+        left='5.1111%'
+        size={3}
+        columns={4}
+        gap={11}
+        zIndex={1}
+        // prettier-ignore
+        list={[
+          0,0,0,0,
+          0,0,0,0,
+          0,0,0,0,
+          0,0,0,0,
+          0,0,0,0,
+          0,0,0,0,
+          0,0,0,0,
+          0,0,0,0,
+        ]}
+      />
+      <DotsArtifact
         bottom={-50}
         right='6.6667%'
         size={3}

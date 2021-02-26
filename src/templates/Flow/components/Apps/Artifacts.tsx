@@ -32,6 +32,21 @@ function MobileArtifacts() {
         left='-20px'
         top={340}
       />
+      <DotsArtifact
+        bottom={22}
+        right='1.51%'
+        size={5}
+        gap={25}
+        columns={4}
+        zIndex={1}
+        // prettier-ignore
+        list={[
+          0,0,0,0,
+          0,0,0,1,
+          1,0,0,1,
+          0,0,0,0,
+        ]}
+      />
     </>
   )
 }

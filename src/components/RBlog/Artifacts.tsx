@@ -13,7 +13,35 @@ const Artifacts: FC<unknown> = (): ReactElement => {
 export default Artifacts
 
 function MobileArtifacts() {
-  return <></>
+  return (
+    <>
+      <CircleArtifact
+        name={CircleName.Green}
+        mainSize={32}
+        left='16px'
+        top={38}
+      />
+      <DotsArtifact
+        bottom={-90}
+        left='4.7833%'
+        size={5}
+        gap={20}
+        columns={2}
+        zIndex={1}
+        // prettier-ignore
+        list={[
+          0,1,
+          0,0,
+          0,0,
+          1,0,
+          1,0,
+          0,0,
+          0,1,
+          1,0,
+        ]}
+      />
+    </>
+  )
 }
 
 function DesktopArtifacts() {

@@ -18,7 +18,7 @@ export default function RBlog(): ReactElement {
   const articles = prepareArticles(items)
 
   return (
-    <RSection cover={Cover} artifacts={Artifacts}>
+    <RSection cover={Cover} artifacts={Artifacts} allowOverflow>
       <div className={styles.root}>
         <div className={styles.header}>
           <SectionLabel text='BLOG' color='success' />

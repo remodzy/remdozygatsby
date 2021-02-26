@@ -14,8 +14,14 @@ export default Artifacts
 function MobileArtifacts() {
   return (
     <>
+      <CircleArtifact
+        name={CircleName.Blue}
+        mainSize={32}
+        right='6.9027%'
+        top={20}
+      />
       <DotsArtifact
-        top={140}
+        bottom={440}
         right='1.7278%'
         size={6}
         gap={28}

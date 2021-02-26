@@ -8,14 +8,19 @@ type Props = {
   children: ReactElement | ReactElement[]
   artifacts?: FC<unknown>
   cover?: FC<unknown>
+  allowOverflow?: boolean
 }
 
 const RSection: FC<Props> = ({
   children,
   artifacts: Artifacts,
   cover: Cover,
+  allowOverflow = false,
 }): ReactElement => (
-  <div className={styles.root}>
+  <div
+    className={styles.root}
+    style={{ overflow: allowOverflow ? 'visible' : 'hidden' }}
+  >
     <RContainer>{children}</RContainer>
     {Artifacts && <Artifacts />}
     {Cover && <Cover />}

@@ -12,6 +12,28 @@ const Artifacts: FC<unknown> = (): ReactElement => {
 
 export default Artifacts
 
+function MobileArtifacts(): ReactElement {
+  return (
+    <>
+      <DotsArtifact
+        bottom={122}
+        right='1.3778%'
+        columns={3}
+        size={5}
+        gap={26}
+        zIndex={1}
+        // prettier-ignore
+        list={[
+          0,1,1,
+          0,0,0,
+          1,0,0,
+          0,0,0,
+        ]}
+      />
+    </>
+  )
+}
+
 function DesktopArtifacts(): ReactElement {
   return (
     <>
@@ -70,8 +92,4 @@ function DesktopArtifacts(): ReactElement {
       />
     </>
   )
-}
-
-function MobileArtifacts(): ReactElement {
-  return <></>
 }
