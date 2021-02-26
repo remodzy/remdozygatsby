@@ -97,4 +97,7 @@ input[type='text'] {
   .buttonWrapper > button {
     width: 100%;
   }
+  .error {
+    bottom: 5px;
+  }
 }

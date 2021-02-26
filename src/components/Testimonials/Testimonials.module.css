@@ -168,6 +168,10 @@
   }
 
   .infoText {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
     font-size: 20px;
     line-height: 28px;
   }

@@ -12,6 +12,6 @@
   .root {
     font-size: 1rem;
     line-height: 1.625rem;
-    margin: 32px 0 0;
+    margin: 32px 0 32px;
   }
 }
