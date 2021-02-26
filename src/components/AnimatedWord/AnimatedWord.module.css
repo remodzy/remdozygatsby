@@ -1,0 +1,9 @@
+.wrapper {
+  display: inline-block;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+}
+.anim {
+  margin-top: -5px;
+  margin-bottom: -5px;
+}
