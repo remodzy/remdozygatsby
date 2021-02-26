@@ -14,7 +14,7 @@
   font-size: 1.25rem;
   line-height: 2rem;
   text-align: center;
-  margin-bottom: 2.8125rem;
+  margin-bottom: -20px;
   margin-top: 2rem;
   max-width: 640px;
 }
@@ -29,6 +29,7 @@
 .form {
   display: flex;
   margin-top: 1.75rem;
+  margin-bottom: -4px;
 }
 .inputWrapper {
   display: flex;
