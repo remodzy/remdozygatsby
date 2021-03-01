@@ -15,7 +15,9 @@ const initialValues = {
 }
 
 const subscribeSchema = Yup.object().shape({
-  email: Yup.string().email().required('Email is required'),
+  email: Yup.string()
+    .email('Email must be valid')
+    .required('Email is required'),
 })
 
 export default function BlueBlock(): ReactElement {
@@ -48,6 +50,11 @@ export default function BlueBlock(): ReactElement {
             {({ errors, touched, isValid, dirty }) => (
               <Form className={styles.form}>
                 <div className={styles.inputWrapper}>
+                  <ErrorMessage
+                    name='email'
+                    component='span'
+                    className={styles.error}
+                  />
                   <Field
                     type='email'
                     name='email'
@@ -56,11 +63,6 @@ export default function BlueBlock(): ReactElement {
                     className={`${styles.input} ${
                       errors.email && touched.email ? 'input-error' : null
                     }`}
-                  />
-                  <ErrorMessage
-                    name='email'
-                    component='span'
-                    className={styles.error}
                   />
                 </div>
 

@@ -28,11 +28,12 @@
 }
 .form {
   display: flex;
-  margin-top: 1.75rem;
+  margin-top: 2.75rem;
   margin-bottom: -4px;
 }
 .inputWrapper {
   display: flex;
+  flex-direction: column;
   width: 100%;
   margin-right: 1.125rem;
   position: relative;
@@ -60,13 +61,12 @@ input[type='text'] {
 }
 
 .error {
-  color: red;
-  background: rgb(204, 208, 211);
-  padding: 5px;
   position: absolute;
+  color: white;
+  text-shadow: 2px 2px 2px red, 2px -2px 2px red, -2px 0 2px red;
+  padding: 5px;
   border-radius: 5px;
-  bottom: -25px;
-  right: -10px;
+  top: -2em;
 }
 
 @media (max-width: 768px) {
