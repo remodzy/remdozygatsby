@@ -49,7 +49,7 @@ export function AnimatedWord({
       transform: 'perspective(600px) rotateX(180deg)',
       color: colors[0],
     },
-    config: config.slow,
+    config: config.molasses,
   })
 
   return (
