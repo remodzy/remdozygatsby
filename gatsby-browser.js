@@ -1,4 +1,4 @@
-exports.shouldUpdateScroll = ({
+export const shouldUpdateScroll = ({
   routerProps: { location },
   getSavedScrollPosition,
 }) => {
