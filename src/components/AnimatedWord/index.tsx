@@ -1,7 +1,13 @@
-import useInterval from '@rooks/use-interval'
 import * as extra from 'extra-array'
-import React, { ReactElement, useState } from 'react'
+import React, {
+  MutableRefObject,
+  ReactElement,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 import { animated, config, useTransition } from 'react-spring'
+import { useInterval, useTimeoutFn } from 'react-use'
 
 import styles from './AnimatedWord.module.css'
 
@@ -12,12 +18,13 @@ type Props = {
   colors?: string[]
   words: string[]
   speed?: number
+  animSpeed?: number
 }
-export function AnimatedWord({
+const AnimatedWord = ({
   colors = ['#000'],
   words,
   speed = 4000,
-}: Props): ReactElement {
+}: Props): ReactElement => {
   const [incr, setIncr] = useState(1)
   const [index, setIndex] = useState(0)
   const [items, setItems] = useState(toList([...words].splice(index, 1), 0))
@@ -69,3 +76,82 @@ export function AnimatedWord({
     </span>
   )
 }
+
+const AnimatedWord2 = ({
+  colors = ['#000'],
+  words,
+  speed = 4000,
+  animSpeed = 2000,
+}: Props): ReactElement => {
+  const enterWrapper = useRef() as MutableRefObject<HTMLSpanElement>
+  const exitWrapper = useRef() as MutableRefObject<HTMLSpanElement>
+  const containerWrapper = useRef() as MutableRefObject<HTMLSpanElement>
+  const [currentState, setCurrentState] = useState<'enter' | 'exit'>('enter')
+  const [slideEnter, setSlideEnter] = useState('')
+  const [slideExit, setSlideExit] = useState('')
+  const [slideEnterColor, setSlideEnterColor] = useState('')
+  const [slideExitColor, setSlideExitColor] = useState('')
+  const [index, setIndex] = useState(0)
+  useInterval(() => {
+    setCurrentState('enter')
+    setSlideEnter(words[index === words.length - 1 ? 0 : index + 1])
+    setSlideExit(words[index])
+    setSlideEnterColor(colors[index === colors.length - 1 ? 0 : index + 1])
+    setSlideExitColor(colors[index])
+    setIndex(state => (state + 1) % words.length)
+  }, speed)
+  useInterval(
+    () => {
+      setCurrentState('exit')
+    },
+    currentState === 'enter' ? animSpeed : null
+  )
+
+  useEffect(() => {
+    if (
+      enterWrapper.current &&
+      exitWrapper.current &&
+      containerWrapper.current
+    ) {
+      const { width: enterWidth } = enterWrapper.current.getBoundingClientRect()
+      containerWrapper.current.style.width = `calc(${enterWidth}px + 1.6rem)`
+    }
+  }, [slideEnter])
+
+  useTimeoutFn(() => {
+    setSlideEnter(words[0])
+  }, 100)
+
+  return (
+    <span className='sc-7ffnpo-9 ceDraP'>
+      <span ref={containerWrapper} className={styles.container}>
+        <div className={styles.divWrapper}>
+          <span
+            ref={enterWrapper}
+            style={{ color: slideEnterColor || colors[0] }}
+            className={`${styles.spanWrapper} ${styles.slideEnter} ${
+              currentState === 'enter'
+                ? styles.slideEnterActive
+                : styles.slideEnterDone
+            }`}
+          >
+            {slideEnter || words[0]}
+          </span>
+          <span
+            ref={exitWrapper}
+            style={{ color: slideExitColor || colors[1] }}
+            className={`${styles.spanWrapper} ${styles.slideExit} ${
+              currentState === 'enter'
+                ? styles.slideExitActive
+                : styles.slideExitDone
+            }`}
+          >
+            {slideExit || words[1]}
+          </span>
+        </div>
+      </span>
+    </span>
+  )
+}
+
+export { AnimatedWord2 as AnimatedWord }
