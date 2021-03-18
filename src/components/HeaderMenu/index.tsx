@@ -1,9 +1,9 @@
-import React, { ReactElement, useCallback, useState } from 'react'
+import { useLocation } from '@reach/router'
 import { Link } from 'gatsby'
+import React, { ReactElement, useCallback, useState } from 'react'
 
 import ModalContainer from '~components/ModalContainer'
 import { useDeviceDetect } from '~utils/hooks'
-import { useLocation } from '@reach/router'
 
 import DesktopProductsMenu from './DesktopProductsMenu'
 import FloatMenu from './FloatMenu'
@@ -21,6 +21,10 @@ const homeMenuList: MenuItem[] = [
     text: 'Support',
   },
   {
+    link: '//docs.roxabo.com',
+    text: 'Docs',
+  },
+  {
     link: '/blog',
     text: 'Blog',
   },
@@ -30,6 +34,10 @@ const productMenuList: MenuItem[] = [
   {
     link: '/support',
     text: 'Support',
+  },
+  {
+    link: '//docs.roxabo.com',
+    text: 'Docs',
   },
   {
     link: '/pricing',
@@ -71,11 +79,21 @@ export default function HeaderMenu(): ReactElement {
   return (
     <div className={headerMenuStyles.root}>
       <DesktopProductsMenu />
-      {menuList.map(item => (
-        <Link key={item.text} className={headerMenuStyles.link} to={item.link}>
-          {item.text}
-        </Link>
-      ))}
+      {menuList.map(item =>
+        /^\/(?!\/)/.test(item.link) ? (
+          <Link
+            key={item.text}
+            className={headerMenuStyles.link}
+            to={item.link}
+          >
+            {item.text}
+          </Link>
+        ) : (
+          <a key={item.text} className={headerMenuStyles.link} href={item.link}>
+            {item.text}
+          </a>
+        )
+      )}
     </div>
   )
 }

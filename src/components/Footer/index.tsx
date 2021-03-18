@@ -24,6 +24,7 @@ export default function Footer(): ReactElement {
               <FooterLink text='Products' url='#' />
               <FooterLink text='Integrations' url='#' />
               <FooterLink text='Pricing' url='/pricing' />
+              <FooterLink text='Docs' url='//docs.roxabo.com' />
             </div>
             <div className={styles.linkColumn}>
               <div className={styles.columnTitle}>About Roxabo</div>
