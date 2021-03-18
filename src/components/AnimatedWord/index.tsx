@@ -83,6 +83,7 @@ const AnimatedWord2 = ({
   speed = 4000,
   animSpeed = 2000,
 }: Props): ReactElement => {
+  const [initialized, setInitialized] = useState(false)
   const enterWrapper = useRef() as MutableRefObject<HTMLSpanElement>
   const exitWrapper = useRef() as MutableRefObject<HTMLSpanElement>
   const containerWrapper = useRef() as MutableRefObject<HTMLSpanElement>
@@ -107,49 +108,60 @@ const AnimatedWord2 = ({
     currentState === 'enter' ? animSpeed : null
   )
 
-  useEffect(() => {
+  function setWidth() {
     if (
       enterWrapper.current &&
       exitWrapper.current &&
       containerWrapper.current
     ) {
       const { width: enterWidth } = enterWrapper.current.getBoundingClientRect()
-      containerWrapper.current.style.width = `calc(${enterWidth}px + 1.6rem)`
+      containerWrapper.current.style.width = `calc(${enterWidth}px + 1.7rem)`
+    }
+  }
+
+  useEffect(() => {
+    if (initialized) {
+      setWidth()
     }
   }, [slideEnter])
 
   useTimeoutFn(() => {
+    setWidth()
     setSlideEnter(words[0])
-  }, 100)
+    setInitialized(true)
+  }, 200)
 
   return (
-    <span className='sc-7ffnpo-9 ceDraP'>
-      <span ref={containerWrapper} className={styles.container}>
-        <div className={styles.divWrapper}>
-          <span
-            ref={enterWrapper}
-            style={{ color: slideEnterColor || colors[0] }}
-            className={`${styles.spanWrapper} ${styles.slideEnter} ${
-              currentState === 'enter'
-                ? styles.slideEnterActive
-                : styles.slideEnterDone
-            }`}
-          >
-            {slideEnter || words[0]}
-          </span>
-          <span
-            ref={exitWrapper}
-            style={{ color: slideExitColor || colors[1] }}
-            className={`${styles.spanWrapper} ${styles.slideExit} ${
-              currentState === 'enter'
-                ? styles.slideExitActive
-                : styles.slideExitDone
-            }`}
-          >
-            {slideExit || words[1]}
-          </span>
-        </div>
-      </span>
+    <span
+      ref={containerWrapper}
+      className={`${styles.container} ${
+        initialized ? '' : styles.containerInit
+      }`}
+    >
+      <div className={styles.divWrapper}>
+        <span
+          ref={enterWrapper}
+          style={{ color: slideEnterColor || colors[0] }}
+          className={`${styles.spanWrapper} ${styles.slideEnter} ${
+            currentState === 'enter'
+              ? styles.slideEnterActive
+              : styles.slideEnterDone
+          }`}
+        >
+          {slideEnter || words[0]}
+        </span>
+        <span
+          ref={exitWrapper}
+          style={{ color: slideExitColor || colors[1] }}
+          className={`${styles.spanWrapper} ${styles.slideExit} ${
+            currentState === 'enter'
+              ? styles.slideExitActive
+              : styles.slideExitDone
+          } ${initialized ? '' : styles.initExit}`}
+        >
+          {slideExit || words[1]}
+        </span>
+      </div>
     </span>
   )
 }

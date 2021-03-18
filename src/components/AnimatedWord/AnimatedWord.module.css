@@ -15,6 +15,9 @@
   background: linear-gradient(to right, rgb(97, 98, 246), rgb(74, 134, 247))
     text;
 }
+.init-exit {
+  display: none;
+}
 .divWrapper {
   height: 3.3rem;
   display: grid;
@@ -30,7 +33,9 @@
   vertical-align: text-top;
   white-space: pre;
   transition: width 0.8s ease-in-out 0s;
-  width: 0;
+}
+.container-init {
+  transition: none;
 }
 
 .slide-enter {
