@@ -1,0 +1,71 @@
+{
+  "_args": [
+    [
+      "gatsby-plugin-zendesk-chat@1.1.4",
+      "/Users/alexey.lukin/proj/kolyan/remdozygatsby"
+    ]
+  ],
+  "_from": "gatsby-plugin-zendesk-chat@1.1.4",
+  "_id": "gatsby-plugin-zendesk-chat@1.1.4",
+  "_inBundle": false,
+  "_integrity": "sha512-L/fRu8tnLO2wVpc2bq7m4b24gl39L5ti6CeXWEx3O28qI+79DmlCKlGrlhT/rRFRZsI8rVhpMFJEEK/Y4FahVw==",
+  "_location": "/gatsby-plugin-zendesk-chat",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "gatsby-plugin-zendesk-chat@1.1.4",
+    "name": "gatsby-plugin-zendesk-chat",
+    "escapedName": "gatsby-plugin-zendesk-chat",
+    "rawSpec": "1.1.4",
+    "saveSpec": null,
+    "fetchSpec": "1.1.4"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/gatsby-plugin-zendesk-chat/-/gatsby-plugin-zendesk-chat-1.1.4.tgz",
+  "_spec": "1.1.4",
+  "_where": "/Users/alexey.lukin/proj/kolyan/remdozygatsby",
+  "author": {
+    "name": "gareth bk",
+    "email": "garethbk@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/garethpbk/gatsby-plugin-zendesk-chat/issues"
+  },
+  "dependencies": {},
+  "description": "Gatsby plugin to add Zendesk chat widget to your site.",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "prettier": "^1.18.2"
+  },
+  "engines": {
+    "node": ">=6.0"
+  },
+  "homepage": "https://github.com/garethpbk/gatsby-plugin-zendesk-chat#readme",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "zendesk",
+    "zendesk chat"
+  ],
+  "license": "MIT",
+  "name": "gatsby-plugin-zendesk-chat",
+  "peerDependencies": {
+    "gatsby": "^2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garethpbk/gatsby-plugin-zendesk-chat.git"
+  },
+  "scripts": {
+    "build": "babel src --out-dir .",
+    "format": "prettier --write \"src/**/*.js\"",
+    "prepare": "npm run build"
+  },
+  "version": "1.1.4"
+}

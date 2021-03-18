@@ -98,7 +98,7 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-sitemap',
     {
-      resolve: 'gatsby-plugin-zendesk-chat',
+      resolve: 'gatsby-plugin-zendesk-chat-roxabo',
       options: {
         zendeskKey: process.env.ZENDESK_KEY,
         enableDuringDevelop: false, // Optional. Disables Zendesk chat widget when running Gatsby dev server. Defaults to true.
