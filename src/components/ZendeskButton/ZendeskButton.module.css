@@ -1,0 +1,14 @@
+.root {
+  width: 46px;
+  height: 46px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 14px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4864eb;
+  border-radius: 999rem;
+  z-index: 1000;
+}
