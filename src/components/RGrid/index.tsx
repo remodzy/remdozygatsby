@@ -51,7 +51,12 @@ const RGrid: FC<Props> = ({ items, title }): ReactElement => {
                 icon={Icon}
               />
               <div className={styles.imageWrapper}>
-                <img src={isMobile ? images?.mobile : images?.desktop} alt='' />
+                <img
+                  src={isMobile ? images?.mobile : images?.desktop}
+                  width={100}
+                  height={100}
+                  alt=''
+                />
               </div>
             </GridRow>
           )
