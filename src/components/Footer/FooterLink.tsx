@@ -8,8 +8,19 @@ type Props = {
 }
 
 const FooterLink: React.FC<Props> = ({ text, url }) => {
+  const isLocal = /^\/(?!\/)/.test(url)
+
   return (
-    <a className={footerLinkStyles.link} href={url}>
+    <a
+      className={footerLinkStyles.link}
+      href={url}
+      {...(!isLocal
+        ? {
+            target: '_blank',
+            rel: 'noreferrer',
+          }
+        : {})}
+    >
       {text}
     </a>
   )

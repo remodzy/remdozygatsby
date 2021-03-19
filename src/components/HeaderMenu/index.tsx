@@ -89,7 +89,13 @@ export default function HeaderMenu(): ReactElement {
             {item.text}
           </Link>
         ) : (
-          <a key={item.text} className={headerMenuStyles.link} href={item.link}>
+          <a
+            key={item.text}
+            target='_blank'
+            rel='noreferrer'
+            className={headerMenuStyles.link}
+            href={item.link}
+          >
             {item.text}
           </a>
         )
