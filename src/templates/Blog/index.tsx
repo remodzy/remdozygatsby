@@ -52,7 +52,7 @@ const Blog: React.FC<Props> = ({ pathContext, pageResources }) => {
             <Img fluid={item.image.fluid} style={imageStyle} />
             <div className={styles.contentWrapper}>
               <div dangerouslySetInnerHTML={createMarkup(item.body)} />
-              <SocialShare />
+              <SocialShare title={item.title} link={window.location.href} />
             </div>
           </div>
         </div>
