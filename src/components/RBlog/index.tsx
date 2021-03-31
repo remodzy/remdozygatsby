@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, navigate, useStaticQuery } from 'gatsby'
 import React, { FC, ReactElement } from 'react'
 
 import Button from '~components/Button'
@@ -21,14 +21,14 @@ export default function RBlog(): ReactElement {
     <RSection cover={Cover} artifacts={Artifacts} allowOverflow>
       <div className={styles.root}>
         <div className={styles.header}>
-          <SectionLabel text='BLOG' color='success' />
+          {/*<SectionLabel text='BLOG' color='success' />*/}
           <RSectionTitle>Useful Resources</RSectionTitle>
         </div>
         <div className={styles.list}>
           {articles.map((item: Article) => (
             <ArticlePreview
               key={item.id}
-              imageTitle='Business Management'
+              imageTitle={item?.image?.imageTitle}
               imageTitleColor='#5D9A78'
               image={item?.image?.fluid}
               title={item?.title}
@@ -42,7 +42,7 @@ export default function RBlog(): ReactElement {
           <Button
             className='primary-btn'
             label='View all'
-            handleClick={() => {}}
+            handleClick={() => navigate(`/blog/`)}
           />
         </div>
       </div>

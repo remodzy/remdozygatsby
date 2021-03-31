@@ -1,4 +1,4 @@
-import { navigate } from 'gatsby'
+import { Link, navigate } from 'gatsby'
 import Img from 'gatsby-image'
 import React from 'react'
 
@@ -36,14 +36,20 @@ const ArticlePreview: React.FC<Props> = ({
   slug,
 }) => (
   <div className={articlePreviewStyles.root}>
-    <Img fluid={image} style={imageStyles} loading='eager' />
+    <Link to={`/blog/${slug}`}>
+      <Img fluid={image} style={imageStyles} loading='eager' />
+    </Link>
     <div
       className={articlePreviewStyles.imageTitle}
       style={{ color: imageTitleColor, marginTop: 24 }}
     >
       {imageTitle}
     </div>
-    <div className={articlePreviewStyles.title}>{title}</div>
+    <div className={articlePreviewStyles.title}>
+      <Link to={`/blog/${slug}`} style={{ textDecoration: `none` }}>
+        {title}
+      </Link>
+    </div>
     <div className={articlePreviewStyles.text}>{text}</div>
     <div className={articlePreviewStyles.linkContainer}>
       <LinkButton
