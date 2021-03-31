@@ -42,7 +42,7 @@ export const products: ProductMenuItem[] = [
     subTitle: 'Features builder',
     icon: getFormIcon,
     iconMobile: getFormIconMobile,
-    link: '/forms',
+    link: '/roxforms',
   },
   {
     key: 'services',
@@ -50,7 +50,7 @@ export const products: ProductMenuItem[] = [
     subTitle: 'Project tracking',
     icon: getServiceIcon,
     iconMobile: getServiceIconMobile,
-    link: '/service',
+    link: '/roxservice',
   },
   {
     key: 'flow',
@@ -58,7 +58,7 @@ export const products: ProductMenuItem[] = [
     subTitle: 'Powerful Workflows',
     icon: getFlowIcon,
     iconMobile: getFlowIconMobile,
-    link: '/flow',
+    link: '/roxflow',
   },
 ]
 

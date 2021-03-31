@@ -22,7 +22,7 @@ export const productConfig: ListItem[] = [
     key: 'roxForms',
     icon: RoxFormsIcon,
     label: 'Forms',
-    link: '/forms',
+    link: '/roxforms',
     extraItem: BetaLabel,
     images: {
       desktop: '/images/landing/landing-products-1.png',
@@ -37,7 +37,7 @@ export const productConfig: ListItem[] = [
     key: 'roxService',
     icon: RoxServiceIcon,
     label: 'Service',
-    link: '/service',
+    link: '/roxservice',
     extraItem: ComingSoonLabel,
     images: {
       desktop: '/images/landing/landing-products-2.png',
@@ -52,7 +52,7 @@ export const productConfig: ListItem[] = [
     key: 'roxFlow',
     icon: RoxFlowIcon,
     label: 'Flow',
-    link: '/flow',
+    link: '/roxflow',
     extraItem: ComingSoonLabel,
     images: {
       desktop: '/images/landing/landing-products-3.png',

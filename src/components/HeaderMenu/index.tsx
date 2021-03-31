@@ -56,7 +56,7 @@ export default function HeaderMenu(): ReactElement {
   const { pathname } = useLocation()
 
   let menuList = homeMenuList
-  if (['/service/', '/forms/', '/flow/'].indexOf(pathname) !== -1)
+  if (['/roxservice/', '/roxforms/', '/roxflow/'].indexOf(pathname) !== -1)
     menuList = productMenuList
 
   const handleClick = useCallback(() => {
