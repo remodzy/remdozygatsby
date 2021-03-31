@@ -14,7 +14,7 @@ export default function Flow(): ReactElement {
       <Benefits />
       <Apps />
       <RBlog />
-      <Testimonials />
+      {/*<Testimonials />*/}
     </>
   )
 }

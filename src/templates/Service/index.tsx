@@ -13,7 +13,7 @@ const Service = (): ReactElement => (
     <KeyFeatures />
     <BenefitsBlock />
     <BlogBlock />
-    <TestimonialsBlock />
+    {/*<TestimonialsBlock />*/}
   </div>
 )
 
