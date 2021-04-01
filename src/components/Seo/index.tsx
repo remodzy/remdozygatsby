@@ -10,7 +10,7 @@ type Props = {
   article?: boolean
 }
 
-export default function SEO({ title, description, image, article }: Props) {
+export default function SEO({ title, description, image }: Props) {
   const { pathname } = useLocation()
   const {
     site: { siteMetadata },

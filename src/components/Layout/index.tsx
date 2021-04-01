@@ -2,19 +2,26 @@ import '../base.css'
 
 import React, { ReactElement } from 'react'
 
+import ZendeskButton from '~components/ZendeskButton'
+import { Article } from '~utils/mapArticles'
+
 import BlueBlock from '../BlueBlock'
 import Footer from '../Footer'
 import Header from '../Header'
 import SEO from '../Seo'
-import ZendeskButton from '~components/ZendeskButton'
 
 type Props = {
   children: ReactElement | (false | null | ReactElement)[]
+  article?: Article
 }
 
-const Layout: React.FC<Props> = ({ children }) => (
+const Layout: React.FC<Props> = ({ children, article }) => (
   <>
-    <SEO />
+    <SEO
+      title={article?.title}
+      description={article?.description}
+      image={article?.image.fluid.src}
+    />
     <Header />
     <div>
       <main style={{ background: 'white', paddingTop: 84 }}>
