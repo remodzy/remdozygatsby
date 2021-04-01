@@ -19,7 +19,10 @@ export default function SEO({ title, description, image }: Props) {
   const seo = {
     title: title || siteMetadata.defaultTitle,
     description: description || siteMetadata.defaultDescription,
-    image: `${siteMetadata.siteUrl}${image || siteMetadata.defaultImage}`,
+    image: `${
+      image ||
+      siteMetadata.siteUrlsiteMetadata.siteUrl + siteMetadata.defaultImage
+    }`,
     url: `${siteMetadata.siteUrl}${pathname}`,
   }
 
