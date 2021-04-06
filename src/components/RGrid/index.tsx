@@ -7,19 +7,24 @@ import InfoBlock from '~components/InfoBlock'
 import RSectionTitle from '~components/RSectionTitle'
 
 import * as styles from './RGrid.module.css'
+import { useDeviceDetect } from '~utils/hooks'
 
 export type ListItem = {
   key?: string
-  label?: Document
+  label?: Document | string
   colors: {
     background: string
     text: string
   }
   link: string
-  title: Document
-  text: Document
+  title: Document | string
+  text: Document | string
   icon: FC<unknown>
   image?: IGatsbyImageData
+  images?: {
+    desktop: string
+    mobile: string
+  }
   learnMoreText?: string
   extraItem?: FC<unknown>
 }
@@ -30,13 +35,25 @@ type Props = {
 }
 
 const RGrid: FC<Props> = ({ items, title }): ReactElement => {
+  const { isMobile } = useDeviceDetect()
+
   return (
     <>
       {title && <RSectionTitle>{title}</RSectionTitle>}
       <div className={styles.root}>
         {items.map(
           (
-            { key, colors, label, link, title, text, icon: Icon, image },
+            {
+              key,
+              colors,
+              label,
+              link,
+              title,
+              text,
+              icon: Icon,
+              image,
+              images,
+            },
             index
           ) => (
             <GridRow key={key || index}>
@@ -50,6 +67,14 @@ const RGrid: FC<Props> = ({ items, title }): ReactElement => {
               />
               <div className={styles.imageWrapper}>
                 {image && <GatsbyImage image={image} alt='' />}
+                {images && (
+                  <img
+                    src={isMobile ? images?.mobile : images?.desktop}
+                    width={100}
+                    height={100}
+                    alt=''
+                  />
+                )}
               </div>
             </GridRow>
           )

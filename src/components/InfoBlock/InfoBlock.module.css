@@ -19,6 +19,7 @@
   border-radius: 12px;
 }
 
+.title,
 .title > p {
   font-style: normal;
   font-weight: bold;
@@ -29,6 +30,7 @@
   color: var(--main-text-color);
 }
 
+.text,
 .text > p {
   font-style: normal;
   font-weight: 500;
@@ -38,6 +40,7 @@
   margin-top: 32px;
 }
 
+.label,
 .label > p {
   display: inline;
   font-style: normal;
@@ -47,6 +50,11 @@
   margin-left: 16px;
   color: var(--main-text-color);
 }
+.label > p {
+  margin-left: 0;
+}
+.label > strong,
+.label > b,
 .label > p > b {
   font-weight: 600;
   font-size: 23px;
@@ -64,10 +72,12 @@
     max-width: 100%;
   }
 
+  .title,
   .title > p {
     margin-top: 25px;
   }
 
+  .text,
   .text > p {
     margin-top: 20px;
   }

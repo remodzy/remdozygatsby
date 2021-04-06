@@ -24,17 +24,23 @@ const InfoBlock: FC<Props> = ({
       {label && (
         <span
           className={styles.label}
-          dangerouslySetInnerHTML={createMarkup(documentToHtmlString(label))}
+          dangerouslySetInnerHTML={createMarkup(
+            typeof label === 'string' ? label : documentToHtmlString(label)
+          )}
         />
       )}
     </div>
     <div
       className={styles.title}
-      dangerouslySetInnerHTML={createMarkup(documentToHtmlString(title))}
+      dangerouslySetInnerHTML={createMarkup(
+        typeof title === 'string' ? title : documentToHtmlString(title)
+      )}
     />
     <div
       className={styles.text}
-      dangerouslySetInnerHTML={createMarkup(documentToHtmlString(text))}
+      dangerouslySetInnerHTML={createMarkup(
+        typeof text === 'string' ? text : documentToHtmlString(text)
+      )}
     />
     <div className={styles.footer}>
       <a
