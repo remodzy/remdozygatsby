@@ -1,4 +1,4 @@
-import { graphql, Link, StaticQuery } from 'gatsby'
+import { graphql, Link, useStaticQuery } from 'gatsby'
 import { FC, ReactElement } from 'react'
 import * as React from 'react'
 import SVG from 'react-inlinesvg'
@@ -60,36 +60,12 @@ const DesktopProductListMenuItems: React.FC<MenuProps> = ({ list }) => (
 const ProductListMenu: FC<ListMenuProps> = ({
   isMobile = false,
 }): ReactElement => {
+  const data = useStaticQuery(query)
+
   return (
-    <StaticQuery
-      query={graphql`
-        query allContentfulProductsMenuQuery {
-          allContentfulProducts(sort: { fields: order }) {
-            edges {
-              node {
-                id
-                name
-                description
-                order
-                iconSize
-                productIcon {
-                  title
-                  file {
-                    contentType
-                    url
-                  }
-                }
-              }
-            }
-          }
-        }
-      `}
-      render={data => (
-        <ProductListMenuBlock
-          products={productsToListMenuItems(data)}
-          isMobile={isMobile}
-        />
-      )}
+    <ProductListMenuBlock
+      products={productsToListMenuItems(data)}
+      isMobile={isMobile}
     />
   )
 }
@@ -148,3 +124,26 @@ const ProductListMenuBlock: React.FC<ListMenuBlockProps> = ({
   )
 
 export default ProductListMenu
+
+export const query = graphql`
+  query allContentfulProductsMenuQuery {
+    allContentfulProducts(sort: { fields: order }) {
+      edges {
+        node {
+          id
+          name
+          description
+          order
+          iconSize
+          productIcon {
+            title
+            file {
+              contentType
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+`

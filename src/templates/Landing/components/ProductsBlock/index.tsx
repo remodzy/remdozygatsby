@@ -1,4 +1,4 @@
-import { graphql, StaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
 import React, { FC, ReactElement } from 'react'
 import SVG from 'react-inlinesvg'
@@ -27,54 +27,9 @@ const ProductsBlock: FC<Props> = ({ productConfig }): ReactElement => {
 
 const Products: FC<unknown> = (): ReactElement => {
   const { isMobile } = useDeviceDetect()
+  const data = useStaticQuery(query)
 
-  return (
-    <StaticQuery
-      query={graphql`
-        query allContentfulProductsQuery {
-          allContentfulProducts(sort: { fields: order }) {
-            edges {
-              node {
-                id
-                name
-                order
-                align
-                productName {
-                  productName: raw
-                }
-                subtitle1 {
-                  subtitle1: raw
-                }
-                subtitle2 {
-                  subtitle2: raw
-                }
-                learnMoreButton
-                productIcon {
-                  title
-                  file {
-                    contentType
-                    url
-                  }
-                }
-                promoImage {
-                  title
-                  desktop: gatsbyImageData(layout: CONSTRAINED, quality: 92)
-                  mobile: gatsbyImageData(
-                    layout: CONSTRAINED
-                    width: 400
-                    quality: 80
-                  )
-                }
-              }
-            }
-          }
-        }
-      `}
-      render={data => (
-        <ProductsBlock productConfig={productsToListItems(data, isMobile)} />
-      )}
-    />
-  )
+  return <ProductsBlock productConfig={productsToListItems(data, isMobile)} />
 }
 
 const productsToListItems = (products: any, isMobile = false): ListItem[] => {
@@ -117,3 +72,44 @@ const productsToListItems = (products: any, isMobile = false): ListItem[] => {
 }
 
 export default Products
+
+export const query = graphql`
+  query allContentfulProductsQuery {
+    allContentfulProducts(sort: { fields: order }) {
+      edges {
+        node {
+          id
+          name
+          order
+          align
+          productName {
+            productName: raw
+          }
+          subtitle1 {
+            subtitle1: raw
+          }
+          subtitle2 {
+            subtitle2: raw
+          }
+          learnMoreButton
+          productIcon {
+            title
+            file {
+              contentType
+              url
+            }
+          }
+          promoImage {
+            title
+            desktop: gatsbyImageData(layout: CONSTRAINED, quality: 92)
+            mobile: gatsbyImageData(
+              layout: CONSTRAINED
+              width: 400
+              quality: 80
+            )
+          }
+        }
+      }
+    }
+  }
+`
