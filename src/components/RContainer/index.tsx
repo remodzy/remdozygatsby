@@ -1,6 +1,6 @@
 import React, { FC, ReactElement } from 'react'
 
-import styles from './RContainer.module.css'
+import * as styles from './RContainer.module.css'
 
 type Props = {
   children: ReactElement | ReactElement[]

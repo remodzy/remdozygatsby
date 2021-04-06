@@ -1,7 +1,7 @@
 import React, { CSSProperties } from 'react'
 import { animated } from 'react-spring'
 
-import styles from './Testimonials.module.css'
+import * as styles from './Testimonials.module.css'
 
 const infoTemplate = (desc: string, author: string, company: string) => ({
   style,

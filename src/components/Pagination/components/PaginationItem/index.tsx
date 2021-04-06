@@ -1,7 +1,7 @@
 import { Link } from 'gatsby'
 import React from 'react'
 
-import styles from './PaginationItem.module.css'
+import * as styles from './PaginationItem.module.css'
 
 type Props = {
   item: number | string

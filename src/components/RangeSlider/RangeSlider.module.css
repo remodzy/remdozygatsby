@@ -2,6 +2,8 @@
   display: flex;
   width: 100%;
 }
+.slider {
+}
 input[type='range'] {
   margin: auto;
   outline: none;

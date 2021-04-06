@@ -78,7 +78,7 @@ module.exports = {
       options: {
         name: `pages`,
         path: `${__dirname}/src/pages/`,
-        ignore: [`**/\.*`],
+        ignore: [`**/.*`],
       },
     },
     {
@@ -91,11 +91,13 @@ module.exports = {
     {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
+      downloadLocal: true,
     },
     'gatsby-transformer-remark',
-    'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sharp',
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-zendesk-chat-roxabo',

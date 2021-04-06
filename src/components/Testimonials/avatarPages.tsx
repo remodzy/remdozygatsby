@@ -3,7 +3,7 @@ import { animated } from 'react-spring'
 import * as color from 'color'
 import * as extra from 'extra-array'
 
-import styles from './Testimonials.module.css'
+import * as styles from './Testimonials.module.css'
 
 const avatars = [
   {

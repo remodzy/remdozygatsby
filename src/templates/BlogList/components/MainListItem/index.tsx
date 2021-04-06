@@ -1,11 +1,11 @@
 import { navigate } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import * as React from 'react'
 
 import LinkButton from '~components/LinkButton'
 import { Article } from '~utils/mapArticles'
 
-import styles from './MainListItem.module.css'
+import * as styles from './MainListItem.module.css'
 
 type Props = {
   item: Article
@@ -21,12 +21,13 @@ const imageStyle = {
 
 const MainListItem: React.FC<Props> = ({ item }) => (
   <div className={styles.root}>
-    <Img
-      fluid={item.image.fluid}
-      style={imageStyle}
-      loading='eager'
-      alt={item.image.alt}
-    />
+    {item.image.gatsbyImageData && (
+      <GatsbyImage
+        image={item.image.gatsbyImageData}
+        alt=''
+        style={imageStyle}
+      />
+    )}
     <div className={styles.infoContainer}>
       <div className={styles.imageTitle} style={{ color: 'blue' }}>
         {item.image.imageTitle}

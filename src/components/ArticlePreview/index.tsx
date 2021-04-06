@@ -1,13 +1,13 @@
 import { Link, navigate } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import React from 'react'
 
 import LinkButton from '~components/LinkButton'
 
-import articlePreviewStyles from './ArticlePreview.module.css'
+import * as styles from './ArticlePreview.module.css'
 
 type Props = {
-  image?: any
+  image?: IGatsbyImageData
   title: string
   text: string
   imageTitle: string
@@ -35,23 +35,23 @@ const ArticlePreview: React.FC<Props> = ({
   imageTitleColor,
   slug,
 }) => (
-  <div className={articlePreviewStyles.root}>
+  <div className={styles.root}>
     <Link to={`/blog/${slug}`}>
-      <Img fluid={image} style={imageStyles} loading='eager' />
+      {image && <GatsbyImage image={image} alt='' style={imageStyles} />}
     </Link>
     <div
-      className={articlePreviewStyles.imageTitle}
+      className={styles.imageTitle}
       style={{ color: imageTitleColor, marginTop: 24 }}
     >
       {imageTitle}
     </div>
-    <div className={articlePreviewStyles.title}>
+    <div className={styles.title}>
       <Link to={`/blog/${slug}`} style={{ textDecoration: `none` }}>
         {title}
       </Link>
     </div>
-    <div className={articlePreviewStyles.text}>{text}</div>
-    <div className={articlePreviewStyles.linkContainer}>
+    <div className={styles.text}>{text}</div>
+    <div className={styles.linkContainer}>
       <LinkButton
         label='Learn More'
         handleClick={() => navigate(`/blog/${slug}`)}

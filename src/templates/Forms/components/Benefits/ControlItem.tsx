@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react'
 
 import IconWrapper from '~components/IconWrapper'
 
-import featureItemStyles from './ControlItem.module.css'
+import * as styles from './ControlItem.module.css'
 
 type Props = {
   title: string
@@ -10,10 +10,10 @@ type Props = {
 }
 
 export const ControlItem: React.FC<Props> = ({ title, icon: Icon }) => (
-  <div className={featureItemStyles.root}>
+  <div className={styles.root}>
     <IconWrapper color='rgba(73, 109, 228, .15)'>
       <Icon />
     </IconWrapper>
-    <div className={featureItemStyles.title}>{title}</div>
+    <div className={styles.title}>{title}</div>
   </div>
 )

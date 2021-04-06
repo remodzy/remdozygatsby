@@ -4,7 +4,7 @@ import RContainer from '~components/RContainer'
 import SectionLabel from '~components/SectionLabel'
 import SectionTitle from '~components/SectionTitle'
 
-import styles from './Benefits.module.css'
+import * as styles from './Benefits.module.css'
 import FeatureList from './FeatureList'
 import RSection from '~components/RSection'
 import Artifacts from './Artifacts'

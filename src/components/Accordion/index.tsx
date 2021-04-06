@@ -2,7 +2,7 @@ import React, { MutableRefObject, useRef, useState } from 'react'
 
 import Icon from '~components/Icons'
 
-import accordionStyles from './Accordion.module.css'
+import * as styles from './Accordion.module.css'
 
 type Props = {
   title: string
@@ -27,24 +27,20 @@ const Accordion: React.FC<Props> = ({ children, title }) => {
   }
 
   return (
-    <div className={accordionStyles.root}>
-      <button onClick={handleClick} className={accordionStyles.button}>
-        <span className={accordionStyles.title}>{title}</span>
+    <div className={styles.root}>
+      <button onClick={handleClick} className={styles.button}>
+        <span className={styles.title}>{title}</span>
         <span
-          className={`${
-            open ? accordionStyles.iconExpanded : accordionStyles.iconCollapsed
-          }`}
+          className={`${open ? styles.iconExpanded : styles.iconCollapsed}`}
         >
-          <Icon className={accordionStyles.svgIcon} name='arrow' />
+          <Icon className={styles.svgIcon} name='arrow' />
         </span>
       </button>
       <div
         ref={panelRef}
-        className={`${accordionStyles.panel} ${
-          open ? accordionStyles.active : ''
-        }`}
+        className={`${styles.panel} ${open ? styles.active : ''}`}
       >
-        <div className={accordionStyles.listWrapper}>{children}</div>
+        <div className={styles.listWrapper}>{children}</div>
       </div>
     </div>
   )

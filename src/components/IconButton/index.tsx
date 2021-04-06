@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Icon from '../Icons'
-import iconButtonStyles from './IconButton.module.css'
+import * as styles from './IconButton.module.css'
 
 type Props = {
   handleClick: () => void
@@ -23,7 +23,7 @@ const IconButton: React.FC<Props> = ({
     height: size ?? 52,
   }
   return (
-    <div onClick={handleClick} className={iconButtonStyles.root} style={style}>
+    <div onClick={handleClick} className={styles.root} style={style}>
       <Icon name={iconName} color={color} className={className} />
     </div>
   )

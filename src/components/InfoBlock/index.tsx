@@ -1,13 +1,12 @@
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 import React, { FC, ReactElement } from 'react'
 
 import { ListItem } from '~components/RGrid'
+import { createMarkup } from '~utils/createMarkup'
 
-import styles from './InfoBlock.module.css'
+import * as styles from './InfoBlock.module.css'
 
-type Props = ListItem & {
-  label?: string
-  extraItem?: () => ReactElement
-}
+type Props = ListItem
 
 const InfoBlock: FC<Props> = ({
   colors = {},
@@ -16,20 +15,27 @@ const InfoBlock: FC<Props> = ({
   title,
   text,
   link,
+  learnMoreText,
   extraItem: ExtraItem,
 }): ReactElement => (
   <div className={styles.root}>
     <div className={styles.iconContainer}>
       <Icon />
       {label && (
-        <span className={styles.label}>
-          <strong>rox</strong>
-          {label}
-        </span>
+        <span
+          className={styles.label}
+          dangerouslySetInnerHTML={createMarkup(documentToHtmlString(label))}
+        />
       )}
     </div>
-    <div className={styles.title}>{title}</div>
-    <div className={styles.text}>{text}</div>
+    <div
+      className={styles.title}
+      dangerouslySetInnerHTML={createMarkup(documentToHtmlString(title))}
+    />
+    <div
+      className={styles.text}
+      dangerouslySetInnerHTML={createMarkup(documentToHtmlString(text))}
+    />
     <div className={styles.footer}>
       <a
         className='btn primary-btn'
@@ -40,7 +46,7 @@ const InfoBlock: FC<Props> = ({
           color: colors?.text,
         }}
       >
-        Learn More
+        {learnMoreText || 'Learn More'}
       </a>
       {ExtraItem && <ExtraItem />}
     </div>

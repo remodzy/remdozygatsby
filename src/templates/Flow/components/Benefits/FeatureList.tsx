@@ -1,18 +1,18 @@
 import React, { ReactElement } from 'react'
 
 import { FeatureItem } from './FeatureItem'
-import featureListStyles from './FeatureList.module.css'
+import * as styles from './FeatureList.module.css'
 import {
   AutomateIcon,
-  OrchestrateIcon,
   BuilderIcon,
   ConnectAppIcon,
+  OrchestrateIcon,
   SolutionsIcon,
 } from './Icons'
 
 export default function FeatureList(): ReactElement {
   return (
-    <div className={featureListStyles.root}>
+    <div className={styles.root}>
       <FeatureItem
         icon={ConnectAppIcon}
         title='Connect your key applications'

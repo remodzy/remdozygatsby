@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './RangeSlider.module.css'
+import * as styles from './RangeSlider.module.css'
 
 type Props = {
   min?: number

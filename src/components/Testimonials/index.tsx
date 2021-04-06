@@ -14,7 +14,7 @@ import {
 import Artifacts from './Artifacts'
 import { infoPages } from './infoPages'
 import { logoPages } from './logoPages'
-import styles from './Testimonials.module.css'
+import * as styles from './Testimonials.module.css'
 
 const SimpleSlider = ({
   count,

@@ -7,7 +7,7 @@ import { useDeviceDetect } from '~utils/hooks'
 
 import Artifacts from './Artifacts'
 import { featureConfig } from './featureConfig'
-import styles from './Features.module.css'
+import * as styles from './Features.module.css'
 
 const Cover: FC<unknown> = (): ReactElement => <div className={styles.cover} />
 

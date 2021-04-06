@@ -6,7 +6,7 @@ import RSection from '~components/RSection'
 import { AnimatedWord } from '~components/AnimatedWord'
 
 import Artifacts from './Artifacts'
-import styles from './PrimaryBlock.module.css'
+import * as styles from './PrimaryBlock.module.css'
 
 const Cover: FC<unknown> = (): ReactElement => <div className={styles.cover} />
 

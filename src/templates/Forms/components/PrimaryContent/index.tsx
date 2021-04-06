@@ -7,7 +7,7 @@ import RSectionTitle from '~components/RSectionTitle'
 import { authorize } from '~utils/auth'
 
 import Artifacts from './Artifacts'
-import styles from './PrimaryContent.module.css'
+import * as styles from './PrimaryContent.module.css'
 import RSection from '~components/RSection'
 
 type Props = {

@@ -1,15 +1,18 @@
-import { ReactElement } from 'react'
+import { graphql, Link, StaticQuery } from 'gatsby'
+import { FC, ReactElement } from 'react'
 import * as React from 'react'
+import SVG from 'react-inlinesvg'
 
-import {
-  RoxFlowIcon,
-  RoxFormsIcon,
-  RoxServiceIcon,
-} from '~components/ProductIcons'
+import { ContentfulAssetIcon, IconWrapper } from '~components/ProductIcons'
 
-import productListStyles from './ProductList.module.css'
+import * as styles from './ProductList.module.css'
 
-type Props = {
+type ListMenuBlockProps = {
+  products: ProductMenuItem[]
+  isMobile?: boolean
+}
+
+type ListMenuProps = {
   isMobile?: boolean
 }
 
@@ -26,52 +29,16 @@ type ProductMenuItem = {
   link: string
 }
 
-const getFormIcon = (): ReactElement => <RoxFormsIcon />
-const getServiceIcon = (): ReactElement => <RoxServiceIcon isLarge />
-const getFlowIcon = (): ReactElement => <RoxFlowIcon isLarge />
-const getFormIconMobile = (): ReactElement => <RoxFormsIcon isMobile />
-const getServiceIconMobile = (): ReactElement => (
-  <RoxServiceIcon isLarge isMobile />
-)
-const getFlowIconMobile = (): ReactElement => <RoxFlowIcon isLarge isMobile />
-
-export const products: ProductMenuItem[] = [
-  {
-    key: 'forms',
-    title: 'roxForms',
-    subTitle: 'Features builder',
-    icon: getFormIcon,
-    iconMobile: getFormIconMobile,
-    link: '/roxforms',
-  },
-  {
-    key: 'services',
-    title: 'roxService',
-    subTitle: 'Project tracking',
-    icon: getServiceIcon,
-    iconMobile: getServiceIconMobile,
-    link: '/roxservice',
-  },
-  {
-    key: 'flow',
-    title: 'roxFlow',
-    subTitle: 'Powerful Workflows',
-    icon: getFlowIcon,
-    iconMobile: getFlowIconMobile,
-    link: '/roxflow',
-  },
-]
-
 const MobileProductListMenuItems: React.FC<MenuProps> = ({ list }) => (
   <>
     {list.map(({ key, title, subTitle, iconMobile: Icon, link }) => (
-      <a href={link} key={key} className={productListStyles.item}>
+      <Link to={link} key={key} className={styles.item}>
         <Icon />
-        <div className={productListStyles.mainBlock}>
-          <span className={productListStyles.title}>{title}</span>
-          <span className={productListStyles.subTitle}>{subTitle}</span>
+        <div className={styles.mainBlock}>
+          <span className={styles.title}>{title}</span>
+          <span className={styles.subTitle}>{subTitle}</span>
         </div>
-      </a>
+      </Link>
     ))}
   </>
 )
@@ -79,18 +46,101 @@ const MobileProductListMenuItems: React.FC<MenuProps> = ({ list }) => (
 const DesktopProductListMenuItems: React.FC<MenuProps> = ({ list }) => (
   <>
     {list.map(({ key, title, subTitle, icon: Icon, link }) => (
-      <a href={link} key={key} className={productListStyles.item}>
+      <Link to={link} key={key} className={styles.item}>
         <Icon />
-        <div className={productListStyles.mainBlock}>
-          <span className={productListStyles.title}>{title}</span>
-          <span className={productListStyles.subTitle}>{subTitle}</span>
+        <div className={styles.mainBlock}>
+          <span className={styles.title}>{title}</span>
+          <span className={styles.subTitle}>{subTitle}</span>
         </div>
-      </a>
+      </Link>
     ))}
   </>
 )
 
-const ProductListMenu: React.FC<Props> = ({ isMobile = false }) =>
+const ProductListMenu: FC<ListMenuProps> = ({
+  isMobile = false,
+}): ReactElement => {
+  return (
+    <StaticQuery
+      query={graphql`
+        query allContentfulProductsMenuQuery {
+          allContentfulProducts(sort: { fields: order }) {
+            edges {
+              node {
+                id
+                name
+                description
+                order
+                iconSize
+                productIcon {
+                  title
+                  file {
+                    contentType
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
+      `}
+      render={data => (
+        <ProductListMenuBlock
+          products={productsToListMenuItems(data)}
+          isMobile={isMobile}
+        />
+      )}
+    />
+  )
+}
+
+const productsToListMenuItems = (products: any): ProductMenuItem[] => {
+  return [
+    ...products?.allContentfulProducts?.edges.map((product: any) => ({
+      key: product.node.name,
+      title: product.node.name,
+      subTitle: product.node.description,
+      icon: function ProductDesktopIcon() {
+        return (
+          <IconWrapper
+            isLarge={product.node.iconSize === 'large'}
+            isMobile={false}
+          >
+            <SVG
+              src={
+                product.node.productIcon.find(
+                  (icon: ContentfulAssetIcon) => icon.title === 'icon-white'
+                ).file.url
+              }
+            />
+          </IconWrapper>
+        )
+      },
+      iconMobile: function ProductMobileIcon() {
+        return (
+          <IconWrapper
+            isLarge={product.node.iconSize === 'large'}
+            isMobile={true}
+          >
+            <SVG
+              src={
+                product.node.productIcon.find(
+                  (icon: ContentfulAssetIcon) => icon.title === 'icon-blue'
+                ).file.url
+              }
+            />
+          </IconWrapper>
+        )
+      },
+      link: `/${product.node.name.toLowerCase()}`,
+    })),
+  ]
+}
+
+const ProductListMenuBlock: React.FC<ListMenuBlockProps> = ({
+  products,
+  isMobile = false,
+}) =>
   isMobile ? (
     <MobileProductListMenuItems list={products} />
   ) : (

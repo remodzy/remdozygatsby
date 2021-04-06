@@ -9,7 +9,7 @@ import React, {
 import { animated, config, useTransition } from 'react-spring'
 import { useInterval, useTimeoutFn } from 'react-use'
 
-import styles from './AnimatedWord.module.css'
+import * as styles from './AnimatedWord.module.css'
 
 const toList = (array: string[], from: number) =>
   array.map((word, index) => ({ text: word, key: index + from }))

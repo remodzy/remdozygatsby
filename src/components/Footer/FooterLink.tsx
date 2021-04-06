@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import footerLinkStyles from './FooterLink.module.css'
+import * as styles from './FooterLink.module.css'
 
 type Props = {
   text: string
@@ -12,7 +12,7 @@ const FooterLink: React.FC<Props> = ({ text, url }) => {
 
   return (
     <a
-      className={footerLinkStyles.link}
+      className={styles.link}
       href={url}
       {...(!isLocal
         ? {

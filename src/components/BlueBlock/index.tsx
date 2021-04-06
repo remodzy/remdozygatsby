@@ -6,7 +6,7 @@ import Button from '~components/Button'
 import { getColor } from '~utils/colors'
 
 import Artifacts from './Artifacts'
-import styles from './BlueBlock.module.css'
+import * as styles from './BlueBlock.module.css'
 
 const colors = getColor({ group: 'main', color: 'primary' })
 

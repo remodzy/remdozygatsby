@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './SectionSubTitle.module.css'
+import * as styles from './SectionSubTitle.module.css'
 
 type Props = {
   text: string

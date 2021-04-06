@@ -7,7 +7,7 @@ import { useDeviceDetect } from '~utils/hooks'
 
 import DesktopProductsMenu from './DesktopProductsMenu'
 import FloatMenu from './FloatMenu'
-import headerMenuStyles from './HeaderMenu.module.css'
+import * as styles from './HeaderMenu.module.css'
 import MenuToggle from './MenuToggle'
 
 export type MenuItem = {
@@ -77,15 +77,11 @@ export default function HeaderMenu(): ReactElement {
   }
 
   return (
-    <div className={headerMenuStyles.root}>
+    <div className={styles.root}>
       <DesktopProductsMenu />
       {menuList.map(item =>
         /^\/(?!\/)/.test(item.link) ? (
-          <Link
-            key={item.text}
-            className={headerMenuStyles.link}
-            to={item.link}
-          >
+          <Link key={item.text} className={styles.link} to={item.link}>
             {item.text}
           </Link>
         ) : (
@@ -93,7 +89,7 @@ export default function HeaderMenu(): ReactElement {
             key={item.text}
             target='_blank'
             rel='noreferrer'
-            className={headerMenuStyles.link}
+            className={styles.link}
             href={item.link}
           >
             {item.text}

@@ -5,7 +5,7 @@ import { useDeviceDetect } from '~utils/hooks'
 import DotsArtifact from '../Dot'
 import Logo from '../Logo'
 import RContainer from '../RContainer'
-import styles from './AppFooter.module.css'
+import * as styles from './AppFooter.module.css'
 import FooterLink from './FooterLink'
 
 export default function Footer(): ReactElement {

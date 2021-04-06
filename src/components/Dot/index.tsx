@@ -1,13 +1,13 @@
 import React from 'react'
 
-import dotStyles from './Dot.module.css'
+import * as styles from './Dot.module.css'
 
 export const gradient = 'linear-gradient(180deg, #8AA5ED 0%, #507CF5 100%)'
 
 export function Dot({ background = '#CCD0D3', size = 6 }) {
   return (
     <i style={{ width: size, height: size }}>
-      <i className={dotStyles.wrapper} style={{ background }}></i>
+      <i className={styles.wrapper} style={{ background }}></i>
     </i>
   )
 }

@@ -19,16 +19,17 @@
   border-radius: 12px;
 }
 
-.title {
+.title > p {
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
   line-height: 28px;
   margin-top: 40px;
   text-transform: capitalize;
+  color: var(--main-text-color);
 }
 
-.text {
+.text > p {
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -37,12 +38,20 @@
   margin-top: 32px;
 }
 
-.label {
+.label > p {
+  display: inline;
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 32px;
   margin-left: 16px;
+  color: var(--main-text-color);
+}
+.label > p > b {
+  font-weight: 600;
+  font-size: 23px;
+  line-height: 31px;
+  color: var(--main-text-color);
 }
 
 .footer {
@@ -55,11 +64,11 @@
     max-width: 100%;
   }
 
-  .title {
+  .title > p {
     margin-top: 25px;
   }
 
-  .text {
+  .text > p {
     margin-top: 20px;
   }
 

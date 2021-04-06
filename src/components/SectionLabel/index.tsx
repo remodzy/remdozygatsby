@@ -2,7 +2,7 @@ import React from 'react'
 
 import { getColor } from '~utils/colors'
 
-import sectionLabelStyles from './SectionLabel.module.css'
+import * as styles from './SectionLabel.module.css'
 
 type Props = {
   text: string
@@ -12,7 +12,7 @@ type Props = {
 export default function SectionLabel({ text, color = 'success' }: Props) {
   const labelColor = getColor({ group: 'main', color })
   return (
-    <div className={sectionLabelStyles.root} style={{ color: labelColor.main }}>
+    <div className={styles.root} style={{ color: labelColor.main }}>
       {text}
     </div>
   )

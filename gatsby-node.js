@@ -21,7 +21,7 @@ async function createPrivacyAndTermsPages(graphql, createPage, reporter) {
               id
               title
               body {
-                body
+                body: raw
               }
             }
           }

@@ -1,27 +1,26 @@
+import { Document } from '@contentful/rich-text-types'
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import React, { FC, ReactElement } from 'react'
 
 import GridRow from '~components/GridRow'
 import InfoBlock from '~components/InfoBlock'
 import RSectionTitle from '~components/RSectionTitle'
-import { useDeviceDetect } from '~utils/hooks'
 
-import styles from './RGrid.module.css'
+import * as styles from './RGrid.module.css'
 
 export type ListItem = {
   key?: string
-  label?: string
+  label?: Document
   colors: {
     background: string
     text: string
   }
   link: string
-  title: string
-  text: string
+  title: Document
+  text: Document
   icon: FC<unknown>
-  images?: {
-    mobile: string
-    desktop: string
-  }
+  image?: IGatsbyImageData
+  learnMoreText?: string
   extraItem?: FC<unknown>
 }
 
@@ -31,14 +30,13 @@ type Props = {
 }
 
 const RGrid: FC<Props> = ({ items, title }): ReactElement => {
-  const { isMobile } = useDeviceDetect()
   return (
     <>
       {title && <RSectionTitle>{title}</RSectionTitle>}
       <div className={styles.root}>
         {items.map(
           (
-            { key, colors, label, link, title, text, icon: Icon, images },
+            { key, colors, label, link, title, text, icon: Icon, image },
             index
           ) => (
             <GridRow key={key || index}>
@@ -51,12 +49,7 @@ const RGrid: FC<Props> = ({ items, title }): ReactElement => {
                 icon={Icon}
               />
               <div className={styles.imageWrapper}>
-                <img
-                  src={isMobile ? images?.mobile : images?.desktop}
-                  width={100}
-                  height={100}
-                  alt=''
-                />
+                {image && <GatsbyImage image={image} alt='' />}
               </div>
             </GridRow>
           )

@@ -6,7 +6,7 @@ import RangeSlider from '~components/RangeSlider'
 import { authorize } from '~utils/auth'
 
 import { ListItem, Plans } from '../PriceList'
-import styles from './PriceItem.module.css'
+import * as styles from './PriceItem.module.css'
 
 type Props = {
   item: ListItem

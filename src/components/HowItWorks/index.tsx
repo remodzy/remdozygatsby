@@ -7,7 +7,7 @@ import SectionLabel from '~components/SectionLabel'
 import SectionTitle from '~components/SectionTitle'
 import { useDeviceDetect } from '~utils/hooks'
 
-import styles from './HowItWorks.module.css'
+import * as styles from './HowItWorks.module.css'
 import Item from './Item'
 
 export type HowItWorksItem = {

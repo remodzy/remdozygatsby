@@ -3,7 +3,7 @@ import React from 'react'
 import IconButton from '~components/IconButton'
 import { useDeviceDetect } from '~utils/hooks'
 
-import styles from './SocialShare.module.css'
+import * as styles from './SocialShare.module.css'
 import {
   FacebookShareButton,
   LinkedinShareButton,

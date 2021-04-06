@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useInterval } from 'react-use'
 
 import Icon from '../Icons'
-import styles from './ZendeskButton.module.css'
+import * as styles from './ZendeskButton.module.css'
 
 type Props = any
 

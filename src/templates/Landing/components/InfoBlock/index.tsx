@@ -1,6 +1,6 @@
 import React, { FC, ReactElement } from 'react'
 
-import styles from './InfoBlock.module.css'
+import * as styles from './InfoBlock.module.css'
 
 type Props = {
   icon: () => ReactElement

@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from 'react'
 import { useDeviceDetect } from '~utils/hooks'
 
-import styles from './Apps.module.css'
+import * as styles from './Apps.module.css'
 import RSection from '~components/RSection'
 import Artifacts from './Artifacts'
 import SectionLabel from '~components/SectionLabel'

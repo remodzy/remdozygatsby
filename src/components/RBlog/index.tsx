@@ -4,12 +4,12 @@ import React, { FC, ReactElement } from 'react'
 import Button from '~components/Button'
 import RSection from '~components/RSection'
 import RSectionTitle from '~components/RSectionTitle'
-import SectionLabel from '~components/SectionLabel'
+// import SectionLabel from '~components/SectionLabel'
 import { Article, prepareArticles } from '~utils/mapArticles'
 
 import ArticlePreview from '../ArticlePreview'
 import Artifacts from './Artifacts'
-import styles from './Blog.module.css'
+import * as styles from './Blog.module.css'
 
 const Cover: FC<unknown> = (): ReactElement => <div className={styles.cover} />
 
@@ -28,9 +28,9 @@ export default function RBlog(): ReactElement {
           {articles.map((item: Article) => (
             <ArticlePreview
               key={item.id}
-              imageTitle={item?.image?.imageTitle}
+              imageTitle={item.image.imageTitle}
               imageTitleColor='#5D9A78'
-              image={item?.image?.fluid}
+              image={item?.image.gatsbyImageData}
               title={item?.title}
               text={item?.description}
               slug={item?.slug}

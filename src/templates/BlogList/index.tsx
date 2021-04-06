@@ -6,12 +6,12 @@ import { Pagination } from '~components/Pagination'
 import SectionTitle from '~components/SectionTitle'
 import { prepareArticles, ResourceNode } from '~utils/mapArticles'
 
-import styles from './BlogList.module.css'
+import * as styles from './BlogList.module.css'
 import ListOfArticles from './components/ListOfArticles'
 
 type Props = {
   pageResources: ContextPageResource
-  pathContext: Pagination
+  pageContext: Pagination
 }
 
 type ContextPageResource = {
@@ -27,7 +27,7 @@ type ContextPageResource = {
 }
 
 export default function BlogList({
-  pathContext,
+  pageContext,
   pageResources,
 }: Props): ReactElement {
   const items = prepareArticles(pageResources?.json?.data)
@@ -36,7 +36,7 @@ export default function BlogList({
     <Layout>
       <div className={styles.pageWrapper}>
         <SectionTitle text='Insights from the Roxabo team' />
-        <ListOfArticles pagination={pathContext} items={items} />
+        <ListOfArticles pagination={pageContext} items={items} />
         {/* <Artifacts /> */}
       </div>
     </Layout>

@@ -8,7 +8,7 @@ import Label from '~components/Label'
 import { authorize } from '~utils/auth'
 import { useDeviceDetect } from '~utils/hooks'
 
-import primaryContentStyles from './PrimaryContent.module.css'
+import * as styles from './PrimaryContent.module.css'
 
 type Props = {
   title: string
@@ -24,7 +24,7 @@ const PrimaryContent: React.FC<Props> = ({ title, subTitle, image }) => {
   }, [])
 
   return (
-    <div className={primaryContentStyles.root}>
+    <div className={styles.root}>
       <BlockWrapper
         styleWrapper={{
           display: 'flex',
@@ -33,17 +33,17 @@ const PrimaryContent: React.FC<Props> = ({ title, subTitle, image }) => {
         }}
       >
         <div
-          className={primaryContentStyles.primaryLabel}
+          className={styles.primaryLabel}
           dangerouslySetInnerHTML={{ __html: title }}
         />
-        <div className={primaryContentStyles.secondaryLabel}>{subTitle}</div>
-        <div className={primaryContentStyles.buttonContainer}>
+        <div className={styles.secondaryLabel}>{subTitle}</div>
+        <div className={styles.buttonContainer}>
           <Button
             label='Start Free Trial'
             className='primary-btn'
             handleClick={handleClick}
           />
-          <div className={primaryContentStyles.labelContainer}>
+          <div className={styles.labelContainer}>
             <Label text='No credit card required' />
           </div>
         </div>
@@ -59,7 +59,7 @@ const PrimaryContent: React.FC<Props> = ({ title, subTitle, image }) => {
 
       {/*{isMobile ? <OutMobileArtifacts /> : <OutDesktopArtifacts />}*/}
 
-      <div className={primaryContentStyles.backgroundCover} />
+      <div className={styles.backgroundCover} />
     </div>
   )
 }

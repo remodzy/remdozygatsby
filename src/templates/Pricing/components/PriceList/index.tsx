@@ -6,7 +6,7 @@ import ToggleSwitch from '~components/ToggleSwitch'
 
 import PriceItem from '../PriceItem'
 import Artifacts from './Artifacts'
-import styles from './PriceList.module.css'
+import * as styles from './PriceList.module.css'
 
 export type ListItem = {
   plan: string

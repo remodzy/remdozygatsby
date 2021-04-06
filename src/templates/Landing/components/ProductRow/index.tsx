@@ -1,6 +1,6 @@
 import React, { FC, ReactElement } from 'react'
 
-import styles from './ProductRow.module.css'
+import * as styles from './ProductRow.module.css'
 
 type Props = {
   children: unknown

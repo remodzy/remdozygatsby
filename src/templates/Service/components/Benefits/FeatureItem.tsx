@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react'
 
 import IconWrapper from '~components/IconWrapper'
 
-import styles from './FeatureItem.module.css'
+import * as styles from './FeatureItem.module.css'
 
 type ItemProps = {
   title: string

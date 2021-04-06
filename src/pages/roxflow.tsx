@@ -19,12 +19,7 @@ export const pageQuery = graphql`
       description
     }
     image: heroImage {
-      fluid {
-        aspectRatio
-        sizes
-        src
-        srcSet
-      }
+      gatsbyImageData(layout: CONSTRAINED, quality: 92)
       alt: description
       imageTitle: title
     }

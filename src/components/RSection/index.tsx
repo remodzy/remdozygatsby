@@ -2,7 +2,7 @@ import React, { FC, ReactElement } from 'react'
 
 import RContainer from '~components/RContainer'
 
-import styles from './RSection.module.css'
+import * as styles from './RSection.module.css'
 
 type Props = {
   children: ReactElement | ReactElement[]

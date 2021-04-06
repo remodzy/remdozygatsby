@@ -9,7 +9,7 @@ import HeaderMenu from '../HeaderMenu'
 import LinkButton from '../LinkButton'
 import Logo from '../Logo'
 import RContainer from '../RContainer'
-import headerStyles from './Header.module.css'
+import * as styles from './Header.module.css'
 
 const Header = (): ReactElement => {
   const { isMobile } = useDeviceDetect()
@@ -23,9 +23,9 @@ const Header = (): ReactElement => {
   }, [])
 
   return (
-    <header className={headerStyles.root}>
+    <header className={styles.root}>
       <RContainer>
-        <div className={headerStyles.wrapper}>
+        <div className={styles.wrapper}>
           <Link
             to='/'
             style={{
@@ -37,8 +37,8 @@ const Header = (): ReactElement => {
           </Link>
           <HeaderMenu />
           {!isMobile && (
-            <div className={headerStyles.buttonsContainer}>
-              <div className={headerStyles.loginContainer}>
+            <div className={styles.buttonsContainer}>
+              <div className={styles.loginContainer}>
                 <LinkButton label='Log In' handleClick={handleLogin} />
               </div>
               <Button

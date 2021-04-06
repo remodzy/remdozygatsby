@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import * as React from 'react'
 
 import Layout from '~components/Layout'
@@ -8,10 +8,11 @@ import RSection from '~components/RSection'
 import RSectionTitle from '~components/RSectionTitle'
 import SectionLabel from '~components/SectionLabel'
 import SocialShare from '~components/SocialShare'
+import { createMarkup } from '~utils/createMarkup'
 import { useDeviceDetect } from '~utils/hooks'
 import { prepareArticle, ResourceNode } from '~utils/mapArticles'
 
-import styles from './Blog.module.css'
+import * as styles from './Blog.module.css'
 
 const imageStyle = {
   margin: '80px 0',
@@ -20,7 +21,7 @@ const imageStyle = {
 }
 
 type Props = {
-  pathContext: Pagination
+  pageContext: Pagination
   pageResources: {
     json: {
       data: {
@@ -30,7 +31,7 @@ type Props = {
   }
 }
 
-const Blog: React.FC<Props> = ({ pathContext, pageResources }) => {
+const Blog: React.FC<Props> = ({ pageContext, pageResources }) => {
   const { isMobile } = useDeviceDetect()
   if (!pageResources) {
     return null
@@ -49,7 +50,13 @@ const Blog: React.FC<Props> = ({ pathContext, pageResources }) => {
           <SectionLabel text={item.image.imageTitle} color='success' />
           <RSectionTitle>{item.title}</RSectionTitle>
           <div>
-            <Img fluid={item.image.fluid} style={imageStyle} />
+            {item.image.gatsbyImageData && (
+              <GatsbyImage
+                image={item.image.gatsbyImageData}
+                alt=''
+                style={imageStyle}
+              />
+            )}
             <div className={styles.contentWrapper}>
               <div dangerouslySetInnerHTML={createMarkup(item.body)} />
               <SocialShare title={item.title} link={window.location.href} />
@@ -76,7 +83,3 @@ export const blogQuery = graphql`
     }
   }
 `
-
-function createMarkup(__html = '') {
-  return { __html }
-}

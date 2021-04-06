@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './Testimonials.module.css'
+import * as styles from './Testimonials.module.css'
 
 const logoTemplate = (bgColor: string, src: string) => (
   <div className={styles.logoContainer} style={{ backgroundColor: bgColor }}>

@@ -54,9 +54,9 @@
     "zendesk chat"
   ],
   "license": "MIT",
-  "name": "gatsby-plugin-zendesk-chat",
+  "name": "gatsby-plugin-zendesk-chat-roxabo",
   "peerDependencies": {
-    "gatsby": "^2.0.0"
+    "gatsby": "^3.0.0"
   },
   "repository": {
     "type": "git",

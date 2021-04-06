@@ -8,7 +8,7 @@ import React, {
 import Icon from '~components/Icons'
 import { useOnClickOutside } from '~utils/hooks'
 
-import styles from './DesktopProductsMenu.module.css'
+import * as styles from './DesktopProductsMenu.module.css'
 import ProductListMenu from './ProductList'
 
 const DesktopProductsMenu = () => {

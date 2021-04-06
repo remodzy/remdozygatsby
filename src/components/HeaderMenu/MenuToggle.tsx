@@ -1,8 +1,7 @@
 import * as React from 'react'
 
 import IconButton from '../IconButton'
-
-import styles from './HeaderMenu.module.css'
+import * as styles from './HeaderMenu.module.css'
 
 type Props = {
   show: boolean

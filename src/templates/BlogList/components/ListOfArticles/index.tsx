@@ -6,7 +6,7 @@ import { useDeviceDetect } from '~utils/hooks'
 import { Article } from '~utils/mapArticles'
 
 import MainListItem from '../MainListItem'
-import styles from './ListOfArticles.module.css'
+import * as styles from './ListOfArticles.module.css'
 
 type Props = {
   pagination: Pagination
@@ -27,7 +27,7 @@ export default function ListOfArticles({ pagination, items }: Props) {
         {items.map((item: Article) => (
           <ArticlePreview
             key={item.id}
-            image={item.image.fluid}
+            image={item.image.gatsbyImageData}
             imageTitle={item.image.imageTitle}
             imageTitleColor={'blue'}
             title={item.title}

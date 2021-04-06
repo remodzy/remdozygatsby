@@ -1,14 +1,15 @@
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
+import { Document } from '@contentful/rich-text-types'
 import * as React from 'react'
 
 import Layout from '~components/Layout'
 import RSection from '~components/RSection'
-import { useDeviceDetect } from '~utils/hooks'
-import { Document } from '@contentful/rich-text-types'
-
-import styles from './RichText.module.css'
-import SocialShare from '~components/SocialShare'
 import RSectionTitle from '~components/RSectionTitle'
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
+// import SocialShare from '~components/SocialShare'
+import { createMarkup } from '~utils/createMarkup'
+import { useDeviceDetect } from '~utils/hooks'
+
+import * as styles from './RichText.module.css'
 
 type Props = {
   pageContext: {
@@ -45,7 +46,3 @@ const RichTextLayout: React.FC<Props> = ({
 }
 
 export default RichTextLayout
-
-function createMarkup(__html = '') {
-  return { __html }
-}

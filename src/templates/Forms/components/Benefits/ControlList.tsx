@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react'
 
 import { ControlItem } from './ControlItem'
-import styles from './ControlList.module.css'
+import * as styles from './ControlList.module.css'
 import {
   AttachIcon,
   BarcodeScannerIcon,

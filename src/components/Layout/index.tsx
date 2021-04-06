@@ -20,7 +20,7 @@ const Layout: React.FC<Props> = ({ children, article }) => (
     <SEO
       title={article?.title}
       description={article?.description}
-      image={article?.image.fluid.src}
+      image={article?.image?.gatsbyImageData?.images?.fallback?.src}
     />
     <Header />
     <div>

@@ -1,13 +1,13 @@
-import { FluidObject } from 'gatsby-image'
+import { getImage, IGatsbyImageData } from 'gatsby-plugin-image'
 
 export type Article = {
   body?: string
-  createdAt?: string
+  createdAt: string
   description: string
   id: string
   image: {
     alt: string
-    fluid: FluidObject
+    gatsbyImageData: IGatsbyImageData | undefined
     imageTitle: string
   }
   slug: string
@@ -27,7 +27,7 @@ export type ResourceNode = {
   id: string
   image: {
     alt: string
-    fluid: FluidObject
+    gatsbyImageData: IGatsbyImageData
     imageTitle: string
   }
   slug: string
@@ -53,11 +53,15 @@ export const prepareArticles = (data: InputParams): Article[] => {
 }
 
 export const prepareArticle = (node: ResourceNode): Article => ({
-  body: node?.body?.childMarkdownRemark?.html,
-  createdAt: node?.createdAt,
-  description: node?.description?.description,
-  id: node?.id,
-  image: node?.image,
-  slug: node?.slug,
-  title: node?.title,
+  body: node.body?.childMarkdownRemark.html,
+  createdAt: node.createdAt,
+  description: node.description.description,
+  id: node.id,
+  image: {
+    alt: node.image.alt,
+    gatsbyImageData: getImage(node.image.gatsbyImageData),
+    imageTitle: node.image.imageTitle,
+  },
+  slug: node.slug,
+  title: node.title,
 })

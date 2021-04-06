@@ -1,6 +1,6 @@
 import React, { FC, ReactElement } from 'react'
 
-import styles from './PrimarySubtitle.module.css'
+import * as styles from './PrimarySubtitle.module.css'
 
 type Props = {
   children: ReactElement | ReactElement[] | string

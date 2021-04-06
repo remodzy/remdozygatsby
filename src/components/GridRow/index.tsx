@@ -1,6 +1,6 @@
 import React, { FC, ReactElement } from 'react'
 
-import styles from './GridRow.module.css'
+import * as styles from './GridRow.module.css'
 
 type Props = {
   children: unknown

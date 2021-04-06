@@ -4,7 +4,7 @@ import RGrid from '~components/RGrid'
 import RSection from '~components/RSection'
 
 import Artifacts from './Artifacts'
-import styles from './KeyFeaturesList.module.css'
+import * as styles from './KeyFeaturesList.module.css'
 import { getConfigList } from './listConfig'
 
 const list = getConfigList()

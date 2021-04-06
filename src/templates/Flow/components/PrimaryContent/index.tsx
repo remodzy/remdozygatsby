@@ -5,7 +5,7 @@ import Label from '~components/Label'
 import { authorize } from '~utils/auth'
 import { useDeviceDetect } from '~utils/hooks'
 
-import styles from './PrimaryContent.module.css'
+import * as styles from './PrimaryContent.module.css'
 import RSectionTitle from '~components/RSectionTitle'
 import PrimarySubtitle from '~components/PrimarySubtitle'
 import RSection from '~components/RSection'

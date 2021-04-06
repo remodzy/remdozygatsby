@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react'
 
 import { FeatureItem } from './FeatureItem'
-import featureListStyles from './FeatureList.module.css'
+import * as styles from './FeatureList.module.css'
 import {
   CustomerNotificationsIcon,
   DispatchingIcon,
@@ -15,7 +15,7 @@ import {
 
 export default function FeatureList(): ReactElement {
   return (
-    <div className={featureListStyles.root}>
+    <div className={styles.root}>
       <FeatureItem
         icon={SimpleSchedulingIcon}
         title='Simple Scheduling'

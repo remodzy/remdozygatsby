@@ -6,7 +6,7 @@ import RSectionTitle from '~components/RSectionTitle'
 import SectionLabel from '~components/SectionLabel'
 
 import Artifacts from './Artifacts'
-import styles from './Benefits.module.css'
+import * as styles from './Benefits.module.css'
 import ControlList from './ControlList'
 
 const Benefits = (): ReactElement => (
