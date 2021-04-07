@@ -15,7 +15,8 @@
       "~components/*": ["components/*"],
       "~utils/*": ["utils/*"],
       "~templates/*": ["templates/*"]
-    }
+    },
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
-  "exclude": ["node_modules", "public", ".cache", "src/**/*.css"]
+  "exclude": ["node_modules", "public", ".cache"]
 }

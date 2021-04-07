@@ -1,30 +1,32 @@
 .root {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  padding-top: 115px;
-  margin-bottom: 112px;
+  padding: 115px 0 112px;
   position: relative;
 }
-.primaryLabel {
-  color: var(--main-text-color);
+.comingSoonLabel {
   font-weight: bold;
-  font-size: 40px;
-  line-height: 63px;
-  text-align: center;
-  text-transform: capitalize;
-  margin-bottom: 22px;
+  font-size: 18px;
+  line-height: 20px;
+  color: #e19763;
+  margin-bottom: 20px;
 }
-.secondaryLabel {
-  color: var(--grey-text-color);
-  font-weight: 500;
-  font-size: 17px;
-  text-align: center;
-  line-height: 182.3%;
-  margin-bottom: 45px;
-  max-width: 800px;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1120px;
+  width: 100%;
+  z-index: 1;
+}
+.bigMargin {
+  margin-top: 45px;
 }
 .buttonContainer {
   text-align: center;
+}
+.imageWrapper {
 }
 .labelContainer {
   margin-top: 10px;
@@ -32,32 +34,22 @@
 
 .backgroundCover {
   position: absolute;
-  z-index: -1;
   width: 100%;
-  height: 818px;
+  height: 968px;
+  border-bottom-right-radius: 48px;
+  border-bottom-left-radius: 48px;
   background: linear-gradient(180deg, rgba(246, 249, 251, 0) 0%, #f5f8fb 100%);
 }
 
 @media (max-width: 768px) {
   .root {
-    padding-top: 56px;
-    margin-bottom: 43px;
-  }
-  .primaryLabel {
-    font-size: 30px;
-    line-height: 40px;
-    padding: 0 18px;
-    margin-bottom: 14px;
-  }
-  .secondaryLabel {
-    font-size: 15px;
-    line-height: 30px;
-    padding: 0 18px;
+    padding: 56px 0 0;
   }
   .backgroundCover {
-    top: -85px;
+    height: 708px;
     width: 100%;
-    height: 699px;
+    border-bottom-right-radius: 32px;
+    border-bottom-left-radius: 32px;
     background: linear-gradient(
       180deg,
       rgba(246, 249, 251, 0) 0%,

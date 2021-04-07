@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react'
 
 export type ButtonColors = {
   background?: string
+  border?: string
   text: string
 }
 
@@ -22,9 +23,10 @@ export default function Button({
   type = 'button',
   disabled,
 }: Props): ReactElement {
-  const style: any = {}
+  const style: React.CSSProperties = {}
   if (!className && colors) {
     style.backgroundColor = colors.background
+    style.borderColor = colors.border
     style.color = colors.text
   }
 
