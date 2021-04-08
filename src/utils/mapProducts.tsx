@@ -7,6 +7,34 @@ import { ContentfulAssetIcon, IconWrapper } from '~components/ProductIcons'
 
 import { betaLabel, comingSoonLabel } from './mapProducts.module.css'
 
+export interface ISectionsDictionary {
+  [index: number]: Section
+}
+
+export type Section = {
+  id: string
+  order: number
+  title: string
+  description: {
+    raw: string
+  }
+  color: string
+  alignLeft: boolean
+  learnMoreText: string
+  icon: {
+    title: string
+    file: {
+      contentType: string
+      url: string
+    }
+  }
+  sectionImage: {
+    title: string
+    desktop: IGatsbyImageData
+    mobile: IGatsbyImageData
+  }
+}
+
 export type Product = {
   key: string
   label?: Document | string
@@ -23,6 +51,7 @@ export type Product = {
   extraItem?: FC<unknown>
   comingSoon: boolean
   hasCover: boolean
+  sections: ISectionsDictionary
 }
 
 export type ProductNode = {
@@ -55,9 +84,7 @@ export type ProductNode = {
     desktop: IGatsbyImageData
     mobile: IGatsbyImageData
   }
-  sections: {
-    id: string
-  }
+  sections: Section[]
 }
 
 export const colors = { background: '#4865EB', text: '#ffffff' }
@@ -103,4 +130,11 @@ export const prepareProduct = (
   comingSoon: node.comingSoon,
   hasCover: node.hasCover,
   colors,
+  sections: node.sections
+    ? node.sections.reduce(
+        //TODO: non-unique order will be replaced
+        (list, section) => ({ ...list, [section.order]: section }),
+        {}
+      )
+    : {},
 })
