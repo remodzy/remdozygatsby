@@ -7,6 +7,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   await Promise.all([
     createBlogPages(graphql, createPage, reporter),
+    createProductsPages(graphql, createPage, reporter),
     createPrivacyAndTermsPages(graphql, createPage, reporter),
   ])
 }
@@ -105,6 +106,43 @@ async function createBlogPages(graphql, createPage, reporter) {
     createPage({
       path: `/blog/${node.slug}`,
       component: blogTemplate,
+      context: {
+        id: node.id,
+      },
+    })
+  })
+}
+
+// Create products pages
+async function createProductsPages(graphql, createPage, reporter) {
+  const result = await graphql(
+    `
+      query allContentfulProductsQuery {
+        allContentfulProducts(sort: { fields: order }) {
+          edges {
+            node {
+              id
+              name
+            }
+          }
+        }
+      }
+    `
+  )
+
+  if (result.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+
+  const template = path.resolve('./src/templates/Product/index.tsx')
+
+  const pages = result.data.allContentfulProducts.edges
+
+  pages.forEach(({ node }) => {
+    createPage({
+      path: `/${node.name.toLowerCase()}`,
+      component: template,
       context: {
         id: node.id,
       },

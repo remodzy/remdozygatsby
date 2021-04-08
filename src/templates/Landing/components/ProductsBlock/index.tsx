@@ -7,9 +7,9 @@ import { ContentfulAssetIcon, IconWrapper } from '~components/ProductIcons'
 import RGrid, { ListItem } from '~components/RGrid'
 import RSection from '~components/RSection'
 import { useDeviceDetect } from '~utils/hooks'
+import { BetaLabel, ComingSoonLabel } from '~utils/mapProducts'
 
 import Artifacts from './Artifacts'
-import { BetaLabel, ComingSoonLabel } from './productConfig'
 import * as styles from './ProductsBlock.module.css'
 
 type Props = {
@@ -32,6 +32,7 @@ const Products: FC<unknown> = (): ReactElement => {
   return <ProductsBlock productConfig={productsToListItems(data, isMobile)} />
 }
 
+//TODO: align products with Product & ProductNode
 const productsToListItems = (products: any, isMobile = false): ListItem[] => {
   const colors = { background: '#4865EB', text: '#ffffff' }
   return [

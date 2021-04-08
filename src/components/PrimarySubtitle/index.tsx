@@ -1,13 +1,13 @@
-import React, { FC, ReactElement } from 'react'
+import React, { FC, ReactElement, ReactNode } from 'react'
 
-import * as styles from './PrimarySubtitle.module.css'
+import { root } from './PrimarySubtitle.module.css'
 
 type Props = {
-  children: ReactElement | ReactElement[] | string
+  children: ReactElement | ReactElement[] | ReactNode | string
 }
 
 const PrimarySubtitle: FC<Props> = ({ children }): ReactElement => (
-  <div className={styles.root}>{children}</div>
+  <div className={root}>{children}</div>
 )
 
 export default PrimarySubtitle

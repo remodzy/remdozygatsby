@@ -1,4 +1,5 @@
-.root {
+.root,
+.root > p {
   color: var(--grey-text-color);
   font-weight: 500;
   font-size: 1.25rem;
@@ -7,9 +8,13 @@
   margin-bottom: 2.8125rem;
   max-width: 640px;
 }
+.root > p {
+  margin: 0;
+}
 
 @media screen and (max-width: 768px) {
-  .root {
+  .root,
+  .root > p {
     font-size: 1rem;
     line-height: 1.625rem;
     margin: 32px 0 32px;

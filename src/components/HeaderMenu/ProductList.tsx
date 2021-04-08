@@ -20,6 +20,7 @@ type MenuProps = {
   list: ProductMenuItem[]
 }
 
+//TODO: align with Product & ProductNode
 type ProductMenuItem = {
   key: string
   title: string
@@ -70,6 +71,7 @@ const ProductListMenu: FC<ListMenuProps> = ({
   )
 }
 
+//TODO: align products with Product & ProductNode
 const productsToListMenuItems = (products: any): ProductMenuItem[] => {
   return [
     ...products?.allContentfulProducts?.edges.map((product: any) => ({

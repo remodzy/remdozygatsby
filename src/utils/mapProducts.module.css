@@ -1,0 +1,17 @@
+.betaLabel {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  color: #5b9976;
+  margin-left: 32px;
+}
+
+.comingSoonLabel {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  color: #e19763;
+  margin-left: 32px;
+}

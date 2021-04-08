@@ -1,4 +1,4 @@
-import React, { FC, ReactElement, useCallback } from 'react'
+import React, { FC, ReactElement, ReactNode, useCallback } from 'react'
 
 import Button, { ButtonColors } from '~components/Button'
 import Label from '~components/Label'
@@ -17,11 +17,12 @@ import {
   root,
   wrapper,
 } from './PrimaryContent.module.css'
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
 
 type Props = {
-  title: string | ReactElement
-  subTitle: string
-  image?: () => ReactElement
+  title: string | ReactNode
+  subTitle: string | ReactNode
+  image?: IGatsbyImageData
   artifacts?: FC<unknown>
   comingSoon?: boolean
   doubleButtonMargins?: boolean
@@ -39,7 +40,7 @@ const Cover: FC<unknown> = (): ReactElement => (
 const PrimaryContent: React.FC<Props> = ({
   title,
   subTitle,
-  image: PrimaryImage,
+  image,
   artifacts: Artifacts,
   comingSoon = false,
   doubleButtonMargins = false,
@@ -87,13 +88,13 @@ const PrimaryContent: React.FC<Props> = ({
               </div>
             )}
           </div>
-          {PrimaryImage && (
+          {image && (
             <div
               className={`${imageWrapper} ${
                 doubleButtonMargins ? bigMargin : ''
               }`}
             >
-              <PrimaryImage />
+              <GatsbyImage image={image} alt='' />
             </div>
           )}
         </div>
