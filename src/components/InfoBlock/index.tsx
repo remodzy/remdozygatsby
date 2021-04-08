@@ -5,6 +5,7 @@ import { ListItem } from '~components/RGrid'
 import { createMarkup } from '~utils/createMarkup'
 
 import * as styles from './InfoBlock.module.css'
+import { Link } from 'gatsby'
 
 type Props = ListItem
 
@@ -43,9 +44,9 @@ const InfoBlock: FC<Props> = ({
       )}
     />
     <div className={styles.footer}>
-      <a
+      <Link
         className='btn primary-btn'
-        href={link}
+        to={link}
         style={{
           textDecoration: 'none',
           background: colors?.background,
@@ -53,7 +54,7 @@ const InfoBlock: FC<Props> = ({
         }}
       >
         {learnMoreText || 'Learn More'}
-      </a>
+      </Link>
       {ExtraItem && <ExtraItem />}
     </div>
   </div>
