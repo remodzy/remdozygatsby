@@ -19,7 +19,7 @@ export const pageQuery = graphql`
       description
     }
     image: heroImage {
-      gatsbyImageData(layout: CONSTRAINED, quality: 92)
+      gatsbyImageData(layout: CONSTRAINED, quality: 100)
       alt: description
       imageTitle: title
     }
