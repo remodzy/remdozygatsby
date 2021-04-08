@@ -5,9 +5,9 @@ import React, { FC, ReactElement } from 'react'
 import GridRow from '~components/GridRow'
 import InfoBlock from '~components/InfoBlock'
 import RSectionTitle from '~components/RSectionTitle'
-import { useDeviceDetect } from '~utils/hooks'
 
 import * as styles from './RGrid.module.css'
+import { useDeviceDetect } from '~utils/hooks'
 
 export type ListItem = {
   key?: string
