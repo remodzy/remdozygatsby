@@ -102,11 +102,16 @@ export const query = graphql`
           }
           promoImage {
             title
-            desktop: gatsbyImageData(layout: CONSTRAINED, quality: 98)
+            desktop: gatsbyImageData(
+              layout: CONSTRAINED
+              quality: 98
+              placeholder: BLURRED
+            )
             mobile: gatsbyImageData(
               layout: CONSTRAINED
               width: 400
               quality: 80
+              placeholder: BLURRED
             )
           }
         }

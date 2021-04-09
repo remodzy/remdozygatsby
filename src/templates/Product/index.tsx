@@ -172,8 +172,17 @@ export const pageQuery = graphql`
       }
       mainImage {
         title
-        desktop: gatsbyImageData(layout: CONSTRAINED, quality: 98)
-        mobile: gatsbyImageData(layout: CONSTRAINED, width: 400, quality: 80)
+        desktop: gatsbyImageData(
+          layout: CONSTRAINED
+          quality: 98
+          placeholder: BLURRED
+        )
+        mobile: gatsbyImageData(
+          layout: CONSTRAINED
+          width: 400
+          quality: 80
+          placeholder: BLURRED
+        )
       }
       sections {
         id
@@ -194,8 +203,17 @@ export const pageQuery = graphql`
         }
         sectionImage {
           title
-          desktop: gatsbyImageData(layout: CONSTRAINED, quality: 98)
-          mobile: gatsbyImageData(layout: CONSTRAINED, width: 400, quality: 80)
+          desktop: gatsbyImageData(
+            layout: CONSTRAINED
+            quality: 98
+            placeholder: BLURRED
+          )
+          mobile: gatsbyImageData(
+            layout: CONSTRAINED
+            width: 400
+            quality: 80
+            placeholder: BLURRED
+          )
         }
       }
     }

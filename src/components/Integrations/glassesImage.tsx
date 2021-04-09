@@ -29,7 +29,7 @@ const query = graphql`
   query {
     file(relativePath: { eq: "shared/glasses-image.png" }) {
       childImageSharp {
-        gatsbyImageData(layout: CONSTRAINED)
+        gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
       }
     }
   }
