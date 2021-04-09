@@ -1,6 +1,7 @@
 const path = require('path')
 // const { createFilePath } = require("gatsby-source-filesystem")
 const chunk = require('lodash/chunk')
+const FilterWarningsPlugin = require('webpack-filter-warnings-plugin')
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
@@ -179,6 +180,12 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions, getConfig }) => {
       },
     })
   }
-
+  if (stage === 'develop') {
+    config.plugins.push(
+      new FilterWarningsPlugin({
+        exclude: /Conflicting order. Following module has been added/,
+      })
+    )
+  }
   actions.replaceWebpackConfig(config)
 }
