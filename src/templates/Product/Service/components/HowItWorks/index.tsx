@@ -1,17 +1,16 @@
 import React from 'react'
+import { isMobile } from 'react-device-detect'
 
 import BlockWrapper from '~components/BlockWrapper'
 import { CircleArtifact, CircleName } from '~components/CircleArtifact'
 import DotsArtifact from '~components/Dot'
 import SectionLabel from '~components/SectionLabel'
 import SectionTitle from '~components/SectionTitle'
-import { useDeviceDetect } from '~utils/hooks'
 
 import * as styles from './HowItWorks.module.css'
 import { Item } from './item'
 
 export default function HowItWorks() {
-  const { isMobile } = useDeviceDetect()
   return (
     <div className={styles.root}>
       <BlockWrapper>

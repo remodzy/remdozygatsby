@@ -1,6 +1,5 @@
 import React from 'react'
-
-import { useDeviceDetect } from '~utils/hooks'
+import { isMobile } from 'react-device-detect'
 
 import SapLogo from './cap'
 import CatLogo from './cat'
@@ -10,7 +9,6 @@ import LyaLogo from './lya'
 import MailchimpLogo from './mailchimp'
 
 const CompaniesLogos = () => {
-  const { isMobile } = useDeviceDetect()
   return (
     <div className={companiesLogosStyles.root}>
       <div className={companiesLogosStyles.item} style={{ gridArea: 'a' }}>

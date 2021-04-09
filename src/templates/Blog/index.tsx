@@ -1,6 +1,7 @@
 import { graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import * as React from 'react'
+import { isMobile } from 'react-device-detect'
 
 import Layout from '~components/Layout'
 import { Pagination } from '~components/Pagination'
@@ -9,7 +10,6 @@ import RSectionTitle from '~components/RSectionTitle'
 import SectionLabel from '~components/SectionLabel'
 import SocialShare from '~components/SocialShare'
 import { createMarkup } from '~utils/createMarkup'
-import { useDeviceDetect } from '~utils/hooks'
 import { prepareArticle, ResourceNode } from '~utils/mapArticles'
 
 import * as styles from './Blog.module.css'
@@ -32,7 +32,6 @@ type Props = {
 }
 
 const Blog: React.FC<Props> = ({ pageContext, pageResources }) => {
-  const { isMobile } = useDeviceDetect()
   if (!pageResources) {
     return null
   }

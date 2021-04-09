@@ -1,10 +1,10 @@
 import React, { ReactElement } from 'react'
+import { isMobile } from 'react-device-detect'
 
 import BlockWrapper from '~components/BlockWrapper'
 import Button from '~components/Button'
 import { CircleArtifact, CircleName } from '~components/CircleArtifact'
 import DotsArtifact from '~components/Dot'
-import { useDeviceDetect } from '~utils/hooks'
 
 import SectionLabel from '../SectionLabel'
 import SectionTitle from '../SectionTitle'
@@ -12,8 +12,6 @@ import GlassesImage from './glassesImage'
 import integrationsStyles from './Integrations.module.css'
 
 export default function Integrations(): ReactElement<any, any> {
-  const { isMobile } = useDeviceDetect()
-
   return (
     <div className={integrationsStyles.root}>
       <BlockWrapper>

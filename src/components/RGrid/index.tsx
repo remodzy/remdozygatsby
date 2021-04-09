@@ -1,11 +1,11 @@
 import { Document } from '@contentful/rich-text-types'
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import React, { FC, ReactElement } from 'react'
+import { isMobile } from 'react-device-detect'
 
 import GridRow from '~components/GridRow'
 import InfoBlock from '~components/InfoBlock'
 import RSectionTitle from '~components/RSectionTitle'
-import { useDeviceDetect } from '~utils/hooks'
 
 import * as styles from './RGrid.module.css'
 
@@ -35,8 +35,6 @@ type Props = {
 }
 
 const RGrid: FC<Props> = ({ items, title }): ReactElement => {
-  const { isMobile } = useDeviceDetect()
-
   return (
     <>
       {title && <RSectionTitle>{title}</RSectionTitle>}

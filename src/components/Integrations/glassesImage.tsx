@@ -1,11 +1,9 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React from 'react'
-
-import { useDeviceDetect } from '~utils/hooks'
+import { isMobile } from 'react-device-detect'
 
 export default function GlassesImage() {
-  const { isMobile } = useDeviceDetect()
   const data = useStaticQuery(query)
 
   const image = getImage(data.file)
@@ -29,7 +27,7 @@ const query = graphql`
   query {
     file(relativePath: { eq: "shared/glasses-image.png" }) {
       childImageSharp {
-        gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+        gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG)
       }
     }
   }

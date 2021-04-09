@@ -1,6 +1,5 @@
 import React, { ReactElement } from 'react'
-
-import { useDeviceDetect } from '~utils/hooks'
+import { isMobile } from 'react-device-detect'
 
 import DotsArtifact from '../Dot'
 import Logo from '../Logo'
@@ -9,8 +8,6 @@ import * as styles from './AppFooter.module.css'
 import FooterLink from './FooterLink'
 
 export default function Footer(): ReactElement {
-  const { isMobile } = useDeviceDetect()
-
   return (
     <footer className={styles.root}>
       <RContainer>

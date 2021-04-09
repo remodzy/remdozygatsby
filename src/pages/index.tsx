@@ -4,7 +4,7 @@ import React from 'react'
 import Layout from '~components/Layout'
 import LandingTemplate from '~templates/Landing'
 
-export default function FormsPage() {
+export default function IndexPage() {
   return (
     <Layout>
       <LandingTemplate />
@@ -19,7 +19,7 @@ export const pageQuery = graphql`
       description
     }
     image: heroImage {
-      gatsbyImageData(layout: CONSTRAINED, quality: 98, placeholder: BLURRED)
+      gatsbyImageData(layout: CONSTRAINED, quality: 98, placeholder: TRACED_SVG)
       alt: description
       imageTitle: title
     }

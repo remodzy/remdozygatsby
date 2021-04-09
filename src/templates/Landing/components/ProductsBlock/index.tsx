@@ -1,12 +1,12 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
 import React, { FC, ReactElement } from 'react'
+import { isMobile } from 'react-device-detect'
 import SVG from 'react-inlinesvg'
 
 import { ContentfulAssetIcon, IconWrapper } from '~components/ProductIcons'
 import RGrid, { ListItem } from '~components/RGrid'
 import RSection from '~components/RSection'
-import { useDeviceDetect } from '~utils/hooks'
 import { BetaLabel, ComingSoonLabel } from '~utils/mapProducts'
 
 import Artifacts from './Artifacts'
@@ -26,9 +26,7 @@ const ProductsBlock: FC<Props> = ({ productConfig }): ReactElement => {
 }
 
 const Products: FC<unknown> = (): ReactElement => {
-  const { isMobile } = useDeviceDetect()
   const data = useStaticQuery(query)
-
   return <ProductsBlock productConfig={productsToListItems(data, isMobile)} />
 }
 
@@ -105,13 +103,13 @@ export const query = graphql`
             desktop: gatsbyImageData(
               layout: CONSTRAINED
               quality: 98
-              placeholder: BLURRED
+              placeholder: TRACED_SVG
             )
             mobile: gatsbyImageData(
               layout: CONSTRAINED
               width: 400
               quality: 80
-              placeholder: BLURRED
+              placeholder: TRACED_SVG
             )
           }
         }

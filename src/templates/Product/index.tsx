@@ -2,13 +2,13 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { graphql } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
 import React, { ReactElement } from 'react'
+import { isMobile } from 'react-device-detect'
 import SVG from 'react-inlinesvg'
 
 import IconWrapper from '~components/IconWrapper'
 import Layout from '~components/Layout'
 import PrimaryContent from '~components/PrimaryContent'
 import { ListItem } from '~components/RGrid'
-import { useDeviceDetect } from '~utils/hooks'
 import {
   ISectionsDictionary,
   prepareProduct,
@@ -100,7 +100,6 @@ type ContextPageResource = {
 }
 
 export default function BlogList({ pageResources }: Props): ReactElement {
-  const { isMobile } = useDeviceDetect()
   if (!pageResources?.json?.data.contentfulProducts) return <></>
 
   const product = prepareProduct(
@@ -175,13 +174,13 @@ export const pageQuery = graphql`
         desktop: gatsbyImageData(
           layout: CONSTRAINED
           quality: 98
-          placeholder: BLURRED
+          placeholder: TRACED_SVG
         )
         mobile: gatsbyImageData(
           layout: CONSTRAINED
           width: 400
           quality: 80
-          placeholder: BLURRED
+          placeholder: TRACED_SVG
         )
       }
       sections {
@@ -206,13 +205,13 @@ export const pageQuery = graphql`
           desktop: gatsbyImageData(
             layout: CONSTRAINED
             quality: 98
-            placeholder: BLURRED
+            placeholder: TRACED_SVG
           )
           mobile: gatsbyImageData(
             layout: CONSTRAINED
             width: 400
             quality: 80
-            placeholder: BLURRED
+            placeholder: TRACED_SVG
           )
         }
       }

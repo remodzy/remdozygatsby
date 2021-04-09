@@ -1,21 +1,20 @@
 import React from 'react'
-
-import IconButton from '~components/IconButton'
-import { useDeviceDetect } from '~utils/hooks'
-
-import * as styles from './SocialShare.module.css'
+import { isMobile } from 'react-device-detect'
 import {
   FacebookShareButton,
   LinkedinShareButton,
   TwitterShareButton,
 } from 'react-share'
 
+import IconButton from '~components/IconButton'
+
+import * as styles from './SocialShare.module.css'
+
 type Props = {
   title: string
   link: string
 }
 const SocialShare: React.FC<Props> = ({ title, link }) => {
-  const { isMobile } = useDeviceDetect()
   const size = isMobile ? 40 : 56
 
   return (

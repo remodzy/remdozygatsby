@@ -1,13 +1,13 @@
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 import { Document } from '@contentful/rich-text-types'
 import * as React from 'react'
+import { isMobile } from 'react-device-detect'
 
 import Layout from '~components/Layout'
 import RSection from '~components/RSection'
 import RSectionTitle from '~components/RSectionTitle'
 // import SocialShare from '~components/SocialShare'
 import { createMarkup } from '~utils/createMarkup'
-import { useDeviceDetect } from '~utils/hooks'
 
 import * as styles from './RichText.module.css'
 
@@ -21,8 +21,6 @@ type Props = {
 const RichTextLayout: React.FC<Props> = ({
   pageContext: { title, document },
 }) => {
-  const { isMobile } = useDeviceDetect()
-
   return (
     <Layout>
       <RSection>

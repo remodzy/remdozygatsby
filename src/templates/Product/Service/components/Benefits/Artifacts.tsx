@@ -1,9 +1,9 @@
 import React, { FC, ReactElement } from 'react'
-import { useDeviceDetect } from '~utils/hooks'
+import { isMobile } from 'react-device-detect'
+
 import { CircleArtifact, CircleName } from '~components/CircleArtifact'
 
 const Artifacts: FC<unknown> = (): ReactElement => {
-  const { isMobile } = useDeviceDetect()
   return isMobile ? <MobileArtifacts /> : <DesktopArtifacts />
 }
 

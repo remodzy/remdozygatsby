@@ -34,7 +34,7 @@ export const useOnClickOutside = (
 }
 
 export const useDeviceDetect = () => {
-  const [isMobile, setIsMobile] = useState(true)
+  const [isMobile, setIsMobile] = useState<boolean | null>(null)
 
   useEffect(() => {
     setIsMobile(detectMobileDevice())
@@ -46,9 +46,11 @@ export const useDeviceDetect = () => {
     }
   }, [])
 
-  return {
-    isMobile,
-  }
+  return isMobile === null
+    ? {}
+    : {
+        isMobile,
+      }
 }
 
 export function usePortal(id: string) {

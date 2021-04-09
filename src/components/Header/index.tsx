@@ -1,8 +1,8 @@
 import { Link } from 'gatsby'
 import React, { ReactElement, useCallback } from 'react'
+import { isMobile } from 'react-device-detect'
 
 import { authorize } from '~utils/auth'
-import { useDeviceDetect } from '~utils/hooks'
 
 import Button from '../Button'
 import HeaderMenu from '../HeaderMenu'
@@ -12,8 +12,6 @@ import RContainer from '../RContainer'
 import * as styles from './Header.module.css'
 
 const Header = (): ReactElement => {
-  const { isMobile } = useDeviceDetect()
-
   const handleLogin = useCallback(() => {
     authorize({})
   }, [])

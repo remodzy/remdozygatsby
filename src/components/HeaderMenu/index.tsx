@@ -1,9 +1,9 @@
 import { useLocation } from '@reach/router'
 import { Link } from 'gatsby'
 import React, { ReactElement, useCallback, useState } from 'react'
+import { isMobile } from 'react-device-detect'
 
 import ModalContainer from '~components/ModalContainer'
-import { useDeviceDetect } from '~utils/hooks'
 
 import DesktopProductsMenu from './DesktopProductsMenu'
 import FloatMenu from './FloatMenu'
@@ -51,7 +51,6 @@ const productMenuList: MenuItem[] = [
 
 export default function HeaderMenu(): ReactElement {
   const [show, setShow] = useState(false)
-  const { isMobile } = useDeviceDetect()
 
   const { pathname } = useLocation()
 

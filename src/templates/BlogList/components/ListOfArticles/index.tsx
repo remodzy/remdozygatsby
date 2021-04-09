@@ -1,8 +1,8 @@
 import React from 'react'
+import { isMobile } from 'react-device-detect'
 
 import ArticlePreview from '~components/ArticlePreview'
 import PaginationBlock, { Pagination } from '~components/Pagination'
-import { useDeviceDetect } from '~utils/hooks'
 import { Article } from '~utils/mapArticles'
 
 import MainListItem from '../MainListItem'
@@ -14,8 +14,6 @@ type Props = {
 }
 
 export default function ListOfArticles({ pagination, items }: Props) {
-  const { isMobile } = useDeviceDetect()
-
   if (!items.length) {
     return null
   }

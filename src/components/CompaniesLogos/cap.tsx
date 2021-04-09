@@ -1,10 +1,7 @@
 import React from 'react'
-
-import { useDeviceDetect } from '~utils/hooks'
+import { isMobile } from 'react-device-detect'
 
 export default function SapLogo() {
-  const { isMobile } = useDeviceDetect()
-
   return isMobile ? (
     <svg width='71' height='35' fill='none' xmlns='http://www.w3.org/2000/svg'>
       <path d='M0 34.81h35.513L70.338 0H0v34.81z' fill='#5C6E80' />

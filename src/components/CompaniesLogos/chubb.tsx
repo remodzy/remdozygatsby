@@ -1,10 +1,7 @@
 import React from 'react'
-
-import { useDeviceDetect } from '~utils/hooks'
+import { isMobile } from 'react-device-detect'
 
 export default function ChubbLogo() {
-  const { isMobile } = useDeviceDetect()
-
   return isMobile ? (
     <svg width='124' height='13' fill='none' xmlns='http://www.w3.org/2000/svg'>
       <path

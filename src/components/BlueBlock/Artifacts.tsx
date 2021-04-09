@@ -1,10 +1,9 @@
 import React, { FC, ReactElement } from 'react'
+import { isMobile } from 'react-device-detect'
 
 import DotsArtifact from '~components/Dot'
-import { useDeviceDetect } from '~utils/hooks'
 
 const Artifacts: FC<unknown> = (): ReactElement => {
-  const { isMobile } = useDeviceDetect()
   return isMobile ? <MobileArtifacts /> : <DesktopArtifacts />
 }
 

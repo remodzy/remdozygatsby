@@ -1,19 +1,18 @@
 import React, { FC, ReactElement } from 'react'
-import { useDeviceDetect } from '~utils/hooks'
+import { isMobile } from 'react-device-detect'
 
-import * as styles from './Apps.module.css'
 import RSection from '~components/RSection'
-import Artifacts from './Artifacts'
 import SectionLabel from '~components/SectionLabel'
 import SectionTitle from '~components/SectionTitle'
+
+import * as styles from './Apps.module.css'
+import Artifacts from './Artifacts'
 
 const Cover: FC<unknown> = (): ReactElement => (
   <div className={styles.backgroundCover} />
 )
 
-const PrimaryContent: React.FC<unknown> = (): ReactElement => {
-  const { isMobile } = useDeviceDetect()
-
+const AppsContent: React.FC<unknown> = (): ReactElement => {
   const imageUrl = isMobile
     ? '/images/apps/m-apps-primary.png'
     : '/images/apps/apps-primary.png'
@@ -29,4 +28,4 @@ const PrimaryContent: React.FC<unknown> = (): ReactElement => {
   )
 }
 
-export default PrimaryContent
+export default AppsContent

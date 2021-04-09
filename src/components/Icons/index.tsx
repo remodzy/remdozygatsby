@@ -1,6 +1,5 @@
 import React, { ReactElement, SVGProps } from 'react'
-
-import { useDeviceDetect } from '~utils/hooks'
+import { isMobile } from 'react-device-detect'
 
 export const Circle = ({ color = '#5A60A6' }): ReactElement => (
   <svg width='64' height='64' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -594,7 +593,6 @@ export default function IconWrapper({
   name,
   ...props
 }: IconProps): ReactElement {
-  const { isMobile } = useDeviceDetect()
   const Icon = icons[name]
   return <Icon {...props} isMobile={isMobile} />
 }
