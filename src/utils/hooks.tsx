@@ -76,3 +76,5 @@ function detectMobileDevice() {
   }
   return false
 }
+
+export const isSSR = () => typeof window === 'undefined'

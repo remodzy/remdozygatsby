@@ -9,6 +9,7 @@ import DesktopProductsMenu from './DesktopProductsMenu'
 import FloatMenu from './FloatMenu'
 import * as styles from './HeaderMenu.module.css'
 import MenuToggle from './MenuToggle'
+import { isSSR } from '~utils/hooks'
 
 export type MenuItem = {
   link: string
@@ -61,6 +62,8 @@ export default function HeaderMenu(): ReactElement {
   const handleClick = useCallback(() => {
     setShow(!show)
   }, [show])
+
+  if (isSSR()) return <></>
 
   if (isMobile) {
     return (

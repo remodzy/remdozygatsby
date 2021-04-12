@@ -3,6 +3,7 @@ import React, { ReactElement, useCallback } from 'react'
 import { isMobile } from 'react-device-detect'
 
 import { authorize } from '~utils/auth'
+import { isSSR } from '~utils/hooks'
 
 import Button from '../Button'
 import HeaderMenu from '../HeaderMenu'
@@ -34,7 +35,7 @@ const Header = (): ReactElement => {
             <Logo />
           </Link>
           <HeaderMenu />
-          {!isMobile && (
+          {!isSSR() && !isMobile && (
             <div className={styles.buttonsContainer}>
               <div className={styles.loginContainer}>
                 <LinkButton label='Log In' handleClick={handleLogin} />
