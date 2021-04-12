@@ -1,5 +1,6 @@
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 import { Document } from '@contentful/rich-text-types'
+import { PageProps } from 'gatsby'
 import * as React from 'react'
 import { isMobile } from 'react-device-detect'
 
@@ -11,7 +12,7 @@ import { createMarkup } from '~utils/createMarkup'
 
 import * as styles from './RichText.module.css'
 
-type Props = {
+type Props = PageProps & {
   pageContext: {
     title: string
     document: Document
