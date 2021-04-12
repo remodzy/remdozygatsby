@@ -52,7 +52,7 @@ const Blog: React.FC<Props> = ({ data, location }) => {
             )}
             <div className={styles.contentWrapper}>
               <div dangerouslySetInnerHTML={createMarkup(item.body)} />
-              <SocialShare title={item.title} link={location.pathname} />
+              <SocialShare title={item.title} link={location.href} />
             </div>
           </div>
         </div>
