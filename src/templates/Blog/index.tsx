@@ -1,10 +1,9 @@
-import { graphql } from 'gatsby'
+import { graphql, PageProps } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import * as React from 'react'
 import { isMobile } from 'react-device-detect'
 
 import Layout from '~components/Layout'
-import { Pagination } from '~components/Pagination'
 import RSection from '~components/RSection'
 import RSectionTitle from '~components/RSectionTitle'
 import SectionLabel from '~components/SectionLabel'
@@ -20,19 +19,14 @@ const imageStyle = {
   borderRadius: 12,
 }
 
-type Props = {
-  pageContext: Pagination
-  pageResources: {
-    json: {
-      data: {
-        article: ResourceNode
-      }
-    }
+type Props = PageProps & {
+  data: {
+    article: ResourceNode
   }
 }
 
-const Blog: React.FC<Props> = ({ pageContext, pageResources }) => {
-  if (!pageResources) {
+const Blog: React.FC<Props> = ({ data, location }) => {
+  if (!data) {
     return null
   }
 
@@ -40,7 +34,7 @@ const Blog: React.FC<Props> = ({ pageContext, pageResources }) => {
     imageStyle.margin = '54px 0'
   }
 
-  const item = prepareArticle(pageResources?.json?.data?.article)
+  const item = prepareArticle(data?.article)
 
   return (
     <Layout article={item}>
@@ -58,7 +52,7 @@ const Blog: React.FC<Props> = ({ pageContext, pageResources }) => {
             )}
             <div className={styles.contentWrapper}>
               <div dangerouslySetInnerHTML={createMarkup(item.body)} />
-              <SocialShare title={item.title} link={window.location.href} />
+              <SocialShare title={item.title} link={location.pathname} />
             </div>
           </div>
         </div>
