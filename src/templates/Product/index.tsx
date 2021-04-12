@@ -1,5 +1,5 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import { graphql } from 'gatsby'
+import { graphql, PageProps } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
 import React, { ReactElement } from 'react'
 import { isMobile } from 'react-device-detect'
@@ -87,25 +87,16 @@ const sectionsToListItem = (
   }))
 }
 
-type Props = {
-  pageResources: ContextPageResource
-}
-
-type ContextPageResource = {
-  json: {
-    data: {
-      contentfulProducts: ProductNode
-    }
+type Props = PageProps & {
+  data: {
+    contentfulProducts: ProductNode
   }
 }
 
-export default function BlogList({ pageResources }: Props): ReactElement {
-  if (!pageResources?.json?.data.contentfulProducts) return <></>
+export default function BlogList({ data }: Props): ReactElement {
+  if (!data.contentfulProducts) return <></>
 
-  const product = prepareProduct(
-    pageResources?.json?.data.contentfulProducts,
-    isMobile
-  )
+  const product = prepareProduct(data.contentfulProducts, isMobile)
   const View = views[product.key]
 
   return (

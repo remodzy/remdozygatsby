@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import { graphql, PageProps } from 'gatsby'
 import React, { ReactElement } from 'react'
 
 import Layout from '~components/Layout'
@@ -9,28 +9,19 @@ import { prepareArticles, ResourceNode } from '~utils/mapArticles'
 import * as styles from './BlogList.module.css'
 import ListOfArticles from './components/ListOfArticles'
 
-type Props = {
-  pageResources: ContextPageResource
+type Props = PageProps & {
+  data: {
+    articles: {
+      edges: {
+        node: ResourceNode
+      }[]
+    }
+  }
   pageContext: Pagination
 }
 
-type ContextPageResource = {
-  json: {
-    data: {
-      articles: {
-        edges: {
-          node: ResourceNode
-        }[]
-      }
-    }
-  }
-}
-
-export default function BlogList({
-  pageContext,
-  pageResources,
-}: Props): ReactElement {
-  const items = prepareArticles(pageResources?.json?.data)
+export default function BlogList({ pageContext, data }: Props): ReactElement {
+  const items = prepareArticles(data)
 
   return (
     <Layout>
