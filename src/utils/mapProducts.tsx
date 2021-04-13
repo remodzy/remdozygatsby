@@ -37,6 +37,7 @@ export type Section = {
 
 export type Product = {
   key: string
+  align?: 'left' | 'right'
   label?: Document | string
   colors: {
     background: string
@@ -46,7 +47,8 @@ export type Product = {
   title: Document | string
   text: Document | string
   icon: FC<unknown>
-  image?: IGatsbyImageData
+  mainImage?: IGatsbyImageData
+  promoImage?: IGatsbyImageData
   learnMoreText?: string
   extraItem?: FC<unknown>
   comingSoon: boolean
@@ -58,7 +60,7 @@ export type ProductNode = {
   id: string
   name: string
   order: number
-  align: string
+  align: 'left' | 'right'
   extra: string
   comingSoon: boolean
   hasCover: boolean
@@ -84,6 +86,11 @@ export type ProductNode = {
     desktop: IGatsbyImageData
     mobile: IGatsbyImageData
   }
+  promoImage: {
+    title: string
+    desktop: IGatsbyImageData
+    mobile: IGatsbyImageData
+  }
   sections: Section[]
 }
 
@@ -102,6 +109,7 @@ export const prepareProduct = (
   isMobile: boolean
 ): Product => ({
   key: node.name,
+  align: node.align,
   icon: function ProductIcon() {
     return (
       <IconWrapper isLarge={true} isMobile={false}>
@@ -123,7 +131,12 @@ export const prepareProduct = (
       : node.extra === 'coming_soon'
       ? ComingSoonLabel
       : undefined,
-  image: getImage(isMobile ? node.mainImage.mobile : node.mainImage.desktop),
+  mainImage: node.mainImage
+    ? getImage(isMobile ? node.mainImage.mobile : node.mainImage.desktop)
+    : undefined,
+  promoImage: node.promoImage
+    ? getImage(isMobile ? node.promoImage.mobile : node.promoImage.desktop)
+    : undefined,
   title: JSON.parse(node.subtitle1.subtitle1),
   text: JSON.parse(node.subtitle2.subtitle2),
   learnMoreText: node.learnMoreButton,

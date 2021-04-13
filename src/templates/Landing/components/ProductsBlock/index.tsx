@@ -1,13 +1,10 @@
 import { graphql, useStaticQuery } from 'gatsby'
-import { getImage } from 'gatsby-plugin-image'
 import React, { FC, ReactElement } from 'react'
 import { isMobile } from 'react-device-detect'
-import SVG from 'react-inlinesvg'
 
-import { ContentfulAssetIcon, IconWrapper } from '~components/ProductIcons'
 import RGrid, { ListItem } from '~components/RGrid'
 import RSection from '~components/RSection'
-import { BetaLabel, ComingSoonLabel } from '~utils/mapProducts'
+import { prepareProduct, Product, ProductNode } from '~utils/mapProducts'
 
 import Artifacts from './Artifacts'
 import * as styles from './ProductsBlock.module.css'
@@ -27,46 +24,28 @@ const ProductsBlock: FC<Props> = ({ productConfig }): ReactElement => {
 
 const Products: FC<unknown> = (): ReactElement => {
   const data = useStaticQuery(query)
-  return <ProductsBlock productConfig={productsToListItems(data, isMobile)} />
+  const products = data.allContentfulProducts?.edges
+  if (!products) return <></>
+  return (
+    <ProductsBlock
+      productConfig={productsToListItems(products, isMobile).map(
+        (product): ListItem => ({
+          ...product,
+          image: product.promoImage,
+        })
+      )}
+    />
+  )
 }
 
-//TODO: align products with Product & ProductNode
-const productsToListItems = (products: any, isMobile = false): ListItem[] => {
-  const colors = { background: '#4865EB', text: '#ffffff' }
+const productsToListItems = (
+  products: { node: ProductNode }[],
+  isMobile = false
+): Product[] => {
   return [
-    ...products?.allContentfulProducts?.edges.map((product: any) => ({
-      key: product.node.name,
-      icon: function ProductIcon() {
-        return (
-          <IconWrapper isLarge={true} isMobile={false}>
-            <SVG
-              src={
-                product.node.productIcon.find(
-                  (icon: ContentfulAssetIcon) => icon.title === 'icon-white'
-                ).file.url
-              }
-            />
-          </IconWrapper>
-        )
-      },
-      label: JSON.parse(product.node.productName.productName),
-      link: `/${product.node.name.toLowerCase()}`,
-      extraItem:
-        product.node.extra === 'beta'
-          ? BetaLabel
-          : product.node.extra === 'coming_soon'
-          ? ComingSoonLabel
-          : '',
-      image: getImage(
-        isMobile
-          ? product.node.promoImage.mobile
-          : product.node.promoImage.desktop
-      ),
-      title: JSON.parse(product.node.subtitle1.subtitle1),
-      text: JSON.parse(product.node.subtitle2.subtitle2),
-      learnMoreText: product.node.learnMoreButton,
-      colors,
-    })),
+    ...products.map(product => {
+      return prepareProduct(product.node, isMobile)
+    }),
   ]
 }
 

@@ -67,6 +67,7 @@ const sectionsToListItem = (
 ): ListItem[] => {
   return Object.values(sections).map(section => ({
     key: section.id,
+    align: section.alignLeft ? 'left' : 'right',
     title: section.title,
     text: JSON.parse(section.description.raw),
     colors: {
@@ -112,7 +113,7 @@ export default function BlogList({ data }: Props): ReactElement {
             ? product.text
             : documentToReactComponents(product.text)
         }
-        image={product.image}
+        image={product.mainImage}
         artifacts={Artifacts}
         comingSoon={product.comingSoon}
         hasCover={product.hasCover}

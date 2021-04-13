@@ -4,11 +4,19 @@ import * as styles from './GridRow.module.css'
 
 type Props = {
   children: unknown
+  align?: 'left' | 'right'
 }
 
-const GridRow: FC<Props> = ({ children }): ReactElement => (
+const GridRow: FC<Props> = ({ children, align = 'left' }): ReactElement => (
   <div className={styles.root}>
-    <div className={styles.wrapper}>{children}</div>
+    <div
+      className={styles.wrapper}
+      style={{
+        flexDirection: align === 'right' ? 'row-reverse' : 'row',
+      }}
+    >
+      {children}
+    </div>
   </div>
 )
 

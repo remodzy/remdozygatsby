@@ -1,7 +1,6 @@
 import { Document } from '@contentful/rich-text-types'
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import React, { FC, ReactElement } from 'react'
-import { isMobile } from 'react-device-detect'
 
 import GridRow from '~components/GridRow'
 import InfoBlock from '~components/InfoBlock'
@@ -21,12 +20,9 @@ export type ListItem = {
   text: Document | string
   icon: FC<unknown>
   image?: IGatsbyImageData
-  images?: {
-    desktop: string
-    mobile: string
-  }
   learnMoreText?: string
   extraItem?: FC<unknown>
+  align?: 'left' | 'right'
 }
 
 type Props = {
@@ -41,20 +37,10 @@ const RGrid: FC<Props> = ({ items, title }): ReactElement => {
       <div className={styles.root}>
         {items.map(
           (
-            {
-              key,
-              colors,
-              label,
-              link,
-              title,
-              text,
-              icon: Icon,
-              image,
-              images,
-            },
+            { key, align, colors, label, link, title, text, icon: Icon, image },
             index
           ) => (
-            <GridRow key={key || index}>
+            <GridRow key={key || index} align={align}>
               <InfoBlock
                 colors={colors}
                 label={label}
@@ -65,14 +51,6 @@ const RGrid: FC<Props> = ({ items, title }): ReactElement => {
               />
               <div className={styles.imageWrapper}>
                 {image && <GatsbyImage image={image} alt='' />}
-                {images && (
-                  <img
-                    src={isMobile ? images?.mobile : images?.desktop}
-                    width={100}
-                    height={100}
-                    alt=''
-                  />
-                )}
               </div>
             </GridRow>
           )
