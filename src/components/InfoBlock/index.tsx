@@ -1,11 +1,11 @@
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
+import { Link } from 'gatsby'
 import React, { FC, ReactElement } from 'react'
 
 import { ListItem } from '~components/RGrid'
 import { createMarkup } from '~utils/createMarkup'
 
 import * as styles from './InfoBlock.module.css'
-import { Link } from 'gatsby'
 
 type Props = ListItem
 
