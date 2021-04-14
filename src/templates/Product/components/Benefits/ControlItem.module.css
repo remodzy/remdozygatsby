@@ -1,3 +1,10 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+}
+
 .title {
   font-weight: 600;
   font-size: 16px;
@@ -5,25 +12,24 @@
   color: var(--main-text-color);
   margin-top: 20px;
 }
-.text {
+.text,
+.text > p {
   font-weight: 500;
   font-size: 14px;
   line-height: 22px;
   color: var(--second-text-color);
   margin-top: 16px;
 }
+.text > p {
+  margin-top: 0;
+}
 
 @media screen and (max-width: 768px) {
-  .title {
-    font-size: 20px;
-    line-height: 27px;
-    text-align: center;
-  }
-  .text {
-    text-align: center;
-  }
-  .icon {
-    margin-left: auto;
-    margin-right: auto;
+  .root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+    max-width: 144px;
   }
 }

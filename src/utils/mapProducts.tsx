@@ -35,6 +35,26 @@ export type Section = {
   }
 }
 
+export interface IBenefitsDictionary {
+  [index: number]: Benefit
+}
+
+export type Benefit = {
+  id: string
+  order: number
+  align: 'left' | 'right' | 'center'
+  color: string
+  title: string
+  description: Document | string
+  icon: {
+    title: string
+    file: {
+      contentType: string
+      url: string
+    }
+  }
+}
+
 export type Product = {
   key: string
   align?: 'left' | 'right'
@@ -54,6 +74,9 @@ export type Product = {
   comingSoon: boolean
   hasCover: boolean
   sections: ISectionsDictionary
+  benefitsTitle: string
+  benefitsColsNumber: number
+  benefits: IBenefitsDictionary
 }
 
 export type ProductNode = {
@@ -92,6 +115,9 @@ export type ProductNode = {
     mobile: IGatsbyImageData
   }
   sections: Section[]
+  benefitsTitle: string
+  benefitsColsNumber: number
+  benefits: Benefit[]
 }
 
 export const colors = { background: '#4865EB', text: '#ffffff' }
@@ -147,6 +173,15 @@ export const prepareProduct = (
     ? node.sections.reduce(
         //TODO: non-unique order will be replaced
         (list, section) => ({ ...list, [section.order]: section }),
+        {}
+      )
+    : {},
+  benefitsTitle: node.benefitsTitle,
+  benefitsColsNumber: node.benefitsColsNumber,
+  benefits: node.benefits
+    ? node.benefits.reduce(
+        //TODO: non-unique order will be replaced
+        (list, benefit) => ({ ...list, [benefit.order]: benefit }),
         {}
       )
     : {},
