@@ -1,3 +1,4 @@
+import { Link } from 'gatsby'
 import * as React from 'react'
 
 import * as styles from './FooterLink.module.css'
@@ -11,9 +12,9 @@ const FooterLink: React.FC<Props> = ({ text, url }) => {
   const isLocal = /^\/(?!\/)/.test(url)
 
   return (
-    <a
+    <Link
       className={styles.link}
-      href={url}
+      to={url}
       {...(!isLocal
         ? {
             target: '_blank',
@@ -22,7 +23,7 @@ const FooterLink: React.FC<Props> = ({ text, url }) => {
         : {})}
     >
       {text}
-    </a>
+    </Link>
   )
 }
 

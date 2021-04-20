@@ -1,3 +1,4 @@
+import { graphql, useStaticQuery } from 'gatsby'
 import React, { ReactElement } from 'react'
 import { isMobile } from 'react-device-detect'
 
@@ -7,7 +8,41 @@ import RContainer from '../RContainer'
 import * as styles from './AppFooter.module.css'
 import FooterLink from './FooterLink'
 
+export type FooterMenu = {
+  id: string
+  isHeader: boolean
+  order: number
+  name: string
+  column: number
+  url?: string
+}
+export type MenuItems = {
+  [key: string]: {
+    header: {
+      [key: string]: FooterMenu
+    }
+    items: {
+      [key: string]: FooterMenu
+    }
+  }
+}
+const prepareFooterItems = (items: FooterMenu[]): MenuItems => {
+  const menuItems: MenuItems = {}
+  items.forEach(item => {
+    if (!menuItems[item.column])
+      menuItems[item.column] = { header: {}, items: {} }
+    if (item.isHeader) {
+      menuItems[item.column].header[item.order] = item
+    } else {
+      menuItems[item.column].items[item.order] = item
+    }
+  })
+  return menuItems
+}
+
 export default function Footer(): ReactElement {
+  const items = useStaticQuery(query)
+  const menuItems = prepareFooterItems(items.allContentfulFooterMenu.nodes)
   return (
     <footer className={styles.root}>
       <RContainer>
@@ -16,26 +51,22 @@ export default function Footer(): ReactElement {
             <Logo />
           </div>
           <div className={styles.linksContainer}>
-            <div className={styles.linkColumn}>
-              <div className={styles.columnTitle}>Company</div>
-              <FooterLink text='Products' url='#' />
-              <FooterLink text='Integrations' url='#' />
-              <FooterLink text='Pricing' url='/pricing' />
-              <FooterLink text='Docs' url='//docs.roxabo.com' />
-            </div>
-            <div className={styles.linkColumn}>
-              <div className={styles.columnTitle}>About Roxabo</div>
-              <FooterLink text='About Us' url='#' />
-              <FooterLink text='Blog' url='/blog' />
-              <FooterLink text='Privacy' url='/privacy' />
-              <FooterLink text='Terms & Conditions' url='/terms' />
-            </div>
-            <div className={styles.linkColumn}>
-              <div className={styles.columnTitle}>Talk With Us</div>
-              <FooterLink text='Request a Free Demo' url='#' />
-              <FooterLink text='Contact Us' url='#' />
-              <FooterLink text='Careers' url='#' />
-            </div>
+            {Object.values(menuItems).map((item, index) => (
+              <div key={index} className={styles.linkColumn}>
+                {Object.values(item.header).map(header => (
+                  <div key={header.id} className={styles.columnTitle}>
+                    {header.name}
+                  </div>
+                ))}
+                {Object.values(item.items).map(link => (
+                  <FooterLink
+                    key={link.id}
+                    text={link.name}
+                    url={link.url || '#'}
+                  />
+                ))}
+              </div>
+            ))}
           </div>
         </div>
         <hr />
@@ -88,3 +119,18 @@ function DesktopArtifacts() {
     </>
   )
 }
+
+export const query = graphql`
+  query allContentfulFooterMenuQuery {
+    allContentfulFooterMenu {
+      nodes {
+        id
+        isHeader
+        order
+        name
+        column
+        url
+      }
+    }
+  }
+`
