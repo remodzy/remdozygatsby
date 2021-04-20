@@ -27,4 +27,32 @@ export const pageQuery = graphql`
     slug
     title
   }
+  fragment Article on ContentfulBlogPost {
+    createdAt
+    description {
+      description
+    }
+    image: heroImage {
+      gatsbyImageData(layout: CONSTRAINED, quality: 98, placeholder: TRACED_SVG)
+      alt: description
+      imageTitle: title
+    }
+    id
+    slug
+    title
+  }
+  fragment GenericArticle on ContentfulGenericPage {
+    createdAt
+    description {
+      description
+    }
+    image: heroImage {
+      gatsbyImageData(layout: CONSTRAINED, quality: 98, placeholder: TRACED_SVG)
+      alt: description
+      imageTitle: title
+    }
+    id
+    slug
+    title
+  }
 `

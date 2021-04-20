@@ -8,6 +8,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   await Promise.all([
     createBlogPages(graphql, createPage, reporter),
+    createGenericPages(graphql, createPage, reporter),
     createProductsPages(graphql, createPage, reporter),
     createPrivacyAndTermsPages(graphql, createPage, reporter),
   ])
@@ -107,6 +108,42 @@ async function createBlogPages(graphql, createPage, reporter) {
     createPage({
       path: `/blog/${node.slug}`,
       component: blogTemplate,
+      context: {
+        id: node.id,
+      },
+    })
+  })
+}
+
+async function createGenericPages(graphql, createPage, reporter) {
+  const result = await graphql(
+    `
+      {
+        pages: allContentfulGenericPage {
+          edges {
+            node {
+              slug
+              id
+            }
+          }
+        }
+      }
+    `
+  )
+
+  if (result.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+  const genericTemplate = path.resolve('./src/templates/Generic/index.tsx')
+
+  const pages = result.data.pages.edges
+
+  pages.forEach(({ node }) => {
+    // loop over split pages
+    createPage({
+      path: `/pages/${node.slug}`,
+      component: genericTemplate,
       context: {
         id: node.id,
       },
