@@ -23,7 +23,7 @@
 
 @media screen and (max-width: 768px) {
   .wrapper {
-    flex-direction: column;
+    flex-direction: column !important;
   }
 
   .wrapper > div:nth-child(2) {
