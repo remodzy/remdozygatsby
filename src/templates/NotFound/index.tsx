@@ -1,4 +1,4 @@
-import { navigate } from 'gatsby'
+import { graphql, navigate, useStaticQuery } from 'gatsby'
 import React, { ReactElement, useCallback } from 'react'
 
 import PrimaryContent from '~components/PrimaryContent'
@@ -6,6 +6,9 @@ import PrimaryContent from '~components/PrimaryContent'
 import Artifacts from './components/PrimaryContent/Artifacts'
 
 export default function Forms(): ReactElement {
+  const data = useStaticQuery(query)
+  const page = data.allContentfulNotFoundPage?.edges[0].node
+
   const handleClick = useCallback(() => {
     navigate('/')
   }, [])
@@ -13,11 +16,11 @@ export default function Forms(): ReactElement {
   return (
     <>
       <PrimaryContent
-        title='Oops. Page Not Found'
-        subTitle='You just hit a route that doesn’t exist... the sadness'
+        title={page.title}
+        subTitle={page.subTitle}
         handleClick={handleClick}
         artifacts={Artifacts}
-        buttonLabel='Back to home'
+        buttonLabel={page.buttonText}
         buttonColors={{
           border: '#4864eb',
           text: '#4864eb',
@@ -29,3 +32,17 @@ export default function Forms(): ReactElement {
     </>
   )
 }
+
+export const query = graphql`
+  query allContentfulNotFoundQuery {
+    allContentfulNotFoundPage {
+      edges {
+        node {
+          title
+          subTitle
+          buttonText
+        }
+      }
+    }
+  }
+`
