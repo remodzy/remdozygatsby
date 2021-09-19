@@ -11,12 +11,16 @@ import * as styles from './ProductsBlock.module.css'
 
 type Props = {
   productConfig: ListItem[]
+  productsLabel: string
 }
-const ProductsBlock: FC<Props> = ({ productConfig }): ReactElement => {
+const ProductsBlock: FC<Props> = ({
+  productConfig,
+  productsLabel = 'Our Products',
+}): ReactElement => {
   return (
     <RSection artifacts={Artifacts}>
       <div className={styles.root}>
-        <RGrid items={productConfig} title='Our Products' />
+        <RGrid items={productConfig} title={productsLabel} />
       </div>
     </RSection>
   )
@@ -25,9 +29,12 @@ const ProductsBlock: FC<Props> = ({ productConfig }): ReactElement => {
 const Products: FC<unknown> = (): ReactElement => {
   const data = useStaticQuery(query)
   const products = data.allContentfulProducts?.edges
+  const productsLabel =
+    data.allContentfulLandingContent?.edges[0].node.productsLabel
   if (!products) return <></>
   return (
     <ProductsBlock
+      productsLabel={productsLabel}
       productConfig={productsToListItems(products, isMobile).map(
         (product): ListItem => ({
           ...product,
@@ -53,6 +60,14 @@ export default Products
 
 export const query = graphql`
   query allContentfulProductsQuery {
+    allContentfulLandingContent {
+      edges {
+        node {
+          id
+          productsLabel
+        }
+      }
+    }
     allContentfulProducts(sort: { fields: order }) {
       edges {
         node {
