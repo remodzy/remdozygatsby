@@ -39,7 +39,7 @@ export default function PrimaryBlock(): ReactElement {
           <>
             {left + ' '}
             {replacer(words)}
-            {right}
+            {' ' + right}
             <br />
           </>
         )
