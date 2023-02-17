@@ -7,6 +7,10 @@
   "bugs": {
     "url": "https://github.com/contentful/starter-gatsby-blog/issues"
   },
+  "engines": {
+    "npm": ">=8.0.0",
+    "node": ">=18.0.0"
+  },
   "dependencies": {
     "@auth0/auth0-spa-js": "~1.13.0",
     "@contentful/rich-text-html-renderer": "~14.1.2",
