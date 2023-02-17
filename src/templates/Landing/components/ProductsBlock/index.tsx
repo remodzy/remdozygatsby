@@ -68,7 +68,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulProducts(sort: { fields: order }) {
+    allContentfulProducts(sort: { order: ASC }) {
       edges {
         node {
           id

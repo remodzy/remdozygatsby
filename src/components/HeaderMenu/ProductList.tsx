@@ -129,7 +129,7 @@ export default ProductListMenu
 
 export const query = graphql`
   query allContentfulProductsMenuQuery {
-    allContentfulProducts(sort: { fields: order }) {
+    allContentfulProducts(sort: { order: ASC }) {
       edges {
         node {
           id
