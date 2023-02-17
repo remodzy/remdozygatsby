@@ -55,7 +55,7 @@ export const query = graphql`
     articles: allContentfulBlogPost(
       skip: 0
       limit: 3
-      sort: { order: DESC, fields: [createdAt] }
+      sort: { createdAt: DESC }
     ) {
       edges {
         node {

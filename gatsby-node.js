@@ -59,9 +59,7 @@ async function createBlogPages(graphql, createPage, reporter) {
   const result = await graphql(
     `
       {
-        articles: allContentfulBlogPost(
-          sort: { order: DESC, fields: [createdAt] }
-        ) {
+        articles: allContentfulBlogPost(sort: { createdAt: DESC }) {
           edges {
             node {
               slug
@@ -156,7 +154,7 @@ async function createProductsPages(graphql, createPage, reporter) {
   const result = await graphql(
     `
       query allContentfulProductsQuery {
-        allContentfulProducts(sort: { fields: order }) {
+        allContentfulProducts(sort: { order: ASC }) {
           edges {
             node {
               id

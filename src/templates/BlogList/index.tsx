@@ -39,7 +39,7 @@ export const pageQuery = graphql`
     articles: allContentfulBlogPost(
       skip: $skip
       limit: $limit
-      sort: { order: DESC, fields: [createdAt] }
+      sort: { createdAt: DESC }
     ) {
       edges {
         node {
