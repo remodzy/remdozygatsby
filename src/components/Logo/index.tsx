@@ -1,19 +1,27 @@
+import { injectIntl } from 'gatsby-plugin-react-intl'
 import React, { memo } from 'react'
+import { IntlShape } from 'react-intl/src/types'
 
 import * as styles from './Logo.module.css'
 
-function Logo() {
+type Props = {
+  intl: IntlShape
+}
+
+const Logo: React.FC<Props> = ({ intl }) => {
   return (
     <div className={styles.root}>
       <span className={styles.iconWrapper}>
         <LogoIcon />
       </span>
-      <span className={styles.logoLabel}>Roxabo</span>
+      <span className={styles.logoLabel}>
+        {intl.formatMessage({ id: 'roxabo' })}
+      </span>
     </div>
   )
 }
 
-export default memo(Logo)
+export default memo(injectIntl(Logo))
 
 function LogoIcon() {
   return (

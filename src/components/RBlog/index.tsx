@@ -1,5 +1,7 @@
 import { graphql, navigate, useStaticQuery } from 'gatsby'
+import { injectIntl } from 'gatsby-plugin-react-intl'
 import React, { FC, ReactElement } from 'react'
+import { IntlShape } from 'react-intl/src/types'
 
 import Button from '~components/Button'
 import RSection from '~components/RSection'
@@ -13,7 +15,11 @@ import * as styles from './Blog.module.css'
 
 const Cover: FC<unknown> = (): ReactElement => <div className={styles.cover} />
 
-export default function RBlog(): ReactElement {
+type Props = {
+  intl: IntlShape
+}
+
+const RBlog: React.FC<Props> = ({ intl }) => {
   const items = useStaticQuery(query)
   const articles = prepareArticles(items)
 
@@ -22,7 +28,9 @@ export default function RBlog(): ReactElement {
       <div className={styles.root}>
         <div className={styles.header}>
           {/*<SectionLabel text='BLOG' color='success' />*/}
-          <RSectionTitle>Useful Resources</RSectionTitle>
+          <RSectionTitle>
+            {intl.formatMessage({ id: 'useful_resources' })}
+          </RSectionTitle>
         </div>
         <div className={styles.list}>
           {articles.map((item: Article) => (
@@ -41,7 +49,7 @@ export default function RBlog(): ReactElement {
         <div className={styles.buttonContainer}>
           <Button
             className='primary-btn'
-            label='View all'
+            label={intl.formatMessage({ id: 'view_all' })}
             handleClick={() => navigate(`/blog/`)}
           />
         </div>
@@ -49,6 +57,8 @@ export default function RBlog(): ReactElement {
     </RSection>
   )
 }
+
+export default injectIntl(RBlog)
 
 export const query = graphql`
   query BlogBlockQuery {

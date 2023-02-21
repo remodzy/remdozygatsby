@@ -1,7 +1,7 @@
 import React from 'react'
-import NotFound from '~templates/NotFound'
 
 import Layout from '~components/Layout'
+import NotFound from '~templates/NotFound'
 
 const NotFoundPage = () => (
   <Layout>

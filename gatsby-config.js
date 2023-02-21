@@ -46,6 +46,27 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-react-intl`,
+      options: {
+        // language JSON resource path
+        path: `${__dirname}/src/intl`,
+        // supported language
+        languages: [`en`, `es`],
+        // language file pathi
+        defaultLanguage: `en`,
+        // option to redirect to `/en` when connecting `/`
+        redirect: true,
+        // option for use / as defaultLanguage root path. if your defaultLanguage is `en`,
+        // when `redirectDefaultLanguageToRoot` is true, then it will not generate `/en/xxx` pages, instead of `/xxx`
+        redirectDefaultLanguageToRoot: false,
+        // paths that you don't want to generate locale pages, example: ["/dashboard/","/test/**"],
+        // string format is from micromatch https://github.com/micromatch/micromatch
+        ignoredPaths: [],
+        // option to fall back to the defined language instead of the `defaultLanguage` if the user language is not in the list
+        fallbackLanguage: `en`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.

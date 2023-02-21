@@ -1,6 +1,8 @@
 import { navigate } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
+import { injectIntl } from 'gatsby-plugin-react-intl'
 import * as React from 'react'
+import { IntlShape } from 'react-intl/src/types'
 
 import LinkButton from '~components/LinkButton'
 import { Article } from '~utils/mapArticles'
@@ -9,6 +11,7 @@ import * as styles from './MainListItem.module.css'
 
 type Props = {
   item: Article
+  intl: IntlShape
 }
 
 const imageStyle = {
@@ -19,7 +22,7 @@ const imageStyle = {
   flex: 0.63,
 }
 
-const MainListItem: React.FC<Props> = ({ item }) => (
+const MainListItem: React.FC<Props> = ({ item, intl }) => (
   <div className={styles.root}>
     {item.image.gatsbyImageData && (
       <GatsbyImage
@@ -36,7 +39,7 @@ const MainListItem: React.FC<Props> = ({ item }) => (
       <div className={styles.description}>{item.description}</div>
       <div className={styles.linkContainer}>
         <LinkButton
-          label='Learn More'
+          label={intl.formatMessage({ id: 'learn_more' })}
           handleClick={() => navigate(`/blog/${item.slug}`)}
         />
       </div>
@@ -44,4 +47,4 @@ const MainListItem: React.FC<Props> = ({ item }) => (
   </div>
 )
 
-export default MainListItem
+export default injectIntl(MainListItem)

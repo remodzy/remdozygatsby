@@ -1,5 +1,7 @@
+import { injectIntl } from 'gatsby-plugin-react-intl'
 import { useCallback, useEffect, useState } from 'react'
 import * as React from 'react'
+import { IntlShape } from 'react-intl/src/types'
 
 import Button from '~components/Button'
 import RangeSlider from '~components/RangeSlider'
@@ -10,9 +12,10 @@ import * as styles from './PriceItem.module.css'
 
 type Props = {
   item: ListItem
+  intl: IntlShape
 }
 
-const PriceItem: React.FC<Props> = ({ item }) => {
+const PriceItem: React.FC<Props> = ({ item, intl }) => {
   const {
     plan,
     price,
@@ -79,14 +82,14 @@ const PriceItem: React.FC<Props> = ({ item }) => {
       <div className={styles.footer}>
         {!selected && (
           <Button
-            label='Get Started'
+            label={intl.formatMessage({ id: 'get_started' })}
             className='fullWidth primary-btn'
             handleClick={handleSignUp}
           />
         )}
         {selected && (
           <Button
-            label='Get Started'
+            label={intl.formatMessage({ id: 'get_started' })}
             className='fullWidth disabled-btn'
             handleClick={handleSignUp}
           />
@@ -96,4 +99,4 @@ const PriceItem: React.FC<Props> = ({ item }) => {
   )
 }
 
-export default PriceItem
+export default injectIntl(PriceItem)

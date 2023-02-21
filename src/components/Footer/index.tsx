@@ -1,6 +1,8 @@
 import { graphql, useStaticQuery } from 'gatsby'
-import React, { ReactElement } from 'react'
+import { injectIntl } from 'gatsby-plugin-react-intl'
+import React from 'react'
 import { isMobile } from 'react-device-detect'
+import { IntlShape } from 'react-intl/src/types'
 
 import DotsArtifact from '../Dot'
 import Logo from '../Logo'
@@ -40,7 +42,11 @@ const prepareFooterItems = (items: FooterMenu[]): MenuItems => {
   return menuItems
 }
 
-export default function Footer(): ReactElement {
+type Props = {
+  intl: IntlShape
+}
+
+const Footer: React.FC<Props> = ({ intl }) => {
   const items = useStaticQuery(query)
   const menuItems = prepareFooterItems(items.allContentfulFooterMenu.nodes)
   return (
@@ -71,13 +77,18 @@ export default function Footer(): ReactElement {
         </div>
         <hr />
         <div className={styles.copyrightContainer}>
-          <span>© {new Date().getFullYear()}, ROXABO PTY LTD.</span>
+          <span>
+            © {new Date().getFullYear()},{' '}
+            {intl.formatMessage({ id: 'copyright' })}
+          </span>
         </div>
       </RContainer>
       {isMobile ? <MobileArtifacts /> : <DesktopArtifacts />}
     </footer>
   )
 }
+
+export default injectIntl(Footer)
 
 function MobileArtifacts() {
   return <></>

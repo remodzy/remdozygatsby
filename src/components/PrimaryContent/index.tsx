@@ -18,6 +18,8 @@ import {
   wrapper,
 } from './PrimaryContent.module.css'
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
+import { injectIntl } from 'gatsby-plugin-react-intl'
+import { IntlShape } from 'react-intl/src/types'
 
 type Props = {
   title: string | ReactNode
@@ -31,6 +33,7 @@ type Props = {
   buttonLabel?: string
   buttonColors?: ButtonColors
   creditCardInfo?: boolean
+  intl: IntlShape
 }
 
 const Cover: FC<unknown> = (): ReactElement => (
@@ -46,9 +49,10 @@ const PrimaryContent: React.FC<Props> = ({
   doubleButtonMargins = false,
   hasCover = false,
   handleClick,
-  buttonLabel = 'Start Free Trial',
+  buttonLabel = 'trial',
   buttonColors,
   creditCardInfo = true,
+  intl,
 }) => {
   const defaultHandleClick = useCallback(() => {
     authorize({ signUp: true })
@@ -68,7 +72,7 @@ const PrimaryContent: React.FC<Props> = ({
           >
             {comingSoon && <div className={comingSoonLabel}>COMING SOON</div>}
             <Button
-              label={buttonLabel}
+              label={intl.formatMessage({ id: buttonLabel })}
               {...(!comingSoon && !buttonColors
                 ? {
                     className: 'primary-btn',
@@ -84,7 +88,7 @@ const PrimaryContent: React.FC<Props> = ({
             />
             {creditCardInfo && (
               <div className={labelContainer}>
-                <Label text='No credit card required' />
+                <Label text={intl.formatMessage({ id: 'no_credit_card' })} />
               </div>
             )}
           </div>
@@ -103,4 +107,4 @@ const PrimaryContent: React.FC<Props> = ({
   )
 }
 
-export default PrimaryContent
+export default injectIntl(PrimaryContent)

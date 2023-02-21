@@ -1,5 +1,7 @@
-import React, { ReactElement } from 'react'
+import { injectIntl } from 'gatsby-plugin-react-intl'
+import React from 'react'
 import { isMobile } from 'react-device-detect'
+import { IntlShape } from 'react-intl/src/types'
 
 import BlockWrapper from '~components/BlockWrapper'
 import Button from '~components/Button'
@@ -11,13 +13,19 @@ import SectionTitle from '../SectionTitle'
 import GlassesImage from './glassesImage'
 import integrationsStyles from './Integrations.module.css'
 
-export default function Integrations(): ReactElement<any, any> {
+type Props = {
+  intl: IntlShape
+}
+
+const Integrations: React.FC<Props> = ({ intl }) => {
   return (
     <div className={integrationsStyles.root}>
       <BlockWrapper>
         <div className={integrationsStyles.wrapper}>
-          <SectionLabel text='INTEGRATIONS' />
-          <SectionTitle text='Google Glass Remote Advisor' />
+          <SectionLabel text={intl.formatMessage({ id: 'integrations' })} />
+          <SectionTitle
+            text={intl.formatMessage({ id: 'google_glass_remote_advisor' })}
+          />
           <div className={integrationsStyles.subTitle}>
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
             sint. Velit officia consequat duis enim velit mollit. Exercitation
@@ -26,7 +34,7 @@ export default function Integrations(): ReactElement<any, any> {
           <GlassesImage />
           <Button
             className='primary-btn'
-            label='Learn More'
+            label={intl.formatMessage({ id: 'learn_more' })}
             handleClick={() => {}}
           />
           {isMobile ? <InMobileArtifacts /> : <InDesktopArtifacts />}
@@ -36,6 +44,8 @@ export default function Integrations(): ReactElement<any, any> {
     </div>
   )
 }
+
+export default injectIntl(Integrations)
 
 function InMobileArtifacts() {
   return (

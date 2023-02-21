@@ -1,4 +1,6 @@
+import { injectIntl } from 'gatsby-plugin-react-intl'
 import React, { FC, ReactElement } from 'react'
+import { IntlShape } from 'react-intl/src/types'
 
 import RContainer from '~components/RContainer'
 import { ListItem } from '~components/RGrid'
@@ -13,17 +15,22 @@ type Props = {
   title: string
   list: ListItem[]
   artifacts?: () => ReactElement
+  intl: IntlShape
 }
 
 const Benefits: FC<Props> = ({
   title,
   list,
   artifacts: Artifacts,
+  intl,
 }): ReactElement => (
   <RSection artifacts={Artifacts}>
     <RContainer>
       <div className={root}>
-        <SectionLabel text='Benefits' color='primary' />
+        <SectionLabel
+          text={intl.formatMessage({ id: 'benefits' })}
+          color='primary'
+        />
         <RSectionTitle maxWidth={'100%'}>{title}</RSectionTitle>
         <ControlList
           items={list.map((item, index) => ({
@@ -39,4 +46,4 @@ const Benefits: FC<Props> = ({
   </RSection>
 )
 
-export default Benefits
+export default injectIntl(Benefits)

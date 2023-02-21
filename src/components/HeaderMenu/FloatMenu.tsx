@@ -1,6 +1,8 @@
 import { Link } from 'gatsby'
+import { injectIntl } from 'gatsby-plugin-react-intl'
 import { useCallback } from 'react'
 import * as React from 'react'
+import { IntlShape } from 'react-intl/src/types'
 
 import Accordion from '~components/Accordion'
 import LinkButton from '~components/LinkButton'
@@ -15,9 +17,10 @@ import ProductListMenu from './ProductList'
 type Props = {
   menuList: MenuItem[]
   handleClose: () => void
+  intl: IntlShape
 }
 
-const FloatMenu: React.FC<Props> = ({ menuList, handleClose }) => {
+const FloatMenu: React.FC<Props> = ({ menuList, handleClose, intl }) => {
   const handleLogin = useCallback(() => {
     authorize({})
   }, [])
@@ -44,7 +47,7 @@ const FloatMenu: React.FC<Props> = ({ menuList, handleClose }) => {
           <MenuToggle show handleClick={handleClose} />
         </div>
         <div className={styles.menuWrapper}>
-          <Accordion title={'Products'}>
+          <Accordion title={intl.formatMessage({ id: 'products' })}>
             <ProductListMenu isMobile />
           </Accordion>
           {menuList.map(item =>
@@ -65,14 +68,20 @@ const FloatMenu: React.FC<Props> = ({ menuList, handleClose }) => {
             )
           )}
           <div className={styles.menuItem}>
-            <LinkButton label='Log In' handleClick={handleLogin} />
+            <LinkButton
+              label={intl.formatMessage({ id: 'login' })}
+              handleClick={handleLogin}
+            />
           </div>
           <div className={styles.menuItem}>
-            <LinkButton label='Get Started' handleClick={handleSignUp} />
+            <LinkButton
+              label={intl.formatMessage({ id: 'get_started' })}
+              handleClick={handleSignUp}
+            />
           </div>
         </div>
       </div>
     </div>
   )
 }
-export default FloatMenu
+export default injectIntl(FloatMenu)

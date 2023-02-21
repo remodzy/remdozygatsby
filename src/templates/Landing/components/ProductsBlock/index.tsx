@@ -1,6 +1,8 @@
 import { graphql, useStaticQuery } from 'gatsby'
+import { injectIntl } from 'gatsby-plugin-react-intl'
 import React, { FC, ReactElement } from 'react'
 import { isMobile } from 'react-device-detect'
+import { IntlShape } from 'react-intl/src/types'
 
 import RGrid, { ListItem } from '~components/RGrid'
 import RSection from '~components/RSection'
@@ -9,13 +11,13 @@ import { prepareProduct, Product, ProductNode } from '~utils/mapProducts'
 import Artifacts from './Artifacts'
 import * as styles from './ProductsBlock.module.css'
 
-type Props = {
+type ProductsBlockProps = {
   productConfig: ListItem[]
   productsLabel: string
 }
-const ProductsBlock: FC<Props> = ({
+const ProductsBlock: FC<ProductsBlockProps> = ({
   productConfig,
-  productsLabel = 'Our Products',
+  productsLabel,
 }): ReactElement => {
   return (
     <RSection artifacts={Artifacts}>
@@ -26,7 +28,10 @@ const ProductsBlock: FC<Props> = ({
   )
 }
 
-const Products: FC<unknown> = (): ReactElement => {
+type Props = {
+  intl: IntlShape
+}
+const Products: React.FC<Props> = ({ intl }) => {
   const data = useStaticQuery(query)
   const products = data.allContentfulProducts?.edges
   const productsLabel =
@@ -34,7 +39,11 @@ const Products: FC<unknown> = (): ReactElement => {
   if (!products) return <></>
   return (
     <ProductsBlock
-      productsLabel={productsLabel}
+      productsLabel={
+        productsLabel
+          ? productsLabel
+          : intl.formatMessage({ id: 'our_products' })
+      }
       productConfig={productsToListItems(products, isMobile).map(
         (product): ListItem => ({
           ...product,
@@ -56,7 +65,7 @@ const productsToListItems = (
   ]
 }
 
-export default Products
+export default injectIntl(Products)
 
 export const query = graphql`
   query allContentfulProductsQuery {

@@ -1,5 +1,7 @@
 import { Link } from 'gatsby'
+import { injectIntl } from 'gatsby-plugin-react-intl'
 import React, { useEffect, useState } from 'react'
+import { IntlShape } from 'react-intl/src/types'
 
 import { PageRangeItem, paginationRange } from '~utils/paginationRange'
 
@@ -19,9 +21,10 @@ export type Pagination = {
 
 type Props = {
   data: Pagination
+  intl: IntlShape
 }
 
-const PaginationBlock: React.FC<Props> = ({ data }) => {
+const PaginationBlock: React.FC<Props> = ({ data, intl }) => {
   const [pageList, setPageList] = useState<PageRangeItem[]>([])
 
   useEffect(() => {
@@ -41,7 +44,7 @@ const PaginationBlock: React.FC<Props> = ({ data }) => {
           !data.hasPrevPage ? styles.disabledLink : ''
         }`}
       >
-        Prev
+        {intl.formatMessage({ id: 'prev' })}
       </Link>
       {pageList.map((el: PageRangeItem, index) => (
         <PaginationItem
@@ -56,10 +59,10 @@ const PaginationBlock: React.FC<Props> = ({ data }) => {
           !data.hasNextPage ? styles.disabledLink : ''
         }`}
       >
-        Next
+        {intl.formatMessage({ id: 'next' })}
       </Link>
     </div>
   )
 }
 
-export default PaginationBlock
+export default injectIntl(PaginationBlock)

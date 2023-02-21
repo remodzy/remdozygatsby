@@ -1,5 +1,7 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik'
-import React, { ReactElement, useState } from 'react'
+import { injectIntl } from 'gatsby-plugin-react-intl'
+import React, { useState } from 'react'
+import { IntlShape } from 'react-intl/src/types'
 import * as Yup from 'yup'
 
 import Button from '~components/Button'
@@ -20,7 +22,10 @@ const subscribeSchema = Yup.object().shape({
     .required('Email is required'),
 })
 
-export default function BlueBlock(): ReactElement {
+type Props = {
+  intl: IntlShape
+}
+const BlueBlock: React.FC<Props> = ({ intl }) => {
   const [email, setEmail] = useState('')
   const [subscribed, set] = useState(false)
 
@@ -32,7 +37,9 @@ export default function BlueBlock(): ReactElement {
     <div className={styles.root}>
       <div className={styles.wrapper}>
         <div className={styles.title}>
-          {subscribed ? `Thank you!` : `Stay up to date with Updates`}
+          {subscribed
+            ? intl.formatMessage({ id: 'thank_you' })
+            : intl.formatMessage({ id: 'stay_up_to_date' })}
         </div>
         {subscribed && (
           <p className={styles.p}>
@@ -59,7 +66,7 @@ export default function BlueBlock(): ReactElement {
                     type='email'
                     name='email'
                     id='email'
-                    placeholder='Enter your email'
+                    placeholder={intl.formatMessage({ id: 'enter_your_email' })}
                     className={`${styles.input} ${
                       errors.email && touched.email ? 'input-error' : null
                     }`}
@@ -69,7 +76,7 @@ export default function BlueBlock(): ReactElement {
                 <div className={styles.buttonWrapper}>
                   <Button
                     type='submit'
-                    label='Subscribe'
+                    label={intl.formatMessage({ id: 'subscribe' })}
                     colors={{
                       background: '#ffffff',
                       text: colors.main,
@@ -87,3 +94,5 @@ export default function BlueBlock(): ReactElement {
     </div>
   )
 }
+
+export default injectIntl(BlueBlock)

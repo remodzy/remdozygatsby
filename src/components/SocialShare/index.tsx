@@ -1,5 +1,7 @@
+import { injectIntl } from 'gatsby-plugin-react-intl'
 import React from 'react'
 import { isMobile } from 'react-device-detect'
+import { IntlShape } from 'react-intl/src/types'
 import {
   FacebookShareButton,
   LinkedinShareButton,
@@ -13,13 +15,14 @@ import * as styles from './SocialShare.module.css'
 type Props = {
   title: string
   link: string
+  intl: IntlShape
 }
-const SocialShare: React.FC<Props> = ({ title, link }) => {
+const SocialShare: React.FC<Props> = ({ title, link, intl }) => {
   const size = isMobile ? 40 : 56
 
   return (
     <div className={styles.root}>
-      <div className={styles.title}>Share</div>
+      <div className={styles.title}>{intl.formatMessage({ id: 'share' })}</div>
       <FacebookShareButton url={link} quote={title}>
         <IconButton iconName='facebook' size={size} handleClick={() => {}} />
       </FacebookShareButton>
@@ -33,4 +36,4 @@ const SocialShare: React.FC<Props> = ({ title, link }) => {
   )
 }
 
-export default SocialShare
+export default injectIntl(SocialShare)

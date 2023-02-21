@@ -1,13 +1,17 @@
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 import { Link } from 'gatsby'
+import { injectIntl } from 'gatsby-plugin-react-intl'
 import React, { FC, ReactElement } from 'react'
+import { IntlShape } from 'react-intl/src/types'
 
 import { ListItem } from '~components/RGrid'
 import { createMarkup } from '~utils/createMarkup'
 
 import * as styles from './InfoBlock.module.css'
 
-type Props = ListItem
+type Props = ListItem & {
+  intl: IntlShape
+}
 
 const InfoBlock: FC<Props> = ({
   colors = {},
@@ -18,6 +22,7 @@ const InfoBlock: FC<Props> = ({
   link,
   learnMoreText,
   extraItem: ExtraItem,
+  intl,
 }): ReactElement => (
   <div className={styles.root}>
     <div className={styles.iconContainer}>
@@ -53,11 +58,11 @@ const InfoBlock: FC<Props> = ({
           color: colors?.text,
         }}
       >
-        {learnMoreText || 'Learn More'}
+        {learnMoreText || intl.formatMessage({ id: 'learn_more' })}
       </Link>
       {ExtraItem && <ExtraItem />}
     </div>
   </div>
 )
 
-export default InfoBlock
+export default injectIntl(InfoBlock)

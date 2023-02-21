@@ -1,5 +1,7 @@
 import useInterval from '@rooks/use-interval'
-import React, { memo, ReactElement, useCallback, useState } from 'react'
+import { injectIntl } from 'gatsby-plugin-react-intl'
+import React, { memo, useCallback, useState } from 'react'
+import { IntlShape } from 'react-intl/src/types'
 import { useTransition } from 'react-spring'
 
 import Icon from '~components/Icons'
@@ -34,7 +36,11 @@ const SimpleSlider = ({
   </div>
 )
 
-const Testimonials = (): ReactElement => {
+type Props = {
+  intl: IntlShape
+}
+
+const Testimonials: React.FC<Props> = ({ intl }) => {
   const testimonialsCount = 4
   const [index, set] = useState(0)
   const onClick = useCallback(
@@ -92,7 +98,9 @@ const Testimonials = (): ReactElement => {
       <div className={styles.root}>
         <div className={styles.header}>
           <SectionLabel text='testimonials' color='success' />
-          <RSectionTitle>What People Say</RSectionTitle>
+          <RSectionTitle>
+            {intl.formatMessage({ id: 'what_people_say' })}
+          </RSectionTitle>
         </div>
         <div className={styles.slide} onClick={onClick}>
           <div className={styles.slideContent}>
@@ -120,4 +128,4 @@ const Testimonials = (): ReactElement => {
   )
 }
 
-export default memo(Testimonials)
+export default memo(injectIntl(Testimonials))

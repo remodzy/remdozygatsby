@@ -1,6 +1,8 @@
-import { Link, navigate } from 'gatsby'
+import { navigate } from 'gatsby'
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
+import { injectIntl, Link } from 'gatsby-plugin-react-intl'
 import React from 'react'
+import { IntlShape } from 'react-intl/src/types'
 
 import LinkButton from '~components/LinkButton'
 
@@ -13,6 +15,7 @@ type Props = {
   imageTitle: string
   imageTitleColor: string
   slug: string
+  intl: IntlShape
 }
 
 type ImageStyles = {
@@ -34,6 +37,7 @@ const ArticlePreview: React.FC<Props> = ({
   imageTitle,
   imageTitleColor,
   slug,
+  intl,
 }) => (
   <div className={styles.root}>
     <Link to={`/blog/${slug}`}>
@@ -53,11 +57,11 @@ const ArticlePreview: React.FC<Props> = ({
     <div className={styles.text}>{text}</div>
     <div className={styles.linkContainer}>
       <LinkButton
-        label='Learn More'
+        label={intl.formatMessage({ id: 'learn_more' })}
         handleClick={() => navigate(`/blog/${slug}`)}
       />
     </div>
   </div>
 )
 
-export default ArticlePreview
+export default injectIntl(ArticlePreview)

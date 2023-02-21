@@ -1,5 +1,7 @@
 import { graphql, PageProps } from 'gatsby'
-import React, { ReactElement } from 'react'
+import { injectIntl } from 'gatsby-plugin-react-intl'
+import React from 'react'
+import { IntlShape } from 'react-intl/src/types'
 
 import Layout from '~components/Layout'
 import { Pagination } from '~components/Pagination'
@@ -18,21 +20,24 @@ type Props = PageProps & {
     }
   }
   pageContext: Pagination
+  intl: IntlShape
 }
 
-export default function BlogList({ pageContext, data }: Props): ReactElement {
+const BlogList: React.FC<Props> = ({ pageContext, data, intl }) => {
   const items = prepareArticles(data)
 
   return (
     <Layout>
       <div className={styles.pageWrapper}>
-        <SectionTitle text='Insights from the Roxabo team' />
+        <SectionTitle text={intl.formatMessage({ id: 'insights' })} />
         <ListOfArticles pagination={pageContext} items={items} />
         {/* <Artifacts /> */}
       </div>
     </Layout>
   )
 }
+
+export default injectIntl(BlogList)
 
 export const pageQuery = graphql`
   query BlogListPageQuery($skip: Int, $limit: Int) {

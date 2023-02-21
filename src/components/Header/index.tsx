@@ -1,6 +1,8 @@
 import { Link } from 'gatsby'
-import React, { ReactElement, useCallback } from 'react'
+import { injectIntl } from 'gatsby-plugin-react-intl'
+import React, { useCallback } from 'react'
 import { isMobile } from 'react-device-detect'
+import { IntlShape } from 'react-intl/src/types'
 
 import { authorize } from '~utils/auth'
 import { isSSR } from '~utils/hooks'
@@ -12,7 +14,11 @@ import Logo from '../Logo'
 import RContainer from '../RContainer'
 import * as styles from './Header.module.css'
 
-const Header = (): ReactElement => {
+type Props = {
+  intl: IntlShape
+}
+
+const Header: React.FC<Props> = ({ intl }) => {
   const handleLogin = useCallback(() => {
     authorize({})
   }, [])
@@ -38,10 +44,13 @@ const Header = (): ReactElement => {
           {!isSSR() && !isMobile && (
             <div className={styles.buttonsContainer}>
               <div className={styles.loginContainer}>
-                <LinkButton label='Log In' handleClick={handleLogin} />
+                <LinkButton
+                  label={intl.formatMessage({ id: 'login' })}
+                  handleClick={handleLogin}
+                />
               </div>
               <Button
-                label='Get Started'
+                label={intl.formatMessage({ id: 'get_started' })}
                 className='primary-btn'
                 handleClick={handleSignUp}
               />
@@ -53,4 +62,4 @@ const Header = (): ReactElement => {
   )
 }
 
-export default Header
+export default injectIntl(Header)
